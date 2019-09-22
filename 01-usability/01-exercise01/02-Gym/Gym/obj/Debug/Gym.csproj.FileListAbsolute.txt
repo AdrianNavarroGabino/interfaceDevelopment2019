@@ -1,0 +1,10 @@
+C:\Users\Adrian\source\repos\Gym\Gym\bin\Debug\Gym.exe.config
+C:\Users\Adrian\source\repos\Gym\Gym\bin\Debug\Gym.exe
+C:\Users\Adrian\source\repos\Gym\Gym\bin\Debug\Gym.pdb
+C:\Users\Adrian\source\repos\Gym\Gym\obj\Debug\Gym.csprojAssemblyReference.cache
+C:\Users\Adrian\source\repos\Gym\Gym\obj\Debug\Gym.Form1.resources
+C:\Users\Adrian\source\repos\Gym\Gym\obj\Debug\Gym.Properties.Resources.resources
+C:\Users\Adrian\source\repos\Gym\Gym\obj\Debug\Gym.csproj.GenerateResource.cache
+C:\Users\Adrian\source\repos\Gym\Gym\obj\Debug\Gym.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\source\repos\Gym\Gym\obj\Debug\Gym.exe
+C:\Users\Adrian\source\repos\Gym\Gym\obj\Debug\Gym.pdb
