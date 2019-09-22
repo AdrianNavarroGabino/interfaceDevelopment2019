@@ -1,0 +1,10 @@
+C:\Users\Adrian\source\repos\HospitalTurn\HospitalTurn\bin\Debug\HospitalTurn.exe.config
+C:\Users\Adrian\source\repos\HospitalTurn\HospitalTurn\bin\Debug\HospitalTurn.exe
+C:\Users\Adrian\source\repos\HospitalTurn\HospitalTurn\bin\Debug\HospitalTurn.pdb
+C:\Users\Adrian\source\repos\HospitalTurn\HospitalTurn\obj\Debug\HospitalTurn.csprojAssemblyReference.cache
+C:\Users\Adrian\source\repos\HospitalTurn\HospitalTurn\obj\Debug\HospitalTurn.Form1.resources
+C:\Users\Adrian\source\repos\HospitalTurn\HospitalTurn\obj\Debug\HospitalTurn.Properties.Resources.resources
+C:\Users\Adrian\source\repos\HospitalTurn\HospitalTurn\obj\Debug\HospitalTurn.csproj.GenerateResource.cache
+C:\Users\Adrian\source\repos\HospitalTurn\HospitalTurn\obj\Debug\HospitalTurn.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\source\repos\HospitalTurn\HospitalTurn\obj\Debug\HospitalTurn.exe
+C:\Users\Adrian\source\repos\HospitalTurn\HospitalTurn\obj\Debug\HospitalTurn.pdb
