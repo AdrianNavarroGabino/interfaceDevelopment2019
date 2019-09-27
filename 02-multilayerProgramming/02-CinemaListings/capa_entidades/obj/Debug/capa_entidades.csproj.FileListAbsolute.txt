@@ -1,0 +1,35 @@
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_entidades\obj\Debug\capa_entidades.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_entidades\obj\Debug\capa_entidades.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_entidades\bin\Debug\capa_entidades.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_entidades\bin\Debug\capa_entidades.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_entidades\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_entidades\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_entidades\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_entidades\bin\Debug\SQLite-net.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_entidades\bin\Debug\SQLite-net.xml
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_entidades\obj\Debug\capa_entidades.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_entidades\obj\Debug\capa_entidades.pdb
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_entidades\bin\Debug\capa_entidades.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_entidades\bin\Debug\capa_entidades.pdb
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_entidades\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_entidades\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_entidades\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_entidades\bin\Debug\SQLite-net.pdb
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_entidades\bin\Debug\SQLite-net.xml
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_entidades\obj\Debug\capa_entidades.csprojAssemblyReference.cache
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_entidades\obj\Debug\capa_entidades.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_entidades\obj\Debug\capa_entidades.csproj.CopyComplete
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_entidades\obj\Debug\capa_entidades.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_entidades\obj\Debug\capa_entidades.pdb
+C:\Users\Adrian\Desktop\CinemaListings\capa_entidades\bin\Debug\capa_entidades.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_entidades\bin\Debug\capa_entidades.pdb
+C:\Users\Adrian\Desktop\CinemaListings\capa_entidades\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_entidades\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_entidades\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_entidades\bin\Debug\SQLite-net.pdb
+C:\Users\Adrian\Desktop\CinemaListings\capa_entidades\bin\Debug\SQLite-net.xml
+C:\Users\Adrian\Desktop\CinemaListings\capa_entidades\obj\Debug\capa_entidades.csprojAssemblyReference.cache
+C:\Users\Adrian\Desktop\CinemaListings\capa_entidades\obj\Debug\capa_entidades.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\Desktop\CinemaListings\capa_entidades\obj\Debug\capa_entidades.csproj.CopyComplete
+C:\Users\Adrian\Desktop\CinemaListings\capa_entidades\obj\Debug\capa_entidades.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_entidades\obj\Debug\capa_entidades.pdb

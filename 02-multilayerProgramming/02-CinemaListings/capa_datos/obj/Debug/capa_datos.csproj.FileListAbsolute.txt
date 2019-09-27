@@ -1,0 +1,83 @@
+c:\users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_datos\bin\Debug\capa_datos.dll
+c:\users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_datos\bin\Debug\capa_datos.pdb
+c:\users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_datos\obj\Debug\capa_datos.csprojResolveAssemblyReference.cache
+c:\users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_datos\obj\Debug\capa_datos.dll
+c:\users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_datos\obj\Debug\capa_datos.pdb
+C:\Users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_datos\bin\Debug\Npgsql.dll
+C:\Users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_datos\bin\Debug\Npgsql.pdb
+C:\Users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_datos\bin\Debug\Npgsql.xml
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_datos\bin\Debug\x86\e_sqlite3.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_datos\bin\Debug\x64\e_sqlite3.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_datos\bin\Debug\capa_datos.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_datos\bin\Debug\capa_datos.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_datos\bin\Debug\SQLite-net.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_datos\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_datos\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_datos\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_datos\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_datos\bin\Debug\Npgsql.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_datos\bin\Debug\Npgsql.xml
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_datos\bin\Debug\SQLite-net.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_datos\bin\Debug\SQLite-net.xml
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_datos\obj\Debug\capa_datos.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_datos\obj\Debug\capa_datos.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_datos\obj\Debug\capa_datos.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\obj\Debug\capa_datos.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\obj\Debug\capa_datos.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\obj\Debug\capa_datos.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\obj\Debug\capa_datos.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\x86\e_sqlite3.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\x64\e_sqlite3.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\capa_datos.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\capa_datos.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\capa_entidades.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\SQLite-net.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\capa_entidades.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\Npgsql.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\Npgsql.xml
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\SQLite-net.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\SQLite-net.xml
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\x86\e_sqlite3.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\x64\e_sqlite3.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\capa_datos.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\capa_datos.pdb
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\capa_entidades.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\SQLite-net.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\capa_entidades.pdb
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\Npgsql.pdb
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\Npgsql.xml
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\SQLite-net.pdb
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\bin\Debug\SQLite-net.xml
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\obj\Debug\capa_datos.csprojAssemblyReference.cache
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\obj\Debug\capa_datos.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\obj\Debug\capa_datos.csproj.CopyComplete
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\obj\Debug\capa_datos.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_datos\obj\Debug\capa_datos.pdb
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\bin\Debug\x86\e_sqlite3.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\bin\Debug\x64\e_sqlite3.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\bin\Debug\capa_datos.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\bin\Debug\capa_datos.pdb
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\bin\Debug\capa_entidades.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\bin\Debug\SQLite-net.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\bin\Debug\capa_entidades.pdb
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\bin\Debug\Npgsql.pdb
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\bin\Debug\Npgsql.xml
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\bin\Debug\SQLite-net.pdb
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\bin\Debug\SQLite-net.xml
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\obj\Debug\capa_datos.csprojAssemblyReference.cache
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\obj\Debug\capa_datos.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\obj\Debug\capa_datos.csproj.CopyComplete
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\obj\Debug\capa_datos.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_datos\obj\Debug\capa_datos.pdb

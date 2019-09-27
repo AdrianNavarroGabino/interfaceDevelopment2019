@@ -1,0 +1,8 @@
+﻿using System;
+
+namespace p1
+{
+    public class Class1
+    {
+    }
+}

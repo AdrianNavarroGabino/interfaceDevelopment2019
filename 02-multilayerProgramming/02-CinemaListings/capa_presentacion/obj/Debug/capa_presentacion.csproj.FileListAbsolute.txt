@@ -1,0 +1,115 @@
+c:\users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_presentacion\bin\Debug\capa_presentacion.exe.config
+c:\users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_presentacion\bin\Debug\capa_presentacion.exe
+c:\users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_presentacion\bin\Debug\capa_presentacion.pdb
+c:\users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_presentacion\obj\Debug\capa_presentacion.csprojResolveAssemblyReference.cache
+c:\users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_presentacion\obj\Debug\capa_presentacion.Properties.Resources.resources
+c:\users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_presentacion\obj\Debug\capa_presentacion.csproj.GenerateResource.Cache
+c:\users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_presentacion\obj\Debug\capa_presentacion.exe
+c:\users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_presentacion\obj\Debug\capa_presentacion.pdb
+C:\Users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_presentacion\bin\Debug\capa_negocio.dll
+C:\Users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_presentacion\bin\Debug\capa_negocio.pdb
+C:\Users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_presentacion\obj\Debug\capa_presentacion.Form1.resources
+C:\Users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_presentacion\bin\Debug\capa_datos.dll
+C:\Users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_presentacion\bin\Debug\Npgsql.dll
+C:\Users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_presentacion\bin\Debug\capa_datos.pdb
+C:\Users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_presentacion\bin\Debug\Npgsql.pdb
+C:\Users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\capa_presentacion\bin\Debug\Npgsql.xml
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\bin\Debug\capa_presentacion.exe.config
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\obj\Debug\capa_presentacion.exe
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\obj\Debug\capa_presentacion.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\obj\Debug\capa_presentacion.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\obj\Debug\capa_presentacion.Form1.resources
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\obj\Debug\capa_presentacion.Properties.Resources.resources
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\obj\Debug\capa_presentacion.csproj.GenerateResource.Cache
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\bin\Debug\x86\e_sqlite3.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\bin\Debug\x64\e_sqlite3.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\bin\Debug\capa_presentacion.exe
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\bin\Debug\capa_presentacion.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\bin\Debug\capa_datos.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\bin\Debug\capa_negocio.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\bin\Debug\SQLite-net.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\bin\Debug\capa_datos.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\bin\Debug\capa_negocio.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\bin\Debug\SQLite-net.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas\capa_presentacion\bin\Debug\SQLite-net.xml
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\obj\Debug\capa_presentacion.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\obj\Debug\capa_presentacion.Form1.resources
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\obj\Debug\capa_presentacion.Properties.Resources.resources
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\obj\Debug\capa_presentacion.csproj.GenerateResource.Cache
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\obj\Debug\capa_presentacion.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\obj\Debug\capa_presentacion.exe
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\obj\Debug\capa_presentacion.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\x86\e_sqlite3.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\x64\e_sqlite3.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_presentacion.exe.config
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_presentacion.exe
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_presentacion.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_datos.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_entidades.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_negocio.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\SQLite-net.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_datos.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_entidades.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_negocio.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\SQLite-net.pdb
+C:\Users\usuario\Documents\Visual Studio 2015\Projects\UT3 - POO y multicapa\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\SQLite-net.xml
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\x86\e_sqlite3.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\x64\e_sqlite3.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_presentacion.exe.config
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_presentacion.exe
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_presentacion.pdb
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_datos.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_entidades.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_negocio.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\SQLite-net.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_datos.pdb
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_entidades.pdb
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\capa_negocio.pdb
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\SQLite-net.pdb
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\bin\Debug\SQLite-net.xml
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\obj\Debug\capa_presentacion.csprojAssemblyReference.cache
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\obj\Debug\capa_presentacion.Form1.resources
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\obj\Debug\capa_presentacion.Properties.Resources.resources
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\obj\Debug\capa_presentacion.csproj.GenerateResource.cache
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\obj\Debug\capa_presentacion.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\obj\Debug\capa_presentacion.csproj.CopyComplete
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\obj\Debug\capa_presentacion.exe
+C:\Users\Adrian\Desktop\Ejemplo_capas_con_entidades\capa_presentacion\obj\Debug\capa_presentacion.pdb
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\x86\e_sqlite3.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\x64\e_sqlite3.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\capa_presentacion.exe.config
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\capa_presentacion.exe
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\capa_presentacion.pdb
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\capa_datos.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\capa_entidades.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\capa_negocio.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\SQLite-net.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\capa_datos.pdb
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\capa_entidades.pdb
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\capa_negocio.pdb
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\SQLite-net.pdb
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\bin\Debug\SQLite-net.xml
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\obj\Debug\capa_presentacion.csprojAssemblyReference.cache
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\obj\Debug\capa_presentacion.Form1.resources
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\obj\Debug\capa_presentacion.Properties.Resources.resources
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\obj\Debug\capa_presentacion.csproj.GenerateResource.cache
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\obj\Debug\capa_presentacion.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\obj\Debug\capa_presentacion.csproj.CopyComplete
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\obj\Debug\capa_presentacion.exe
+C:\Users\Adrian\Desktop\CinemaListings\capa_presentacion\obj\Debug\capa_presentacion.pdb

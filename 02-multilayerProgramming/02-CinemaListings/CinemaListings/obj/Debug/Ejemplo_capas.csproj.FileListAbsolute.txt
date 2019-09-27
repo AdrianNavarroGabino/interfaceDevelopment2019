@@ -1,0 +1,2 @@
+c:\users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\Ejemplo_capas\bin\Debug\Ejemplo_capas.exe.config
+c:\users\usuario\documents\visual studio 2015\Projects\Ejemplo_capas\Ejemplo_capas\bin\Debug\capa_presentacion.exe.config
