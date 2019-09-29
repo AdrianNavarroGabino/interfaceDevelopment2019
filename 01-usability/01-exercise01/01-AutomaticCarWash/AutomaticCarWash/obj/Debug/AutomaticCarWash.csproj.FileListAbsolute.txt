@@ -1,0 +1,10 @@
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\AutomaticCarWash\AutomaticCarWash\bin\Debug\AutomaticCarWash.exe.config
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\AutomaticCarWash\AutomaticCarWash\bin\Debug\AutomaticCarWash.exe
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\AutomaticCarWash\AutomaticCarWash\bin\Debug\AutomaticCarWash.pdb
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\AutomaticCarWash\AutomaticCarWash\obj\Debug\AutomaticCarWash.csprojAssemblyReference.cache
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\AutomaticCarWash\AutomaticCarWash\obj\Debug\AutomaticCarWash.Form1.resources
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\AutomaticCarWash\AutomaticCarWash\obj\Debug\AutomaticCarWash.Properties.Resources.resources
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\AutomaticCarWash\AutomaticCarWash\obj\Debug\AutomaticCarWash.csproj.GenerateResource.cache
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\AutomaticCarWash\AutomaticCarWash\obj\Debug\AutomaticCarWash.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\AutomaticCarWash\AutomaticCarWash\obj\Debug\AutomaticCarWash.exe
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\AutomaticCarWash\AutomaticCarWash\obj\Debug\AutomaticCarWash.pdb
