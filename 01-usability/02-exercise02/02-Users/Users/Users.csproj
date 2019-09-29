@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BF3BB04E-AE9F-4326-B7FC-46D3745BFA3A}</ProjectGuid>
+    <ProjectGuid>{9AE6E18B-75CE-4F5B-884D-D5ED20FADA05}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SignUp</RootNamespace>
-    <AssemblyName>SignUp</AssemblyName>
+    <RootNamespace>Users</RootNamespace>
+    <AssemblyName>Users</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

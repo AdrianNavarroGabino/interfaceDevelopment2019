@@ -1,4 +1,4 @@
-﻿namespace SignUp
+﻿namespace Users
 {
     partial class Form1
     {
@@ -57,7 +57,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.dataGridView1.Location = new System.Drawing.Point(2, 101);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 101);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(278, 479);

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SignUp.Properties
+namespace Users.Properties
 {
 
 
