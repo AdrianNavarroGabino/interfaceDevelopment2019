@@ -41,7 +41,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, -88);
+            this.pictureBox1.Location = new System.Drawing.Point(-21, -89);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(266, 273);
             this.pictureBox1.TabIndex = 0;
@@ -52,7 +52,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.label1.Location = new System.Drawing.Point(265, 34);
+            this.label1.Location = new System.Drawing.Point(251, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(232, 70);
             this.label1.TabIndex = 1;
