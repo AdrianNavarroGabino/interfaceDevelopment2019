@@ -1,0 +1,10 @@
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\Paddle\Paddle\bin\Debug\Paddle.exe.config
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\Paddle\Paddle\bin\Debug\Paddle.exe
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\Paddle\Paddle\bin\Debug\Paddle.pdb
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\Paddle\Paddle\obj\Debug\Paddle.csprojAssemblyReference.cache
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\Paddle\Paddle\obj\Debug\Paddle.Form1.resources
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\Paddle\Paddle\obj\Debug\Paddle.Properties.Resources.resources
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\Paddle\Paddle\obj\Debug\Paddle.csproj.GenerateResource.cache
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\Paddle\Paddle\obj\Debug\Paddle.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\Paddle\Paddle\obj\Debug\Paddle.exe
+C:\Users\Adrian\Desktop\NavarroGabinoAdrian_Usabilidad\exercise01\Paddle\Paddle\obj\Debug\Paddle.pdb
