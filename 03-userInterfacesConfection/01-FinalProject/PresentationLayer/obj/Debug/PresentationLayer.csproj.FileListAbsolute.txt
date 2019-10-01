@@ -1,0 +1,10 @@
+C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.csprojAssemblyReference.cache
+C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Properties.Resources.resources
+C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.csproj.GenerateResource.cache
+C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\bin\Debug\PresentationLayer.exe.config
+C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\bin\Debug\PresentationLayer.exe
+C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\bin\Debug\PresentationLayer.pdb
+C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Form1.resources
+C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.exe
+C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.pdb

@@ -1,0 +1,6 @@
+C:\Users\Adrian\source\repos\FinalProject\BussinessLayer\bin\Debug\BussinessLayer.dll
+C:\Users\Adrian\source\repos\FinalProject\BussinessLayer\bin\Debug\BussinessLayer.pdb
+C:\Users\Adrian\source\repos\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.csprojAssemblyReference.cache
+C:\Users\Adrian\source\repos\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\source\repos\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.dll
+C:\Users\Adrian\source\repos\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.pdb
