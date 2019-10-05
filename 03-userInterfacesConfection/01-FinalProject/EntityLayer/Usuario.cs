@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    class Usuario
+    public class Usuario
     {
         public long UsuarioID { get; set; }
         public string email { get; set; }
+        public string password { get; set; }
         public string nombre { get; set; }
         public string apellidos { get; set; }
         public string dni { get; set; }
@@ -21,14 +22,15 @@ namespace EntityLayer
         public string provinciaID { get; set; }
         public string nacido { get; set; }
 
-        public Usuario(long UsuarioID, string email, string nombre,
+        public Usuario(string UsuarioID, string email, string password, string nombre,
             string apellidos, string dni, string telefono, string calle,
             string calle2, string codpos, string puebloID, string provinciaID,
             string nacido)
         {
-            this.UsuarioID = UsuarioID;
+            this.UsuarioID = Convert.ToInt64(UsuarioID);
             this.email = email;
             this.nombre = nombre;
+            this.password = password;
             this.apellidos = apellidos;
             this.dni = dni;
             this.telefono = telefono;
