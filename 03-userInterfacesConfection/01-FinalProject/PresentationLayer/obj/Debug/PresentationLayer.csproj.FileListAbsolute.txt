@@ -22,3 +22,5 @@ C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\bin\Debug\Newtonsoft
 C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.exe.config
 C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Login.resources
 C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.csproj.CopyComplete
+C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.SignUp.resources
+C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Main.resources

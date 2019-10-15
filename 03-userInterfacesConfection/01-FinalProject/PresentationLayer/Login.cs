@@ -14,12 +14,15 @@ namespace PresentationLayer
 {
     public partial class Login : Form
     {
+        private static int attempts;
         private Bussiness buss;
+        private Main main;
 
         public Login()
         {
             buss = new Bussiness();
             InitializeComponent();
+            attempts = 3;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -50,12 +53,26 @@ namespace PresentationLayer
             {
                 if (buss.Validate(textBox1.Text, textBox2.Text))
                 {
+                    attempts = 3;
                     errorLabel.ForeColor = Color.FromArgb(76,148,144);
                     errorLabel.Text = "Acceso permitido";
+                    main = new Main(textBox1.Text);
+                    this.Hide();
+                    main.Show();
+
                 }
                 else
                 {
-                    errorLabel.Text = "Acceso denegado";
+                    attempts--;
+                    if (attempts > 0)
+                    {
+                        errorLabel.Text = "Access denied. You have " +
+                            attempts + " attempts left";
+                    }
+                    else
+                    {
+                        Application.Exit();
+                    }
                 }
             }
         }

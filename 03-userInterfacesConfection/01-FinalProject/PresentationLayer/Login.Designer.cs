@@ -70,6 +70,7 @@
             this.textBox1.Size = new System.Drawing.Size(361, 45);
             this.textBox1.TabIndex = 4;
             this.textBox1.Text = "Username";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.UseWaitCursor = true;
             this.textBox1.Click += new System.EventHandler(this.selectAllUser);
             // 
@@ -84,6 +85,7 @@
             this.textBox2.Size = new System.Drawing.Size(361, 45);
             this.textBox2.TabIndex = 5;
             this.textBox2.Text = "Password";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.Click += new System.EventHandler(this.selectAllPass);
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -118,7 +120,7 @@
             this.errorLabel.AutoSize = true;
             this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(184, 389);
+            this.errorLabel.Location = new System.Drawing.Point(179, 391);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(0, 25);
             this.errorLabel.TabIndex = 9;
