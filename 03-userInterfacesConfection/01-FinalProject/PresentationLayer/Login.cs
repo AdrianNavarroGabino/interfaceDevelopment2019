@@ -90,5 +90,13 @@ namespace PresentationLayer
                 errorLabel.Text = "Error al crear el usuario";
             }*/
         }
+
+        private void PressEnter(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                Validate(sender, e);
+            }
+        }
     }
 }

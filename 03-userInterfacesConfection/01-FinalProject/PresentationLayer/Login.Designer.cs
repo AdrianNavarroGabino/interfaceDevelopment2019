@@ -73,6 +73,7 @@
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.UseWaitCursor = true;
             this.textBox1.Click += new System.EventHandler(this.selectAllUser);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PressEnter);
             // 
             // textBox2
             // 
@@ -88,6 +89,7 @@
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.Click += new System.EventHandler(this.selectAllPass);
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PressEnter);
             // 
             // loginButon
             // 
