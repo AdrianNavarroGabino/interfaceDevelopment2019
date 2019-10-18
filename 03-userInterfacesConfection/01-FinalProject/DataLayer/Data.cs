@@ -48,6 +48,54 @@ namespace DataLayer
             return listaUsuarios;
         }
 
+        public List<Provincia> ReadProvinces()
+        {
+            List<Provincia> provincesList = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response = client.GetAsync("api/provincias").Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    provincesList = JsonConvert.DeserializeObject<List<Provincia>>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return provincesList;
+        }
+
+        public List<Localidad> ReadTowns()
+        {
+            List<Localidad> townsList = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response = client.GetAsync("api/localidades").Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    townsList = JsonConvert.DeserializeObject<List<Localidad>>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return townsList;
+        }
+
         /*public bool NewUser(string nom, string pas)
         {
             try

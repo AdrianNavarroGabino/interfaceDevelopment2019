@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BussinessLayer;
 
 namespace PresentationLayer
 {
@@ -14,11 +15,13 @@ namespace PresentationLayer
     {
         private SignUp signUp;
         private String user;
+        private Bussiness buss;
 
-        public Main(String user)
+        public Main(String user, Bussiness buss)
         {
             InitializeComponent();
             this.user = user;
+            this.buss = buss;
         }
 
         private void CloseForms()
@@ -39,7 +42,7 @@ namespace PresentationLayer
             this.IsMdiContainer = false;
             this.IsMdiContainer = true;
 
-            signUp = new SignUp();
+            signUp = new SignUp(buss);
             
             signUp.MdiParent = this;
             
@@ -51,7 +54,28 @@ namespace PresentationLayer
 
         private void Exit(object sender, EventArgs e)
         {
-            Application.Exit();
+            Exit();
+        }
+
+        private void Exit(object sender, FormClosingEventArgs e)
+        {
+            Exit(e);
+        }
+
+        private void Exit(FormClosingEventArgs e = null)
+        {
+            DialogResult result1 = MessageBox.Show("Do you really want to exit?",
+                "Exit",
+                MessageBoxButtons.YesNo);
+
+            if (result1 == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else if (result1 == DialogResult.No && e != null)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

@@ -56,7 +56,7 @@ namespace PresentationLayer
                     attempts = 3;
                     errorLabel.ForeColor = Color.FromArgb(76,148,144);
                     errorLabel.Text = "Acceso permitido";
-                    main = new Main(textBox1.Text);
+                    main = new Main(textBox1.Text, buss);
                     this.Hide();
                     main.Show();
 

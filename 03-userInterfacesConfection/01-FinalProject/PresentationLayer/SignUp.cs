@@ -7,14 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BussinessLayer;
+using EntityLayer;
 
 namespace PresentationLayer
 {
     public partial class SignUp : Form
     {
-        public SignUp()
+        Bussiness buss;
+        List<Provincia> provinces;
+        List<Localidad> towns; 
+
+        public SignUp(Bussiness buss)
         {
             InitializeComponent();
+            this.buss = buss;
+            provinces = buss.GetProvinces();
+            foreach(Provincia p in provinces)
+            {
+                provinceBox.Items.Add(p.nombre);
+            }
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -125,9 +137,84 @@ namespace PresentationLayer
                 ((TextBox)sender).Text = "Born";
         }
 
-        private void Validate(object sender, EventArgs e)
+        private void ValidateSignUp(object sender, EventArgs e)
         {
+            bool isValidated = true;
 
+            if (mailBox.Text == "")
+            {
+                mailError.Text = "Mail cannot be empty";
+                isValidated = false;
+            }
+            if (nameBox.Text == "")
+            {
+                nameError.Text = "Name cannot be empty";
+                isValidated = false;
+            }
+            if (surnameBox.Text == "")
+            {
+                surnameError.Text = "Surname cannot be empty";
+                isValidated = false;
+            }
+            if (passBox.Text == "")
+            {
+                passError.Text = "Password cannot be empty";
+                isValidated = false;
+            }
+            if (passAgainBox.Text == passBox.Text)
+            {
+                passAgainError.Text = "Password don't match";
+                isValidated = false;
+            }
+            if (idBox.Text == "")
+            {
+                IDError.Text = "ID cannot be empty";
+                isValidated = false;
+            }
+            if (phoneBox.Text == "")
+            {
+                phoneError.Text = "Phone cannot be empty";
+                isValidated = false;
+            }
+            if (addressBox.Text == "")
+            {
+                addressError.Text = "Address cannot be empty";
+                isValidated = false;
+            }
+            if (postalCodeBox.Text == "")
+            {
+                postalCodeError.Text = "Postal code cannot be empty";
+                isValidated = false;
+            }
+            if (townBox.Text == "")
+            {
+                townError.Text = "Town cannot be empty";
+                isValidated = false;
+            }
+            /*if (provinceBox.Text == "")
+            {
+                provinceError.Text = "Province cannot be empty";
+                isValidated = false;
+            }*/
+            if (bornBox.Text == "")
+            {
+                bornError.Text = "Born cannot be empty";
+                isValidated = false;
+            }
+        }
+
+        private void FillTowns(object sender, EventArgs e)
+        {
+            int id = provinceBox.SelectedIndex + 1;
+            towns = buss.GetTowns();
+            
+            foreach(Localidad l in towns)
+            {
+                if(Convert.ToInt32(l.provinciaID) == id)
+                {
+                    townBox.Items.Add(l.nombre);
+                }
+            }
         }
     }
 }

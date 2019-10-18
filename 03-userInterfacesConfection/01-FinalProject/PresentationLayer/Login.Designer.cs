@@ -140,6 +140,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Location = new System.Drawing.Point(100, 100);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(765, 665);
             this.MinimumSize = new System.Drawing.Size(765, 665);

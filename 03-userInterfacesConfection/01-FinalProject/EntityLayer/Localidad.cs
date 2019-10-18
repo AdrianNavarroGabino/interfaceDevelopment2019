@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    class Localidad
+    public class Localidad
     {
         public string localidadID { get; set; }
         public string nombre { get; set; }

@@ -48,7 +48,17 @@ namespace BussinessLayer
                 }
             }
 
-            return (false);
+            return false;
+        }
+
+        public List<Provincia> GetProvinces()
+        {
+            return dat.ReadProvinces();
+        }
+
+        public List<Localidad> GetTowns()
+        {
+            return dat.ReadTowns();
         }
 
         // Creo un nuevo usuario
