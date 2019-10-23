@@ -54,25 +54,16 @@ namespace PresentationLayer
 
         private void Exit(object sender, EventArgs e)
         {
-            Exit();
+            Application.Exit();
         }
 
         private void Exit(object sender, FormClosingEventArgs e)
-        {
-            Exit(e);
-        }
-
-        private void Exit(FormClosingEventArgs e = null)
         {
             DialogResult result1 = MessageBox.Show("Do you really want to exit?",
                 "Exit",
                 MessageBoxButtons.YesNo);
 
-            if (result1 == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            else if (result1 == DialogResult.No && e != null)
+            if (result1 == DialogResult.No && e != null)
             {
                 e.Cancel = true;
             }

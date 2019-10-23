@@ -62,7 +62,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(233, -88);
+            this.pictureBox1.Location = new System.Drawing.Point(190, -88);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(266, 273);
             this.pictureBox1.TabIndex = 1;
@@ -73,7 +73,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.label1.Location = new System.Drawing.Point(504, 31);
+            this.label1.Location = new System.Drawing.Point(461, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(252, 70);
             this.label1.TabIndex = 2;
@@ -84,7 +84,7 @@
             this.mailBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.mailBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mailBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.mailBox.Location = new System.Drawing.Point(178, 185);
+            this.mailBox.Location = new System.Drawing.Point(48, 152);
             this.mailBox.Margin = new System.Windows.Forms.Padding(10);
             this.mailBox.Name = "mailBox";
             this.mailBox.Size = new System.Drawing.Size(360, 45);
@@ -99,7 +99,7 @@
             this.nameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.nameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.nameBox.Location = new System.Drawing.Point(178, 265);
+            this.nameBox.Location = new System.Drawing.Point(48, 232);
             this.nameBox.Margin = new System.Windows.Forms.Padding(10);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(360, 45);
@@ -115,7 +115,7 @@
             this.surnameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.surnameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.surnameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.surnameBox.Location = new System.Drawing.Point(178, 345);
+            this.surnameBox.Location = new System.Drawing.Point(48, 312);
             this.surnameBox.Margin = new System.Windows.Forms.Padding(10);
             this.surnameBox.Name = "surnameBox";
             this.surnameBox.Size = new System.Drawing.Size(360, 45);
@@ -131,7 +131,7 @@
             this.passBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.passBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.passBox.Location = new System.Drawing.Point(178, 425);
+            this.passBox.Location = new System.Drawing.Point(48, 392);
             this.passBox.Name = "passBox";
             this.passBox.Size = new System.Drawing.Size(360, 45);
             this.passBox.TabIndex = 8;
@@ -144,7 +144,7 @@
             this.passAgainBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.passAgainBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passAgainBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.passAgainBox.Location = new System.Drawing.Point(178, 505);
+            this.passAgainBox.Location = new System.Drawing.Point(48, 472);
             this.passAgainBox.Name = "passAgainBox";
             this.passAgainBox.Size = new System.Drawing.Size(360, 45);
             this.passAgainBox.TabIndex = 9;
@@ -155,11 +155,11 @@
             // loginButon
             // 
             this.loginButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.loginButon.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginButon.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.loginButon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(175)))), ((int)(((byte)(169)))));
-            this.loginButon.Location = new System.Drawing.Point(500, 680);
+            this.loginButon.Location = new System.Drawing.Point(393, 618);
             this.loginButon.Name = "loginButon";
-            this.loginButon.Size = new System.Drawing.Size(256, 67);
+            this.loginButon.Size = new System.Drawing.Size(188, 42);
             this.loginButon.TabIndex = 1;
             this.loginButon.Text = "REGISTER";
             this.loginButon.UseVisualStyleBackColor = false;
@@ -170,7 +170,7 @@
             this.idBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.idBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.idBox.Location = new System.Drawing.Point(178, 585);
+            this.idBox.Location = new System.Drawing.Point(48, 552);
             this.idBox.Margin = new System.Windows.Forms.Padding(10);
             this.idBox.Name = "idBox";
             this.idBox.Size = new System.Drawing.Size(360, 45);
@@ -185,7 +185,7 @@
             this.phoneBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.phoneBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.phoneBox.Location = new System.Drawing.Point(718, 185);
+            this.phoneBox.Location = new System.Drawing.Point(588, 152);
             this.phoneBox.Margin = new System.Windows.Forms.Padding(10);
             this.phoneBox.Name = "phoneBox";
             this.phoneBox.Size = new System.Drawing.Size(360, 45);
@@ -200,7 +200,7 @@
             this.addressBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.addressBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addressBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.addressBox.Location = new System.Drawing.Point(718, 265);
+            this.addressBox.Location = new System.Drawing.Point(588, 232);
             this.addressBox.Margin = new System.Windows.Forms.Padding(10);
             this.addressBox.Name = "addressBox";
             this.addressBox.Size = new System.Drawing.Size(360, 45);
@@ -215,7 +215,7 @@
             this.postalCodeBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.postalCodeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.postalCodeBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.postalCodeBox.Location = new System.Drawing.Point(718, 345);
+            this.postalCodeBox.Location = new System.Drawing.Point(588, 312);
             this.postalCodeBox.Margin = new System.Windows.Forms.Padding(10);
             this.postalCodeBox.Name = "postalCodeBox";
             this.postalCodeBox.Size = new System.Drawing.Size(360, 45);
@@ -352,7 +352,7 @@
             this.provinceBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
             this.provinceBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
             this.provinceBox.FormattingEnabled = true;
-            this.provinceBox.Location = new System.Drawing.Point(718, 425);
+            this.provinceBox.Location = new System.Drawing.Point(588, 392);
             this.provinceBox.Name = "provinceBox";
             this.provinceBox.Size = new System.Drawing.Size(360, 45);
             this.provinceBox.TabIndex = 15;
@@ -366,7 +366,7 @@
             this.townBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
             this.townBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
             this.townBox.FormattingEnabled = true;
-            this.townBox.Location = new System.Drawing.Point(718, 505);
+            this.townBox.Location = new System.Drawing.Point(588, 472);
             this.townBox.Name = "townBox";
             this.townBox.Size = new System.Drawing.Size(360, 45);
             this.townBox.TabIndex = 16;
@@ -377,7 +377,7 @@
             this.bornBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.bornBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bornBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.bornBox.Location = new System.Drawing.Point(718, 585);
+            this.bornBox.Location = new System.Drawing.Point(588, 552);
             this.bornBox.Margin = new System.Windows.Forms.Padding(10);
             this.bornBox.Name = "bornBox";
             this.bornBox.Size = new System.Drawing.Size(360, 45);
@@ -392,7 +392,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(225)))), ((int)(((byte)(212)))));
-            this.ClientSize = new System.Drawing.Size(1256, 810);
+            this.ClientSize = new System.Drawing.Size(1000, 690);
             this.Controls.Add(this.townBox);
             this.Controls.Add(this.provinceBox);
             this.Controls.Add(this.bornError);

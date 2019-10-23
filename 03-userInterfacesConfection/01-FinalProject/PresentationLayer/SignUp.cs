@@ -205,6 +205,7 @@ namespace PresentationLayer
 
         private void FillTowns(object sender, EventArgs e)
         {
+            townBox.Items.Clear();
             int id = provinceBox.SelectedIndex + 1;
             towns = buss.GetTowns();
             

@@ -45,7 +45,7 @@ namespace API_Tienda.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutLocalidad(string id, Localidad localidad)
         {
-            if (id != localidad.localidadID)
+            if (id != localidad.provinciaID)
             {
                 return BadRequest();
             }
@@ -76,9 +76,23 @@ namespace API_Tienda.Controllers
         public async Task<ActionResult<Localidad>> PostLocalidad(Localidad localidad)
         {
             _context.Localidad.Add(localidad);
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (LocalidadExists(localidad.provinciaID))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-            return CreatedAtAction("GetLocalidad", new { id = localidad.localidadID }, localidad);
+            return CreatedAtAction("GetLocalidad", new { id = localidad.provinciaID }, localidad);
         }
 
         // DELETE: api/Localidades/5
@@ -99,7 +113,7 @@ namespace API_Tienda.Controllers
 
         private bool LocalidadExists(string id)
         {
-            return _context.Localidad.Any(e => e.localidadID == id);
+            return _context.Localidad.Any(e => e.provinciaID == id);
         }
     }
 }

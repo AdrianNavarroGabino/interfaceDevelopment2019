@@ -48,9 +48,13 @@
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusBar = new System.Windows.Forms.StatusStrip();
+            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.hourLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timerLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.userLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.statusBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -67,7 +71,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1262, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1006, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -217,27 +221,73 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.statusStrip1);
-            this.panel1.Location = new System.Drawing.Point(0, 28);
+            this.panel1.Location = new System.Drawing.Point(0, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1262, 948);
+            this.panel1.Size = new System.Drawing.Size(1000, 700);
             this.panel1.TabIndex = 1;
             // 
-            // statusStrip1
+            // statusBar
             // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 926);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1262, 22);
-            this.statusStrip1.TabIndex = 0;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusBar.Font = new System.Drawing.Font("Tahoma", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusBar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusLabel,
+            this.hourLabel,
+            this.timerLabel,
+            this.userLabel});
+            this.statusBar.Location = new System.Drawing.Point(0, 726);
+            this.statusBar.Name = "statusBar";
+            this.statusBar.Size = new System.Drawing.Size(1006, 34);
+            this.statusBar.TabIndex = 3;
+            this.statusBar.Text = "statusStrip1";
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = false;
+            this.statusLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.statusLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLabel.ForeColor = System.Drawing.Color.Black;
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(300, 29);
+            this.statusLabel.Text = "Status";
+            this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // hourLabel
+            // 
+            this.hourLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.hourLabel.ForeColor = System.Drawing.Color.Black;
+            this.hourLabel.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
+            this.hourLabel.Name = "hourLabel";
+            this.hourLabel.Size = new System.Drawing.Size(71, 29);
+            this.hourLabel.Text = "Hour";
+            // 
+            // timerLabel
+            // 
+            this.timerLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.timerLabel.ForeColor = System.Drawing.Color.Black;
+            this.timerLabel.Margin = new System.Windows.Forms.Padding(20, 3, 0, 2);
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Size = new System.Drawing.Size(82, 29);
+            this.timerLabel.Text = "Timer";
+            // 
+            // userLabel
+            // 
+            this.userLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.userLabel.ForeColor = System.Drawing.Color.Black;
+            this.userLabel.Margin = new System.Windows.Forms.Padding(150, 3, 0, 2);
+            this.userLabel.MergeIndex = 2;
+            this.userLabel.Name = "userLabel";
+            this.userLabel.Size = new System.Drawing.Size(67, 29);
+            this.userLabel.Text = "User";
+            this.userLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(225)))), ((int)(((byte)(212)))));
-            this.ClientSize = new System.Drawing.Size(1262, 977);
+            this.ClientSize = new System.Drawing.Size(1006, 760);
+            this.Controls.Add(this.statusBar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Location = new System.Drawing.Point(100, 100);
@@ -246,8 +296,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exit);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.statusBar.ResumeLayout(false);
+            this.statusBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,6 +325,10 @@
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusBar;
+        private System.Windows.Forms.ToolStripStatusLabel statusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel hourLabel;
+        private System.Windows.Forms.ToolStripStatusLabel timerLabel;
+        private System.Windows.Forms.ToolStripStatusLabel userLabel;
     }
 }
