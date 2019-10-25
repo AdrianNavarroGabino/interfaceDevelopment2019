@@ -61,6 +61,11 @@ namespace BussinessLayer
             return dat.ReadTowns();
         }
 
+        public List<Usuario> GetUsers()
+        {
+            return dat.ReadUsers();
+        }
+
         // Creo un nuevo usuario
         /*public bool NewUser(string usu, string pas)
         {

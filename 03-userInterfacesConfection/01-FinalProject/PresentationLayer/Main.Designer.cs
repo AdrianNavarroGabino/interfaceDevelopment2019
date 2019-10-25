@@ -107,7 +107,7 @@
             // 
             this.insertToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
             this.insertToolStripMenuItem.Name = "insertToolStripMenuItem";
-            this.insertToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
+            this.insertToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.insertToolStripMenuItem.Text = "Insert";
             this.insertToolStripMenuItem.Click += new System.EventHandler(this.InsertUser);
             // 
@@ -115,14 +115,15 @@
             // 
             this.modifyToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
             this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
-            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
+            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.modifyToolStripMenuItem.Text = "Modify";
+            this.modifyToolStripMenuItem.Click += new System.EventHandler(this.Modify);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.removeToolStripMenuItem.Text = "Remove";
             // 
             // productsToolStripMenuItem

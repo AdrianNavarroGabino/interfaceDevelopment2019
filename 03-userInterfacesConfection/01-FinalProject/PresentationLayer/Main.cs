@@ -14,6 +14,7 @@ namespace PresentationLayer
     public partial class Main : Form
     {
         private SignUp signUp;
+        private ModifyUser modifyUser;
         private String user;
         private Bussiness buss;
 
@@ -67,6 +68,23 @@ namespace PresentationLayer
             {
                 e.Cancel = true;
             }
+        }
+
+        private void Modify(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            this.IsMdiContainer = false;
+            this.IsMdiContainer = true;
+
+            modifyUser = new ModifyUser(buss);
+
+            modifyUser.MdiParent = this;
+
+            modifyUser.ControlBox = false;
+
+            modifyUser.FormBorderStyle = FormBorderStyle.None;
+            modifyUser.Show();
         }
     }
 }

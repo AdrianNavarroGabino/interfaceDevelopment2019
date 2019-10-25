@@ -42,3 +42,17 @@ C:\Users\Adrián Navarro\source\repos\FinalProject\API_Tienda\obj\Debug\netcorea
 C:\Users\Adrián Navarro\source\repos\FinalProject\API_Tienda\obj\Debug\netcoreapp2.2\API_Tienda.dll
 C:\Users\Adrián Navarro\source\repos\FinalProject\API_Tienda\obj\Debug\netcoreapp2.2\API_Tienda.pdb
 C:\Users\Adrián Navarro\source\repos\FinalProject\API_Tienda\obj\Debug\netcoreapp2.2\API_Tienda.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\Documents\FinalProject\API_Tienda\bin\Debug\netcoreapp2.2\API_Tienda.deps.json
+C:\Users\Adrian\Documents\FinalProject\API_Tienda\bin\Debug\netcoreapp2.2\API_Tienda.runtimeconfig.json
+C:\Users\Adrian\Documents\FinalProject\API_Tienda\bin\Debug\netcoreapp2.2\API_Tienda.runtimeconfig.dev.json
+C:\Users\Adrian\Documents\FinalProject\API_Tienda\bin\Debug\netcoreapp2.2\API_Tienda.dll
+C:\Users\Adrian\Documents\FinalProject\API_Tienda\bin\Debug\netcoreapp2.2\API_Tienda.pdb
+C:\Users\Adrian\Documents\FinalProject\API_Tienda\obj\Debug\netcoreapp2.2\API_Tienda.csprojAssemblyReference.cache
+C:\Users\Adrian\Documents\FinalProject\API_Tienda\obj\Debug\netcoreapp2.2\API_Tienda.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\Documents\FinalProject\API_Tienda\obj\Debug\netcoreapp2.2\API_Tienda.RazorAssemblyInfo.cache
+C:\Users\Adrian\Documents\FinalProject\API_Tienda\obj\Debug\netcoreapp2.2\API_Tienda.RazorAssemblyInfo.cs
+C:\Users\Adrian\Documents\FinalProject\API_Tienda\obj\Debug\netcoreapp2.2\API_Tienda.AssemblyInfoInputs.cache
+C:\Users\Adrian\Documents\FinalProject\API_Tienda\obj\Debug\netcoreapp2.2\API_Tienda.AssemblyInfo.cs
+C:\Users\Adrian\Documents\FinalProject\API_Tienda\obj\Debug\netcoreapp2.2\API_Tienda.RazorTargetAssemblyInfo.cache
+C:\Users\Adrian\Documents\FinalProject\API_Tienda\obj\Debug\netcoreapp2.2\API_Tienda.dll
+C:\Users\Adrian\Documents\FinalProject\API_Tienda\obj\Debug\netcoreapp2.2\API_Tienda.pdb

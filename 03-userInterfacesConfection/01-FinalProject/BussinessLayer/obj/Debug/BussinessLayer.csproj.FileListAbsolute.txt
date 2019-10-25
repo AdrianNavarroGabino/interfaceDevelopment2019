@@ -32,3 +32,20 @@ C:\Users\Adrián Navarro\source\repos\FinalProject\BussinessLayer\bin\Debug\Newt
 C:\Users\Adrián Navarro\source\repos\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.csprojAssemblyReference.cache
 C:\Users\Adrián Navarro\source\repos\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.csproj.CopyComplete
 C:\Users\Adrián Navarro\source\repos\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\bin\Debug\BussinessLayer.dll
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\bin\Debug\BussinessLayer.pdb
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\bin\Debug\DataLayer.dll
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\bin\Debug\EntityLayer.dll
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\bin\Debug\DataLayer.dll.config
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\bin\Debug\EntityLayer.pdb
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.csprojAssemblyReference.cache
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.csproj.CopyComplete
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.dll
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.pdb
