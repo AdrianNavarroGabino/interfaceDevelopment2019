@@ -1,35 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\usuario\\Documents\\Visual Studio 2017\\Projects\\Proyectos evaluacion\\TiendaOnline\\API_Tienda\\API_Tienda.csproj": {}
+    "C:\\Users\\Adrián Navarro\\source\\repos\\FinalProject\\API_Tienda\\API_Tienda.csproj": {}
   },
   "projects": {
-    "C:\\Users\\usuario\\Documents\\Visual Studio 2017\\Projects\\Proyectos evaluacion\\TiendaOnline\\API_Tienda\\API_Tienda.csproj": {
+    "C:\\Users\\Adrián Navarro\\source\\repos\\FinalProject\\API_Tienda\\API_Tienda.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\usuario\\Documents\\Visual Studio 2017\\Projects\\Proyectos evaluacion\\TiendaOnline\\API_Tienda\\API_Tienda.csproj",
+        "projectUniqueName": "C:\\Users\\Adrián Navarro\\source\\repos\\FinalProject\\API_Tienda\\API_Tienda.csproj",
         "projectName": "API_Tienda",
-        "projectPath": "C:\\Users\\usuario\\Documents\\Visual Studio 2017\\Projects\\Proyectos evaluacion\\TiendaOnline\\API_Tienda\\API_Tienda.csproj",
-        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\usuario\\Documents\\Visual Studio 2017\\Projects\\Proyectos evaluacion\\TiendaOnline\\API_Tienda\\obj\\",
+        "projectPath": "C:\\Users\\Adrián Navarro\\source\\repos\\FinalProject\\API_Tienda\\API_Tienda.csproj",
+        "packagesPath": "C:\\Users\\Adrián Navarro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Adrián Navarro\\source\\repos\\FinalProject\\API_Tienda\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Adrián Navarro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.2"
+          "netcoreapp3.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.syncfusion.com/nuget_wpf/nuget/getsyncfusionpackages/wpf": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.2": {
+          "netcoreapp3.0": {
             "projectReferences": {}
           }
         },
@@ -40,24 +41,12 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.2": {
+        "netcoreapp3.0": {
           "dependencies": {
-            "Microsoft.AspNetCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.0, )",
-              "autoReferenced": true
-            },
             "Microsoft.AspNetCore.Razor.Design": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.2.0, )"
-            },
-            "Microsoft.NETCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.0, )",
-              "autoReferenced": true
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -78,6 +67,14 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }

@@ -113,12 +113,6 @@ namespace PresentationLayer
                 ((TextBox)sender).Text = "Address";
         }
 
-        private void PostalCodeLeave(object sender, EventArgs e)
-        {
-            if (((TextBox)sender).Text == "")
-                ((TextBox)sender).Text = "Postal code";
-        }
-
         private void TownLeave(object sender, EventArgs e)
         {
             if (((TextBox)sender).Text == "")
@@ -216,6 +210,53 @@ namespace PresentationLayer
                     townBox.Items.Add(l.nombre);
                 }
             }
+        }
+
+        private void PostalCodeEnter(object sender, EventArgs e)
+        {
+            postalCodeBox.Visible = false;
+            postalCodeBox2.Visible = true;
+            postalCodeBox2.Focus();
+        }
+
+        private void PostalCodeLostFocus(object sender, EventArgs e)
+        {
+            if (((MaskedTextBox)sender).Text == "")
+            {
+                postalCodeBox2.Visible = false;
+                postalCodeBox.Visible = true;
+            }
+        }
+
+        private void IdLostFocus(object sender, EventArgs e)
+        {
+            if (((MaskedTextBox)sender).Text == "")
+            {
+                idBox2.Visible = false;
+                idBox.Visible = true;
+            }
+        }
+
+        private void IdEnter(object sender, EventArgs e)
+        {
+            idBox.Visible = false;
+            idBox2.Visible = true;
+            idBox2.Focus();
+        }
+
+        private void BornEnter(object sender, EventArgs e)
+        {
+            bornBox.Visible = false;
+            bornDate.Visible = true;
+            bornDate.Select();
+            SendKeys.Send("%{DOWN}");
+        }
+
+        private void DateChange(object sender, EventArgs e)
+        {
+            bornDate.Visible = false;
+            bornBox.Visible = true;
+            bornBox.Text = bornDate.Value.ToString("dd/MM/yyyy");
         }
     }
 }

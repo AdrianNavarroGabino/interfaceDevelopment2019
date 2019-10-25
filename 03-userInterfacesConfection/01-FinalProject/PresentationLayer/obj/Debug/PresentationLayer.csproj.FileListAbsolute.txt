@@ -24,3 +24,29 @@ C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\Presentati
 C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.csproj.CopyComplete
 C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.SignUp.resources
 C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Main.resources
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.exe
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.pdb
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\bin\Debug\PresentationLayer.exe.config
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\bin\Debug\PresentationLayer.exe
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\bin\Debug\PresentationLayer.pdb
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\bin\Debug\BussinessLayer.dll
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\bin\Debug\EntityLayer.dll
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\bin\Debug\DataLayer.dll
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\bin\Debug\BussinessLayer.pdb
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\bin\Debug\EntityLayer.pdb
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\bin\Debug\DataLayer.pdb
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\bin\Debug\DataLayer.dll.config
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.csprojAssemblyReference.cache
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.exe.config
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Login.resources
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Main.resources
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Properties.Resources.resources
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.SignUp.resources
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.csproj.GenerateResource.cache
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.csproj.CopyComplete
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.csproj.CoreCompileInputs.cache

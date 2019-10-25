@@ -9,3 +9,14 @@ C:\Users\Adrian\source\repos\FinalProject\EntityLayer\obj\Debug\EntityLayer.cspr
 C:\Users\Adrian\source\repos\FinalProject\EntityLayer\obj\Debug\EntityLayer.csproj.CopyComplete
 C:\Users\Adrian\source\repos\FinalProject\EntityLayer\obj\Debug\EntityLayer.dll
 C:\Users\Adrian\source\repos\FinalProject\EntityLayer\obj\Debug\EntityLayer.pdb
+C:\Users\Adrián Navarro\source\repos\FinalProject\EntityLayer\obj\Debug\EntityLayer.dll
+C:\Users\Adrián Navarro\source\repos\FinalProject\EntityLayer\obj\Debug\EntityLayer.pdb
+C:\Users\Adrián Navarro\source\repos\FinalProject\EntityLayer\bin\Debug\EntityLayer.dll
+C:\Users\Adrián Navarro\source\repos\FinalProject\EntityLayer\bin\Debug\EntityLayer.pdb
+C:\Users\Adrián Navarro\source\repos\FinalProject\EntityLayer\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Adrián Navarro\source\repos\FinalProject\EntityLayer\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Adrián Navarro\source\repos\FinalProject\EntityLayer\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Adrián Navarro\source\repos\FinalProject\EntityLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Adrián Navarro\source\repos\FinalProject\EntityLayer\obj\Debug\EntityLayer.csprojAssemblyReference.cache
+C:\Users\Adrián Navarro\source\repos\FinalProject\EntityLayer\obj\Debug\EntityLayer.csproj.CopyComplete
+C:\Users\Adrián Navarro\source\repos\FinalProject\EntityLayer\obj\Debug\EntityLayer.csproj.CoreCompileInputs.cache
