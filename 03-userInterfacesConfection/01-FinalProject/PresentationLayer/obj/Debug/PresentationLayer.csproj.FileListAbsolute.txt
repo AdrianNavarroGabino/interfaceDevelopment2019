@@ -46,7 +46,6 @@ C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\P
 C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Login.resources
 C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Main.resources
 C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Properties.Resources.resources
-C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.SignUp.resources
 C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.csproj.GenerateResource.cache
 C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.csproj.CopyComplete
 C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.csproj.CoreCompileInputs.cache
@@ -77,3 +76,5 @@ C:\Users\Adrian\Documents\FinalProject\PresentationLayer\obj\Debug\PresentationL
 C:\Users\Adrian\Documents\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.exe
 C:\Users\Adrian\Documents\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.pdb
 C:\Users\Adrian\Documents\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.ModifyUser.resources
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.ModifyUser.resources
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.User.resources

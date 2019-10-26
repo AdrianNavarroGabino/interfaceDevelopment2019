@@ -90,5 +90,40 @@ namespace PresentationLayer
             }
             dataGridView1.DataSource = dataView;
         }
+
+        private void SetEmpty(object sender, EventArgs e)
+        {
+            Utils.SetEmpty(sender);
+        }
+
+        private void NameLeave(object sender, EventArgs e)
+        {
+            Utils.NameLeave(sender);
+        }
+
+        private void SurnameLeave(object sender, EventArgs e)
+        {
+            Utils.SurnameLeave(sender);
+        }
+
+        private void MailLeave(object sender, EventArgs e)
+        {
+            Utils.MailLeave(sender);
+        }
+
+        private void IdLostFocus(object sender, EventArgs e)
+        {
+            Utils.IdLostFocus(sender, idBox, idBox2);
+        }
+
+        private void IdEnter(object sender, EventArgs e)
+        {
+            Utils.IdEnter(idBox, idBox2);
+        }
+
+        private void GoToUserForm(object sender, EventArgs e)
+        {
+            ((Main)this.MdiParent).InsertUser(true);
+        }
     }
 }

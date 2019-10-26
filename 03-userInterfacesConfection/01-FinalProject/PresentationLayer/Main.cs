@@ -13,7 +13,7 @@ namespace PresentationLayer
 {
     public partial class Main : Form
     {
-        private SignUp signUp;
+        private User userForm;
         private ModifyUser modifyUser;
         private String user;
         private Bussiness buss;
@@ -27,7 +27,7 @@ namespace PresentationLayer
 
         private void CloseForms()
         {
-            this.Controls.Remove(panel1);
+            Controls.Remove(panel1);
 
             for (int i = 0; i < this.MdiChildren.Count(); i++)
             {
@@ -36,21 +36,26 @@ namespace PresentationLayer
             }
         }
 
-        private void InsertUser(object sender, EventArgs e)
+        public void InsertUser(bool modify = false)
         {
             CloseForms();
-            
+
             this.IsMdiContainer = false;
             this.IsMdiContainer = true;
 
-            signUp = new SignUp(buss);
-            
-            signUp.MdiParent = this;
-            
-            signUp.ControlBox = false;
-            
-            signUp.FormBorderStyle = FormBorderStyle.None;
-            signUp.Show();
+            userForm = new User(buss, modify);
+
+            userForm.MdiParent = this;
+
+            userForm.ControlBox = false;
+
+            userForm.FormBorderStyle = FormBorderStyle.None;
+            userForm.Show();
+        }
+
+        private void InsertUser(object sender, EventArgs e)
+        {
+            InsertUser();
         }
 
         private void Exit(object sender, EventArgs e)
