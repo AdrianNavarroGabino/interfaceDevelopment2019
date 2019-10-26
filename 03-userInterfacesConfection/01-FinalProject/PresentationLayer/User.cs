@@ -16,14 +16,17 @@ namespace PresentationLayer
     {
         Bussiness buss;
         List<Provincia> provinces;
-        List<Localidad> towns; 
+        List<Localidad> towns;
+        List<Usuario> users;
 
-        public User(Bussiness buss, bool modify)
+        public User(Bussiness buss, bool modify, string idCard)
         {
             InitializeComponent();
             this.buss = buss;
             provinces = buss.GetProvinces();
-            foreach(Provincia p in provinces)
+            users = buss.GetUsers();
+            towns = buss.GetTowns();
+            foreach (Provincia p in provinces)
             {
                 provinceBox.Items.Add(p.nombre);
             }
@@ -32,6 +35,8 @@ namespace PresentationLayer
             {
                 registerLbl.Text = "Modify";
                 registerBtn.Text = "MODIFY";
+                Usuario selectedUser = Utils.SearchUserByIdCard(users, idCard);
+                FillFields(selectedUser);
             }
         }
 
@@ -254,6 +259,65 @@ namespace PresentationLayer
             bornDate.Visible = false;
             bornBox.Visible = true;
             bornBox.Text = bornDate.Value.ToString("dd/MM/yyyy");
+        }
+
+        private void FillFields(Usuario user)
+        {
+            mailBox.Text = user.email;
+            nameBox.Text = user.nombre;
+            surnameBox.Text = user.apellidos;
+            passBox.PasswordChar = '•';
+            passBox.Text = "--------";
+            passAgainBox.PasswordChar = '•';
+            passAgainBox.Text = "--------";
+            Utils.IdEnter(idBox, idBox2);
+            idBox2.Text = user.dni;
+            phoneBox.Text = user.telefono;
+            addressBox.Text = user.calle;
+            postalCodeBox.Visible = false;
+            postalCodeBox2.Visible = true;
+            postalCodeBox2.Text = user.codpos;
+            provinceBox.Text = GetProvince(user.provinciaID).nombre;
+            townBox.Text = GetTown(user.provinciaID, user.puebloID).nombre;
+        }
+
+        /*private List<Localidad> GetTownsByProvince(string provinceId)
+        {
+            List<Localidad> townsByProvince = new List<Localidad>();
+
+            foreach(Localidad l in towns)
+            {
+                if(l.provinciaID == provinceId)
+                {
+                    townsByProvince.Add(l);
+                }
+            }
+
+            return townsByProvince;
+        }*/
+
+        private Localidad GetTown(String provinceId, String townId)
+        {
+            foreach(Localidad l in towns)
+            {
+                if(l.provinciaID == provinceId && l.localidadID == townId)
+                {
+                    return l;
+                }
+            }
+            return null;
+        }
+
+        private Provincia GetProvince(String provinceId)
+        {
+            foreach(Provincia p in provinces)
+            {
+                if(p.provinciaID == provinceId)
+                {
+                    return p;
+                }
+            }
+            return null;
         }
     }
 }

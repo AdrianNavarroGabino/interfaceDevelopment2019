@@ -36,14 +36,14 @@ namespace PresentationLayer
             }
         }
 
-        public void InsertUser(bool modify = false)
+        public void InsertUser(bool modify = false, string idCard = null)
         {
             CloseForms();
 
             this.IsMdiContainer = false;
             this.IsMdiContainer = true;
 
-            userForm = new User(buss, modify);
+            userForm = new User(buss, modify, idCard);
 
             userForm.MdiParent = this;
 

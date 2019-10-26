@@ -123,7 +123,8 @@ namespace PresentationLayer
 
         private void GoToUserForm(object sender, EventArgs e)
         {
-            ((Main)this.MdiParent).InsertUser(true);
+            string idCard = dataGridView1.SelectedCells[2].Value.ToString();
+            ((Main)this.MdiParent).InsertUser(true, idCard);
         }
     }
 }
