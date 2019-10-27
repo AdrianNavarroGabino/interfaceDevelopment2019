@@ -19,6 +19,7 @@ namespace PresentationLayer
         List<Localidad> towns;
         List<Usuario> users;
         private int nextId;
+        private Usuario selectedUser;
 
         public User(Bussiness buss, bool modify, string idCard)
         {
@@ -37,8 +38,10 @@ namespace PresentationLayer
             {
                 registerLbl.Text = "Modify";
                 registerBtn.Text = "MODIFY";
-                Usuario selectedUser = Utils.SearchUserByIdCard(users, idCard);
+                selectedUser = Utils.SearchUserByIdCard(users, idCard);
                 FillFields(selectedUser);
+                bornBox.Text = bornBox.Text.Substring(6) + "-" +
+                    bornBox.Text.Substring(3, 2) + "-" + bornBox.Text.Substring(0, 2);
             }
         }
 
@@ -198,7 +201,7 @@ namespace PresentationLayer
         {
             bornDate.Visible = false;
             bornBox.Visible = true;
-            bornBox.Text = bornDate.Value.ToString("dd/MM/yyyy");
+            bornBox.Text = bornDate.Value.ToString("yyyy-MM-dd");
         }
 
         private void FillFields(Usuario user)
@@ -272,19 +275,38 @@ namespace PresentationLayer
 
         private void RegisterOrModify(object sender, EventArgs e)
         {
+            string provinceId = GetProvinceByName(provinceBox.SelectedText).provinciaID;
+
             if (registerBtn.Text == "REGISTER")
             {
-                string provinceId = GetProvinceByName(provinceBox.Text).provinciaID;
                 bool inserted = buss.InsertUser(
                     nextId, mailBox.Text, nameBox.Text,
                     surnameBox.Text, passBox.Text, idBox2.Text, phoneBox.Text,
                     addressBox.Text, postalCodeBox2.Text, provinceId,
-                    GetTownByName(townBox.Text, provinceId).localidadID,
+                    GetTownByName(townBox.SelectedText, provinceId).localidadID,
                     bornBox.Text);
                 if (inserted)
                 {
                     nextId++;
                     MessageBox.Show("User inserted");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong");
+                }
+            }
+            else if(registerBtn.Text == "MODIFY")
+            {
+                bool modified = buss.ModifyUser(
+                    selectedUser.usuarioID, mailBox.Text, nameBox.Text,
+                    surnameBox.Text, passBox.Text, idBox2.Text, phoneBox.Text,
+                    addressBox.Text, postalCodeBox2.Text, provinceId,
+                    GetTownByName(townBox.SelectedText, provinceId).localidadID,
+                    bornBox.Text);
+
+                if(modified)
+                {
+                    MessageBox.Show("User modified");
                 }
                 else
                 {

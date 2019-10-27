@@ -76,9 +76,19 @@ namespace BussinessLayer
                 provinceId, birthdate));
         }
 
-        public bool DeleteUser(string id)
+        public bool DeleteUser(int id)
         {
             return dat.DeleteUser(id);
+        }
+
+        public bool ModifyUser(int id, string mail, string name,
+            string surname, string password, string idCard, string phone,
+            string address, string postalCode, string provinceId,
+            string townId, string birthdate)
+        {
+            return dat.ModifyUser(id, new Usuario(id, mail, Codifica_MD5(password), name,
+                surname, idCard, phone, address, null, postalCode, townId,
+                provinceId, birthdate));
         }
 
         // Creo un nuevo usuario

@@ -115,11 +115,30 @@ namespace DataLayer
             return true;
         }
 
-        public bool DeleteUser(string id)
+        public bool DeleteUser(int id)
         {
             try
             {
                 HttpResponseMessage response = client.DeleteAsync("api/usuarios/" + id).Result;
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return true;
+        }
+
+        public bool ModifyUser(int id, Usuario user)
+        {
+            try
+            {
+                HttpResponseMessage response = client.PutAsJsonAsync("api/usuarios/" + id, user).Result;
 
                 if (response.IsSuccessStatusCode)
                     return true;

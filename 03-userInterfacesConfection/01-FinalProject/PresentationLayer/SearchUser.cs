@@ -157,23 +157,23 @@ namespace PresentationLayer
                     else
                     {
                         MessageBox.Show(GetUserId(
-                            dataGridView1.SelectedCells[2].Value.ToString()));
+                            dataGridView1.SelectedCells[2].Value.ToString()) + "");
                     }
                 }
             }
         }
 
-        private string GetUserId(String idCard)
+        private int GetUserId(String idCard)
         {
             foreach(Usuario u in users)
             {
                 if(u.dni == idCard)
                 {
-                    return u.usuarioID.ToString();
+                    return u.usuarioID;
                 }
             }
 
-            return null;
+            return -1;
         }
     }
 }
