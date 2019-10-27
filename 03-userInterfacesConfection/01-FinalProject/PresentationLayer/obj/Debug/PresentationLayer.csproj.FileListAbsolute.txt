@@ -76,5 +76,5 @@ C:\Users\Adrian\Documents\FinalProject\PresentationLayer\obj\Debug\PresentationL
 C:\Users\Adrian\Documents\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.exe
 C:\Users\Adrian\Documents\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.pdb
 C:\Users\Adrian\Documents\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.ModifyUser.resources
-C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.ModifyUser.resources
 C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.User.resources
+C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.SearchUser.resources

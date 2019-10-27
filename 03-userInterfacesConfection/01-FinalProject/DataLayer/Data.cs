@@ -96,6 +96,44 @@ namespace DataLayer
             return townsList;
         }
 
+        public bool InsertUser(Usuario user)
+        {
+            try
+            {
+                HttpResponseMessage response = client.PostAsJsonAsync("api/usuarios", user).Result;
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return true;
+        }
+
+        public bool DeleteUser(string id)
+        {
+            try
+            {
+                HttpResponseMessage response = client.DeleteAsync("api/usuarios/" + id).Result;
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return true;
+        }
+
         /*public bool NewUser(string nom, string pas)
         {
             try

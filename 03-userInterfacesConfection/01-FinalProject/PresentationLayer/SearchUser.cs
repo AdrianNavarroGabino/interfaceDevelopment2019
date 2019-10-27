@@ -12,17 +12,26 @@ using EntityLayer;
 
 namespace PresentationLayer
 {
-    public partial class ModifyUser : Form
+    public partial class SearchUser : Form
     {
         private Bussiness buss;
         private List<Usuario> users;
+        private bool delete;
 
-        public ModifyUser(Bussiness buss)
+        public SearchUser(Bussiness buss, bool delete = false)
         {
             InitializeComponent();
             this.buss = buss;
             users = buss.GetUsers();
             FillTable(users);
+            this.delete = false;
+            modifyBtn.Visible = true;
+
+            if (delete)
+            {
+                this.delete = true;
+                modifyBtn.Visible = false;
+            }
         }
 
         public void FillTable(List<Usuario> users)
@@ -125,6 +134,46 @@ namespace PresentationLayer
         {
             string idCard = dataGridView1.SelectedCells[2].Value.ToString();
             ((Main)this.MdiParent).InsertUser(true, idCard);
+        }
+
+        private void DeleteUser(object sender, DataGridViewCellEventArgs e)
+        {
+            if(delete)
+            {
+                var confirmResult = MessageBox.Show("Are you sure to delete " + 
+                    dataGridView1.SelectedCells[0].Value.ToString() + " " +
+                    dataGridView1.SelectedCells[1].Value.ToString() + "?",
+                                     "Delete user",
+                                     MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    if(buss.DeleteUser(
+                        GetUserId(
+                            dataGridView1.SelectedCells[2].Value.ToString())))
+                    {
+                        users = buss.GetUsers();
+                        FillTable(users);
+                    }
+                    else
+                    {
+                        MessageBox.Show(GetUserId(
+                            dataGridView1.SelectedCells[2].Value.ToString()));
+                    }
+                }
+            }
+        }
+
+        private string GetUserId(String idCard)
+        {
+            foreach(Usuario u in users)
+            {
+                if(u.dni == idCard)
+                {
+                    return u.usuarioID.ToString();
+                }
+            }
+
+            return null;
         }
     }
 }

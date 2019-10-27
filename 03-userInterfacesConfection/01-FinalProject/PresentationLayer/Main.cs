@@ -14,7 +14,7 @@ namespace PresentationLayer
     public partial class Main : Form
     {
         private User userForm;
-        private ModifyUser modifyUser;
+        private SearchUser searchUser;
         private String user;
         private Bussiness buss;
 
@@ -82,14 +82,31 @@ namespace PresentationLayer
             this.IsMdiContainer = false;
             this.IsMdiContainer = true;
 
-            modifyUser = new ModifyUser(buss);
+            searchUser = new SearchUser(buss);
 
-            modifyUser.MdiParent = this;
+            searchUser.MdiParent = this;
 
-            modifyUser.ControlBox = false;
+            searchUser.ControlBox = false;
 
-            modifyUser.FormBorderStyle = FormBorderStyle.None;
-            modifyUser.Show();
+            searchUser.FormBorderStyle = FormBorderStyle.None;
+            searchUser.Show();
+        }
+
+        private void RemoveUser(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            this.IsMdiContainer = false;
+            this.IsMdiContainer = true;
+
+            searchUser = new SearchUser(buss, true);
+
+            searchUser.MdiParent = this;
+
+            searchUser.ControlBox = false;
+
+            searchUser.FormBorderStyle = FormBorderStyle.None;
+            searchUser.Show();
         }
     }
 }

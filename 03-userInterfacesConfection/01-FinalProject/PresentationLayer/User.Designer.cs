@@ -64,8 +64,9 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(142, -72);
+            this.pictureBox1.Location = new System.Drawing.Point(142, -74);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 222);
@@ -74,10 +75,11 @@
             // 
             // registerLbl
             // 
+            this.registerLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.registerLbl.AutoSize = true;
             this.registerLbl.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.registerLbl.Location = new System.Drawing.Point(346, 25);
+            this.registerLbl.Location = new System.Drawing.Point(346, 23);
             this.registerLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.registerLbl.Name = "registerLbl";
             this.registerLbl.Size = new System.Drawing.Size(217, 56);
@@ -86,10 +88,11 @@
             // 
             // mailBox
             // 
+            this.mailBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.mailBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.mailBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mailBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.mailBox.Location = new System.Drawing.Point(36, 124);
+            this.mailBox.Location = new System.Drawing.Point(36, 122);
             this.mailBox.Margin = new System.Windows.Forms.Padding(8);
             this.mailBox.Name = "mailBox";
             this.mailBox.Size = new System.Drawing.Size(320, 37);
@@ -101,10 +104,11 @@
             // 
             // nameBox
             // 
+            this.nameBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.nameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.nameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.nameBox.Location = new System.Drawing.Point(36, 188);
+            this.nameBox.Location = new System.Drawing.Point(36, 186);
             this.nameBox.Margin = new System.Windows.Forms.Padding(8);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(320, 37);
@@ -117,10 +121,11 @@
             // 
             // surnameBox
             // 
+            this.surnameBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.surnameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.surnameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.surnameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.surnameBox.Location = new System.Drawing.Point(36, 254);
+            this.surnameBox.Location = new System.Drawing.Point(36, 252);
             this.surnameBox.Margin = new System.Windows.Forms.Padding(8);
             this.surnameBox.Name = "surnameBox";
             this.surnameBox.Size = new System.Drawing.Size(320, 37);
@@ -133,10 +138,11 @@
             // 
             // passBox
             // 
+            this.passBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.passBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.passBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.passBox.Location = new System.Drawing.Point(36, 318);
+            this.passBox.Location = new System.Drawing.Point(36, 316);
             this.passBox.Margin = new System.Windows.Forms.Padding(2);
             this.passBox.Name = "passBox";
             this.passBox.Size = new System.Drawing.Size(320, 37);
@@ -147,10 +153,11 @@
             // 
             // passAgainBox
             // 
+            this.passAgainBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.passAgainBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.passAgainBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passAgainBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.passAgainBox.Location = new System.Drawing.Point(36, 384);
+            this.passAgainBox.Location = new System.Drawing.Point(36, 382);
             this.passAgainBox.Margin = new System.Windows.Forms.Padding(2);
             this.passAgainBox.Name = "passAgainBox";
             this.passAgainBox.Size = new System.Drawing.Size(320, 37);
@@ -161,24 +168,26 @@
             // 
             // registerBtn
             // 
+            this.registerBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.registerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
             this.registerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.registerBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(175)))), ((int)(((byte)(169)))));
-            this.registerBtn.Location = new System.Drawing.Point(295, 502);
+            this.registerBtn.Location = new System.Drawing.Point(295, 500);
             this.registerBtn.Margin = new System.Windows.Forms.Padding(2);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(141, 34);
             this.registerBtn.TabIndex = 1;
             this.registerBtn.Text = "REGISTER";
             this.registerBtn.UseVisualStyleBackColor = false;
-            this.registerBtn.Click += new System.EventHandler(this.ValidateSignUp);
+            this.registerBtn.Click += new System.EventHandler(this.RegisterOrModify);
             // 
             // idBox
             // 
+            this.idBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.idBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.idBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.idBox.Location = new System.Drawing.Point(36, 448);
+            this.idBox.Location = new System.Drawing.Point(36, 446);
             this.idBox.Margin = new System.Windows.Forms.Padding(8);
             this.idBox.Name = "idBox";
             this.idBox.Size = new System.Drawing.Size(320, 37);
@@ -190,10 +199,11 @@
             // 
             // phoneBox
             // 
+            this.phoneBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.phoneBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.phoneBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.phoneBox.Location = new System.Drawing.Point(405, 124);
+            this.phoneBox.Location = new System.Drawing.Point(405, 122);
             this.phoneBox.Margin = new System.Windows.Forms.Padding(8);
             this.phoneBox.Name = "phoneBox";
             this.phoneBox.Size = new System.Drawing.Size(320, 37);
@@ -205,10 +215,11 @@
             // 
             // addressBox
             // 
+            this.addressBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.addressBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.addressBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addressBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.addressBox.Location = new System.Drawing.Point(405, 188);
+            this.addressBox.Location = new System.Drawing.Point(405, 186);
             this.addressBox.Margin = new System.Windows.Forms.Padding(8);
             this.addressBox.Name = "addressBox";
             this.addressBox.Size = new System.Drawing.Size(320, 37);
@@ -220,13 +231,14 @@
             // 
             // postalCodeBox
             // 
+            this.postalCodeBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.postalCodeBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.postalCodeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.postalCodeBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.postalCodeBox.Location = new System.Drawing.Point(441, 254);
+            this.postalCodeBox.Location = new System.Drawing.Point(405, 252);
             this.postalCodeBox.Margin = new System.Windows.Forms.Padding(8);
             this.postalCodeBox.Name = "postalCodeBox";
-            this.postalCodeBox.Size = new System.Drawing.Size(271, 37);
+            this.postalCodeBox.Size = new System.Drawing.Size(320, 37);
             this.postalCodeBox.TabIndex = 14;
             this.postalCodeBox.Text = "Postal code";
             this.postalCodeBox.UseWaitCursor = true;
@@ -234,10 +246,11 @@
             // 
             // mailError
             // 
+            this.mailError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.mailError.AutoSize = true;
             this.mailError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mailError.ForeColor = System.Drawing.Color.Red;
-            this.mailError.Location = new System.Drawing.Point(130, 187);
+            this.mailError.Location = new System.Drawing.Point(130, 185);
             this.mailError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.mailError.Name = "mailError";
             this.mailError.Size = new System.Drawing.Size(0, 20);
@@ -245,10 +258,11 @@
             // 
             // nameError
             // 
+            this.nameError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.nameError.AutoSize = true;
             this.nameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameError.ForeColor = System.Drawing.Color.Red;
-            this.nameError.Location = new System.Drawing.Point(130, 252);
+            this.nameError.Location = new System.Drawing.Point(130, 250);
             this.nameError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameError.Name = "nameError";
             this.nameError.Size = new System.Drawing.Size(0, 20);
@@ -256,10 +270,11 @@
             // 
             // surnameError
             // 
+            this.surnameError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.surnameError.AutoSize = true;
             this.surnameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.surnameError.ForeColor = System.Drawing.Color.Red;
-            this.surnameError.Location = new System.Drawing.Point(130, 317);
+            this.surnameError.Location = new System.Drawing.Point(130, 315);
             this.surnameError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.surnameError.Name = "surnameError";
             this.surnameError.Size = new System.Drawing.Size(0, 20);
@@ -267,10 +282,11 @@
             // 
             // passError
             // 
+            this.passError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.passError.AutoSize = true;
             this.passError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passError.ForeColor = System.Drawing.Color.Red;
-            this.passError.Location = new System.Drawing.Point(130, 382);
+            this.passError.Location = new System.Drawing.Point(130, 380);
             this.passError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.passError.Name = "passError";
             this.passError.Size = new System.Drawing.Size(0, 20);
@@ -278,10 +294,11 @@
             // 
             // passAgainError
             // 
+            this.passAgainError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.passAgainError.AutoSize = true;
             this.passAgainError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passAgainError.ForeColor = System.Drawing.Color.Red;
-            this.passAgainError.Location = new System.Drawing.Point(130, 447);
+            this.passAgainError.Location = new System.Drawing.Point(130, 445);
             this.passAgainError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.passAgainError.Name = "passAgainError";
             this.passAgainError.Size = new System.Drawing.Size(0, 20);
@@ -289,10 +306,11 @@
             // 
             // IDError
             // 
+            this.IDError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.IDError.AutoSize = true;
             this.IDError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDError.ForeColor = System.Drawing.Color.Red;
-            this.IDError.Location = new System.Drawing.Point(130, 512);
+            this.IDError.Location = new System.Drawing.Point(130, 510);
             this.IDError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.IDError.Name = "IDError";
             this.IDError.Size = new System.Drawing.Size(0, 20);
@@ -300,10 +318,11 @@
             // 
             // bornError
             // 
+            this.bornError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.bornError.AutoSize = true;
             this.bornError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bornError.ForeColor = System.Drawing.Color.Red;
-            this.bornError.Location = new System.Drawing.Point(535, 512);
+            this.bornError.Location = new System.Drawing.Point(535, 510);
             this.bornError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bornError.Name = "bornError";
             this.bornError.Size = new System.Drawing.Size(0, 20);
@@ -311,10 +330,11 @@
             // 
             // provinceError
             // 
+            this.provinceError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.provinceError.AutoSize = true;
             this.provinceError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.provinceError.ForeColor = System.Drawing.Color.Red;
-            this.provinceError.Location = new System.Drawing.Point(535, 447);
+            this.provinceError.Location = new System.Drawing.Point(535, 445);
             this.provinceError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.provinceError.Name = "provinceError";
             this.provinceError.Size = new System.Drawing.Size(0, 20);
@@ -322,10 +342,11 @@
             // 
             // townError
             // 
+            this.townError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.townError.AutoSize = true;
             this.townError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.townError.ForeColor = System.Drawing.Color.Red;
-            this.townError.Location = new System.Drawing.Point(535, 382);
+            this.townError.Location = new System.Drawing.Point(535, 380);
             this.townError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.townError.Name = "townError";
             this.townError.Size = new System.Drawing.Size(0, 20);
@@ -333,10 +354,11 @@
             // 
             // postalCodeError
             // 
+            this.postalCodeError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.postalCodeError.AutoSize = true;
             this.postalCodeError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.postalCodeError.ForeColor = System.Drawing.Color.Red;
-            this.postalCodeError.Location = new System.Drawing.Point(535, 317);
+            this.postalCodeError.Location = new System.Drawing.Point(535, 315);
             this.postalCodeError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.postalCodeError.Name = "postalCodeError";
             this.postalCodeError.Size = new System.Drawing.Size(0, 20);
@@ -344,10 +366,11 @@
             // 
             // addressError
             // 
+            this.addressError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.addressError.AutoSize = true;
             this.addressError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addressError.ForeColor = System.Drawing.Color.Red;
-            this.addressError.Location = new System.Drawing.Point(535, 252);
+            this.addressError.Location = new System.Drawing.Point(535, 250);
             this.addressError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.addressError.Name = "addressError";
             this.addressError.Size = new System.Drawing.Size(0, 20);
@@ -355,10 +378,11 @@
             // 
             // phoneError
             // 
+            this.phoneError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.phoneError.AutoSize = true;
             this.phoneError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneError.ForeColor = System.Drawing.Color.Red;
-            this.phoneError.Location = new System.Drawing.Point(535, 187);
+            this.phoneError.Location = new System.Drawing.Point(535, 185);
             this.phoneError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.phoneError.Name = "phoneError";
             this.phoneError.Size = new System.Drawing.Size(0, 20);
@@ -367,11 +391,12 @@
             // provinceBox
             // 
             this.provinceBox.AccessibleName = "";
+            this.provinceBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.provinceBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.provinceBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
             this.provinceBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
             this.provinceBox.FormattingEnabled = true;
-            this.provinceBox.Location = new System.Drawing.Point(405, 317);
+            this.provinceBox.Location = new System.Drawing.Point(405, 315);
             this.provinceBox.Margin = new System.Windows.Forms.Padding(2);
             this.provinceBox.Name = "provinceBox";
             this.provinceBox.Size = new System.Drawing.Size(320, 37);
@@ -382,11 +407,12 @@
             // townBox
             // 
             this.townBox.AccessibleName = "";
+            this.townBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.townBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.townBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
             this.townBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
             this.townBox.FormattingEnabled = true;
-            this.townBox.Location = new System.Drawing.Point(405, 385);
+            this.townBox.Location = new System.Drawing.Point(405, 383);
             this.townBox.Margin = new System.Windows.Forms.Padding(2);
             this.townBox.Name = "townBox";
             this.townBox.Size = new System.Drawing.Size(320, 37);
@@ -395,10 +421,11 @@
             // 
             // bornBox
             // 
+            this.bornBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.bornBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.bornBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bornBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.bornBox.Location = new System.Drawing.Point(405, 447);
+            this.bornBox.Location = new System.Drawing.Point(405, 445);
             this.bornBox.Margin = new System.Windows.Forms.Padding(8);
             this.bornBox.Name = "bornBox";
             this.bornBox.Size = new System.Drawing.Size(320, 37);
@@ -410,10 +437,11 @@
             // 
             // postalCodeBox2
             // 
+            this.postalCodeBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.postalCodeBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.postalCodeBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F);
             this.postalCodeBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.postalCodeBox2.Location = new System.Drawing.Point(405, 254);
+            this.postalCodeBox2.Location = new System.Drawing.Point(405, 252);
             this.postalCodeBox2.Mask = "00000";
             this.postalCodeBox2.Name = "postalCodeBox2";
             this.postalCodeBox2.Size = new System.Drawing.Size(320, 37);
@@ -423,10 +451,11 @@
             // 
             // idBox2
             // 
+            this.idBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.idBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.idBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F);
             this.idBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.idBox2.Location = new System.Drawing.Point(36, 448);
+            this.idBox2.Location = new System.Drawing.Point(36, 446);
             this.idBox2.Mask = "A0000000L";
             this.idBox2.Name = "idBox2";
             this.idBox2.Size = new System.Drawing.Size(320, 37);
@@ -436,7 +465,8 @@
             // 
             // bornDate
             // 
-            this.bornDate.Location = new System.Drawing.Point(405, 465);
+            this.bornDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bornDate.Location = new System.Drawing.Point(405, 463);
             this.bornDate.Name = "bornDate";
             this.bornDate.Size = new System.Drawing.Size(320, 20);
             this.bornDate.TabIndex = 19;
@@ -449,7 +479,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(225)))), ((int)(((byte)(212)))));
-            this.ClientSize = new System.Drawing.Size(750, 561);
+            this.ClientSize = new System.Drawing.Size(750, 556);
             this.Controls.Add(this.bornDate);
             this.Controls.Add(this.idBox2);
             this.Controls.Add(this.postalCodeBox2);

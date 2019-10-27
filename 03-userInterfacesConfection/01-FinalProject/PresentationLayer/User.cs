@@ -18,6 +18,7 @@ namespace PresentationLayer
         List<Provincia> provinces;
         List<Localidad> towns;
         List<Usuario> users;
+        private int nextId;
 
         public User(Bussiness buss, bool modify, string idCard)
         {
@@ -26,6 +27,7 @@ namespace PresentationLayer
             provinces = buss.GetProvinces();
             users = buss.GetUsers();
             towns = buss.GetTowns();
+            GetNextId();
             foreach (Provincia p in provinces)
             {
                 provinceBox.Items.Add(p.nombre);
@@ -141,79 +143,17 @@ namespace PresentationLayer
 
         private void ValidateSignUp(object sender, EventArgs e)
         {
-            bool isValidated = true;
 
-            if (mailBox.Text == "")
-            {
-                mailError.Text = "Mail cannot be empty";
-                isValidated = false;
-            }
-            if (nameBox.Text == "")
-            {
-                nameError.Text = "Name cannot be empty";
-                isValidated = false;
-            }
-            if (surnameBox.Text == "")
-            {
-                surnameError.Text = "Surname cannot be empty";
-                isValidated = false;
-            }
-            if (passBox.Text == "")
-            {
-                passError.Text = "Password cannot be empty";
-                isValidated = false;
-            }
-            if (passAgainBox.Text == passBox.Text)
-            {
-                passAgainError.Text = "Password don't match";
-                isValidated = false;
-            }
-            if (idBox.Text == "")
-            {
-                IDError.Text = "ID cannot be empty";
-                isValidated = false;
-            }
-            if (phoneBox.Text == "")
-            {
-                phoneError.Text = "Phone cannot be empty";
-                isValidated = false;
-            }
-            if (addressBox.Text == "")
-            {
-                addressError.Text = "Address cannot be empty";
-                isValidated = false;
-            }
-            if (postalCodeBox.Text == "")
-            {
-                postalCodeError.Text = "Postal code cannot be empty";
-                isValidated = false;
-            }
-            if (townBox.Text == "")
-            {
-                townError.Text = "Town cannot be empty";
-                isValidated = false;
-            }
-            /*if (provinceBox.Text == "")
-            {
-                provinceError.Text = "Province cannot be empty";
-                isValidated = false;
-            }*/
-            if (bornBox.Text == "")
-            {
-                bornError.Text = "Born cannot be empty";
-                isValidated = false;
-            }
         }
 
         private void FillTowns(object sender, EventArgs e)
         {
             townBox.Items.Clear();
-            int id = provinceBox.SelectedIndex + 1;
-            towns = buss.GetTowns();
+            string provinceId = GetProvinceByName(provinceBox.Text).provinciaID;
             
             foreach(Localidad l in towns)
             {
-                if(Convert.ToInt32(l.provinciaID) == id)
+                if(l.provinciaID == provinceId)
                 {
                     townBox.Items.Add(l.nombre);
                 }
@@ -277,24 +217,10 @@ namespace PresentationLayer
             postalCodeBox.Visible = false;
             postalCodeBox2.Visible = true;
             postalCodeBox2.Text = user.codpos;
-            provinceBox.Text = GetProvince(user.provinciaID).nombre;
+            provinceBox.Text = GetProvinceById(user.provinciaID).nombre;
             townBox.Text = GetTown(user.provinciaID, user.puebloID).nombre;
+            bornBox.Text = user.nacido.Substring(0, 10);
         }
-
-        /*private List<Localidad> GetTownsByProvince(string provinceId)
-        {
-            List<Localidad> townsByProvince = new List<Localidad>();
-
-            foreach(Localidad l in towns)
-            {
-                if(l.provinciaID == provinceId)
-                {
-                    townsByProvince.Add(l);
-                }
-            }
-
-            return townsByProvince;
-        }*/
 
         private Localidad GetTown(String provinceId, String townId)
         {
@@ -308,7 +234,19 @@ namespace PresentationLayer
             return null;
         }
 
-        private Provincia GetProvince(String provinceId)
+        private Localidad GetTownByName(string townName, string provinceId)
+        {
+            foreach (Localidad l in towns)
+            {
+                if (l.nombre == townName && l.provinciaID == provinceId)
+                {
+                    return l;
+                }
+            }
+            return null;
+        }
+
+        private Provincia GetProvinceById(String provinceId)
         {
             foreach(Provincia p in provinces)
             {
@@ -318,6 +256,54 @@ namespace PresentationLayer
                 }
             }
             return null;
+        }
+
+        private Provincia GetProvinceByName(String provinceName)
+        {
+            foreach (Provincia p in provinces)
+            {
+                if (p.nombre == provinceName)
+                {
+                    return p;
+                }
+            }
+            return null;
+        }
+
+        private void RegisterOrModify(object sender, EventArgs e)
+        {
+            if (registerBtn.Text == "REGISTER")
+            {
+                string provinceId = GetProvinceByName(provinceBox.Text).provinciaID;
+                bool inserted = buss.InsertUser(
+                    nextId, mailBox.Text, nameBox.Text,
+                    surnameBox.Text, passBox.Text, idBox2.Text, phoneBox.Text,
+                    addressBox.Text, postalCodeBox2.Text, provinceId,
+                    GetTownByName(townBox.Text, provinceId).localidadID,
+                    bornBox.Text);
+                if (inserted)
+                {
+                    nextId++;
+                    MessageBox.Show("User inserted");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong");
+                }
+            }
+        }
+
+        private void GetNextId()
+        {
+            int auxId = -1;
+
+            foreach(Usuario u in users)
+            {
+                auxId = u.usuarioID > auxId ?
+                    u.usuarioID : auxId;
+            }
+
+            nextId = auxId + 1;
         }
     }
 }

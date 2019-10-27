@@ -12,7 +12,16 @@ namespace PresentationLayer
     {
         public static void SetEmpty(object sender)
         {
-            ((TextBox)sender).Text = "";
+            switch(((TextBox)sender).Text)
+            {
+                case "Mail":
+                case "Name":
+                case "Surname":
+                case "Password":
+                case "Password again":
+                case "Phone":
+                case "Address": ((TextBox)sender).Text = ""; break;
+            }
         }
 
         public static void NameLeave(object sender)

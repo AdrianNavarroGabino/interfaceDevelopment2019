@@ -8,7 +8,7 @@ namespace EntityLayer
 {
     public class Usuario
     {
-        public long UsuarioID { get; set; }
+        public int usuarioID { get; set; }
         public string email { get; set; }
         public string password { get; set; }
         public string nombre { get; set; }
@@ -22,12 +22,12 @@ namespace EntityLayer
         public string provinciaID { get; set; }
         public string nacido { get; set; }
 
-        public Usuario(string UsuarioID, string email, string password, string nombre,
+        public Usuario(int usuarioID, string email, string password, string nombre,
             string apellidos, string dni, string telefono, string calle,
             string calle2, string codpos, string puebloID, string provinciaID,
             string nacido)
         {
-            this.UsuarioID = Convert.ToInt64(UsuarioID);
+            this.usuarioID = usuarioID;
             this.email = email;
             this.nombre = nombre;
             this.password = password;

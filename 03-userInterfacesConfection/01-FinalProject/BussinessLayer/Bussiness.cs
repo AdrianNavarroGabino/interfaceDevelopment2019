@@ -18,7 +18,7 @@ namespace BussinessLayer
             dat = new Data();
         }
 
-        public string codifica_MD5(string pas)
+        public string Codifica_MD5(string pas)
         {
             int i;
             MD5 md5Hash = MD5.Create();
@@ -43,7 +43,7 @@ namespace BussinessLayer
                 for (int i = 0; i < usersList.Count; i++)
                 {
                     if ((usersList[i].nombre == usu) &&
-                        (usersList[i].password == codifica_MD5(pas)))
+                        (usersList[i].password == Codifica_MD5(pas)))
                         return (true);
                 }
             }
@@ -64,6 +64,21 @@ namespace BussinessLayer
         public List<Usuario> GetUsers()
         {
             return dat.ReadUsers();
+        }
+
+        public bool InsertUser(int id, string mail, string name,
+            string surname, string password, string idCard, string phone,
+            string address, string postalCode, string provinceId,
+            string townId, string birthdate)
+        {
+            return dat.InsertUser(new Usuario(id, mail, Codifica_MD5(password), name,
+                surname, idCard, phone, address, null, postalCode, townId,
+                provinceId, birthdate));
+        }
+
+        public bool DeleteUser(string id)
+        {
+            return dat.DeleteUser(id);
         }
 
         // Creo un nuevo usuario

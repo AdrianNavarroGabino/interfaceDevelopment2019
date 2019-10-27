@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer
 {
-    partial class ModifyUser
+    partial class SearchUser
     {
         /// <summary>
         /// Required designer variable.
@@ -41,10 +41,11 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 10);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 8);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -53,14 +54,16 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(732, 395);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DeleteUser);
             // 
             // nameBox
             // 
+            this.nameBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.nameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.nameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.nameBox.Location = new System.Drawing.Point(26, 443);
-            this.nameBox.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.nameBox.Location = new System.Drawing.Point(26, 441);
+            this.nameBox.Margin = new System.Windows.Forms.Padding(8);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(271, 37);
             this.nameBox.TabIndex = 11;
@@ -72,10 +75,11 @@
             // 
             // idBox2
             // 
+            this.idBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.idBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.idBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F);
             this.idBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.idBox2.Location = new System.Drawing.Point(335, 443);
+            this.idBox2.Location = new System.Drawing.Point(335, 441);
             this.idBox2.Mask = "A0000000L";
             this.idBox2.Name = "idBox2";
             this.idBox2.Size = new System.Drawing.Size(271, 37);
@@ -86,11 +90,12 @@
             // 
             // idBox
             // 
+            this.idBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.idBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.idBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.idBox.Location = new System.Drawing.Point(335, 443);
-            this.idBox.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.idBox.Location = new System.Drawing.Point(335, 441);
+            this.idBox.Margin = new System.Windows.Forms.Padding(8);
             this.idBox.Name = "idBox";
             this.idBox.Size = new System.Drawing.Size(271, 37);
             this.idBox.TabIndex = 12;
@@ -100,11 +105,12 @@
             // 
             // surnameBox
             // 
+            this.surnameBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.surnameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.surnameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.surnameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.surnameBox.Location = new System.Drawing.Point(26, 491);
-            this.surnameBox.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.surnameBox.Location = new System.Drawing.Point(26, 489);
+            this.surnameBox.Margin = new System.Windows.Forms.Padding(8);
             this.surnameBox.Name = "surnameBox";
             this.surnameBox.Size = new System.Drawing.Size(271, 37);
             this.surnameBox.TabIndex = 14;
@@ -116,11 +122,12 @@
             // 
             // mailBox
             // 
+            this.mailBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.mailBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.mailBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mailBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.mailBox.Location = new System.Drawing.Point(334, 491);
-            this.mailBox.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.mailBox.Location = new System.Drawing.Point(334, 489);
+            this.mailBox.Margin = new System.Windows.Forms.Padding(8);
             this.mailBox.Name = "mailBox";
             this.mailBox.Size = new System.Drawing.Size(271, 37);
             this.mailBox.TabIndex = 15;
@@ -132,10 +139,11 @@
             // 
             // modifyBtn
             // 
+            this.modifyBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.modifyBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
             this.modifyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.modifyBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(175)))), ((int)(((byte)(169)))));
-            this.modifyBtn.Location = new System.Drawing.Point(623, 461);
+            this.modifyBtn.Location = new System.Drawing.Point(623, 459);
             this.modifyBtn.Margin = new System.Windows.Forms.Padding(2);
             this.modifyBtn.Name = "modifyBtn";
             this.modifyBtn.Size = new System.Drawing.Size(107, 44);
@@ -144,12 +152,12 @@
             this.modifyBtn.UseVisualStyleBackColor = false;
             this.modifyBtn.Click += new System.EventHandler(this.GoToUserForm);
             // 
-            // ModifyUser
+            // SearchUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(225)))), ((int)(((byte)(212)))));
-            this.ClientSize = new System.Drawing.Size(750, 561);
+            this.ClientSize = new System.Drawing.Size(750, 556);
             this.Controls.Add(this.modifyBtn);
             this.Controls.Add(this.mailBox);
             this.Controls.Add(this.surnameBox);
@@ -158,8 +166,8 @@
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "ModifyUser";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "SearchUser";
             this.Text = "ModifyUser";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
