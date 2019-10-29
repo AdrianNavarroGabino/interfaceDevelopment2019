@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.registerLbl = new System.Windows.Forms.Label();
@@ -41,25 +42,15 @@
             this.phoneBox = new System.Windows.Forms.TextBox();
             this.addressBox = new System.Windows.Forms.TextBox();
             this.postalCodeBox = new System.Windows.Forms.TextBox();
-            this.mailError = new System.Windows.Forms.Label();
-            this.nameError = new System.Windows.Forms.Label();
-            this.surnameError = new System.Windows.Forms.Label();
-            this.passError = new System.Windows.Forms.Label();
-            this.passAgainError = new System.Windows.Forms.Label();
-            this.IDError = new System.Windows.Forms.Label();
-            this.bornError = new System.Windows.Forms.Label();
-            this.provinceError = new System.Windows.Forms.Label();
-            this.townError = new System.Windows.Forms.Label();
-            this.postalCodeError = new System.Windows.Forms.Label();
-            this.addressError = new System.Windows.Forms.Label();
-            this.phoneError = new System.Windows.Forms.Label();
             this.provinceBox = new System.Windows.Forms.ComboBox();
             this.townBox = new System.Windows.Forms.ComboBox();
             this.bornBox = new System.Windows.Forms.TextBox();
             this.postalCodeBox2 = new System.Windows.Forms.MaskedTextBox();
             this.idBox2 = new System.Windows.Forms.MaskedTextBox();
             this.bornDate = new System.Windows.Forms.DateTimePicker();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -101,6 +92,7 @@
             this.mailBox.UseWaitCursor = true;
             this.mailBox.Enter += new System.EventHandler(this.SetEmpty);
             this.mailBox.Leave += new System.EventHandler(this.MailLeave);
+            this.mailBox.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingMail);
             // 
             // nameBox
             // 
@@ -115,9 +107,9 @@
             this.nameBox.TabIndex = 6;
             this.nameBox.Text = "Name";
             this.nameBox.UseWaitCursor = true;
-            this.nameBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.nameBox.Enter += new System.EventHandler(this.SetEmpty);
             this.nameBox.Leave += new System.EventHandler(this.NameLeave);
+            this.nameBox.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingName);
             // 
             // surnameBox
             // 
@@ -244,150 +236,6 @@
             this.postalCodeBox.UseWaitCursor = true;
             this.postalCodeBox.Enter += new System.EventHandler(this.PostalCodeEnter);
             // 
-            // mailError
-            // 
-            this.mailError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.mailError.AutoSize = true;
-            this.mailError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mailError.ForeColor = System.Drawing.Color.Red;
-            this.mailError.Location = new System.Drawing.Point(130, 185);
-            this.mailError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.mailError.Name = "mailError";
-            this.mailError.Size = new System.Drawing.Size(0, 20);
-            this.mailError.TabIndex = 18;
-            // 
-            // nameError
-            // 
-            this.nameError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.nameError.AutoSize = true;
-            this.nameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameError.ForeColor = System.Drawing.Color.Red;
-            this.nameError.Location = new System.Drawing.Point(130, 250);
-            this.nameError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.nameError.Name = "nameError";
-            this.nameError.Size = new System.Drawing.Size(0, 20);
-            this.nameError.TabIndex = 19;
-            // 
-            // surnameError
-            // 
-            this.surnameError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.surnameError.AutoSize = true;
-            this.surnameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.surnameError.ForeColor = System.Drawing.Color.Red;
-            this.surnameError.Location = new System.Drawing.Point(130, 315);
-            this.surnameError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.surnameError.Name = "surnameError";
-            this.surnameError.Size = new System.Drawing.Size(0, 20);
-            this.surnameError.TabIndex = 20;
-            // 
-            // passError
-            // 
-            this.passError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.passError.AutoSize = true;
-            this.passError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passError.ForeColor = System.Drawing.Color.Red;
-            this.passError.Location = new System.Drawing.Point(130, 380);
-            this.passError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.passError.Name = "passError";
-            this.passError.Size = new System.Drawing.Size(0, 20);
-            this.passError.TabIndex = 21;
-            // 
-            // passAgainError
-            // 
-            this.passAgainError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.passAgainError.AutoSize = true;
-            this.passAgainError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passAgainError.ForeColor = System.Drawing.Color.Red;
-            this.passAgainError.Location = new System.Drawing.Point(130, 445);
-            this.passAgainError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.passAgainError.Name = "passAgainError";
-            this.passAgainError.Size = new System.Drawing.Size(0, 20);
-            this.passAgainError.TabIndex = 22;
-            // 
-            // IDError
-            // 
-            this.IDError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.IDError.AutoSize = true;
-            this.IDError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDError.ForeColor = System.Drawing.Color.Red;
-            this.IDError.Location = new System.Drawing.Point(130, 510);
-            this.IDError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.IDError.Name = "IDError";
-            this.IDError.Size = new System.Drawing.Size(0, 20);
-            this.IDError.TabIndex = 23;
-            // 
-            // bornError
-            // 
-            this.bornError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.bornError.AutoSize = true;
-            this.bornError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bornError.ForeColor = System.Drawing.Color.Red;
-            this.bornError.Location = new System.Drawing.Point(535, 510);
-            this.bornError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bornError.Name = "bornError";
-            this.bornError.Size = new System.Drawing.Size(0, 20);
-            this.bornError.TabIndex = 29;
-            // 
-            // provinceError
-            // 
-            this.provinceError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.provinceError.AutoSize = true;
-            this.provinceError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.provinceError.ForeColor = System.Drawing.Color.Red;
-            this.provinceError.Location = new System.Drawing.Point(535, 445);
-            this.provinceError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.provinceError.Name = "provinceError";
-            this.provinceError.Size = new System.Drawing.Size(0, 20);
-            this.provinceError.TabIndex = 28;
-            // 
-            // townError
-            // 
-            this.townError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.townError.AutoSize = true;
-            this.townError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.townError.ForeColor = System.Drawing.Color.Red;
-            this.townError.Location = new System.Drawing.Point(535, 380);
-            this.townError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.townError.Name = "townError";
-            this.townError.Size = new System.Drawing.Size(0, 20);
-            this.townError.TabIndex = 27;
-            // 
-            // postalCodeError
-            // 
-            this.postalCodeError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.postalCodeError.AutoSize = true;
-            this.postalCodeError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.postalCodeError.ForeColor = System.Drawing.Color.Red;
-            this.postalCodeError.Location = new System.Drawing.Point(535, 315);
-            this.postalCodeError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.postalCodeError.Name = "postalCodeError";
-            this.postalCodeError.Size = new System.Drawing.Size(0, 20);
-            this.postalCodeError.TabIndex = 26;
-            // 
-            // addressError
-            // 
-            this.addressError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.addressError.AutoSize = true;
-            this.addressError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressError.ForeColor = System.Drawing.Color.Red;
-            this.addressError.Location = new System.Drawing.Point(535, 250);
-            this.addressError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.addressError.Name = "addressError";
-            this.addressError.Size = new System.Drawing.Size(0, 20);
-            this.addressError.TabIndex = 25;
-            // 
-            // phoneError
-            // 
-            this.phoneError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.phoneError.AutoSize = true;
-            this.phoneError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneError.ForeColor = System.Drawing.Color.Red;
-            this.phoneError.Location = new System.Drawing.Point(535, 185);
-            this.phoneError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.phoneError.Name = "phoneError";
-            this.phoneError.Size = new System.Drawing.Size(0, 20);
-            this.phoneError.TabIndex = 24;
-            // 
             // provinceBox
             // 
             this.provinceBox.AccessibleName = "";
@@ -474,6 +322,10 @@
             this.bornDate.Visible = false;
             this.bornDate.ValueChanged += new System.EventHandler(this.DateChange);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -485,18 +337,6 @@
             this.Controls.Add(this.postalCodeBox2);
             this.Controls.Add(this.townBox);
             this.Controls.Add(this.provinceBox);
-            this.Controls.Add(this.bornError);
-            this.Controls.Add(this.provinceError);
-            this.Controls.Add(this.townError);
-            this.Controls.Add(this.postalCodeError);
-            this.Controls.Add(this.addressError);
-            this.Controls.Add(this.phoneError);
-            this.Controls.Add(this.IDError);
-            this.Controls.Add(this.passAgainError);
-            this.Controls.Add(this.passError);
-            this.Controls.Add(this.surnameError);
-            this.Controls.Add(this.nameError);
-            this.Controls.Add(this.mailError);
             this.Controls.Add(this.bornBox);
             this.Controls.Add(this.postalCodeBox);
             this.Controls.Add(this.addressBox);
@@ -515,6 +355,7 @@
             this.Name = "User";
             this.Text = "SignUp";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -534,23 +375,12 @@
         private System.Windows.Forms.TextBox phoneBox;
         private System.Windows.Forms.TextBox addressBox;
         private System.Windows.Forms.TextBox postalCodeBox;
-        private System.Windows.Forms.Label mailError;
-        private System.Windows.Forms.Label nameError;
-        private System.Windows.Forms.Label surnameError;
-        private System.Windows.Forms.Label passError;
-        private System.Windows.Forms.Label passAgainError;
-        private System.Windows.Forms.Label IDError;
-        private System.Windows.Forms.Label bornError;
-        private System.Windows.Forms.Label provinceError;
-        private System.Windows.Forms.Label townError;
-        private System.Windows.Forms.Label postalCodeError;
-        private System.Windows.Forms.Label addressError;
-        private System.Windows.Forms.Label phoneError;
         private System.Windows.Forms.ComboBox provinceBox;
         private System.Windows.Forms.ComboBox townBox;
         private System.Windows.Forms.TextBox bornBox;
         private System.Windows.Forms.MaskedTextBox postalCodeBox2;
         private System.Windows.Forms.MaskedTextBox idBox2;
         private System.Windows.Forms.DateTimePicker bornDate;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

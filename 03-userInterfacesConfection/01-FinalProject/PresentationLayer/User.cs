@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLayer;
@@ -14,6 +15,14 @@ namespace PresentationLayer
 {
     public partial class User : Form
     {
+        private const string mailRegex =
+            @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,4})+)$";
+        private char[] idCardLetter = { 'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F',
+            'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C',
+            'K', 'E' };
+        private const string passwordRegexExpresion =
+            @"^(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d\s])[A-Za-z\d@$!%*?&]{4,}$";
+
         Bussiness buss;
         List<Provincia> provinces;
         List<Localidad> towns;
@@ -46,11 +55,6 @@ namespace PresentationLayer
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -326,6 +330,35 @@ namespace PresentationLayer
             }
 
             nextId = auxId + 1;
+        }
+
+        private void ValidatingMail(object sender, CancelEventArgs e)
+        {
+            if (mailBox.Text.Trim().Length == 0 || mailBox.Text == "Mail")
+            {
+                errorProvider.SetError(mailBox, "Mail cannot be empty");
+            }
+            
+            else if (!Regex.IsMatch(mailBox.Text, mailRegex))
+            {
+                errorProvider.SetError(mailBox, "Wrong mail");
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
+        }
+
+        private void ValidatingName(object sender, CancelEventArgs e)
+        {
+            if (nameBox.Text == "Name")
+            {
+                errorProvider.SetError(nameBox, "Name can no be empty");
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
         }
     }
 }

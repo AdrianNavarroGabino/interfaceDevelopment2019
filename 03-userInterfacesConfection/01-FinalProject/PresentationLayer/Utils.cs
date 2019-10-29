@@ -26,19 +26,19 @@ namespace PresentationLayer
 
         public static void NameLeave(object sender)
         {
-            if (((TextBox)sender).Text == "")
+            if (((TextBox)sender).Text.Trim() == "")
                 ((TextBox)sender).Text = "Name";
         }
 
         public static void SurnameLeave(object sender)
         {
-            if (((TextBox)sender).Text == "")
+            if (((TextBox)sender).Text.Trim() == "")
                 ((TextBox)sender).Text = "Surname";
         }
 
         public static void MailLeave(object sender)
         {
-            if (((TextBox)sender).Text == "")
+            if (((TextBox)sender).Text.Trim() == "")
                 ((TextBox)sender).Text = "Mail";
         }
 
