@@ -20,7 +20,7 @@ namespace PresentationLayer
         private char[] idCardLetter = { 'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F',
             'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C',
             'K', 'E' };
-        private const string passwordRegexExpresion =
+        private const string passRegex =
             @"^(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d\s])[A-Za-z\d@$!%*?&]{4,}$";
 
         Bussiness buss;
@@ -52,11 +52,6 @@ namespace PresentationLayer
                 bornBox.Text = bornBox.Text.Substring(6) + "-" +
                     bornBox.Text.Substring(3, 2) + "-" + bornBox.Text.Substring(0, 2);
             }
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void HidePassword(object sender, MouseEventArgs e)
@@ -186,6 +181,59 @@ namespace PresentationLayer
         private void IdLostFocus(object sender, EventArgs e)
         {
             Utils.IdLostFocus(sender, idBox, idBox2);
+
+            int aux;
+            bool wrong = false;
+
+            if (idBox2.Text.Replace("_", "") == "")
+            {
+                errorProvider.SetError(idBox, "ID Card cannot be empty");
+            }
+            else if ((idBox2.Text[0] >= 'A' && idBox2.Text[0] <= 'Z') ||
+                (idBox2.Text[0] >= 'a' && idBox2.Text[0] <= 'z'))
+            {
+                aux = Convert.ToInt32(idBox2.Text.Substring(1, 7));
+                if (idBox2.Text[0] == 'X' || idBox2.Text[0] == 'x')
+                {
+                    if (idBox2.Text[8] != idCardLetter[aux % 23])
+                    {
+                        wrong = true;
+                    }
+                }
+                else if (idBox2.Text[0] == 'Y' || idBox2.Text[0] == 'y')
+                {
+                    aux += 10000000;
+                    if (idBox2.Text[8] != idCardLetter[aux % 23])
+                    {
+                        wrong = true;
+                    }
+                }
+                else if (idBox2.Text[0] == 'Z' || idBox2.Text[0] == 'z')
+                {
+                    aux += 20000000;
+                    if (idBox2.Text[8] != idCardLetter[aux % 23])
+                    {
+                        wrong = true;
+                    }
+                }
+                else
+                {
+                    wrong = true;
+                }
+            }
+            else 
+            {
+                aux = Convert.ToInt32(idBox2.Text.Substring(0, 8));
+                if (idBox2.Text[8] != idCardLetter[aux % 23])
+                {
+                    wrong = true;
+                }
+            }
+
+            if (wrong)
+            {
+                errorProvider.SetError(idBox, "Wrong ID card");
+            }
         }
 
         private void IdEnter(object sender, EventArgs e)
@@ -358,6 +406,76 @@ namespace PresentationLayer
             else
             {
                 errorProvider.Clear();
+            }
+        }
+
+        private void ValidatingPassword(object sender, CancelEventArgs e)
+        {
+            if (!Regex.IsMatch(passBox.Text, passRegex))
+            {
+                errorProvider.SetError(passBox,
+                    "The password must have at least 1 number, a capital " +
+                    "letter and a non-alphanumeric character");
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
+        }
+
+        private void ValidatingIdCard(object sender, CancelEventArgs e)
+        {
+            int aux;
+            bool wrong = false;
+
+            if (idBox2.Text.Replace("_","") == "")
+            {
+                errorProvider.SetError(idBox2, "ID Card cannot be empty");
+            }
+            else if((idBox2.Text[0] >= 'A' && idBox2.Text[0] <= 'Z') ||
+                (idBox2.Text[0] >= 'a' && idBox2.Text[0] <= 'z'))
+            {
+                aux = Convert.ToInt32(idBox2.Text.Substring(1, 7));
+                if (idBox2.Text[0] == 'X' || idBox2.Text[0] == 'x')
+                {
+                    if(idBox2.Text[8] != idCardLetter[aux % 23])
+                    {
+                        wrong = true;
+                    }
+                }
+                else if(idBox2.Text[0] == 'Y' || idBox2.Text[0] == 'y')
+                {
+                    aux += 10000000;
+                    if (idBox2.Text[8] != idCardLetter[aux % 23])
+                    {
+                        wrong = true;
+                    }
+                }
+                else if (idBox2.Text[0] == 'Z' || idBox2.Text[0] == 'z')
+                {
+                    aux += 20000000;
+                    if (idBox2.Text[8] != idCardLetter[aux % 23])
+                    {
+                        wrong = true;
+                    }
+                }
+                else
+                {
+                    wrong = true;
+                }
+            }
+            else if(idBox2.Text[0] >= '0' && idBox2.Text[0] <= '9')
+            {
+                aux = Convert.ToInt32(idBox2.Text.Substring(0, 8));
+                if (idBox2.Text[8] != idCardLetter[aux % 23])
+                {
+                    wrong = true;
+                }
+            }
+
+            if(wrong)
+            {
+                errorProvider.SetError(idBox2, "Wrong ID card");
             }
         }
     }

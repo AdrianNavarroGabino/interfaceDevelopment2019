@@ -22,7 +22,6 @@ C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\bin\Debug\Newtonsoft
 C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.exe.config
 C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Login.resources
 C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.csproj.CopyComplete
-C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.SignUp.resources
 C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Main.resources
 C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.exe
 C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.pdb
@@ -78,3 +77,5 @@ C:\Users\Adrian\Documents\FinalProject\PresentationLayer\obj\Debug\PresentationL
 C:\Users\Adrian\Documents\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.ModifyUser.resources
 C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.User.resources
 C:\Users\Adrián Navarro\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.SearchUser.resources
+C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.SearchUser.resources
+C:\Users\Adrian\source\repos\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.User.resources
