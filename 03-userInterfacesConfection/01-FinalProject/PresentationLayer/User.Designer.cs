@@ -317,6 +317,7 @@
             this.bornDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.bornDate.Location = new System.Drawing.Point(540, 573);
             this.bornDate.Margin = new System.Windows.Forms.Padding(4);
+            this.bornDate.MaxDate = new System.DateTime(2019, 10, 30, 0, 0, 0, 0);
             this.bornDate.Name = "bornDate";
             this.bornDate.Size = new System.Drawing.Size(425, 22);
             this.bornDate.TabIndex = 19;

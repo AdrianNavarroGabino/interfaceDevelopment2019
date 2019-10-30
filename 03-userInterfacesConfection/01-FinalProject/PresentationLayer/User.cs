@@ -15,6 +15,7 @@ namespace PresentationLayer
 {
     public partial class User : Form
     {
+        private bool validated;
         private const string mailRegex =
             @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,4})+)$";
         private char[] idCardLetter = { 'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F',
@@ -52,6 +53,8 @@ namespace PresentationLayer
                 bornBox.Text = bornBox.Text.Substring(6) + "-" +
                     bornBox.Text.Substring(3, 2) + "-" + bornBox.Text.Substring(0, 2);
             }
+
+            bornDate.MaxDate = DateTime.Now;
         }
 
         private void HidePassword(object sender, MouseEventArgs e)
@@ -182,58 +185,7 @@ namespace PresentationLayer
         {
             Utils.IdLostFocus(sender, idBox, idBox2);
 
-            int aux;
-            bool wrong = false;
-
-            if (idBox2.Text.Replace("_", "") == "")
-            {
-                errorProvider.SetError(idBox, "ID Card cannot be empty");
-            }
-            else if ((idBox2.Text[0] >= 'A' && idBox2.Text[0] <= 'Z') ||
-                (idBox2.Text[0] >= 'a' && idBox2.Text[0] <= 'z'))
-            {
-                aux = Convert.ToInt32(idBox2.Text.Substring(1, 7));
-                if (idBox2.Text[0] == 'X' || idBox2.Text[0] == 'x')
-                {
-                    if (idBox2.Text[8] != idCardLetter[aux % 23])
-                    {
-                        wrong = true;
-                    }
-                }
-                else if (idBox2.Text[0] == 'Y' || idBox2.Text[0] == 'y')
-                {
-                    aux += 10000000;
-                    if (idBox2.Text[8] != idCardLetter[aux % 23])
-                    {
-                        wrong = true;
-                    }
-                }
-                else if (idBox2.Text[0] == 'Z' || idBox2.Text[0] == 'z')
-                {
-                    aux += 20000000;
-                    if (idBox2.Text[8] != idCardLetter[aux % 23])
-                    {
-                        wrong = true;
-                    }
-                }
-                else
-                {
-                    wrong = true;
-                }
-            }
-            else 
-            {
-                aux = Convert.ToInt32(idBox2.Text.Substring(0, 8));
-                if (idBox2.Text[8] != idCardLetter[aux % 23])
-                {
-                    wrong = true;
-                }
-            }
-
-            if (wrong)
-            {
-                errorProvider.SetError(idBox, "Wrong ID card");
-            }
+            ValidateId();
         }
 
         private void IdEnter(object sender, EventArgs e)
@@ -327,6 +279,24 @@ namespace PresentationLayer
 
         private void RegisterOrModify(object sender, EventArgs e)
         {
+            errorProvider.Clear();
+            validated = true;
+
+            ValidatingIdCard(null, null);
+            ValidatingMail(null, null);
+            ValidatingName(null, null);
+            ValidateId();
+            ValidateTown(null, null);
+            if (registerBtn.Text == "REGISTER")
+            {
+                ValidatingPassword(null, null);
+            }
+
+            if(!validated)
+            {
+                return;
+            }
+
             string provinceId = GetProvinceByName(provinceBox.SelectedText).provinciaID;
 
             if (registerBtn.Text == "REGISTER")
@@ -384,11 +354,13 @@ namespace PresentationLayer
         {
             if (mailBox.Text.Trim().Length == 0 || mailBox.Text == "Mail")
             {
+                validated = false;
                 errorProvider.SetError(mailBox, "Mail cannot be empty");
             }
             
             else if (!Regex.IsMatch(mailBox.Text, mailRegex))
             {
+                validated = false;
                 errorProvider.SetError(mailBox, "Wrong mail");
             }
             else
@@ -401,6 +373,7 @@ namespace PresentationLayer
         {
             if (nameBox.Text == "Name")
             {
+                validated = false;
                 errorProvider.SetError(nameBox, "Name can no be empty");
             }
             else
@@ -475,7 +448,75 @@ namespace PresentationLayer
 
             if(wrong)
             {
+                validated = false;
                 errorProvider.SetError(idBox2, "Wrong ID card");
+            }
+        }
+
+        public void ValidateId()
+        {
+            int aux;
+            bool wrong = false;
+
+            if (idBox2.Text.Replace("_", "") == "")
+            {
+                validated = false;
+                errorProvider.SetError(idBox, "ID Card cannot be empty");
+            }
+            else if ((idBox2.Text[0] >= 'A' && idBox2.Text[0] <= 'Z') ||
+                (idBox2.Text[0] >= 'a' && idBox2.Text[0] <= 'z'))
+            {
+                aux = Convert.ToInt32(idBox2.Text.Substring(1, 7));
+                if (idBox2.Text[0] == 'X' || idBox2.Text[0] == 'x')
+                {
+                    if (idBox2.Text[8] != idCardLetter[aux % 23])
+                    {
+                        wrong = true;
+                    }
+                }
+                else if (idBox2.Text[0] == 'Y' || idBox2.Text[0] == 'y')
+                {
+                    aux += 10000000;
+                    if (idBox2.Text[8] != idCardLetter[aux % 23])
+                    {
+                        wrong = true;
+                    }
+                }
+                else if (idBox2.Text[0] == 'Z' || idBox2.Text[0] == 'z')
+                {
+                    aux += 20000000;
+                    if (idBox2.Text[8] != idCardLetter[aux % 23])
+                    {
+                        wrong = true;
+                    }
+                }
+                else
+                {
+                    wrong = true;
+                }
+            }
+            else
+            {
+                aux = Convert.ToInt32(idBox2.Text.Substring(0, 8));
+                if (idBox2.Text[8] != idCardLetter[aux % 23])
+                {
+                    wrong = true;
+                }
+            }
+
+            if (wrong)
+            {
+                validated = false;
+                errorProvider.SetError(idBox, "Wrong ID card");
+            }
+        }
+        
+        private void ValidateTown()
+        {
+            if (townBox.SelectedText == "Town")
+            {
+                errorProvider.SetError(townBox, "You must select a town");
+                validated = false;
             }
         }
     }
