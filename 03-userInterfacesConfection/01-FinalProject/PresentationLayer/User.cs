@@ -286,7 +286,7 @@ namespace PresentationLayer
             ValidatingMail(null, null);
             ValidatingName(null, null);
             ValidateId();
-            ValidateTown(null, null);
+            ValidateTown();
             if (registerBtn.Text == "REGISTER")
             {
                 ValidatingPassword(null, null);
