@@ -17,12 +17,18 @@ namespace PresentationLayer
         private SearchUser searchUser;
         private String user;
         private Bussiness buss;
+        private int time;
 
         public Main(String user, Bussiness buss)
         {
             InitializeComponent();
             this.user = user;
             this.buss = buss;
+            userLbl.Text = user;
+            hourLbl.Text = DateTime.Now.TimeOfDay.ToString().Substring(0, 5);
+            time = 0;
+            timerLbl.Text = (time / 60).ToString("00") + ":" +
+                (time % 60).ToString("00");
         }
 
         private void CloseForms()
@@ -107,6 +113,18 @@ namespace PresentationLayer
 
             searchUser.FormBorderStyle = FormBorderStyle.None;
             searchUser.Show();
+        }
+
+        private void IncreaseTimer(object sender, EventArgs e)
+        {
+            time++;
+            timerLbl.Text = (time / 60).ToString("00") + ":"
+                + (time % 60).ToString("00");
+        }
+
+        private void IncreaseHour(object sender, EventArgs e)
+        {
+            hourLbl.Text = DateTime.Now.TimeOfDay.ToString().Substring(0, 5);
         }
     }
 }

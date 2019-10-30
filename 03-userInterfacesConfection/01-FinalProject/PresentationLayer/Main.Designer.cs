@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.opcion1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,9 +51,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.hourLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.timerLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.userLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.hourLbl = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timerLbl = new System.Windows.Forms.ToolStripStatusLabel();
+            this.userLbl = new System.Windows.Forms.ToolStripStatusLabel();
+            this.hourTimer = new System.Windows.Forms.Timer(this.components);
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.SuspendLayout();
@@ -236,9 +239,9 @@
             this.statusBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabel,
-            this.hourLabel,
-            this.timerLabel,
-            this.userLabel});
+            this.hourLbl,
+            this.timerLbl,
+            this.userLbl});
             this.statusBar.Location = new System.Drawing.Point(0, 727);
             this.statusBar.Name = "statusBar";
             this.statusBar.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
@@ -257,34 +260,46 @@
             this.statusLabel.Text = "Status";
             this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // hourLabel
+            // hourLbl
             // 
-            this.hourLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.hourLabel.ForeColor = System.Drawing.Color.Black;
-            this.hourLabel.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
-            this.hourLabel.Name = "hourLabel";
-            this.hourLabel.Size = new System.Drawing.Size(71, 29);
-            this.hourLabel.Text = "Hour";
+            this.hourLbl.BackColor = System.Drawing.SystemColors.Control;
+            this.hourLbl.ForeColor = System.Drawing.Color.Black;
+            this.hourLbl.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
+            this.hourLbl.Name = "hourLbl";
+            this.hourLbl.Size = new System.Drawing.Size(71, 29);
+            this.hourLbl.Text = "Hour";
             // 
-            // timerLabel
+            // timerLbl
             // 
-            this.timerLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.timerLabel.ForeColor = System.Drawing.Color.Black;
-            this.timerLabel.Margin = new System.Windows.Forms.Padding(20, 3, 0, 2);
-            this.timerLabel.Name = "timerLabel";
-            this.timerLabel.Size = new System.Drawing.Size(82, 29);
-            this.timerLabel.Text = "Timer";
+            this.timerLbl.BackColor = System.Drawing.SystemColors.Control;
+            this.timerLbl.ForeColor = System.Drawing.Color.Black;
+            this.timerLbl.Margin = new System.Windows.Forms.Padding(20, 3, 0, 2);
+            this.timerLbl.Name = "timerLbl";
+            this.timerLbl.Size = new System.Drawing.Size(82, 29);
+            this.timerLbl.Text = "Timer";
             // 
-            // userLabel
+            // userLbl
             // 
-            this.userLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.userLabel.ForeColor = System.Drawing.Color.Black;
-            this.userLabel.Margin = new System.Windows.Forms.Padding(150, 3, 0, 2);
-            this.userLabel.MergeIndex = 2;
-            this.userLabel.Name = "userLabel";
-            this.userLabel.Size = new System.Drawing.Size(67, 29);
-            this.userLabel.Text = "User";
-            this.userLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.userLbl.BackColor = System.Drawing.SystemColors.Control;
+            this.userLbl.ForeColor = System.Drawing.Color.Black;
+            this.userLbl.Margin = new System.Windows.Forms.Padding(150, 3, 0, 2);
+            this.userLbl.MergeIndex = 2;
+            this.userLbl.Name = "userLbl";
+            this.userLbl.Size = new System.Drawing.Size(67, 29);
+            this.userLbl.Text = "User";
+            this.userLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // hourTimer
+            // 
+            this.hourTimer.Enabled = true;
+            this.hourTimer.Interval = 6000;
+            this.hourTimer.Tick += new System.EventHandler(this.IncreaseHour);
+            // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.IncreaseTimer);
             // 
             // Main
             // 
@@ -333,8 +348,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.StatusStrip statusBar;
         private System.Windows.Forms.ToolStripStatusLabel statusLabel;
-        private System.Windows.Forms.ToolStripStatusLabel hourLabel;
-        private System.Windows.Forms.ToolStripStatusLabel timerLabel;
-        private System.Windows.Forms.ToolStripStatusLabel userLabel;
+        private System.Windows.Forms.ToolStripStatusLabel hourLbl;
+        private System.Windows.Forms.ToolStripStatusLabel timerLbl;
+        private System.Windows.Forms.ToolStripStatusLabel userLbl;
+        private System.Windows.Forms.Timer hourTimer;
+        private System.Windows.Forms.Timer timer;
     }
 }
