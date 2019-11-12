@@ -15,6 +15,7 @@ namespace PresentationLayer
     {
         private User userForm;
         private SearchUser searchUser;
+        private Products productsForm;
         private String user;
         private Bussiness buss;
         private int time;
@@ -125,6 +126,23 @@ namespace PresentationLayer
         private void IncreaseHour(object sender, EventArgs e)
         {
             hourLbl.Text = DateTime.Now.TimeOfDay.ToString().Substring(0, 5);
+        }
+
+        private void ConsultProducts(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            this.IsMdiContainer = false;
+            this.IsMdiContainer = true;
+
+            productsForm = new Products(buss);
+
+            productsForm.MdiParent = this;
+
+            productsForm.ControlBox = false;
+
+            productsForm.FormBorderStyle = FormBorderStyle.None;
+            productsForm.Show();
         }
     }
 }

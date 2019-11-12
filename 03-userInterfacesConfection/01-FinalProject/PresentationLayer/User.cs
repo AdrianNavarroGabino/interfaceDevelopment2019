@@ -181,13 +181,6 @@ namespace PresentationLayer
             }
         }
 
-        private void IdLostFocus(object sender, EventArgs e)
-        {
-            Utils.IdLostFocus(sender, idBox, idBox2);
-
-            ValidateId();
-        }
-
         private void IdEnter(object sender, EventArgs e)
         {
             Utils.IdEnter(idBox, idBox2);
@@ -282,7 +275,7 @@ namespace PresentationLayer
             errorProvider.Clear();
             validated = true;
 
-            ValidatingIdCard(null, null);
+            ValidateId();
             ValidatingMail(null, null);
             ValidatingName(null, null);
             ValidateId();
@@ -396,72 +389,16 @@ namespace PresentationLayer
             }
         }
 
-        private void ValidatingIdCard(object sender, CancelEventArgs e)
-        {
-            int aux;
-            bool wrong = false;
-
-            if (idBox2.Text.Replace("_","") == "")
-            {
-                errorProvider.SetError(idBox2, "ID Card cannot be empty");
-            }
-            else if((idBox2.Text[0] >= 'A' && idBox2.Text[0] <= 'Z') ||
-                (idBox2.Text[0] >= 'a' && idBox2.Text[0] <= 'z'))
-            {
-                aux = Convert.ToInt32(idBox2.Text.Substring(1, 7));
-                if (idBox2.Text[0] == 'X' || idBox2.Text[0] == 'x')
-                {
-                    if(idBox2.Text[8] != idCardLetter[aux % 23])
-                    {
-                        wrong = true;
-                    }
-                }
-                else if(idBox2.Text[0] == 'Y' || idBox2.Text[0] == 'y')
-                {
-                    aux += 10000000;
-                    if (idBox2.Text[8] != idCardLetter[aux % 23])
-                    {
-                        wrong = true;
-                    }
-                }
-                else if (idBox2.Text[0] == 'Z' || idBox2.Text[0] == 'z')
-                {
-                    aux += 20000000;
-                    if (idBox2.Text[8] != idCardLetter[aux % 23])
-                    {
-                        wrong = true;
-                    }
-                }
-                else
-                {
-                    wrong = true;
-                }
-            }
-            else if(idBox2.Text[0] >= '0' && idBox2.Text[0] <= '9')
-            {
-                aux = Convert.ToInt32(idBox2.Text.Substring(0, 8));
-                if (idBox2.Text[8] != idCardLetter[aux % 23])
-                {
-                    wrong = true;
-                }
-            }
-
-            if(wrong)
-            {
-                validated = false;
-                errorProvider.SetError(idBox2, "Wrong ID card");
-            }
-        }
-
         public void ValidateId()
         {
             int aux;
             bool wrong = false;
 
-            if (idBox2.Text.Replace("_", "") == "")
+            if (idBox2.Text.Replace("_", "").Length < 9)
             {
+                MessageBox.Show(idBox2.Text);
                 validated = false;
-                errorProvider.SetError(idBox, "ID Card cannot be empty");
+                errorProvider.SetError(idBox2, "ID Card cannot be empty");
             }
             else if ((idBox2.Text[0] >= 'A' && idBox2.Text[0] <= 'Z') ||
                 (idBox2.Text[0] >= 'a' && idBox2.Text[0] <= 'z'))
@@ -518,6 +455,14 @@ namespace PresentationLayer
                 errorProvider.SetError(townBox, "You must select a town");
                 validated = false;
             }
+        }
+
+        private void IdLostFocus(object sender, EventArgs e)
+        {
+            MessageBox.Show("IdLostFocus");
+            Utils.IdLostFocus(sender, idBox, idBox2);
+
+            ValidateId();
         }
     }
 }

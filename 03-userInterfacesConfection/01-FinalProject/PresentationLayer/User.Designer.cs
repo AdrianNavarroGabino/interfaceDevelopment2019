@@ -185,6 +185,7 @@
             this.idBox.TabIndex = 11;
             this.idBox.Text = "ID";
             this.idBox.UseWaitCursor = true;
+            this.idBox.Click += new System.EventHandler(this.IdEnter);
             this.idBox.Enter += new System.EventHandler(this.IdEnter);
             this.idBox.Leave += new System.EventHandler(this.IDLeave);
             // 
@@ -303,14 +304,14 @@
             this.idBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.idBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F);
             this.idBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.idBox2.Location = new System.Drawing.Point(48, 552);
+            this.idBox2.Location = new System.Drawing.Point(48, 601);
             this.idBox2.Margin = new System.Windows.Forms.Padding(4);
             this.idBox2.Mask = "A0000000L";
             this.idBox2.Name = "idBox2";
             this.idBox2.Size = new System.Drawing.Size(425, 45);
             this.idBox2.TabIndex = 11;
             this.idBox2.Visible = false;
-            this.idBox2.Validated += new System.EventHandler(this.IdLostFocus);
+            this.idBox2.Validating += new System.ComponentModel.CancelEventHandler(this.IdLostFocus);
             // 
             // bornDate
             // 

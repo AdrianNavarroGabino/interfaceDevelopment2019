@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    class TipoArticulo
+    public class TipoArticulo
     {
-        public long tipoArticuloID { get; set; }
+        public string tipoArticuloID { get; set; }
         public string Descripcion { get; set; }
 
-        public TipoArticulo(long tipoArticuloID, string descripcion)
+        public TipoArticulo(string tipoArticuloID, string descripcion)
         {
             this.tipoArticuloID = tipoArticuloID;
             Descripcion = descripcion;

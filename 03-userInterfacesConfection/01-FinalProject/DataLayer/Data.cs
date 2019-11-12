@@ -153,6 +153,54 @@ namespace DataLayer
             return true;
         }
 
+        public List<Articulo> ReadProducts()
+        {
+            List<Articulo> productsList = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response = client.GetAsync("api/Articulos").Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    productsList = JsonConvert.DeserializeObject<List<Articulo>>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return productsList;
+        }
+
+        public List<TipoArticulo> ReadProductTypes()
+        {
+            List<TipoArticulo> productTypesList = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response = client.GetAsync("api/tipoArticulos").Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    productTypesList = JsonConvert.DeserializeObject<List<TipoArticulo>>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return productTypesList;
+        }
+
         /*public bool NewUser(string nom, string pas)
         {
             try

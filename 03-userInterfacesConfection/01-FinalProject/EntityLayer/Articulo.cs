@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    class Articulo
+    public class Articulo
     {
         public string articuloID { get; set; }
         public string nombre { get; set; }
-        public double pvp { get; set; }
+        public string pvp { get; set; }
         public string marcaID { get; set; }
         public string imagen { get; set; }
         public string urlimagen { get; set; }
         public string especificaciones { get; set; }
-        public long tipoArticulo { get; set; }
+        public string tipoArticulo { get; set; }
 
-        public Articulo(string articuloID, string nombre, double pvp,
+        public Articulo(string articuloID, string nombre, string pvp,
             string marcaID, string imagen, string urlimagen,
-            string especificaciones, long tipoArticulo)
+            string especificaciones, string tipoArticulo)
         {
             this.articuloID = articuloID;
             this.nombre = nombre;

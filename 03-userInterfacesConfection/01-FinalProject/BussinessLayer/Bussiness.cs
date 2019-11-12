@@ -91,6 +91,16 @@ namespace BussinessLayer
                 provinceId, birthdate));
         }
 
+        public List<Articulo> GetProducts()
+        {
+            return dat.ReadProducts();
+        }
+
+        public List<TipoArticulo> GetProductTypes()
+        {
+            return dat.ReadProductTypes();
+        }
+
         // Creo un nuevo usuario
         /*public bool NewUser(string usu, string pas)
         {
