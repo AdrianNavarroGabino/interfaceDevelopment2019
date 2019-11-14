@@ -25,23 +25,6 @@ namespace PresentationLayer
             attempts = 3;
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void selectAllPass(object sender, EventArgs e)
-        {
-            if(textBox2.Text == "Password")
-                textBox2.SelectAll();
-        }
-
-        private void selectAllUser(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "Username")
-                textBox1.SelectAll();
-        }
-
         private void Validate(object sender, EventArgs e)
         {
             errorLabel.ForeColor = Color.Red;
@@ -77,26 +60,17 @@ namespace PresentationLayer
             }
         }
 
-        private void NewUser(object sender, EventArgs e)
+        private void PressEnter(object sender, KeyEventArgs e)
         {
-            /*if (buss.NewUser(textBox1.Text, textBox2.Text))
-            {
-                errorLabel.ForeColor = Color.FromArgb(76, 148, 144);
-                errorLabel.Text = "Usuario creado";
-            }
-            else
-            {
-                errorLabel.ForeColor = Color.Red;
-                errorLabel.Text = "Error al crear el usuario";
-            }*/
-        }
-
-        private void PressEnter(object sender, KeyPressEventArgs e)
-        {
-            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            if (e.KeyCode == Keys.Enter)
             {
                 Validate(sender, e);
             }
+        }
+
+        private void Exit(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

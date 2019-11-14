@@ -15,11 +15,11 @@ namespace EntityLayer
         public string imagen { get; set; }
         public string urlimagen { get; set; }
         public string especificaciones { get; set; }
-        public string tipoArticulo { get; set; }
+        public string tipoArticuloID { get; set; }
 
         public Articulo(string articuloID, string nombre, string pvp,
             string marcaID, string imagen, string urlimagen,
-            string especificaciones, string tipoArticulo)
+            string especificaciones, string tipoArticuloID)
         {
             this.articuloID = articuloID;
             this.nombre = nombre;
@@ -28,7 +28,7 @@ namespace EntityLayer
             this.imagen = imagen;
             this.urlimagen = urlimagen;
             this.especificaciones = especificaciones;
-            this.tipoArticulo = tipoArticulo;
+            this.tipoArticuloID = tipoArticuloID;
         }
     }
 }

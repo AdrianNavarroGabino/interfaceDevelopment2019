@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    class Objetivo
+    public class Objetivo
     {
         public string ObjetivoID { get; set; }
         public string tipo { get; set; }

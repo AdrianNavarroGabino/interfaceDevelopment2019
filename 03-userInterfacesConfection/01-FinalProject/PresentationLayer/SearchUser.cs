@@ -67,67 +67,12 @@ namespace PresentationLayer
         {
             DataView dataView = (DataView)dataGridView1.DataSource;
 
-            dataView.RowFilter = "";
+            dataView.RowFilter = "Name LIKE '%" + nameBox.Text + "%' AND " +
+                "ID LIKE '%" + idBox.Text + "%' AND " +
+                "Surname LIKE '%" + surnameBox.Text + "%' AND " +
+                "Mail LIKE '%" + mailBox.Text + "%'";
 
-            if (nameBox.Text != "Name")
-            {
-                dataView.RowFilter += "Name LIKE '%" + nameBox.Text + "%'";
-            }
-            if (idBox2.Text != "")
-            {
-                if (dataView.RowFilter.Length != 0)
-                {
-                    dataView.RowFilter += " AND ";
-                }
-                dataView.RowFilter += "ID LIKE '%" + idBox2.Text + "%'";
-            }
-            if (surnameBox.Text != "Surname")
-            {
-                if (dataView.RowFilter.Length != 0)
-                {
-                    dataView.RowFilter += " AND ";
-                }
-                dataView.RowFilter += "Surname LIKE '%" + surnameBox.Text + "%'";
-            }
-            if (mailBox.Text != "Mail")
-            {
-                if (dataView.RowFilter.Length != 0)
-                {
-                    dataView.RowFilter += " AND ";
-                }
-                dataView.RowFilter += "Mail LIKE '%" + mailBox.Text + "%'";
-            }
             dataGridView1.DataSource = dataView;
-        }
-
-        private void SetEmpty(object sender, EventArgs e)
-        {
-            Utils.SetEmpty(sender);
-        }
-
-        private void NameLeave(object sender, EventArgs e)
-        {
-            Utils.NameLeave(sender);
-        }
-
-        private void SurnameLeave(object sender, EventArgs e)
-        {
-            Utils.SurnameLeave(sender);
-        }
-
-        private void MailLeave(object sender, EventArgs e)
-        {
-            Utils.MailLeave(sender);
-        }
-
-        private void IdLostFocus(object sender, EventArgs e)
-        {
-            Utils.IdLostFocus(sender, idBox, idBox2);
-        }
-
-        private void IdEnter(object sender, EventArgs e)
-        {
-            Utils.IdEnter(idBox, idBox2);
         }
 
         private void GoToUserForm(object sender, EventArgs e)

@@ -50,82 +50,16 @@ namespace PresentationLayer
                 registerBtn.Text = "MODIFY";
                 selectedUser = Utils.SearchUserByIdCard(users, idCard);
                 FillFields(selectedUser);
-                bornBox.Text = bornBox.Text.Substring(6) + "-" +
-                    bornBox.Text.Substring(3, 2) + "-" + bornBox.Text.Substring(0, 2);
+                bornDate.Value = DateTime.ParseExact(bornDate.Value.ToString().Substring(0,10), "dd/MM/yyyy", null);
             }
 
             bornDate.MaxDate = DateTime.Now;
-        }
-
-        private void HidePassword(object sender, MouseEventArgs e)
-        {
-            ((TextBox)sender).PasswordChar = '•';
-        }
-
-        private void Hide(object sender, EventArgs e)
-        {
-
-        }
-
-        private void HidePassword(object sender, EventArgs e)
-        {
-            SetEmpty(sender, e);
-            ((TextBox)sender).PasswordChar = '•';
-        }
-
-        private void ShowPassword(object sender, EventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            if (tb.Text == "")
-            {
-                if(tb.Name == "passBox")
-                {
-                    tb.Text = "Password";
-                }
-                else if(tb.Name == "passAgainBox")
-                {
-                    tb.Text = "Password again";
-                }
-                tb.PasswordChar = '\0';
-            }
-        }
-
-        private void SetEmpty(object sender, EventArgs e)
-        {
-            Utils.SetEmpty(sender);
-        }
-
-        private void MailLeave(object sender, EventArgs e)
-        {
-            Utils.MailLeave(sender);
-        }
-
-        private void NameLeave(object sender, EventArgs e)
-        {
-            Utils.NameLeave(sender);
-        }
-
-        private void SurnameLeave(object sender, EventArgs e)
-        {
-            Utils.SurnameLeave(sender);
         }
 
         private void IDLeave(object sender, EventArgs e)
         {
             if (((TextBox)sender).Text == "")
                 ((TextBox)sender).Text = "ID";
-        }
-
-        private void PhoneLeave(object sender, EventArgs e)
-        {
-            if (((TextBox)sender).Text == "")
-                ((TextBox)sender).Text = "Phone";
-        }
-
-        private void AddressLeave(object sender, EventArgs e)
-        {
-            if (((TextBox)sender).Text == "")
-                ((TextBox)sender).Text = "Address";
         }
 
         private void TownLeave(object sender, EventArgs e)
@@ -146,11 +80,6 @@ namespace PresentationLayer
                 ((TextBox)sender).Text = "Born";
         }
 
-        private void ValidateSignUp(object sender, EventArgs e)
-        {
-
-        }
-
         private void FillTowns(object sender, EventArgs e)
         {
             townBox.Items.Clear();
@@ -165,61 +94,20 @@ namespace PresentationLayer
             }
         }
 
-        private void PostalCodeEnter(object sender, EventArgs e)
-        {
-            postalCodeBox.Visible = false;
-            postalCodeBox2.Visible = true;
-            postalCodeBox2.Focus();
-        }
-
-        private void PostalCodeLostFocus(object sender, EventArgs e)
-        {
-            if (((MaskedTextBox)sender).Text == "")
-            {
-                postalCodeBox2.Visible = false;
-                postalCodeBox.Visible = true;
-            }
-        }
-
-        private void IdEnter(object sender, EventArgs e)
-        {
-            Utils.IdEnter(idBox, idBox2);
-        }
-
-        private void BornEnter(object sender, EventArgs e)
-        {
-            bornBox.Visible = false;
-            bornDate.Visible = true;
-            bornDate.Select();
-            SendKeys.Send("%{DOWN}");
-        }
-
-        private void DateChange(object sender, EventArgs e)
-        {
-            bornDate.Visible = false;
-            bornBox.Visible = true;
-            bornBox.Text = bornDate.Value.ToString("yyyy-MM-dd");
-        }
-
         private void FillFields(Usuario user)
         {
             mailBox.Text = user.email;
             nameBox.Text = user.nombre;
             surnameBox.Text = user.apellidos;
-            passBox.PasswordChar = '•';
             passBox.Text = "--------";
-            passAgainBox.PasswordChar = '•';
             passAgainBox.Text = "--------";
-            Utils.IdEnter(idBox, idBox2);
-            idBox2.Text = user.dni;
+            idBox.Text = user.dni;
             phoneBox.Text = user.telefono;
             addressBox.Text = user.calle;
-            postalCodeBox.Visible = false;
-            postalCodeBox2.Visible = true;
             postalCodeBox2.Text = user.codpos;
             provinceBox.Text = GetProvinceById(user.provinciaID).nombre;
             townBox.Text = GetTown(user.provinciaID, user.puebloID).nombre;
-            bornBox.Text = user.nacido.Substring(0, 10);
+            bornDate.Text = user.nacido.Substring(0, 10);
         }
 
         private Localidad GetTown(String provinceId, String townId)
@@ -296,10 +184,10 @@ namespace PresentationLayer
             {
                 bool inserted = buss.InsertUser(
                     nextId, mailBox.Text, nameBox.Text,
-                    surnameBox.Text, passBox.Text, idBox2.Text, phoneBox.Text,
+                    surnameBox.Text, passBox.Text, idBox.Text, phoneBox.Text,
                     addressBox.Text, postalCodeBox2.Text, provinceId,
                     GetTownByName(townBox.SelectedText, provinceId).localidadID,
-                    bornBox.Text);
+                    bornDate.Text);
                 if (inserted)
                 {
                     nextId++;
@@ -314,10 +202,10 @@ namespace PresentationLayer
             {
                 bool modified = buss.ModifyUser(
                     selectedUser.usuarioID, mailBox.Text, nameBox.Text,
-                    surnameBox.Text, passBox.Text, idBox2.Text, phoneBox.Text,
+                    surnameBox.Text, passBox.Text, idBox.Text, phoneBox.Text,
                     addressBox.Text, postalCodeBox2.Text, provinceId,
                     GetTownByName(townBox.SelectedText, provinceId).localidadID,
-                    bornBox.Text);
+                    bornDate.Text);
 
                 if(modified)
                 {
@@ -394,35 +282,35 @@ namespace PresentationLayer
             int aux;
             bool wrong = false;
 
-            if (idBox2.Text.Replace("_", "").Length < 9)
+            if (idBox.Text.Replace("_", "").Length < 9)
             {
-                MessageBox.Show(idBox2.Text);
+                MessageBox.Show(idBox.Text);
                 validated = false;
-                errorProvider.SetError(idBox2, "ID Card cannot be empty");
+                errorProvider.SetError(idBox, "ID Card cannot be empty");
             }
-            else if ((idBox2.Text[0] >= 'A' && idBox2.Text[0] <= 'Z') ||
-                (idBox2.Text[0] >= 'a' && idBox2.Text[0] <= 'z'))
+            else if ((idBox.Text[0] >= 'A' && idBox.Text[0] <= 'Z') ||
+                (idBox.Text[0] >= 'a' && idBox.Text[0] <= 'z'))
             {
-                aux = Convert.ToInt32(idBox2.Text.Substring(1, 7));
-                if (idBox2.Text[0] == 'X' || idBox2.Text[0] == 'x')
+                aux = Convert.ToInt32(idBox.Text.Substring(1, 7));
+                if (idBox.Text[0] == 'X' || idBox.Text[0] == 'x')
                 {
-                    if (idBox2.Text[8] != idCardLetter[aux % 23])
+                    if (idBox.Text[8] != idCardLetter[aux % 23])
                     {
                         wrong = true;
                     }
                 }
-                else if (idBox2.Text[0] == 'Y' || idBox2.Text[0] == 'y')
+                else if (idBox.Text[0] == 'Y' || idBox.Text[0] == 'y')
                 {
                     aux += 10000000;
-                    if (idBox2.Text[8] != idCardLetter[aux % 23])
+                    if (idBox.Text[8] != idCardLetter[aux % 23])
                     {
                         wrong = true;
                     }
                 }
-                else if (idBox2.Text[0] == 'Z' || idBox2.Text[0] == 'z')
+                else if (idBox.Text[0] == 'Z' || idBox.Text[0] == 'z')
                 {
                     aux += 20000000;
-                    if (idBox2.Text[8] != idCardLetter[aux % 23])
+                    if (idBox.Text[8] != idCardLetter[aux % 23])
                     {
                         wrong = true;
                     }
@@ -434,8 +322,8 @@ namespace PresentationLayer
             }
             else
             {
-                aux = Convert.ToInt32(idBox2.Text.Substring(0, 8));
-                if (idBox2.Text[8] != idCardLetter[aux % 23])
+                aux = Convert.ToInt32(idBox.Text.Substring(0, 8));
+                if (idBox.Text[8] != idCardLetter[aux % 23])
                 {
                     wrong = true;
                 }
@@ -455,14 +343,6 @@ namespace PresentationLayer
                 errorProvider.SetError(townBox, "You must select a town");
                 validated = false;
             }
-        }
-
-        private void IdLostFocus(object sender, EventArgs e)
-        {
-            MessageBox.Show("IdLostFocus");
-            Utils.IdLostFocus(sender, idBox, idBox2);
-
-            ValidateId();
         }
     }
 }

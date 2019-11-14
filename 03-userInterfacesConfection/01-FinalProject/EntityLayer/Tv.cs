@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    class Tv
+    public class Tv
     {
         public string TvID { get; set; }
         public string panel { get; set; }
-        public int pantalla { get; set; }
+        public string pantalla { get; set; }
         public string resolucion { get; set; }
         public string hdreadyfullhd { get; set; }
-        public int tdt { get; set; }
+        public string tdt { get; set; }
 
-        public Tv(string tvID, string panel, int pantalla, string resolucion,
-            string hdreadyfullhd, int tdt)
+        public Tv(string tvID, string panel, string pantalla, string resolucion,
+            string hdreadyfullhd, string tdt)
         {
             TvID = tvID;
             this.panel = panel;

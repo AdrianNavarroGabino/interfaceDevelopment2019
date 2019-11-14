@@ -101,10 +101,39 @@ namespace BussinessLayer
             return dat.ReadProductTypes();
         }
 
-        // Creo un nuevo usuario
-        /*public bool NewUser(string usu, string pas)
+        public Articulo GetProducts(String idGet)
         {
-            return dat.NewUser(usu, pas);
-        }*/
+            return dat.ReadProduct(idGet);
+        }
+
+        public TipoArticulo GetType(String type)
+        {
+            return dat.ReadProductTypes(type);
+        }
+
+        public Tv GetTv(String id)
+        {
+            return dat.ReadTv(id);
+        }
+
+        public Memoria GetMemory(String id)
+        {
+            return dat.ReadMemory(id);
+        }
+
+        public Camara GetCamera(String id)
+        {
+            return dat.ReadCamera(id);
+        }
+
+        public Objetivo GetObjective(String id)
+        {
+            return dat.ReadObjective(id);
+        }
+
+        public bool ModifyProduct(string id, Articulo product)
+        {
+            return dat.ModifyProduct(id, product);
+        }
     }
 }

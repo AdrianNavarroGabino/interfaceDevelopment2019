@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    class Memoria
+    public class Memoria
     {
         public string MemoriaID { get; set; }
         public string tipo { get; set; }

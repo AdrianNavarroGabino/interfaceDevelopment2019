@@ -201,13 +201,155 @@ namespace DataLayer
             return productTypesList;
         }
 
-        /*public bool NewUser(string nom, string pas)
+        public Articulo ReadProduct(String idGet)
+        {
+            Articulo product = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response = client.GetAsync("api/Articulos/" + idGet).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    product = JsonConvert.DeserializeObject<Articulo>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return product;
+        }
+        
+        public TipoArticulo ReadProductTypes(String type)
+        {
+            TipoArticulo productType = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response = client.GetAsync("api/tipoArticulos/" + type).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    productType = JsonConvert.DeserializeObject<TipoArticulo>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return productType;
+        }
+
+        public Tv ReadTv(String id)
+        {
+            Tv tv = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response = client.GetAsync("api/Tvs/" + id).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    tv = JsonConvert.DeserializeObject<Tv>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return tv;
+        }
+
+        public Memoria ReadMemory(String id)
+        {
+            Memoria memory = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response = client.GetAsync("api/Memorias/" + id).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    memory = JsonConvert.DeserializeObject<Memoria>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return memory;
+        }
+
+        public Camara ReadCamera(String id)
+        {
+            Camara camera = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response = client.GetAsync("api/Camaras/" + id).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    camera = JsonConvert.DeserializeObject<Camara>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return camera;
+        }
+
+        public Objetivo ReadObjective(String id)
+        {
+            Objetivo objective = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response = client.GetAsync("api/Objetivos/" + id).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    objective = JsonConvert.DeserializeObject<Objetivo>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return objective;
+        }
+
+        public bool ModifyProduct(string id, Articulo product)
         {
             try
             {
-                Usuario usu = new Usuario(nom, pas);
-
-                HttpResponseMessage response = client.PostAsJsonAsync("api/articulos", usu).Result;
+                HttpResponseMessage response = client.PutAsJsonAsync("api/Articulos/" + id, product).Result;
 
                 if (response.IsSuccessStatusCode)
                     return true;
@@ -217,8 +359,9 @@ namespace DataLayer
             catch (Exception e)
             {
                 Console.WriteLine("Error " + e);
-                return false;
             }
-        }*/
+
+            return true;
+        }
     }
 }
