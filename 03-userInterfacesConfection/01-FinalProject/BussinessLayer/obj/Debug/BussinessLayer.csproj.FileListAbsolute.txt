@@ -121,9 +121,7 @@ C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.ReportVi
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.ReportViewer.Design.dll
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.SqlServer.Types.dll
-C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\System.Net.Http.Extensions.dll
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\System.Net.Http.Formatting.dll
-C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\System.Net.Http.Primitives.dll
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Newtonsoft.Json.dll
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
@@ -184,10 +182,7 @@ C:\Users\adrian\Desktop\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.csp
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.dll
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.pdb
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\dotnet-aspnet-codegenerator-design.exe
-C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.AspNetCore.Html.Abstractions.dll
-C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.AspNetCore.Razor.dll
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.AspNetCore.Razor.Language.dll
-C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.AspNetCore.Razor.Runtime.dll
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.CodeAnalysis.dll
@@ -219,10 +214,7 @@ C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\System.Text.Encodi
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\EntityLayer.dll.config
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\dotnet-aspnet-codegenerator-design.xml
-C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.AspNetCore.Html.Abstractions.xml
-C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.AspNetCore.Razor.xml
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.AspNetCore.Razor.Language.xml
-C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.AspNetCore.Razor.Runtime.xml
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.CodeAnalysis.pdb
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.CodeAnalysis.xml
 C:\Users\adrian\Desktop\FinalProject\BussinessLayer\bin\Debug\Microsoft.CodeAnalysis.CSharp.pdb

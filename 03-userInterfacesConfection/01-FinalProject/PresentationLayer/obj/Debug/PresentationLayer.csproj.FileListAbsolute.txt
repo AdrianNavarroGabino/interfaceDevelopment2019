@@ -150,9 +150,7 @@ C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\Microsoft.Repor
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\Microsoft.ReportViewer.Design.dll
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\Microsoft.SqlServer.Types.dll
-C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\System.Net.Http.Extensions.dll
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\System.Net.Http.Formatting.dll
-C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\System.Net.Http.Primitives.dll
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\DataLayer.dll
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll

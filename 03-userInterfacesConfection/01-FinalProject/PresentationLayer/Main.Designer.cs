@@ -145,7 +145,7 @@
             // 
             this.consultToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
             this.consultToolStripMenuItem.Name = "consultToolStripMenuItem";
-            this.consultToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.consultToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.consultToolStripMenuItem.Text = "Consult";
             this.consultToolStripMenuItem.Click += new System.EventHandler(this.ConsultProducts);
             // 
@@ -153,8 +153,9 @@
             // 
             this.modifyToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
             this.modifyToolStripMenuItem1.Name = "modifyToolStripMenuItem1";
-            this.modifyToolStripMenuItem1.Size = new System.Drawing.Size(141, 26);
+            this.modifyToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.modifyToolStripMenuItem1.Text = "Modify";
+            this.modifyToolStripMenuItem1.Click += new System.EventHandler(this.ModifyProducts);
             // 
             // ordersToolStripMenuItem
             // 

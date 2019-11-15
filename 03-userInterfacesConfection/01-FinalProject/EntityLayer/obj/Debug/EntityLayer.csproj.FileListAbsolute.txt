@@ -99,9 +99,6 @@ C:\Users\adrian\Desktop\FinalProject\EntityLayer\bin\Debug\Microsoft.ReportViewe
 C:\Users\adrian\Desktop\FinalProject\EntityLayer\bin\Debug\Microsoft.ReportViewer.Design.dll
 C:\Users\adrian\Desktop\FinalProject\EntityLayer\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\adrian\Desktop\FinalProject\EntityLayer\bin\Debug\Microsoft.SqlServer.Types.dll
-C:\Users\adrian\Desktop\FinalProject\EntityLayer\bin\Debug\System.Net.Http.Extensions.dll
-C:\Users\adrian\Desktop\FinalProject\EntityLayer\bin\Debug\System.Net.Http.Formatting.dll
-C:\Users\adrian\Desktop\FinalProject\EntityLayer\bin\Debug\System.Net.Http.Primitives.dll
 C:\Users\adrian\Desktop\FinalProject\EntityLayer\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
 C:\Users\adrian\Desktop\FinalProject\EntityLayer\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\adrian\Desktop\FinalProject\EntityLayer\bin\Debug\EnvDTE.dll

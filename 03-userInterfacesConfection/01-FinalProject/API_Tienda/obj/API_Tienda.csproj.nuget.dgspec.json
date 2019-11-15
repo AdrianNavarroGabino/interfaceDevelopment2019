@@ -73,10 +73,6 @@
             "MySql.Data.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.18, )"
-            },
-            "System.Net.Http.Formatting.Extension": {
-              "target": "Package",
-              "version": "[5.2.3, )"
             }
           },
           "imports": [

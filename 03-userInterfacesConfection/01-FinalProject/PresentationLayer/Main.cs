@@ -135,7 +135,24 @@ namespace PresentationLayer
             this.IsMdiContainer = false;
             this.IsMdiContainer = true;
 
-            productsForm = new Products(buss);
+            productsForm = new Products(buss, false);
+
+            productsForm.MdiParent = this;
+
+            productsForm.ControlBox = false;
+
+            productsForm.FormBorderStyle = FormBorderStyle.None;
+            productsForm.Show();
+        }
+
+        private void ModifyProducts(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            this.IsMdiContainer = false;
+            this.IsMdiContainer = true;
+
+            productsForm = new Products(buss, true);
 
             productsForm.MdiParent = this;
 

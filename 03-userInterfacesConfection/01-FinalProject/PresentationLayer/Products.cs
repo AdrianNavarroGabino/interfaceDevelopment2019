@@ -17,11 +17,13 @@ namespace PresentationLayer
         private Bussiness buss;
         private List<Articulo> products;
         private List<TipoArticulo> productTypes;
+        private bool modifyMode;
 
-        public Products(Bussiness buss)
+        public Products(Bussiness buss, bool modifyMode)
         {
             InitializeComponent();
             this.buss = buss;
+            this.modifyMode = modifyMode;
             products = buss.GetProducts();
             productTypes = buss.GetProductTypes();
             FillTable(products);
@@ -125,7 +127,8 @@ namespace PresentationLayer
                 case "Camara": FillCamera(product, typeTable); break;
                 case "Objetivo": FillObjective(product, typeTable); break;
             }
-            CreateModifyButton(product);
+            if(modifyMode)
+                CreateModifyButton(product);
         }
 
         private void FillTV(Articulo product, String typeTable)
@@ -192,7 +195,7 @@ namespace PresentationLayer
             textBox.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
             textBox.Size = new Size(150, 30);
             textBox.Text = tbValue;
-            if(name != "pvp")
+            if(!modifyMode || name != "pvp")
             {
                 textBox.ReadOnly = true;
             }
@@ -229,7 +232,10 @@ namespace PresentationLayer
                     product.articuloID, product.nombre, newPrice,
                     product.marcaID, product.imagen, product.urlimagen,
                     product.especificaciones, product.tipoArticuloID);
-                buss.ModifyProduct(product.articuloID, modifiedProduct);
+                if(buss.ModifyProduct(product.articuloID, modifiedProduct))
+                {
+                    dataGridView1.SelectedCells[1].Value = newPrice;
+                }
             }
             catch(Exception ex)
             {

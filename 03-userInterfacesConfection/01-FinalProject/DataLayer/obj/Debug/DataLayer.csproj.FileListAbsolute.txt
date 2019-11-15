@@ -298,4 +298,3 @@ C:\Users\adrian\Desktop\FinalProject\DataLayer\bin\Debug\System.Composition.Host
 C:\Users\adrian\Desktop\FinalProject\DataLayer\bin\Debug\System.Composition.Runtime.xml
 C:\Users\adrian\Desktop\FinalProject\DataLayer\bin\Debug\System.Composition.TypedParts.xml
 C:\Users\adrian\Desktop\FinalProject\DataLayer\bin\Debug\System.Text.Encoding.CodePages.xml
-C:\Users\adrian\Desktop\FinalProject\DataLayer\bin\Debug\System.Net.Http.Formatting.xml
