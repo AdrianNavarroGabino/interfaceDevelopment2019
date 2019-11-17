@@ -24,14 +24,14 @@ namespace PresentationLayer
         private const string passRegex =
             @"^(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d\s])[A-Za-z\d@$!%*?&]{4,}$";
 
-        Bussiness buss;
+        Business buss;
         List<Provincia> provinces;
         List<Localidad> towns;
         List<Usuario> users;
         private int nextId;
         private Usuario selectedUser;
 
-        public User(Bussiness buss, bool modify, string idCard)
+        public User(Business buss, bool modify, string idCard)
         {
             InitializeComponent();
             this.buss = buss;

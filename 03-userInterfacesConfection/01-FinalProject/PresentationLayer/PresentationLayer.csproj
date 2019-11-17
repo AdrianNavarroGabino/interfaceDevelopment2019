@@ -222,6 +222,12 @@
     <Compile Include="NewOrder.Designer.cs">
       <DependentUpon>NewOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderSummary.Designer.cs">
+      <DependentUpon>OrderSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Products.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewOrder.resx">
       <DependentUpon>NewOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderSummary.resx">
+      <DependentUpon>OrderSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
@@ -287,9 +296,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BussinessLayer\BussinessLayer.csproj">
+    <ProjectReference Include="..\BussinessLayer\BusinessLayer.csproj">
       <Project>{07f04954-c791-4a02-9f2a-dd4c1f20e6f6}</Project>
-      <Name>BussinessLayer</Name>
+      <Name>BusinessLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
       <Project>{449f17a0-9c47-4c04-b3bf-268f7d802c4d}</Project>

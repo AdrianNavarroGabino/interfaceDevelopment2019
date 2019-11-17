@@ -20,7 +20,7 @@ namespace PresentationLayer
             Application.SetCompatibleTextRenderingDefault(false);
             if (autologin)
             {
-                Application.Run(new Main("admin", new BussinessLayer.Bussiness()));
+                Application.Run(new Main("admin", new BussinessLayer.Business()));
             }
             else
             {

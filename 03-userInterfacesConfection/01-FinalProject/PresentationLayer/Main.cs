@@ -16,11 +16,12 @@ namespace PresentationLayer
         private User userForm;
         private SearchUser searchUser;
         private Products productsForm;
+        private NewOrder newOrder;
         private String user;
-        private Bussiness buss;
+        private Business buss;
         private int time;
 
-        public Main(String user, Bussiness buss)
+        public Main(String user, Business buss)
         {
             InitializeComponent();
             this.user = user;
@@ -160,6 +161,23 @@ namespace PresentationLayer
 
             productsForm.FormBorderStyle = FormBorderStyle.None;
             productsForm.Show();
+        }
+
+        private void NewOrder(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            this.IsMdiContainer = false;
+            this.IsMdiContainer = true;
+
+            newOrder = new NewOrder(buss);
+
+            newOrder.MdiParent = this;
+
+            newOrder.ControlBox = false;
+
+            newOrder.FormBorderStyle = FormBorderStyle.None;
+            newOrder.Show();
         }
     }
 }

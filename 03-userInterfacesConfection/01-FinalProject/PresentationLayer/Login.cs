@@ -15,12 +15,12 @@ namespace PresentationLayer
     public partial class Login : Form
     {
         private static int attempts;
-        private Bussiness buss;
+        private Business buss;
         private Main main;
 
         public Login()
         {
-            buss = new Bussiness();
+            buss = new Business();
             InitializeComponent();
             attempts = 3;
         }

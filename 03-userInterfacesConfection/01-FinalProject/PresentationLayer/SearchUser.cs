@@ -14,11 +14,11 @@ namespace PresentationLayer
 {
     public partial class SearchUser : Form
     {
-        private Bussiness buss;
+        private Business buss;
         private List<Usuario> users;
         private bool delete;
 
-        public SearchUser(Bussiness buss, bool delete = false)
+        public SearchUser(Business buss, bool delete = false)
         {
             InitializeComponent();
             this.buss = buss;
@@ -45,14 +45,14 @@ namespace PresentationLayer
             foreach (Usuario user in users)
             {
                 DataRow userRow = dataTable.NewRow();
-                
+
                 userRow["Name"] = user.nombre;
                 userRow["Surname"] = user.apellidos;
                 userRow["ID"] = user.dni;
                 userRow["Mail"] = user.email;
                 dataTable.Rows.Add(userRow);
             }
-            
+
             DataView dataView = dataTable.DefaultView;
 
             dataGridView1.DataSource = dataView;

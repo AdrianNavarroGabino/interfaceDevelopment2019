@@ -14,12 +14,12 @@ namespace PresentationLayer
 {
     public partial class Products : Form
     {
-        private Bussiness buss;
+        private Business buss;
         private List<Articulo> products;
         private List<TipoArticulo> productTypes;
         private bool modifyMode;
 
-        public Products(Bussiness buss, bool modifyMode)
+        public Products(Business buss, bool modifyMode)
         {
             InitializeComponent();
             this.buss = buss;
@@ -33,11 +33,6 @@ namespace PresentationLayer
             {
                 typeBox.Items.Add(t.Descripcion);
             }
-        }
-
-        public List<TipoArticulo> GetProductTypes()
-        {
-            return buss.GetProductTypes();
         }
 
         public string GetTypeDescription(String type)
@@ -110,7 +105,7 @@ namespace PresentationLayer
         {
             string idGet = dataGridView1.SelectedCells[4].Value.ToString();
 
-            Articulo product = buss.GetProducts(idGet);
+            Articulo product = buss.GetProduct(idGet);
             String typeGet = buss.GetType(product.tipoArticuloID).Descripcion;
 
             CreateProductControls(product, typeGet);

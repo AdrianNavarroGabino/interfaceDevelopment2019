@@ -363,5 +363,29 @@ namespace DataLayer
 
             return true;
         }
+
+        public Usuario ReadUser(String id)
+        {
+            Usuario user = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response = client.GetAsync("api/usuarios/" + id).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    user = JsonConvert.DeserializeObject<Usuario>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return user;
+        }
     }
 }
