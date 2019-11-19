@@ -347,3 +347,4 @@ C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\System.Composit
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\System.Text.Encoding.CodePages.xml
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.NewOrder.resources
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.OrderSummary.resources
+C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.SearchOrder.resources

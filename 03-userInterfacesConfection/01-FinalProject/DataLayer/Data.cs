@@ -115,7 +115,7 @@ namespace DataLayer
             return true;
         }
 
-        public bool DeleteUser(int id)
+        public bool DeleteUser(string id)
         {
             try
             {
@@ -134,7 +134,7 @@ namespace DataLayer
             return true;
         }
 
-        public bool ModifyUser(int id, Usuario user)
+        public bool ModifyUser(string id, Usuario user)
         {
             try
             {
@@ -371,7 +371,7 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/usuarios/" + id).Result;
+                HttpResponseMessage response = client.GetAsync("api/Usuarios/" + id).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -386,6 +386,68 @@ namespace DataLayer
             }
 
             return user;
+        }
+
+        public bool InsertOrderRow(Linped lp)
+        {
+            try
+            {
+                HttpResponseMessage response = client.PostAsJsonAsync("api/Linped", lp).Result;
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return true;
+        }
+
+        public List<Pedido> ReadOrders()
+        {
+            List<Pedido> ordersList = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response = client.GetAsync("api/Pedidos").Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    ordersList = JsonConvert.DeserializeObject<List<Pedido>>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return ordersList;
+        }
+
+        public bool InsertOrder(Pedido order)
+        {
+            try
+            {
+                HttpResponseMessage response = client.PostAsJsonAsync("api/Pedidos", order).Result;
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return true;
         }
     }
 }

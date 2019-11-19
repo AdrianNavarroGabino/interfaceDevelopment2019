@@ -42,7 +42,6 @@
             this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultationAndModificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.billToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -161,8 +160,7 @@
             // 
             this.ordersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
-            this.consultationAndModificationToolStripMenuItem,
-            this.removeToolStripMenuItem1});
+            this.consultationAndModificationToolStripMenuItem});
             this.ordersToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
             this.ordersToolStripMenuItem.Name = "ordersToolStripMenuItem";
             this.ordersToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
@@ -172,7 +170,7 @@
             // 
             this.newToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(293, 26);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.NewOrder);
             // 
@@ -180,15 +178,9 @@
             // 
             this.consultationAndModificationToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
             this.consultationAndModificationToolStripMenuItem.Name = "consultationAndModificationToolStripMenuItem";
-            this.consultationAndModificationToolStripMenuItem.Size = new System.Drawing.Size(293, 26);
-            this.consultationAndModificationToolStripMenuItem.Text = "Consultation and modification";
-            // 
-            // removeToolStripMenuItem1
-            // 
-            this.removeToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
-            this.removeToolStripMenuItem1.Name = "removeToolStripMenuItem1";
-            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(293, 26);
-            this.removeToolStripMenuItem1.Text = "Remove";
+            this.consultationAndModificationToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.consultationAndModificationToolStripMenuItem.Text = "Modification";
+            this.consultationAndModificationToolStripMenuItem.Click += new System.EventHandler(this.ModifyOrder);
             // 
             // statisticsToolStripMenuItem
             // 
@@ -343,7 +335,6 @@
         private System.Windows.Forms.ToolStripMenuItem ordersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultationAndModificationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem billToolStripMenuItem;

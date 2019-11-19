@@ -17,6 +17,7 @@ namespace PresentationLayer
         private SearchUser searchUser;
         private Products productsForm;
         private NewOrder newOrder;
+        private SearchOrder searchOrder;
         private String user;
         private Business buss;
         private int time;
@@ -163,7 +164,7 @@ namespace PresentationLayer
             productsForm.Show();
         }
 
-        private void NewOrder(object sender, EventArgs e)
+        public void NewOrder(object sender, EventArgs e)
         {
             CloseForms();
 
@@ -178,6 +179,23 @@ namespace PresentationLayer
 
             newOrder.FormBorderStyle = FormBorderStyle.None;
             newOrder.Show();
+        }
+
+        private void ModifyOrder(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            this.IsMdiContainer = false;
+            this.IsMdiContainer = true;
+
+            searchOrder = new SearchOrder(buss);
+
+            searchOrder.MdiParent = this;
+
+            searchOrder.ControlBox = false;
+
+            searchOrder.FormBorderStyle = FormBorderStyle.None;
+            searchOrder.Show();
         }
     }
 }

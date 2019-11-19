@@ -183,7 +183,7 @@ namespace PresentationLayer
             if (registerBtn.Text == "REGISTER")
             {
                 bool inserted = buss.InsertUser(
-                    nextId, mailBox.Text, nameBox.Text,
+                    nextId.ToString(), mailBox.Text, nameBox.Text,
                     surnameBox.Text, passBox.Text, idBox.Text, phoneBox.Text,
                     addressBox.Text, postalCodeBox2.Text, provinceId,
                     GetTownByName(townBox.SelectedText, provinceId).localidadID,
@@ -224,8 +224,8 @@ namespace PresentationLayer
 
             foreach(Usuario u in users)
             {
-                auxId = u.usuarioID > auxId ?
-                    u.usuarioID : auxId;
+                auxId = Convert.ToInt32(u.usuarioID) > auxId ?
+                    Convert.ToInt32(u.usuarioID) : auxId;
             }
 
             nextId = auxId + 1;

@@ -23,6 +23,7 @@ namespace PresentationLayer
         private SortedList<string, int> selectedProducts;
         private string selectedProductId;
         private bool userIsSelected;
+        private OrderSummary orderSummary;
 
         public NewOrder(Business buss)
         {
@@ -68,7 +69,7 @@ namespace PresentationLayer
                 userRow["Name"] = user.nombre;
                 userRow["Surname"] = user.apellidos;
                 userRow["ID"] = user.dni;
-                userRow["articuloID"] = user.dni;
+                userRow["articuloID"] = user.usuarioID;
                 dataTable.Rows.Add(userRow);
             }
 
@@ -198,7 +199,12 @@ namespace PresentationLayer
         {
             if(userIsSelected)
             {
-
+                orderSummary = new OrderSummary(buss, selectedUser.usuarioID, selectedProducts);
+                orderSummary.MdiParent = this.ParentForm;
+                orderSummary.StartPosition = FormStartPosition.Manual;
+                orderSummary.Location = new Point(0, 0);
+                this.Hide();
+                orderSummary.Show();
             }
             else
             {

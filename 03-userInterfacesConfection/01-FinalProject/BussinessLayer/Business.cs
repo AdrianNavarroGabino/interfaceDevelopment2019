@@ -66,7 +66,7 @@ namespace BussinessLayer
             return dat.ReadUsers();
         }
 
-        public bool InsertUser(int id, string mail, string name,
+        public bool InsertUser(string id, string mail, string name,
             string surname, string password, string idCard, string phone,
             string address, string postalCode, string provinceId,
             string townId, string birthdate)
@@ -76,12 +76,12 @@ namespace BussinessLayer
                 provinceId, birthdate));
         }
 
-        public bool DeleteUser(int id)
+        public bool DeleteUser(string id)
         {
             return dat.DeleteUser(id);
         }
 
-        public bool ModifyUser(int id, string mail, string name,
+        public bool ModifyUser(string id, string mail, string name,
             string surname, string password, string idCard, string phone,
             string address, string postalCode, string provinceId,
             string townId, string birthdate)
@@ -139,6 +139,26 @@ namespace BussinessLayer
         public Usuario GetUser(String id)
         {
             return dat.ReadUser(id);
+        }
+
+        public String CalculatePrice(double finalPrice)
+        {
+            return (finalPrice * 100 / 121).ToString("#.##");
+        }
+
+        public bool InsertOrderRow(Linped lp)
+        {
+            return dat.InsertOrderRow(lp);
+        }
+
+        public List<Pedido> GetOrders()
+        {
+            return dat.ReadOrders();
+        }
+
+        public bool InsertOrder(Pedido order)
+        {
+            return dat.InsertOrder(order);
         }
     }
 }

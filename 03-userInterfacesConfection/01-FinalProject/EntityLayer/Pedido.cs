@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    class Pedido
+    public class Pedido
     {
-        public long PedidoID { get; set; }
-        public long usuarioID { get; set; }
+        public string PedidoID { get; set; }
+        public string usuarioID { get; set; }
         public string fecha { get; set; }
 
-        public Pedido(long pedidoID, long usuarioID, string fecha)
+        public Pedido(string pedidoID, string usuarioID, string fecha)
         {
             PedidoID = pedidoID;
             this.usuarioID = usuarioID;

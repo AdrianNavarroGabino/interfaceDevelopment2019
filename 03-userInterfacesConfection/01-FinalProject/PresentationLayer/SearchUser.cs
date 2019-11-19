@@ -108,7 +108,7 @@ namespace PresentationLayer
             }
         }
 
-        private int GetUserId(String idCard)
+        private string GetUserId(String idCard)
         {
             foreach(Usuario u in users)
             {
@@ -118,7 +118,7 @@ namespace PresentationLayer
                 }
             }
 
-            return -1;
+            return null;
         }
     }
 }
