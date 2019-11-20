@@ -18,6 +18,7 @@ namespace PresentationLayer
         private Products productsForm;
         private NewOrder newOrder;
         private SearchOrder searchOrder;
+        private Statistics statistics;
         private String user;
         private Business buss;
         private int time;
@@ -196,6 +197,23 @@ namespace PresentationLayer
 
             searchOrder.FormBorderStyle = FormBorderStyle.None;
             searchOrder.Show();
+        }
+
+        private void ShowStatistics(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            this.IsMdiContainer = false;
+            this.IsMdiContainer = true;
+
+            statistics = new Statistics(buss);
+
+            statistics.MdiParent = this;
+
+            statistics.ControlBox = false;
+
+            statistics.FormBorderStyle = FormBorderStyle.None;
+            statistics.Show();
         }
     }
 }

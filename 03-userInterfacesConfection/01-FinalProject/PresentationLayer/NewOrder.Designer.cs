@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.productsLbl = new System.Windows.Forms.Label();
+            this.titleLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.surnameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,17 +55,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
             this.SuspendLayout();
             // 
-            // productsLbl
+            // titleLbl
             // 
-            this.productsLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.productsLbl.AutoSize = true;
-            this.productsLbl.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productsLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.productsLbl.Location = new System.Drawing.Point(332, 9);
-            this.productsLbl.Name = "productsLbl";
-            this.productsLbl.Size = new System.Drawing.Size(325, 70);
-            this.productsLbl.TabIndex = 4;
-            this.productsLbl.Text = "New order";
+            this.titleLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.titleLbl.AutoSize = true;
+            this.titleLbl.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.titleLbl.Location = new System.Drawing.Point(332, 9);
+            this.titleLbl.Name = "titleLbl";
+            this.titleLbl.Size = new System.Drawing.Size(325, 70);
+            this.titleLbl.TabIndex = 4;
+            this.titleLbl.Text = "New order";
             // 
             // label3
             // 
@@ -367,7 +367,7 @@
             this.Controls.Add(this.surnameBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.userNameBox);
-            this.Controls.Add(this.productsLbl);
+            this.Controls.Add(this.titleLbl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NewOrder";
             this.Text = "NewOrder";
@@ -381,7 +381,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label productsLbl;
+        private System.Windows.Forms.Label titleLbl;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox surnameBox;
         private System.Windows.Forms.Label label2;

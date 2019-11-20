@@ -16,6 +16,8 @@ namespace PresentationLayer
     {
         private Business buss;
         private List<Pedido> orders;
+        private NewOrder newOrder;
+
         public SearchOrder(Business buss)
         {
             InitializeComponent();
@@ -23,7 +25,6 @@ namespace PresentationLayer
             orders = buss.GetOrders();
             FillTable();
             orderDate.MaxDate = DateTime.Now;
-            orderDate.Value = DateTime.Now;
             orderDate.CustomFormat = " ";
         }
 
@@ -34,7 +35,8 @@ namespace PresentationLayer
             dataTable.Columns.Add("Surname");
             dataTable.Columns.Add("ID Card");
             dataTable.Columns.Add("Date");
-            dataTable.Columns.Add("ID");
+            dataTable.Columns.Add("IDProduct");
+            dataTable.Columns.Add("IDUser");
 
             foreach (Pedido order in orders)
             {
@@ -46,14 +48,16 @@ namespace PresentationLayer
                 productRow["Surname"] = user.apellidos;
                 productRow["ID Card"] = user.dni;
                 productRow["Date"] = order.fecha;
-                productRow["ID"] = order.PedidoID;
+                productRow["IDProduct"] = order.PedidoID;
+                productRow["IDUser"] = user.usuarioID;
                 dataTable.Rows.Add(productRow);
             }
 
             DataView dataView = dataTable.DefaultView;
 
             dataGridViewOrders.DataSource = dataView;
-            dataGridViewOrders.Columns["ID"].Visible = false;
+            dataGridViewOrders.Columns["IDProduct"].Visible = false;
+            dataGridViewOrders.Columns["IDUser"].Visible = false;
         }
 
         private void FilterName(object sender, KeyEventArgs e)
@@ -73,10 +77,37 @@ namespace PresentationLayer
 
             dataView.RowFilter = "Name LIKE '%" + nameBox.Text + "%'";
 
-            if(orderDate.Value.ToString() != " ")
+            if(orderDate.CustomFormat != " ")
                 dataView.RowFilter += " AND Date LIKE '" + orderDate.Value.ToString("dd/MM/yyyy") + "%'";
 
             dataGridViewOrders.DataSource = dataView;
+        }
+
+        private void Modify(object sender, EventArgs e)
+        {
+            SortedList<string, int> orderRows = new SortedList<string, int>();
+
+            foreach(Linped lp in buss.GetLinpeds())
+            {
+                if(lp.PedidoID == dataGridViewOrders.SelectedCells[4].Value.ToString())
+                {
+                    orderRows.Add(lp.articuloID, Convert.ToInt32(lp.cantidad));
+                }
+            }
+
+            newOrder = new NewOrder(buss, orderRows, dataGridViewOrders.SelectedCells[5].Value.ToString(), dataGridViewOrders.SelectedCells[4].Value.ToString());
+            newOrder.MdiParent = this.ParentForm;
+            newOrder.StartPosition = FormStartPosition.Manual;
+            newOrder.Location = new Point(0, 0);
+            this.Hide();
+            newOrder.Show();
+        }
+
+        private void ResetFields(object sender, EventArgs e)
+        {
+            nameBox.Text = "";
+            orderDate.CustomFormat = " ";
+            Filter();
         }
     }
 }

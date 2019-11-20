@@ -170,7 +170,7 @@
             // 
             this.newToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.NewOrder);
             // 
@@ -178,7 +178,7 @@
             // 
             this.consultationAndModificationToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
             this.consultationAndModificationToolStripMenuItem.Name = "consultationAndModificationToolStripMenuItem";
-            this.consultationAndModificationToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.consultationAndModificationToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
             this.consultationAndModificationToolStripMenuItem.Text = "Modification";
             this.consultationAndModificationToolStripMenuItem.Click += new System.EventHandler(this.ModifyOrder);
             // 
@@ -188,6 +188,7 @@
             this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
             this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.statisticsToolStripMenuItem.Text = "Statistics";
+            this.statisticsToolStripMenuItem.Click += new System.EventHandler(this.ShowStatistics);
             // 
             // reportsToolStripMenuItem
             // 

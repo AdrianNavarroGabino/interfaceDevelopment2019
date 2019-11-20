@@ -160,5 +160,10 @@ namespace BussinessLayer
         {
             return dat.InsertOrder(order);
         }
+
+        public List<Linped> GetLinpeds()
+        {
+            return dat.ReadLinpeds();
+        }
     }
 }

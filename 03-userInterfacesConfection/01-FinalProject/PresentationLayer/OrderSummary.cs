@@ -21,9 +21,11 @@ namespace PresentationLayer
         private double finalPrice;
         private List<Pedido> currentOrders;
         private long orderPK;
+        private bool modify;
+        private string oldPK;
 
         public OrderSummary(Business buss, string userID,
-            SortedList<string, int> orderedProducts)
+            SortedList<string, int> orderedProducts, bool modify = false, string oldPK = null)
         {
             InitializeComponent();
             this.buss = buss;
@@ -36,6 +38,13 @@ namespace PresentationLayer
             noIVALbl.Text = buss.CalculatePrice(finalPrice) + "€";
             currentOrders = buss.GetOrders();
             orderPK = Convert.ToInt64(currentOrders[currentOrders.Count - 1].PedidoID);
+            this.modify = modify;
+
+            if(modify)
+            {
+                orderBtn.Text = "Modify";
+                this.oldPK = oldPK;
+            }
         }
 
         public void FillTable()
@@ -73,18 +82,25 @@ namespace PresentationLayer
 
         private void Order(object sender, EventArgs e)
         {
-            int affectedRows = 0;
             orderPK++;
+            string pkAux = orderPK.ToString();
+            if (modify)
+            {
+                pkAux = oldPK;
+            }
+
+            int affectedRows = 0;
+            
             bool orderInserted = 
                 buss.InsertOrder(new Pedido(
-                    orderPK.ToString(), userID,
+                    pkAux, userID,
                     DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
             int row = 1;
 
             foreach (KeyValuePair<string, int> kvp in orderedProducts)
             {
                 bool rowInserted = 
-                    buss.InsertOrderRow(new Linped(orderPK.ToString(),
+                    buss.InsertOrderRow(new Linped(pkAux,
                     row.ToString(), kvp.Key, (Convert.ToDouble(
                         buss.GetProduct(kvp.Key).pvp) * kvp.Value).ToString(),
                     kvp.Value.ToString()));

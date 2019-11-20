@@ -24,8 +24,10 @@ namespace PresentationLayer
         private string selectedProductId;
         private bool userIsSelected;
         private OrderSummary orderSummary;
+        private string userId;
+        private string orderPK;
 
-        public NewOrder(Business buss)
+        public NewOrder(Business buss, SortedList<string, int> selectedProducts = null, string userId = null, string orderPK = null)
         {
             InitializeComponent();
             this.buss = buss;
@@ -42,16 +44,30 @@ namespace PresentationLayer
                 typeBox.Items.Add(t.Descripcion);
             }
 
-            selectedProducts = new SortedList<string, int>();
+            if (selectedProducts == null)
+            {
+                this.selectedProducts = new SortedList<string, int>();
+                orderBtn.Visible = false;
+                userIsSelected = false;
+            }
+            else
+            {
+                this.selectedProducts = selectedProducts;
+                orderBtn.Visible = true;
+                userIsSelected = true;
+                this.userId = userId;
+                dataGridViewUsers.ClearSelection();
+                dataGridViewUsers.Enabled = false;
+                orderBtn.Text = "Modify";
+                titleLbl.Text = "Modify order";
+                this.orderPK = orderPK;
+            }
             addBtn.Visible = false;
             removeBtn.Visible = false;
             chosenProductBox.Visible = false;
             chosenProductLbl.Visible = false;
             amountBox.Visible = false;
             amountLbl.Visible = false;
-
-            orderBtn.Visible = false;
-            userIsSelected = false;
         }
 
         public void FillUsersTable(List<Usuario> users)
@@ -197,18 +213,30 @@ namespace PresentationLayer
 
         private void Order(object sender, EventArgs e)
         {
-            if(userIsSelected)
+            if (titleLbl.Text == "New order")
             {
-                orderSummary = new OrderSummary(buss, selectedUser.usuarioID, selectedProducts);
+                if (userIsSelected)
+                {
+                    orderSummary = new OrderSummary(buss, selectedUser.usuarioID, selectedProducts, true, orderPK);
+                    orderSummary.MdiParent = this.ParentForm;
+                    orderSummary.StartPosition = FormStartPosition.Manual;
+                    orderSummary.Location = new Point(0, 0);
+                    this.Hide();
+                    orderSummary.Show();
+                }
+                else
+                {
+                    MessageBox.Show("You must select the user to order");
+                }
+            }
+            else
+            {
+                orderSummary = new OrderSummary(buss, userId, selectedProducts, true);
                 orderSummary.MdiParent = this.ParentForm;
                 orderSummary.StartPosition = FormStartPosition.Manual;
                 orderSummary.Location = new Point(0, 0);
                 this.Hide();
                 orderSummary.Show();
-            }
-            else
-            {
-                MessageBox.Show("You must select the user to order");
             }
         }
 

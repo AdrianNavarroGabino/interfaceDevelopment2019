@@ -348,3 +348,4 @@ C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\System.Text.Enc
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.NewOrder.resources
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.OrderSummary.resources
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.SearchOrder.resources
+C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Statistics.resources

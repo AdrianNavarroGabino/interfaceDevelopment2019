@@ -449,5 +449,29 @@ namespace DataLayer
 
             return true;
         }
+
+        public List<Linped> ReadLinpeds()
+        {
+            List<Linped> orderRows = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response = client.GetAsync("api/Linped").Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    orderRows = JsonConvert.DeserializeObject<List<Linped>>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return orderRows;
+        }
     }
 }
