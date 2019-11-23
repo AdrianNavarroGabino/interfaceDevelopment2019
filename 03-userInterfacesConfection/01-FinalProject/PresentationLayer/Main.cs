@@ -21,6 +21,7 @@ namespace PresentationLayer
         private String user;
         private Business buss;
         private int time;
+        private bool hide;
 
         public Main(String user, Business buss)
         {
@@ -32,6 +33,7 @@ namespace PresentationLayer
             time = 0;
             timerLbl.Text = (time / 60).ToString("00") + ":" +
                 (time % 60).ToString("00");
+            hide = false;
         }
 
         private void CloseForms()
@@ -266,6 +268,29 @@ namespace PresentationLayer
         {
             about = new About(this);
             about.Show();
+        }
+
+        private void Restore(object sender, MouseEventArgs e)
+        {
+            /*if(this.WindowState == FormWindowState.Minimized)
+            {
+                //this.WindowState = FormWindowState.Normal;
+                this.Hide();
+            }
+            else if (this.WindowState == FormWindowState.Normal)
+            {
+                //this.WindowState = FormWindowState.Minimized;
+                this.Hide();
+            }*/
+            if(hide)
+            {
+                this.Show();
+            }
+            else
+            {
+                this.Hide();
+            }
+            hide = !hide;
         }
     }
 }

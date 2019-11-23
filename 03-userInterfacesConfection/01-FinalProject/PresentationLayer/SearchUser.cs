@@ -82,26 +82,44 @@ namespace PresentationLayer
 
         private void DeleteUser(object sender, DataGridViewCellEventArgs e)
         {
-            if(delete)
+            main.SetStatus("Status");
+            if (delete)
             {
-                var confirmResult = MessageBox.Show("Are you sure to delete " + 
-                    dataGridView1.SelectedCells[0].Value.ToString() + " " +
-                    dataGridView1.SelectedCells[1].Value.ToString() + "?",
-                                     "Delete user",
-                                     MessageBoxButtons.YesNo);
-                if (confirmResult == DialogResult.Yes)
+                List<Pedido> orders = buss.GetOrders();
+                bool canDelete = true;
+                foreach(Pedido o in orders)
                 {
-                    if(buss.DeleteUser(
-                        dataGridView1.SelectedCells[4].Value.ToString()))
+                    if(o.usuarioID == dataGridView1.SelectedCells[4].Value.ToString())
                     {
-                        users = buss.GetUsers();
-                        FillTable(users);
-                        main.SetStatus("User removed");
+                        canDelete = false;
+                        break;
                     }
-                    else
+                }
+                if (canDelete)
+                {
+                    var confirmResult = MessageBox.Show("Are you sure to delete " +
+                        dataGridView1.SelectedCells[0].Value.ToString() + " " +
+                        dataGridView1.SelectedCells[1].Value.ToString() + "?",
+                                         "Delete user",
+                                         MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
                     {
-                        main.SetStatus("Something went wrong", true);
+                        if (buss.DeleteUser(
+                            dataGridView1.SelectedCells[4].Value.ToString()))
+                        {
+                            users = buss.GetUsers();
+                            FillTable(users);
+                            main.SetStatus("User removed");
+                        }
+                        else
+                        {
+                            main.SetStatus("Something went wrong", true);
+                        }
                     }
+                }
+                else
+                {
+                    main.SetStatus("This user has orders", true);
                 }
             }
         }

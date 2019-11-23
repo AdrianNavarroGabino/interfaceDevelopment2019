@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿// Adrián Navarro Gabino
+
+using System;
 using System.Windows.Forms;
 
 namespace PresentationLayer
 {
     static class Program
     {
-        static bool autologin = true;
-
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
@@ -18,14 +15,7 @@ namespace PresentationLayer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (autologin)
-            {
-                Application.Run(new Main("admin", new BussinessLayer.Business()));
-            }
-            else
-            {
-                Application.Run(new Login());
-            }
+            Application.Run(new Login());
         }
     }
 }

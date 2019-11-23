@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// Adrián Navarro Gabino
 
 namespace EntityLayer
 {
-    class Ptienea
+    public class Ptienea
     {
         public string pack { get; set; }
         public string articulo { get; set; }

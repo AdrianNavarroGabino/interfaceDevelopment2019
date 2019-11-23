@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EntityLayer;
+﻿// Adrián Navarro Gabino
 
+using System;
+using System.Collections.Generic;
+using EntityLayer;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
@@ -527,6 +525,25 @@ namespace DataLayer
             try
             {
                 HttpResponseMessage response = client.DeleteAsync("api/Linped/" + order + ":" + row).Result;
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return true;
+        }
+
+        public bool DeleteOrder(string orderPK)
+        {
+            try
+            {
+                HttpResponseMessage response = client.DeleteAsync("api/Pedidos/" + orderPK).Result;
 
                 if (response.IsSuccessStatusCode)
                     return true;

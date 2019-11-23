@@ -115,7 +115,7 @@ namespace PresentationLayer
             }
             else
             {
-                orderBill = new Bill(buss, new Pedido(dataGridViewOrders.SelectedCells[4].Value.ToString(),
+                orderBill = new Bill(main, buss, new Pedido(dataGridViewOrders.SelectedCells[4].Value.ToString(),
                     dataGridViewOrders.SelectedCells[5].Value.ToString(), dataGridViewOrders.SelectedCells[3].Value.ToString()));
                 orderBill.MdiParent = this.ParentForm;
                 orderBill.StartPosition = FormStartPosition.Manual;

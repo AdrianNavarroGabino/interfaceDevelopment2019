@@ -54,6 +54,8 @@ namespace PresentationLayer
                 bornDate.Value = DateTime.ParseExact(
                     bornDate.Value.ToString().Substring(0,10),
                     "dd/MM/yyyy", null);
+                passBox.ReadOnly = true;
+                passAgainBox.ReadOnly = true;
             }
 
             bornDate.MaxDate = DateTime.Now;
@@ -170,12 +172,20 @@ namespace PresentationLayer
             }
             else if(registerBtn.Text == "MODIFY")
             {
-                bool modified = buss.ModifyUser(
-                    selectedUser.usuarioID, mailBox.Text, nameBox.Text,
-                    surnameBox.Text, passBox.Text, idBox.Text, phoneBox.Text,
-                    addressBox.Text, postalCodeBox2.Text, provinceId,
-                    GetTownByName(townBox.SelectedItem.ToString(), provinceId).localidadID,
-                    bornDate.Text);
+                selectedUser.email = mailBox.Text;
+                selectedUser.nombre = nameBox.Text;
+                selectedUser.apellidos = surnameBox.Text;
+                selectedUser.dni = idBox.Text;
+                selectedUser.telefono = phoneBox.Text;
+                selectedUser.calle = addressBox.Text;
+                selectedUser.codpos = postalCodeBox2.Text;
+                selectedUser.provinciaID = provinceId;
+                selectedUser.puebloID =GetTownByName(
+                    townBox.SelectedItem.ToString(),
+                    provinceId).localidadID;
+                selectedUser.nacido = bornDate.Text;
+
+                bool modified = buss.ModifyUser(selectedUser);
 
                 if(modified)
                 {

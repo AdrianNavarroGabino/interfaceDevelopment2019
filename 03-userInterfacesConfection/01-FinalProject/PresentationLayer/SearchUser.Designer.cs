@@ -172,7 +172,7 @@
             this.idBox.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.idBox.Name = "idBox";
             this.idBox.Size = new System.Drawing.Size(284, 34);
-            this.idBox.TabIndex = 32;
+            this.idBox.TabIndex = 29;
             this.idBox.UseWaitCursor = true;
             // 
             // SearchUser

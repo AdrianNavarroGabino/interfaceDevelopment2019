@@ -88,7 +88,7 @@
             this.surnameBox.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.surnameBox.Name = "surnameBox";
             this.surnameBox.Size = new System.Drawing.Size(200, 26);
-            this.surnameBox.TabIndex = 36;
+            this.surnameBox.TabIndex = 17;
             this.surnameBox.UseWaitCursor = true;
             this.surnameBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FilterUser);
             // 
@@ -113,7 +113,7 @@
             this.userNameBox.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.userNameBox.Name = "userNameBox";
             this.userNameBox.Size = new System.Drawing.Size(116, 26);
-            this.userNameBox.TabIndex = 33;
+            this.userNameBox.TabIndex = 15;
             this.userNameBox.UseWaitCursor = true;
             this.userNameBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FilterUser);
             // 
@@ -204,7 +204,7 @@
             this.productNameBox.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.productNameBox.Name = "productNameBox";
             this.productNameBox.Size = new System.Drawing.Size(200, 26);
-            this.productNameBox.TabIndex = 47;
+            this.productNameBox.TabIndex = 18;
             this.productNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.productNameBox.UseWaitCursor = true;
             this.productNameBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FilterProductName);
@@ -221,7 +221,7 @@
             this.typeBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.typeBox.Name = "typeBox";
             this.typeBox.Size = new System.Drawing.Size(201, 28);
-            this.typeBox.TabIndex = 48;
+            this.typeBox.TabIndex = 19;
             this.typeBox.SelectedValueChanged += new System.EventHandler(this.FilterType);
             // 
             // chosenProductBox
@@ -235,7 +235,7 @@
             this.chosenProductBox.Name = "chosenProductBox";
             this.chosenProductBox.ReadOnly = true;
             this.chosenProductBox.Size = new System.Drawing.Size(200, 26);
-            this.chosenProductBox.TabIndex = 49;
+            this.chosenProductBox.TabIndex = 20;
             this.chosenProductBox.UseWaitCursor = true;
             // 
             // chosenProductLbl
@@ -268,7 +268,7 @@
             this.amountBox.Location = new System.Drawing.Point(780, 315);
             this.amountBox.Name = "amountBox";
             this.amountBox.Size = new System.Drawing.Size(199, 22);
-            this.amountBox.TabIndex = 52;
+            this.amountBox.TabIndex = 21;
             this.amountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // addBtn
@@ -336,7 +336,7 @@
             this.idBox.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.idBox.Name = "idBox";
             this.idBox.Size = new System.Drawing.Size(116, 26);
-            this.idBox.TabIndex = 57;
+            this.idBox.TabIndex = 16;
             this.idBox.UseWaitCursor = true;
             this.idBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FilterUser);
             // 

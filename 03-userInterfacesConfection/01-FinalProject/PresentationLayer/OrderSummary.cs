@@ -154,6 +154,15 @@ namespace PresentationLayer
 
             if(orderedProducts.Count == 0)
             {
+                if(modify)
+                {
+                    for (int i = 1; i <= numberOfRows; i++)
+                    {
+                        buss.DeleteRow(oldPK, i);
+                    }
+
+                    buss.DeleteOrder(oldPK);
+                }
                 main.NewOrder(null, null);
                 this.Hide();
             }

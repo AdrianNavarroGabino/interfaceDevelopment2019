@@ -56,6 +56,7 @@
             this.userLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.hourTimer = new System.Windows.Forms.Timer(this.components);
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.SuspendLayout();
@@ -301,6 +302,13 @@
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.IncreaseTimer);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "Online Shop";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Restore);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -310,9 +318,11 @@
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(100, 100);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Online shop";
@@ -354,5 +364,6 @@
         private System.Windows.Forms.ToolStripStatusLabel userLbl;
         private System.Windows.Forms.Timer hourTimer;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

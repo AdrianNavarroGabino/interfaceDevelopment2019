@@ -1,8 +1,8 @@
-﻿using System;
+﻿// Adrián Navarro Gabino
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using DataLayer;
 using EntityLayer;
 using System.Security.Cryptography;
@@ -34,16 +34,17 @@ namespace BussinessLayer
         }
 
         // Valido el login de un usuario
-        public bool Validate(string usu, string pas)
+        public bool Validate(string mail, string pas)
         {
             List<Usuario> usersList = dat.ReadUsers();
+            String passAux = Codifica_MD5(pas);
 
             if (usersList != null)
             {
                 for (int i = 0; i < usersList.Count; i++)
                 {
-                    if ((usersList[i].nombre == usu) &&
-                        (usersList[i].password == Codifica_MD5(pas)))
+                    if ((usersList[i].email == mail) &&
+                        (usersList[i].password == passAux))
                         return (true);
                 }
             }
@@ -86,14 +87,9 @@ namespace BussinessLayer
             return dat.DeleteUser(id);
         }
 
-        public bool ModifyUser(string id, string mail, string name,
-            string surname, string password, string idCard, string phone,
-            string address, string postalCode, string provinceId,
-            string townId, string birthdate)
+        public bool ModifyUser(Usuario user)
         {
-            return dat.ModifyUser(id, new Usuario(id, mail, Codifica_MD5(password), name,
-                surname, idCard, phone, address, null, postalCode, townId,
-                provinceId, birthdate));
+            return dat.ModifyUser(user.usuarioID, user);
         }
 
         public List<Articulo> GetProducts()
@@ -190,6 +186,11 @@ namespace BussinessLayer
         public bool DeleteRow(string pkAux, int i)
         {
             return dat.DeleteRow(pkAux, i);
+        }
+
+        public bool DeleteOrder(string orderPK)
+        {
+            return dat.DeleteOrder(orderPK);
         }
     }
 }
