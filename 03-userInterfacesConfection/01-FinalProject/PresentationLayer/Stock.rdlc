@@ -49,20 +49,20 @@
     <ReportSection>
       <Body>
         <ReportItems>
-          <Tablix Name="Tablix2">
+          <Tablix Name="Tablix1">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>4.33917cm</Width>
+                  <Width>5.3213cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.3542cm</Width>
+                  <Width>4.7352cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.64067cm</Width>
+                  <Width>3.95817cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.53483cm</Width>
+                  <Width>4.1275cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -284,6 +284,12 @@
                                     <Color>#f7fcfa</Color>
                                   </Style>
                                 </TextRun>
+                                <TextRun>
+                                  <Value> products</Value>
+                                  <Style>
+                                    <Color>#f7fcfa</Color>
+                                  </Style>
+                                </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
@@ -332,7 +338,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -361,7 +366,7 @@
             <Top>0.10583cm</Top>
             <Left>0.254cm</Left>
             <Height>2.68166cm</Height>
-            <Width>15.86887cm</Width>
+            <Width>18.14217cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -374,7 +379,7 @@
           <BackgroundColor>#4c9490</BackgroundColor>
         </Style>
       </Body>
-      <Width>6.5in</Width>
+      <Width>7.39167in</Width>
       <Page>
         <PageHeader>
           <Height>2.54cm</Height>

@@ -19,6 +19,8 @@ namespace PresentationLayer
         private NewOrder newOrder;
         private SearchOrder searchOrder;
         private Statistics statistics;
+        private Stock stock;
+        private About about;
         private String user;
         private Business buss;
         private int time;
@@ -231,6 +233,29 @@ namespace PresentationLayer
 
             searchOrder.FormBorderStyle = FormBorderStyle.None;
             searchOrder.Show();
+        }
+
+        private void ShowStock(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            this.IsMdiContainer = false;
+            this.IsMdiContainer = true;
+
+            stock = new Stock(buss);
+
+            stock.MdiParent = this;
+
+            stock.ControlBox = false;
+
+            stock.FormBorderStyle = FormBorderStyle.None;
+            stock.Show();
+        }
+
+        private void ShowAbout(object sender, EventArgs e)
+        {
+            about = new About();
+            about.Show();
         }
     }
 }

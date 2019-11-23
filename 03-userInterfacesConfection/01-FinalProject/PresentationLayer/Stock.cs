@@ -16,6 +16,7 @@ namespace PresentationLayer
     public partial class Stock : Form
     {
         private Business buss;
+        private List<StockAux> stockAux;
         private List<StockAux> l_stock;
         private List<EntityLayer.Stock> stock;
         private int minProducts;
@@ -25,7 +26,18 @@ namespace PresentationLayer
             this.buss = buss;
             stock = buss.GetStock();
             l_stock = new List<StockAux>();
+            stockAux = new List<StockAux>();
+            foreach(EntityLayer.Stock s in stock)
+            {
+                Articulo prod = buss.GetProduct(s.articuloID);
+                stockAux.Add(new StockAux(s.articuloID,
+                    Convert.ToInt64(s.disponible), s.entrega,
+                    prod.nombre, prod.marcaID));
+            }
+
+            minNumber.Value = 10;
             minProducts = 10;
+            Search(null, null);
         }
 
         private void Stock_Load(object sender, EventArgs e)
@@ -35,13 +47,12 @@ namespace PresentationLayer
             reportViewer1.LocalReport.SetParameters(new ReportParameter("minProducts", minProducts.ToString()));
             
             this.reportViewer1.RefreshReport();
-            this.reportViewer1.Dock = DockStyle.Fill;
         }
 
         private void Search(object sender, EventArgs e)
         {
             minProducts = Convert.ToInt32(minNumber.Value);
-            //.where
+            l_stock = stockAux.Where(p => Convert.ToInt32(p.disponible) < minProducts).ToList();
             Stock_Load(null, null);
         }
     }

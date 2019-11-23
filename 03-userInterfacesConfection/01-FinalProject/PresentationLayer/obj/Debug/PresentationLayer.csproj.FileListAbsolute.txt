@@ -353,3 +353,4 @@ C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLay
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\RdlCompile.cache
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\RdlCompile.compiled
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Stock.resources
+C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.About.resources

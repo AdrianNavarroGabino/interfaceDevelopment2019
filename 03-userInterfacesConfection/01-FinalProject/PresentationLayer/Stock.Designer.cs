@@ -65,9 +65,19 @@
             this.minNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
             this.minNumber.Location = new System.Drawing.Point(441, 108);
+            this.minNumber.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.minNumber.Name = "minNumber";
             this.minNumber.Size = new System.Drawing.Size(148, 34);
             this.minNumber.TabIndex = 30;
+            this.minNumber.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // modifyBtn
             // 
@@ -84,6 +94,7 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "PresentationLayer.Stock.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 169);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
