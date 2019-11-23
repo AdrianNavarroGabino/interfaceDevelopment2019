@@ -56,6 +56,11 @@ namespace BussinessLayer
             return dat.ReadProvinces();
         }
 
+        public Provincia GetProvince(string provinceId)
+        {
+            return dat.ReadProvince(provinceId);
+        }
+
         public List<Localidad> GetTowns()
         {
             return dat.ReadTowns();

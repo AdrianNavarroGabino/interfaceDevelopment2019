@@ -49,7 +49,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.statusBar = new System.Windows.Forms.StatusStrip();
-            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.hourLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.timerLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.userLbl = new System.Windows.Forms.ToolStripStatusLabel();
@@ -237,7 +237,7 @@
             this.statusBar.Font = new System.Drawing.Font("Tahoma", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusLabel,
+            this.statusLbl,
             this.hourLbl,
             this.timerLbl,
             this.userLbl});
@@ -248,16 +248,16 @@
             this.statusBar.TabIndex = 3;
             this.statusBar.Text = "statusStrip1";
             // 
-            // statusLabel
+            // statusLbl
             // 
-            this.statusLabel.AutoSize = false;
-            this.statusLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.statusLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusLabel.ForeColor = System.Drawing.Color.Black;
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(300, 28);
-            this.statusLabel.Text = "Status";
-            this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.statusLbl.AutoSize = false;
+            this.statusLbl.BackColor = System.Drawing.SystemColors.Control;
+            this.statusLbl.Font = new System.Drawing.Font("Tahoma", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLbl.ForeColor = System.Drawing.Color.Black;
+            this.statusLbl.Name = "statusLbl";
+            this.statusLbl.Size = new System.Drawing.Size(300, 28);
+            this.statusLbl.Text = "Status";
+            this.statusLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // hourLbl
             // 
@@ -346,7 +346,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.StatusStrip statusBar;
-        private System.Windows.Forms.ToolStripStatusLabel statusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel statusLbl;
         private System.Windows.Forms.ToolStripStatusLabel hourLbl;
         private System.Windows.Forms.ToolStripStatusLabel timerLbl;
         private System.Windows.Forms.ToolStripStatusLabel userLbl;

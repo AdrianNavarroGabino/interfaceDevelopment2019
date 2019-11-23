@@ -72,6 +72,30 @@ namespace DataLayer
             return provincesList;
         }
 
+        public Provincia ReadProvince(string provinceId)
+        {
+            Provincia province = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response = client.GetAsync("api/provincias/" + provinceId).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    province = JsonConvert.DeserializeObject<Provincia>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return province;
+        }
+
         public List<Localidad> ReadTowns()
         {
             List<Localidad> townsList = null;

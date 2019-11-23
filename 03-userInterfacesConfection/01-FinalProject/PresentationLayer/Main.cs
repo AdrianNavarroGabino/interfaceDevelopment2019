@@ -133,6 +133,19 @@ namespace PresentationLayer
             hourLbl.Text = DateTime.Now.TimeOfDay.ToString().Substring(0, 5);
         }
 
+        public void SetStatus(string status, bool error = false)
+        {
+            statusLbl.Text = status;
+            if(error)
+            {
+                statusLbl.ForeColor = Color.Red;
+            }
+            else
+            {
+                statusLbl.ForeColor = Color.Black;
+            }
+        }
+
         private void ConsultProducts(object sender, EventArgs e)
         {
             CloseForms();
