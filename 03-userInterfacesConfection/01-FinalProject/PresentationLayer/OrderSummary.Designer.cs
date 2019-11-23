@@ -37,7 +37,12 @@
             this.IVA = new System.Windows.Forms.Label();
             this.finalPriceLbl = new System.Windows.Forms.Label();
             this.orderBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.amountBox = new System.Windows.Forms.NumericUpDown();
+            this.updateBtn = new System.Windows.Forms.Button();
+            this.removeBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.amountBox)).BeginInit();
             this.SuspendLayout();
             // 
             // productsLbl
@@ -66,8 +71,9 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(488, 554);
+            this.dataGridView1.Size = new System.Drawing.Size(488, 432);
             this.dataGridView1.TabIndex = 43;
+            this.dataGridView1.TabStop = false;
             // 
             // label4
             // 
@@ -157,12 +163,74 @@
             this.orderBtn.UseVisualStyleBackColor = false;
             this.orderBtn.Click += new System.EventHandler(this.Order);
             // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.label3.Location = new System.Drawing.Point(12, 577);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 30);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "Amount:";
+            // 
+            // amountBox
+            // 
+            this.amountBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
+            this.amountBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amountBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.amountBox.Location = new System.Drawing.Point(152, 575);
+            this.amountBox.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.amountBox.Name = "amountBox";
+            this.amountBox.Size = new System.Drawing.Size(120, 36);
+            this.amountBox.TabIndex = 52;
+            this.amountBox.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // updateBtn
+            // 
+            this.updateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(175)))), ((int)(((byte)(169)))));
+            this.updateBtn.Location = new System.Drawing.Point(327, 576);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(135, 34);
+            this.updateBtn.TabIndex = 53;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.UpdateAmount);
+            // 
+            // removeBtn
+            // 
+            this.removeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.removeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(175)))), ((int)(((byte)(169)))));
+            this.removeBtn.Location = new System.Drawing.Point(162, 630);
+            this.removeBtn.Name = "removeBtn";
+            this.removeBtn.Size = new System.Drawing.Size(197, 48);
+            this.removeBtn.TabIndex = 54;
+            this.removeBtn.Text = "Remove product";
+            this.removeBtn.UseVisualStyleBackColor = false;
+            this.removeBtn.Click += new System.EventHandler(this.RemoveProduct);
+            // 
             // OrderSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(225)))), ((int)(((byte)(212)))));
             this.ClientSize = new System.Drawing.Size(1000, 690);
+            this.Controls.Add(this.removeBtn);
+            this.Controls.Add(this.updateBtn);
+            this.Controls.Add(this.amountBox);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.orderBtn);
             this.Controls.Add(this.finalPriceLbl);
             this.Controls.Add(this.IVA);
@@ -176,6 +244,7 @@
             this.Name = "OrderSummary";
             this.Text = "OrderSummary";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.amountBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +261,9 @@
         private System.Windows.Forms.Label IVA;
         private System.Windows.Forms.Label finalPriceLbl;
         private System.Windows.Forms.Button orderBtn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown amountBox;
+        private System.Windows.Forms.Button updateBtn;
+        private System.Windows.Forms.Button removeBtn;
     }
 }

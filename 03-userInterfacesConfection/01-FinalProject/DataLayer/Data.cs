@@ -79,7 +79,7 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/provincias/" + provinceId).Result;
+                HttpResponseMessage response = client.GetAsync("api/Provincias/" + provinceId).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -520,6 +520,25 @@ namespace DataLayer
             }
 
             return stock;
+        }
+
+        public bool DeleteRow(string order, int row)
+        {
+            try
+            {
+                HttpResponseMessage response = client.DeleteAsync("api/Linped/" + order + ":" + row).Result;
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return true;
         }
     }
 }

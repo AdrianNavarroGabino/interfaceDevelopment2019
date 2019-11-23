@@ -1,11 +1,9 @@
-﻿using System;
+﻿// Adrián Navarro Gabino
+
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLayer;
 using EntityLayer;
@@ -14,14 +12,17 @@ namespace PresentationLayer
 {
     public partial class Products : Form
     {
+        private Main main;
         private Business buss;
         private List<Articulo> products;
         private List<TipoArticulo> productTypes;
         private bool modifyMode;
 
-        public Products(Business buss, bool modifyMode)
+        public Products(Main main, Business buss, bool modifyMode)
         {
             InitializeComponent();
+            this.main = main;
+            main.SetStatus("Status");
             this.buss = buss;
             this.modifyMode = modifyMode;
             products = buss.GetProducts();
@@ -230,14 +231,12 @@ namespace PresentationLayer
                 if(buss.ModifyProduct(product.articuloID, modifiedProduct))
                 {
                     dataGridView1.SelectedCells[1].Value = newPrice;
+                    main.SetStatus("Price changed");
                 }
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show("Enter a valid price",
-                        "Invalid price",
-                        MessageBoxButtons.OK);
+                main.SetStatus("Enter a valid price", true);
             }
         }
     }

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿// Adrián Navarro Gabino
+
+using System;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLayer;
 
@@ -48,14 +45,14 @@ namespace PresentationLayer
             }
         }
 
-        public void InsertUser(bool modify = false, string idCard = null)
+        public void InsertUser(bool modify = false, string id = null)
         {
             CloseForms();
 
             this.IsMdiContainer = false;
             this.IsMdiContainer = true;
 
-            userForm = new User(buss, modify, idCard);
+            userForm = new User(this, buss, modify, id);
 
             userForm.MdiParent = this;
 
@@ -94,7 +91,7 @@ namespace PresentationLayer
             this.IsMdiContainer = false;
             this.IsMdiContainer = true;
 
-            searchUser = new SearchUser(buss);
+            searchUser = new SearchUser(this, buss);
 
             searchUser.MdiParent = this;
 
@@ -111,7 +108,7 @@ namespace PresentationLayer
             this.IsMdiContainer = false;
             this.IsMdiContainer = true;
 
-            searchUser = new SearchUser(buss, true);
+            searchUser = new SearchUser(this, buss, true);
 
             searchUser.MdiParent = this;
 
@@ -153,7 +150,7 @@ namespace PresentationLayer
             this.IsMdiContainer = false;
             this.IsMdiContainer = true;
 
-            productsForm = new Products(buss, false);
+            productsForm = new Products(this, buss, false);
 
             productsForm.MdiParent = this;
 
@@ -170,7 +167,7 @@ namespace PresentationLayer
             this.IsMdiContainer = false;
             this.IsMdiContainer = true;
 
-            productsForm = new Products(buss, true);
+            productsForm = new Products(this, buss, true);
 
             productsForm.MdiParent = this;
 
@@ -187,7 +184,7 @@ namespace PresentationLayer
             this.IsMdiContainer = false;
             this.IsMdiContainer = true;
 
-            newOrder = new NewOrder(buss);
+            newOrder = new NewOrder(this, buss);
 
             newOrder.MdiParent = this;
 
@@ -204,7 +201,7 @@ namespace PresentationLayer
             this.IsMdiContainer = false;
             this.IsMdiContainer = true;
 
-            searchOrder = new SearchOrder(buss);
+            searchOrder = new SearchOrder(this, buss);
 
             searchOrder.MdiParent = this;
 
@@ -221,7 +218,7 @@ namespace PresentationLayer
             this.IsMdiContainer = false;
             this.IsMdiContainer = true;
 
-            statistics = new Statistics(buss);
+            statistics = new Statistics(this, buss);
 
             statistics.MdiParent = this;
 
@@ -238,7 +235,7 @@ namespace PresentationLayer
             this.IsMdiContainer = false;
             this.IsMdiContainer = true;
 
-            searchOrder = new SearchOrder(buss, true);
+            searchOrder = new SearchOrder(this, buss, true);
 
             searchOrder.MdiParent = this;
 
@@ -255,7 +252,7 @@ namespace PresentationLayer
             this.IsMdiContainer = false;
             this.IsMdiContainer = true;
 
-            stock = new Stock(buss);
+            stock = new Stock(this, buss);
 
             stock.MdiParent = this;
 
@@ -267,7 +264,7 @@ namespace PresentationLayer
 
         private void ShowAbout(object sender, EventArgs e)
         {
-            about = new About();
+            about = new About(this);
             about.Show();
         }
     }

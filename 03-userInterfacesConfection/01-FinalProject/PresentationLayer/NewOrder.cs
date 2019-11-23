@@ -15,6 +15,7 @@ namespace PresentationLayer
 {
     public partial class NewOrder : Form
     {
+        private Main main;
         private Business buss;
         private List<Usuario> users;
         private List<Articulo> products;
@@ -27,9 +28,11 @@ namespace PresentationLayer
         private string userId;
         private string orderPK;
 
-        public NewOrder(Business buss, SortedList<string, int> selectedProducts = null, string userId = null, string orderPK = null)
+        public NewOrder(Main main, Business buss, SortedList<string, int> selectedProducts = null, string userId = null, string orderPK = null)
         {
             InitializeComponent();
+            this.main = main;
+            main.SetStatus("Status");
             this.buss = buss;
             users = buss.GetUsers();
             FillUsersTable(users);
@@ -217,7 +220,7 @@ namespace PresentationLayer
             {
                 if (userIsSelected)
                 {
-                    orderSummary = new OrderSummary(buss, selectedUser.usuarioID, selectedProducts, true, orderPK);
+                    orderSummary = new OrderSummary(main, buss, selectedUser.usuarioID, selectedProducts, false, orderPK);
                     orderSummary.MdiParent = this.ParentForm;
                     orderSummary.StartPosition = FormStartPosition.Manual;
                     orderSummary.Location = new Point(0, 0);
@@ -226,12 +229,12 @@ namespace PresentationLayer
                 }
                 else
                 {
-                    MessageBox.Show("You must select the user to order");
+                    main.SetStatus("You must select the user to order", true);
                 }
             }
             else
             {
-                orderSummary = new OrderSummary(buss, userId, selectedProducts, true);
+                orderSummary = new OrderSummary(main, buss, userId, selectedProducts, true, orderPK);
                 orderSummary.MdiParent = this.ParentForm;
                 orderSummary.StartPosition = FormStartPosition.Manual;
                 orderSummary.Location = new Point(0, 0);

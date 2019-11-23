@@ -1,28 +1,29 @@
-﻿using BussinessLayer;
+﻿// Adrián Navarro Gabino
+
+using BussinessLayer;
 using EntityLayer;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PresentationLayer
 {
     public partial class SearchOrder : Form
     {
+        private Main main;
         private Business buss;
         private List<Pedido> orders;
         private NewOrder newOrder;
         private Bill orderBill;
         private bool bill;
 
-        public SearchOrder(Business buss, bool bill = false)
+        public SearchOrder(Main main, Business buss, bool bill = false)
         {
             InitializeComponent();
+            this.main = main;
+            main.SetStatus("Status");
             this.buss = buss;
             this.bill = bill;
             orders = buss.GetOrders();
@@ -105,7 +106,7 @@ namespace PresentationLayer
                     }
                 }
 
-                newOrder = new NewOrder(buss, orderRows, dataGridViewOrders.SelectedCells[5].Value.ToString(), dataGridViewOrders.SelectedCells[4].Value.ToString());
+                newOrder = new NewOrder(main, buss, orderRows, dataGridViewOrders.SelectedCells[5].Value.ToString(), dataGridViewOrders.SelectedCells[4].Value.ToString());
                 newOrder.MdiParent = this.ParentForm;
                 newOrder.StartPosition = FormStartPosition.Manual;
                 newOrder.Location = new Point(0, 0);

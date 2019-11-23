@@ -186,5 +186,10 @@ namespace BussinessLayer
         {
             return dat.ReadStock();
         }
+
+        public bool DeleteRow(string pkAux, int i)
+        {
+            return dat.DeleteRow(pkAux, i);
+        }
     }
 }

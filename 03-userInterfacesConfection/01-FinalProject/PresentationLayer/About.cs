@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
+﻿// Adrián Navarro Gabino
+
+using System;
 using System.Windows.Forms;
 
 namespace PresentationLayer
 {
     partial class About : Form
     {
-        public About()
+        private Main main;
+
+        public About(Main main)
         {
             InitializeComponent();
+            this.main = main;
+            main.SetStatus("Status");
         }
 
         private void Accept(object sender, EventArgs e)

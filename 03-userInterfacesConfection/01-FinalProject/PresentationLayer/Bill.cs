@@ -1,13 +1,9 @@
-﻿using BussinessLayer;
+﻿// Adrián Navarro Gabino
+
+using BussinessLayer;
 using EntityLayer;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 
@@ -15,14 +11,17 @@ namespace PresentationLayer
 {
     public partial class Bill : Form
     {
+        private Main main;
         private Business buss;
         private List<LinpedAux> l_bills;
         private List<Usuario> l_user;
         private List<Pedido> l_order;
 
-        public Bill(Business buss, Pedido order)
+        public Bill(Main main, Business buss, Pedido order)
         {
             InitializeComponent();
+            this.main = main;
+            main.SetStatus("Status");
             this.buss = buss;
             
             l_bills = new List<LinpedAux>();

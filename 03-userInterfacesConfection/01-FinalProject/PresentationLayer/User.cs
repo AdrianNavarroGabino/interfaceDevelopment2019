@@ -21,21 +21,25 @@ namespace PresentationLayer
         private const string passRegex =
             @"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{3,}$";
 
-        Business buss;
-        List<Provincia> provinces;
-        List<Localidad> towns;
-        List<Usuario> users;
+        private Main main;
+        private Business buss;
+        private List<Provincia> provinces;
+        private List<Localidad> towns;
+        private List<Usuario> users;
         private Usuario selectedUser;
         private long currentUserId;
 
-        public User(Business buss, bool modify, string idCard)
+        public User(Main main, Business buss, bool modify, string modifyId)
         {
             InitializeComponent();
+            this.main = main;
+            main.SetStatus("Status");
             this.buss = buss;
             provinces = buss.GetProvinces();
             users = buss.GetUsers();
             towns = buss.GetTowns();
-            currentUserId = Convert.ToInt64(users[users.Count - 1].usuarioID) + 1;
+            currentUserId =
+                Convert.ToInt64(users[users.Count - 1].usuarioID) + 1;
             foreach (Provincia p in provinces)
             {
                 provinceBox.Items.Add(p.nombre);
@@ -45,9 +49,11 @@ namespace PresentationLayer
             {
                 registerLbl.Text = "Modify";
                 registerBtn.Text = "MODIFY";
-                selectedUser = Utils.SearchUserByIdCard(users, idCard);
-                FillFields(selectedUser);
-                bornDate.Value = DateTime.ParseExact(bornDate.Value.ToString().Substring(0,10), "dd/MM/yyyy", null);
+                selectedUser = buss.GetUser(modifyId);
+                FillFields();
+                bornDate.Value = DateTime.ParseExact(
+                    bornDate.Value.ToString().Substring(0,10),
+                    "dd/MM/yyyy", null);
             }
 
             bornDate.MaxDate = DateTime.Now;
@@ -63,20 +69,22 @@ namespace PresentationLayer
                     townBox.Items.Add(l.nombre);
         }
 
-        private void FillFields(Usuario user)
+        private void FillFields()
         {
-            mailBox.Text = user.email;
-            nameBox.Text = user.nombre;
-            surnameBox.Text = user.apellidos;
+            mailBox.Text = selectedUser.email;
+            nameBox.Text = selectedUser.nombre;
+            surnameBox.Text = selectedUser.apellidos;
             passBox.Text = "--------";
             passAgainBox.Text = "--------";
-            idBox.Text = user.dni;
-            phoneBox.Text = user.telefono;
-            addressBox.Text = user.calle;
-            postalCodeBox2.Text = user.codpos;
-            provinceBox.Text = GetProvinceById(user.provinciaID).nombre;
-            townBox.Text = GetTown(user.provinciaID, user.puebloID).nombre;
-            bornDate.Text = user.nacido.Substring(0, 10);
+            idBox.Text = selectedUser.dni;
+            phoneBox.Text = selectedUser.telefono;
+            addressBox.Text = selectedUser.calle;
+            postalCodeBox2.Text = selectedUser.codpos;
+            provinceBox.Text =
+                buss.GetProvince(selectedUser.provinciaID).nombre;
+            townBox.Text = GetTown(selectedUser.provinciaID,
+                selectedUser.puebloID).nombre;
+            bornDate.Text = selectedUser.nacido.Substring(0, 10);
         }
 
         private Localidad GetTown(String provinceId, String townId)
@@ -171,11 +179,11 @@ namespace PresentationLayer
 
                 if(modified)
                 {
-                    MessageBox.Show("User modified");
+                    ((Main)this.MdiParent).SetStatus("User modified");
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong");
+                    ((Main)this.MdiParent).SetStatus("Something went wrong", true);
                 }
             }
         }

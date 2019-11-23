@@ -1,19 +1,17 @@
-﻿using BussinessLayer;
+﻿// Adrián Navarro Gabino
+
+using BussinessLayer;
 using EntityLayer;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PresentationLayer
 {
     public partial class Statistics : Form
     {
+        private Main main;
         private Business buss;
         private List<Pedido> ordersAux;
         private List<string> months;
@@ -25,11 +23,13 @@ namespace PresentationLayer
         private List<TipoArticulo> types;
         private SortedList<string, SortedList<int, int>> ordersByDay;
 
-        public Statistics(Business buss)
+        public Statistics(Main main, Business buss)
         {
             InitializeComponent();
             loadingLbl1.Visible = false;
             loadingLbl2.Visible = false;
+            this.main = main;
+            main.SetStatus("Status");
             this.buss = buss;
             orderRows = buss.GetLinpeds();
             ordersAux = buss.GetOrders();
