@@ -165,5 +165,21 @@ namespace BussinessLayer
         {
             return dat.ReadLinpeds();
         }
+
+        public double GetTotalPrice(List<LinpedAux> rows)
+        {
+            double totalPrice = 0;
+            foreach (LinpedAux lp in rows)
+            {
+                totalPrice += Convert.ToInt32(lp.cantidad) * Convert.ToDouble(lp.pvp);
+            }
+
+            return totalPrice;
+        }
+
+        public List<Stock> GetStock()
+        {
+            return dat.ReadStock();
+        }
     }
 }

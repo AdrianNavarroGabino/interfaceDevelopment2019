@@ -473,5 +473,29 @@ namespace DataLayer
 
             return orderRows;
         }
+
+        public List<Stock> ReadStock()
+        {
+            List<Stock> stock = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response = client.GetAsync("api/Stock").Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    stock = JsonConvert.DeserializeObject<List<Stock>>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return stock;
+        }
     }
 }

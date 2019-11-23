@@ -17,15 +17,23 @@ namespace PresentationLayer
         private Business buss;
         private List<Pedido> orders;
         private NewOrder newOrder;
+        private Bill orderBill;
+        private bool bill;
 
-        public SearchOrder(Business buss)
+        public SearchOrder(Business buss, bool bill = false)
         {
             InitializeComponent();
             this.buss = buss;
+            this.bill = bill;
             orders = buss.GetOrders();
             FillTable();
             orderDate.MaxDate = DateTime.Now;
             orderDate.CustomFormat = " ";
+            if(bill)
+            {
+                titleLbl.Text = "Search bill";
+                modifyBtn.Text = "Search";
+            }
         }
 
         public void FillTable()
@@ -85,22 +93,35 @@ namespace PresentationLayer
 
         private void Modify(object sender, EventArgs e)
         {
-            SortedList<string, int> orderRows = new SortedList<string, int>();
-
-            foreach(Linped lp in buss.GetLinpeds())
+            if (!bill)
             {
-                if(lp.PedidoID == dataGridViewOrders.SelectedCells[4].Value.ToString())
-                {
-                    orderRows.Add(lp.articuloID, Convert.ToInt32(lp.cantidad));
-                }
-            }
+                SortedList<string, int> orderRows = new SortedList<string, int>();
 
-            newOrder = new NewOrder(buss, orderRows, dataGridViewOrders.SelectedCells[5].Value.ToString(), dataGridViewOrders.SelectedCells[4].Value.ToString());
-            newOrder.MdiParent = this.ParentForm;
-            newOrder.StartPosition = FormStartPosition.Manual;
-            newOrder.Location = new Point(0, 0);
-            this.Hide();
-            newOrder.Show();
+                foreach (Linped lp in buss.GetLinpeds())
+                {
+                    if (lp.PedidoID == dataGridViewOrders.SelectedCells[4].Value.ToString())
+                    {
+                        orderRows.Add(lp.articuloID, Convert.ToInt32(lp.cantidad));
+                    }
+                }
+
+                newOrder = new NewOrder(buss, orderRows, dataGridViewOrders.SelectedCells[5].Value.ToString(), dataGridViewOrders.SelectedCells[4].Value.ToString());
+                newOrder.MdiParent = this.ParentForm;
+                newOrder.StartPosition = FormStartPosition.Manual;
+                newOrder.Location = new Point(0, 0);
+                this.Hide();
+                newOrder.Show();
+            }
+            else
+            {
+                orderBill = new Bill(buss, new Pedido(dataGridViewOrders.SelectedCells[4].Value.ToString(),
+                    dataGridViewOrders.SelectedCells[5].Value.ToString(), dataGridViewOrders.SelectedCells[3].Value.ToString()));
+                orderBill.MdiParent = this.ParentForm;
+                orderBill.StartPosition = FormStartPosition.Manual;
+                orderBill.Location = new Point(0, 0);
+                this.Hide();
+                orderBill.Show();
+            }
         }
 
         private void ResetFields(object sender, EventArgs e)

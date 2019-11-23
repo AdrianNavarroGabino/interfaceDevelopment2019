@@ -349,3 +349,7 @@ C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLay
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.OrderSummary.resources
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.SearchOrder.resources
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Statistics.resources
+C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Bill.resources
+C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\RdlCompile.cache
+C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\RdlCompile.compiled
+C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Stock.resources

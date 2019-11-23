@@ -204,14 +204,15 @@
             // 
             this.billToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
             this.billToolStripMenuItem.Name = "billToolStripMenuItem";
-            this.billToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
+            this.billToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.billToolStripMenuItem.Text = "Bill";
+            this.billToolStripMenuItem.Click += new System.EventHandler(this.SearchBills);
             // 
             // stockToolStripMenuItem
             // 
             this.stockToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.stockToolStripMenuItem.Text = "Stock";
             // 
             // aboutToolStripMenuItem

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.productsLbl = new System.Windows.Forms.Label();
+            this.titleLbl = new System.Windows.Forms.Label();
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
             this.nameLbl = new System.Windows.Forms.Label();
             this.nameBox = new System.Windows.Forms.TextBox();
@@ -36,20 +36,21 @@
             this.orderDate = new System.Windows.Forms.DateTimePicker();
             this.modifyBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             this.SuspendLayout();
             // 
-            // productsLbl
+            // titleLbl
             // 
-            this.productsLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.productsLbl.AutoSize = true;
-            this.productsLbl.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productsLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.productsLbl.Location = new System.Drawing.Point(300, 33);
-            this.productsLbl.Name = "productsLbl";
-            this.productsLbl.Size = new System.Drawing.Size(399, 70);
-            this.productsLbl.TabIndex = 5;
-            this.productsLbl.Text = "Search order";
+            this.titleLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.titleLbl.AutoSize = true;
+            this.titleLbl.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.titleLbl.Location = new System.Drawing.Point(301, 9);
+            this.titleLbl.Name = "titleLbl";
+            this.titleLbl.Size = new System.Drawing.Size(399, 70);
+            this.titleLbl.TabIndex = 5;
+            this.titleLbl.Text = "Search order";
             // 
             // dataGridViewOrders
             // 
@@ -139,11 +140,11 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(175)))), ((int)(((byte)(169)))));
-            this.button1.Location = new System.Drawing.Point(515, 625);
+            this.button1.Location = new System.Drawing.Point(509, 615);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 31);
+            this.button1.Size = new System.Drawing.Size(72, 48);
             this.button1.TabIndex = 62;
-            this.button1.Text = "Reset";
+            this.button1.Text = "Reset filters";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.ResetFields);
             // 
@@ -160,7 +161,7 @@
             this.Controls.Add(this.nameLbl);
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.dataGridViewOrders);
-            this.Controls.Add(this.productsLbl);
+            this.Controls.Add(this.titleLbl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SearchOrder";
             this.Text = "SearchOrder";
@@ -172,7 +173,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label productsLbl;
+        private System.Windows.Forms.Label titleLbl;
         private System.Windows.Forms.DataGridView dataGridViewOrders;
         private System.Windows.Forms.Label nameLbl;
         private System.Windows.Forms.TextBox nameBox;
@@ -180,5 +181,6 @@
         private System.Windows.Forms.DateTimePicker orderDate;
         private System.Windows.Forms.Button modifyBtn;
         private System.Windows.Forms.Button button1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

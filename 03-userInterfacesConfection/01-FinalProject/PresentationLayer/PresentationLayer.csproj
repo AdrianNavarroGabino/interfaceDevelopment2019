@@ -205,6 +205,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bill.Designer.cs">
+      <DependentUpon>Bill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,12 @@
     <Compile Include="Statistics.Designer.cs">
       <DependentUpon>Statistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock.Designer.cs">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +275,10 @@
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="Bill.rdlc" />
+    <EmbeddedResource Include="Bill.resx">
+      <DependentUpon>Bill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,10 +313,30 @@
     <EmbeddedResource Include="Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Stock.rdlc" />
+    <EmbeddedResource Include="Stock.resx">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\EntityLayer.Articulo.datasource" />
+    <None Include="Properties\DataSources\EntityLayer.Camara.datasource" />
+    <None Include="Properties\DataSources\EntityLayer.Linped.datasource" />
+    <None Include="Properties\DataSources\EntityLayer.LinpedAux.datasource" />
+    <None Include="Properties\DataSources\EntityLayer.Localidad.datasource" />
+    <None Include="Properties\DataSources\EntityLayer.Memoria.datasource" />
+    <None Include="Properties\DataSources\EntityLayer.Objetivo.datasource" />
+    <None Include="Properties\DataSources\EntityLayer.Pedido.datasource" />
+    <None Include="Properties\DataSources\EntityLayer.Provincia.datasource" />
+    <None Include="Properties\DataSources\EntityLayer.Stock.datasource" />
+    <None Include="Properties\DataSources\EntityLayer.StockAux.datasource" />
+    <None Include="Properties\DataSources\EntityLayer.TipoArticulo.datasource" />
+    <None Include="Properties\DataSources\EntityLayer.Tlb.datasource" />
+    <None Include="Properties\DataSources\EntityLayer.Tv.datasource" />
+    <None Include="Properties\DataSources\EntityLayer.Usuario.datasource" />
+    <None Include="Properties\DataSources\SqlServerTypes.Utilities.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

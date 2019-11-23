@@ -28,6 +28,8 @@ namespace PresentationLayer
         public Statistics(Business buss)
         {
             InitializeComponent();
+            loadingLbl1.Visible = false;
+            loadingLbl2.Visible = false;
             this.buss = buss;
             orderRows = buss.GetLinpeds();
             ordersAux = buss.GetOrders();
@@ -125,12 +127,13 @@ namespace PresentationLayer
                     i++;
                 }
             }
+            loadingLbl1.Visible = false;
         }
 
         private void FillType()
         {
             yearChart.Titles.Clear();
-            yearChart.Titles.Add(monthBox.SelectedItem.ToString() + " - Ordered products by type");
+            yearChart.Titles.Add(monthBox.SelectedItem.ToString() + " - Products by type");
             yearChart.Titles[0].ForeColor = Color.FromArgb(247, 252, 250);
             yearChart.Titles[0].Font = new Font("Arial", 14, FontStyle.Bold);
 
@@ -164,10 +167,13 @@ namespace PresentationLayer
                 yearChart.Series[0].Points[i].IsValueShownAsLabel = true;
                 i++;
             }
+            loadingLbl2.Visible = false;
         }
 
         private void FillCharts(object sender, EventArgs e)
         {
+            loadingLbl1.Visible = true;
+            loadingLbl2.Visible = true;
             FillChartByDay();
             FillType();
         }

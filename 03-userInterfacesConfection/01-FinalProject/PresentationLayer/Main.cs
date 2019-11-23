@@ -215,5 +215,22 @@ namespace PresentationLayer
             statistics.FormBorderStyle = FormBorderStyle.None;
             statistics.Show();
         }
+
+        private void SearchBills(object sender, EventArgs e)
+        {
+            CloseForms();
+
+            this.IsMdiContainer = false;
+            this.IsMdiContainer = true;
+
+            searchOrder = new SearchOrder(buss, true);
+
+            searchOrder.MdiParent = this;
+
+            searchOrder.ControlBox = false;
+
+            searchOrder.FormBorderStyle = FormBorderStyle.None;
+            searchOrder.Show();
+        }
     }
 }

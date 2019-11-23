@@ -37,6 +37,8 @@
             this.monthBox = new System.Windows.Forms.ComboBox();
             this.yearChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.monthChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.loadingLbl1 = new System.Windows.Forms.Label();
+            this.loadingLbl2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.yearChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthChart)).BeginInit();
             this.SuspendLayout();
@@ -125,12 +127,38 @@
             this.monthChart.TabIndex = 61;
             this.monthChart.Text = "Grafico 1";
             // 
+            // loadingLbl1
+            // 
+            this.loadingLbl1.AutoSize = true;
+            this.loadingLbl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
+            this.loadingLbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadingLbl1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.loadingLbl1.Location = new System.Drawing.Point(185, 441);
+            this.loadingLbl1.Name = "loadingLbl1";
+            this.loadingLbl1.Size = new System.Drawing.Size(128, 29);
+            this.loadingLbl1.TabIndex = 62;
+            this.loadingLbl1.Text = "Loading...";
+            // 
+            // loadingLbl2
+            // 
+            this.loadingLbl2.AutoSize = true;
+            this.loadingLbl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
+            this.loadingLbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadingLbl2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.loadingLbl2.Location = new System.Drawing.Point(689, 441);
+            this.loadingLbl2.Name = "loadingLbl2";
+            this.loadingLbl2.Size = new System.Drawing.Size(128, 29);
+            this.loadingLbl2.TabIndex = 63;
+            this.loadingLbl2.Text = "Loading...";
+            // 
             // Statistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(225)))), ((int)(((byte)(212)))));
             this.ClientSize = new System.Drawing.Size(1000, 690);
+            this.Controls.Add(this.loadingLbl2);
+            this.Controls.Add(this.loadingLbl1);
             this.Controls.Add(this.monthChart);
             this.Controls.Add(this.yearChart);
             this.Controls.Add(this.monthBox);
@@ -153,5 +181,7 @@
         private System.Windows.Forms.ComboBox monthBox;
         private System.Windows.Forms.DataVisualization.Charting.Chart yearChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart monthChart;
+        private System.Windows.Forms.Label loadingLbl1;
+        private System.Windows.Forms.Label loadingLbl2;
     }
 }
