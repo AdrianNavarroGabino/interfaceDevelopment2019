@@ -28,7 +28,10 @@ namespace PresentationLayer
         private string userId;
         private string orderPK;
 
-        public NewOrder(Main main, Business buss, SortedList<string, int> selectedProducts = null, string userId = null, string orderPK = null)
+        public NewOrder(
+            Main main, Business buss,
+            SortedList<string, int> selectedProducts = null,
+            string userId = null, string orderPK = null)
         {
             InitializeComponent();
             this.main = main;
@@ -59,8 +62,32 @@ namespace PresentationLayer
                 orderBtn.Visible = true;
                 userIsSelected = true;
                 this.userId = userId;
-                dataGridViewUsers.ClearSelection();
-                dataGridViewUsers.Enabled = false;
+                usersLbl.Visible = false;
+                dataGridViewUsers.Visible = false;
+                userNameLbl.Visible = false;
+                userSurnameLbl.Visible = false;
+                userIdLbl.Visible = false;
+                userNameBox.Visible = false;
+                surnameBox.Visible = false;
+                idBox.Visible = false;
+                dataGridViewProducts.Location = new Point(
+                    dataGridViewProducts.Location.X - 30,
+                    dataGridViewProducts.Location.Y);
+                productsLbl.Location = new Point(
+                    productsLbl.Location.X - 30,
+                    productsLbl.Location.Y);
+                nameLbl.Location = new Point(
+                    nameLbl.Location.X - 30,
+                    nameLbl.Location.Y);
+                productNameBox.Location = new Point(
+                    productNameBox.Location.X - 30,
+                    productNameBox.Location.Y);
+                typeLbl.Location = new Point(
+                    typeLbl.Location.X - 30,
+                    typeLbl.Location.Y);
+                typeBox.Location = new Point(
+                    typeBox.Location.X - 30,
+                    typeBox.Location.Y);
                 orderBtn.Text = "Modify";
                 titleLbl.Text = "Modify order";
                 this.orderPK = orderPK;
@@ -115,7 +142,8 @@ namespace PresentationLayer
                 productRow["Brand"] = product.marcaID;
                 productRow["PVP"] = product.pvp;
                 productRow["Id"] = product.articuloID;
-                productRow["Type"] = GetTypeDescription(product.tipoArticuloID);
+                productRow["Type"] =
+                    GetTypeDescription(product.tipoArticuloID);
 
                 dataTable.Rows.Add(productRow);
             }
@@ -141,7 +169,8 @@ namespace PresentationLayer
 
         private void SelectUser(object sender, DataGridViewCellEventArgs e)
         {
-            selectedUser = buss.GetUser(dataGridViewUsers.SelectedCells[3].Value.ToString());
+            selectedUser = buss.GetUser(
+                dataGridViewUsers.SelectedCells[3].Value.ToString());
             userIsSelected = true;
         }
 
@@ -152,8 +181,10 @@ namespace PresentationLayer
             amountBox.Visible = true;
             amountLbl.Visible = true;
 
-            selectedProductId = dataGridViewProducts.SelectedCells[3].Value.ToString();
-            String productName = dataGridViewProducts.SelectedCells[0].Value.ToString();
+            selectedProductId =
+                dataGridViewProducts.SelectedCells[3].Value.ToString();
+            String productName =
+                dataGridViewProducts.SelectedCells[0].Value.ToString();
 
             chosenProductBox.Text = productName;
             addBtn.Visible = true;
@@ -199,7 +230,8 @@ namespace PresentationLayer
 
         private void RemoveProduct(object sender, EventArgs e)
         {
-            selectedProducts.Remove(dataGridViewProducts.SelectedCells[3].Value.ToString());
+            selectedProducts.Remove(
+                dataGridViewProducts.SelectedCells[3].Value.ToString());
 
             if(selectedProducts.Count == 0)
             {
@@ -220,7 +252,9 @@ namespace PresentationLayer
             {
                 if (userIsSelected)
                 {
-                    orderSummary = new OrderSummary(main, buss, selectedUser.usuarioID, selectedProducts, false, orderPK);
+                    orderSummary = new OrderSummary(
+                        main, buss, selectedUser.usuarioID,
+                        selectedProducts, false, orderPK);
                     orderSummary.MdiParent = this.ParentForm;
                     orderSummary.StartPosition = FormStartPosition.Manual;
                     orderSummary.Location = new Point(0, 0);
@@ -234,7 +268,9 @@ namespace PresentationLayer
             }
             else
             {
-                orderSummary = new OrderSummary(main, buss, userId, selectedProducts, true, orderPK);
+                orderSummary = new OrderSummary(
+                    main, buss, userId,
+                    selectedProducts, true, orderPK);
                 orderSummary.MdiParent = this.ParentForm;
                 orderSummary.StartPosition = FormStartPosition.Manual;
                 orderSummary.Location = new Point(0, 0);
@@ -274,8 +310,8 @@ namespace PresentationLayer
         {
             DataView dataView = (DataView)dataGridViewUsers.DataSource;
 
-            dataView.RowFilter = "Name LIKE '%" + userNameBox.Text + "%' AND " +
-                "ID LIKE '%" + idBox.Text + "%' AND " +
+            dataView.RowFilter = "Name LIKE '%" + userNameBox.Text +
+                "%' AND " + "ID LIKE '%" + idBox.Text + "%' AND " +
                 "Surname LIKE '%" + surnameBox.Text + "%'";
 
             dataGridViewUsers.DataSource = dataView;

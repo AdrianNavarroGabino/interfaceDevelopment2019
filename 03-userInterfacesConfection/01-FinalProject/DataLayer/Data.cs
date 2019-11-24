@@ -29,13 +29,15 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/usuarios").Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/usuarios").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     aux = response.Content.ReadAsStringAsync().Result;
 
-                    listaUsuarios = JsonConvert.DeserializeObject<List<Usuario>>(aux);
+                    listaUsuarios =
+                        JsonConvert.DeserializeObject<List<Usuario>>(aux);
                 }
             }
             catch (Exception e)
@@ -53,13 +55,15 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/provincias").Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/provincias").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     aux = response.Content.ReadAsStringAsync().Result;
 
-                    provincesList = JsonConvert.DeserializeObject<List<Provincia>>(aux);
+                    provincesList =
+                        JsonConvert.DeserializeObject<List<Provincia>>(aux);
                 }
             }
             catch (Exception e)
@@ -77,7 +81,8 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Provincias/" + provinceId).Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Provincias/" + provinceId).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -101,13 +106,15 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/localidades").Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/localidades").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     aux = response.Content.ReadAsStringAsync().Result;
 
-                    townsList = JsonConvert.DeserializeObject<List<Localidad>>(aux);
+                    townsList =
+                        JsonConvert.DeserializeObject<List<Localidad>>(aux);
                 }
             }
             catch (Exception e)
@@ -122,7 +129,8 @@ namespace DataLayer
         {
             try
             {
-                HttpResponseMessage response = client.PostAsJsonAsync("api/usuarios", user).Result;
+                HttpResponseMessage response =
+                    client.PostAsJsonAsync("api/usuarios", user).Result;
 
                 if (response.IsSuccessStatusCode)
                     return true;
@@ -141,7 +149,8 @@ namespace DataLayer
         {
             try
             {
-                HttpResponseMessage response = client.DeleteAsync("api/usuarios/" + id).Result;
+                HttpResponseMessage response =
+                    client.DeleteAsync("api/usuarios/" + id).Result;
 
                 if (response.IsSuccessStatusCode)
                     return true;
@@ -160,7 +169,8 @@ namespace DataLayer
         {
             try
             {
-                HttpResponseMessage response = client.PutAsJsonAsync("api/usuarios/" + id, user).Result;
+                HttpResponseMessage response =
+                    client.PutAsJsonAsync("api/usuarios/" + id, user).Result;
 
                 if (response.IsSuccessStatusCode)
                     return true;
@@ -182,13 +192,15 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Articulos").Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Articulos").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     aux = response.Content.ReadAsStringAsync().Result;
 
-                    productsList = JsonConvert.DeserializeObject<List<Articulo>>(aux);
+                    productsList =
+                        JsonConvert.DeserializeObject<List<Articulo>>(aux);
                 }
             }
             catch (Exception e)
@@ -206,13 +218,15 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/tipoArticulos").Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/tipoArticulos").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     aux = response.Content.ReadAsStringAsync().Result;
 
-                    productTypesList = JsonConvert.DeserializeObject<List<TipoArticulo>>(aux);
+                    productTypesList =
+                        JsonConvert.DeserializeObject<List<TipoArticulo>>(aux);
                 }
             }
             catch (Exception e)
@@ -230,7 +244,8 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Articulos/" + idGet).Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Articulos/" + idGet).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -254,13 +269,15 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/tipoArticulos/" + type).Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/tipoArticulos/" + type).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     aux = response.Content.ReadAsStringAsync().Result;
 
-                    productType = JsonConvert.DeserializeObject<TipoArticulo>(aux);
+                    productType =
+                        JsonConvert.DeserializeObject<TipoArticulo>(aux);
                 }
             }
             catch (Exception e)
@@ -278,7 +295,8 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Tvs/" + id).Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Tvs/" + id).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -302,7 +320,8 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Memorias/" + id).Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Memorias/" + id).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -326,7 +345,8 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Camaras/" + id).Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Camaras/" + id).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -350,7 +370,8 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Objetivos/" + id).Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Objetivos/" + id).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -371,7 +392,9 @@ namespace DataLayer
         {
             try
             {
-                HttpResponseMessage response = client.PutAsJsonAsync("api/Articulos/" + id, product).Result;
+                HttpResponseMessage response =
+                    client.PutAsJsonAsync(
+                        "api/Articulos/" + id, product).Result;
 
                 if (response.IsSuccessStatusCode)
                     return true;
@@ -393,7 +416,8 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Usuarios/" + id).Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Usuarios/" + id).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -414,7 +438,8 @@ namespace DataLayer
         {
             try
             {
-                HttpResponseMessage response = client.PostAsJsonAsync("api/Linped", lp).Result;
+                HttpResponseMessage response =
+                    client.PostAsJsonAsync("api/Linped", lp).Result;
 
                 if (response.IsSuccessStatusCode)
                     return true;
@@ -436,13 +461,15 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Pedidos").Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Pedidos").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     aux = response.Content.ReadAsStringAsync().Result;
 
-                    ordersList = JsonConvert.DeserializeObject<List<Pedido>>(aux);
+                    ordersList =
+                        JsonConvert.DeserializeObject<List<Pedido>>(aux);
                 }
             }
             catch (Exception e)
@@ -457,7 +484,8 @@ namespace DataLayer
         {
             try
             {
-                HttpResponseMessage response = client.PostAsJsonAsync("api/Pedidos", order).Result;
+                HttpResponseMessage response =
+                    client.PostAsJsonAsync("api/Pedidos", order).Result;
 
                 if (response.IsSuccessStatusCode)
                     return true;
@@ -479,13 +507,15 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Linped").Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Linped").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     aux = response.Content.ReadAsStringAsync().Result;
 
-                    orderRows = JsonConvert.DeserializeObject<List<Linped>>(aux);
+                    orderRows =
+                        JsonConvert.DeserializeObject<List<Linped>>(aux);
                 }
             }
             catch (Exception e)
@@ -503,7 +533,8 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Stock").Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Stock").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -524,7 +555,9 @@ namespace DataLayer
         {
             try
             {
-                HttpResponseMessage response = client.DeleteAsync("api/Linped/" + order + ":" + row).Result;
+                HttpResponseMessage response =
+                    client.DeleteAsync(
+                        "api/Linped/" + order + ":" + row).Result;
 
                 if (response.IsSuccessStatusCode)
                     return true;
@@ -543,7 +576,8 @@ namespace DataLayer
         {
             try
             {
-                HttpResponseMessage response = client.DeleteAsync("api/Pedidos/" + orderPK).Result;
+                HttpResponseMessage response =
+                    client.DeleteAsync("api/Pedidos/" + orderPK).Result;
 
                 if (response.IsSuccessStatusCode)
                     return true;

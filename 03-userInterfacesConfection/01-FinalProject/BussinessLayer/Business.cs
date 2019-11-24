@@ -77,9 +77,9 @@ namespace BussinessLayer
             string address, string postalCode, string provinceId,
             string townId, string birthdate)
         {
-            return dat.InsertUser(new Usuario(id, mail, Codifica_MD5(password), name,
-                surname, idCard, phone, address, null, postalCode, townId,
-                provinceId, birthdate));
+            return dat.InsertUser(new Usuario(id, mail, Codifica_MD5(password),
+                name, surname, idCard, phone, address, null, postalCode,
+                townId, provinceId, birthdate));
         }
 
         public bool DeleteUser(string id)
@@ -172,7 +172,8 @@ namespace BussinessLayer
             double totalPrice = 0;
             foreach (LinpedAux lp in rows)
             {
-                totalPrice += Convert.ToInt32(lp.cantidad) * Convert.ToDouble(lp.pvp);
+                totalPrice +=
+                    Convert.ToInt32(lp.cantidad) * Convert.ToDouble(lp.pvp);
             }
 
             return totalPrice;

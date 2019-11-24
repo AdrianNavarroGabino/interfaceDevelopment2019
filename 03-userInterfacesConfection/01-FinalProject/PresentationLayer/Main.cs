@@ -76,7 +76,8 @@ namespace PresentationLayer
 
         private void Exit(object sender, FormClosingEventArgs e)
         {
-            DialogResult result1 = MessageBox.Show("Do you really want to exit?",
+            DialogResult result1 = MessageBox.Show(
+                "Do you really want to exit?",
                 "Exit",
                 MessageBoxButtons.YesNo);
 
@@ -196,7 +197,7 @@ namespace PresentationLayer
             newOrder.Show();
         }
 
-        private void ModifyOrder(object sender, EventArgs e)
+        public void ModifyOrder(object sender, EventArgs e)
         {
             CloseForms();
 
@@ -272,16 +273,6 @@ namespace PresentationLayer
 
         private void Restore(object sender, MouseEventArgs e)
         {
-            /*if(this.WindowState == FormWindowState.Minimized)
-            {
-                //this.WindowState = FormWindowState.Normal;
-                this.Hide();
-            }
-            else if (this.WindowState == FormWindowState.Normal)
-            {
-                //this.WindowState = FormWindowState.Minimized;
-                this.Hide();
-            }*/
             if(hide)
             {
                 this.Show();

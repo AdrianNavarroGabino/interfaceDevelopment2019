@@ -89,7 +89,8 @@ namespace PresentationLayer
                 bool canDelete = true;
                 foreach(Pedido o in orders)
                 {
-                    if(o.usuarioID == dataGridView1.SelectedCells[4].Value.ToString())
+                    if(o.usuarioID ==
+                        dataGridView1.SelectedCells[4].Value.ToString())
                     {
                         canDelete = false;
                         break;
@@ -97,7 +98,8 @@ namespace PresentationLayer
                 }
                 if (canDelete)
                 {
-                    var confirmResult = MessageBox.Show("Are you sure to delete " +
+                    var confirmResult = MessageBox.Show(
+                        "Are you sure to delete " +
                         dataGridView1.SelectedCells[0].Value.ToString() + " " +
                         dataGridView1.SelectedCells[1].Value.ToString() + "?",
                                          "Delete user",

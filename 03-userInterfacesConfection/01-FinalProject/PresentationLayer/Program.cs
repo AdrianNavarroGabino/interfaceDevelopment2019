@@ -8,7 +8,7 @@ namespace PresentationLayer
     static class Program
     {
         /// <summary>
-        /// Punto de entrada principal para la aplicación.
+        /// Main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()

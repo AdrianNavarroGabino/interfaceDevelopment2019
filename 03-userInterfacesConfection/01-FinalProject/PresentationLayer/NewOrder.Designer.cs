@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.titleLbl = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.userSurnameLbl = new System.Windows.Forms.Label();
             this.surnameBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.userNameLbl = new System.Windows.Forms.Label();
             this.userNameBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.usersLbl = new System.Windows.Forms.Label();
             this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
             this.orderBtn = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.productsLbl = new System.Windows.Forms.Label();
             this.nameLbl = new System.Windows.Forms.Label();
             this.typeLbl = new System.Windows.Forms.Label();
             this.productNameBox = new System.Windows.Forms.TextBox();
@@ -48,7 +48,7 @@
             this.addBtn = new System.Windows.Forms.Button();
             this.removeBtn = new System.Windows.Forms.Button();
             this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.userIdLbl = new System.Windows.Forms.Label();
             this.idBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountBox)).BeginInit();
@@ -67,16 +67,16 @@
             this.titleLbl.TabIndex = 4;
             this.titleLbl.Text = "New order";
             // 
-            // label3
+            // userSurnameLbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.label3.Location = new System.Drawing.Point(15, 641);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
-            this.label3.TabIndex = 37;
-            this.label3.Text = "Surname:";
+            this.userSurnameLbl.AutoSize = true;
+            this.userSurnameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userSurnameLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.userSurnameLbl.Location = new System.Drawing.Point(15, 641);
+            this.userSurnameLbl.Name = "userSurnameLbl";
+            this.userSurnameLbl.Size = new System.Drawing.Size(89, 20);
+            this.userSurnameLbl.TabIndex = 37;
+            this.userSurnameLbl.Text = "Surname:";
             // 
             // surnameBox
             // 
@@ -92,16 +92,16 @@
             this.surnameBox.UseWaitCursor = true;
             this.surnameBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FilterUser);
             // 
-            // label2
+            // userNameLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.label2.Location = new System.Drawing.Point(1, 592);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 20);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Name:";
+            this.userNameLbl.AutoSize = true;
+            this.userNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.userNameLbl.Location = new System.Drawing.Point(1, 592);
+            this.userNameLbl.Name = "userNameLbl";
+            this.userNameLbl.Size = new System.Drawing.Size(63, 20);
+            this.userNameLbl.TabIndex = 34;
+            this.userNameLbl.Text = "Name:";
             // 
             // userNameBox
             // 
@@ -117,17 +117,17 @@
             this.userNameBox.UseWaitCursor = true;
             this.userNameBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FilterUser);
             // 
-            // label4
+            // usersLbl
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.label4.Location = new System.Drawing.Point(105, 88);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 49);
-            this.label4.TabIndex = 41;
-            this.label4.Text = "Users";
+            this.usersLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.usersLbl.AutoSize = true;
+            this.usersLbl.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usersLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.usersLbl.Location = new System.Drawing.Point(105, 88);
+            this.usersLbl.Name = "usersLbl";
+            this.usersLbl.Size = new System.Drawing.Size(137, 49);
+            this.usersLbl.TabIndex = 41;
+            this.usersLbl.Text = "Users";
             // 
             // dataGridViewProducts
             // 
@@ -160,17 +160,17 @@
             this.orderBtn.UseVisualStyleBackColor = false;
             this.orderBtn.Click += new System.EventHandler(this.Order);
             // 
-            // label5
+            // productsLbl
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.label5.Location = new System.Drawing.Point(485, 88);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(204, 49);
-            this.label5.TabIndex = 44;
-            this.label5.Text = "Products";
+            this.productsLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.productsLbl.AutoSize = true;
+            this.productsLbl.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productsLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.productsLbl.Location = new System.Drawing.Point(480, 88);
+            this.productsLbl.Name = "productsLbl";
+            this.productsLbl.Size = new System.Drawing.Size(204, 49);
+            this.productsLbl.TabIndex = 44;
+            this.productsLbl.Text = "Products";
             // 
             // nameLbl
             // 
@@ -315,16 +315,16 @@
             this.dataGridViewUsers.TabIndex = 55;
             this.dataGridViewUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelectUser);
             // 
-            // label1
+            // userIdLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
-            this.label1.Location = new System.Drawing.Point(206, 592);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 20);
-            this.label1.TabIndex = 56;
-            this.label1.Text = "ID:";
+            this.userIdLbl.AutoSize = true;
+            this.userIdLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userIdLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.userIdLbl.Location = new System.Drawing.Point(206, 592);
+            this.userIdLbl.Name = "userIdLbl";
+            this.userIdLbl.Size = new System.Drawing.Size(34, 20);
+            this.userIdLbl.TabIndex = 56;
+            this.userIdLbl.Text = "ID:";
             // 
             // idBox
             // 
@@ -347,7 +347,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(225)))), ((int)(((byte)(212)))));
             this.ClientSize = new System.Drawing.Size(1000, 690);
             this.Controls.Add(this.idBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.userIdLbl);
             this.Controls.Add(this.dataGridViewUsers);
             this.Controls.Add(this.removeBtn);
             this.Controls.Add(this.addBtn);
@@ -359,13 +359,13 @@
             this.Controls.Add(this.typeLbl);
             this.Controls.Add(this.productNameBox);
             this.Controls.Add(this.typeBox);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.productsLbl);
             this.Controls.Add(this.orderBtn);
             this.Controls.Add(this.dataGridViewProducts);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.usersLbl);
+            this.Controls.Add(this.userSurnameLbl);
             this.Controls.Add(this.surnameBox);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.userNameLbl);
             this.Controls.Add(this.userNameBox);
             this.Controls.Add(this.titleLbl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -382,14 +382,14 @@
         #endregion
 
         private System.Windows.Forms.Label titleLbl;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label userSurnameLbl;
         private System.Windows.Forms.TextBox surnameBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label userNameLbl;
         private System.Windows.Forms.TextBox userNameBox;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label usersLbl;
         private System.Windows.Forms.DataGridView dataGridViewProducts;
         private System.Windows.Forms.Button orderBtn;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label productsLbl;
         private System.Windows.Forms.Label nameLbl;
         private System.Windows.Forms.Label typeLbl;
         private System.Windows.Forms.TextBox productNameBox;
@@ -401,7 +401,7 @@
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button removeBtn;
         private System.Windows.Forms.DataGridView dataGridViewUsers;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label userIdLbl;
         private System.Windows.Forms.TextBox idBox;
     }
 }

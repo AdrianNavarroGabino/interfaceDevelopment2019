@@ -28,6 +28,7 @@ namespace PresentationLayer
         private List<Usuario> users;
         private Usuario selectedUser;
         private long currentUserId;
+        private bool passwordChanged;
 
         public User(Main main, Business buss, bool modify, string modifyId)
         {
@@ -54,9 +55,8 @@ namespace PresentationLayer
                 bornDate.Value = DateTime.ParseExact(
                     bornDate.Value.ToString().Substring(0,10),
                     "dd/MM/yyyy", null);
-                passBox.ReadOnly = true;
-                passAgainBox.ReadOnly = true;
             }
+            passwordChanged = false;
 
             bornDate.MaxDate = DateTime.Now;
         }
@@ -64,7 +64,8 @@ namespace PresentationLayer
         private void FillTowns(object sender, EventArgs e)
         {
             townBox.Items.Clear();
-            string provinceId = GetProvinceByName(provinceBox.Text).provinciaID;
+            string provinceId =
+                GetProvinceByName(provinceBox.Text).provinciaID;
             
             foreach(Localidad l in towns)
                 if(l.provinciaID == provinceId)
@@ -139,18 +140,20 @@ namespace PresentationLayer
             ValidatingMail(null, null);
             ValidatingName(null, null);
             ValidateTown(null, null);
-            if (registerBtn.Text == "REGISTER")
+            ValidateProvince(null, null);
+            if (registerBtn.Text == "REGISTER" || passwordChanged)
             {
                 ValidatingPassword(null, null);
+                ValidatingPasswordAgain(null, null);
             }
 
             if(!validated)
             {
-                ((Main)this.MdiParent).SetStatus("Fields are not correct", true);
                 return;
             }
 
-            string provinceId = GetProvinceByName(provinceBox.SelectedItem.ToString()).provinciaID;
+            string provinceId = GetProvinceByName(
+                provinceBox.SelectedItem.ToString()).provinciaID;
 
             if (registerBtn.Text == "REGISTER")
             {
@@ -158,7 +161,8 @@ namespace PresentationLayer
                     currentUserId.ToString(), mailBox.Text, nameBox.Text,
                     surnameBox.Text, passBox.Text, idBox.Text, phoneBox.Text,
                     addressBox.Text, postalCodeBox2.Text, provinceId,
-                    GetTownByName(townBox.SelectedItem.ToString(), provinceId).localidadID,
+                    GetTownByName(townBox.SelectedItem.ToString(),
+                    provinceId).localidadID,
                     bornDate.Text);
                 if (inserted)
                 {
@@ -167,7 +171,23 @@ namespace PresentationLayer
                 }
                 else
                 {
-                    ((Main)this.MdiParent).SetStatus("Something went wrong", true);
+                    foreach(Usuario u in users)
+                    {
+                        if(u.email == mailBox.Text)
+                        {
+                            ((Main)this.MdiParent).SetStatus(
+                                "This mail already exists", true);
+                            return;
+                        }
+                        else if(u.dni == idBox.Text)
+                        {
+                            ((Main)this.MdiParent).SetStatus(
+                                "This ID Card already exists", true);
+                            return;
+                        }
+                    }
+                    ((Main)this.MdiParent).SetStatus(
+                        "Something went wrong", true);
                 }
             }
             else if(registerBtn.Text == "MODIFY")
@@ -184,6 +204,10 @@ namespace PresentationLayer
                     townBox.SelectedItem.ToString(),
                     provinceId).localidadID;
                 selectedUser.nacido = bornDate.Text;
+                if(passwordChanged)
+                {
+                    selectedUser.password = buss.Codifica_MD5(passBox.Text);
+                }
 
                 bool modified = buss.ModifyUser(selectedUser);
 
@@ -193,7 +217,8 @@ namespace PresentationLayer
                 }
                 else
                 {
-                    ((Main)this.MdiParent).SetStatus("Something went wrong", true);
+                    ((Main)this.MdiParent).SetStatus(
+                        "Something went wrong", true);
                 }
             }
         }
@@ -213,7 +238,7 @@ namespace PresentationLayer
             }
             else
             {
-                errorProvider.Clear();
+                errorProvider.SetError(mailBox, null);
             }
         }
 
@@ -226,12 +251,13 @@ namespace PresentationLayer
             }
             else
             {
-                errorProvider.Clear();
+                errorProvider.SetError(nameBox, null);
             }
         }
 
         private void ValidatingPassword(object sender, CancelEventArgs e)
         {
+            passwordChanged = true;
             if (!Regex.IsMatch(passBox.Text, passRegex))
             {
                 validated = false;
@@ -241,12 +267,13 @@ namespace PresentationLayer
             }
             else
             {
-                errorProvider.Clear();
+                errorProvider.SetError(passBox, null);
             }
         }
 
         private void ValidatingPasswordAgain(object sender, CancelEventArgs e)
         {
+            passwordChanged = true;
             if(passBox.Text != passAgainBox.Text)
             {
                 validated = false;
@@ -255,7 +282,7 @@ namespace PresentationLayer
             }
             else
             {
-                errorProvider.Clear();
+                errorProvider.SetError(passAgainBox, null);
             }
         }
 
@@ -315,22 +342,22 @@ namespace PresentationLayer
                 validated = false;
                 errorProvider.SetError(idBox, "Wrong ID card");
             }
-            else
+            else if(!wrong && idBox.Text.Replace("_", "").Length >= 9)
             {
-                errorProvider.Clear();
+                errorProvider.SetError(idBox, null);
             }
         }
         
         private void ValidateTown(object sender, CancelEventArgs e)
         {
-            if (townBox.SelectedItem.ToString() == "")
+            if (townBox.SelectedItem == null)
             {
                 errorProvider.SetError(townBox, "You must select a town");
                 validated = false;
             }
             else
             {
-                errorProvider.Clear();
+                errorProvider.SetError(townBox, null);
             }
         }
 
@@ -338,8 +365,23 @@ namespace PresentationLayer
         {
             this.BeginInvoke((MethodInvoker)delegate ()
             {
-                ((MaskedTextBox)sender).SelectionStart = ((MaskedTextBox)sender).Text.Length;
+                ((MaskedTextBox)sender).SelectionStart =
+                    ((MaskedTextBox)sender).Text.Length;
             });
+        }
+
+        private void ValidateProvince(object sender, CancelEventArgs e)
+        {
+            if (provinceBox.SelectedItem == null)
+            {
+                errorProvider.SetError(
+                    provinceBox, "You must select a province");
+                validated = false;
+            }
+            else
+            {
+                errorProvider.SetError(provinceBox, null);
+            }
         }
     }
 }

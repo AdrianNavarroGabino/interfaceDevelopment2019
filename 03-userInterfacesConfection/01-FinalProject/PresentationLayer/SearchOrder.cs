@@ -87,7 +87,8 @@ namespace PresentationLayer
             dataView.RowFilter = "Name LIKE '%" + nameBox.Text + "%'";
 
             if(orderDate.CustomFormat != " ")
-                dataView.RowFilter += " AND Date LIKE '" + orderDate.Value.ToString("dd/MM/yyyy") + "%'";
+                dataView.RowFilter += " AND Date LIKE '" +
+                    orderDate.Value.ToString("dd/MM/yyyy") + "%'";
 
             dataGridViewOrders.DataSource = dataView;
         }
@@ -96,17 +97,25 @@ namespace PresentationLayer
         {
             if (!bill)
             {
-                SortedList<string, int> orderRows = new SortedList<string, int>();
+                SortedList<string, int> orderRows =
+                    new SortedList<string, int>();
 
                 foreach (Linped lp in buss.GetLinpeds())
                 {
-                    if (lp.PedidoID == dataGridViewOrders.SelectedCells[4].Value.ToString())
+                    if (lp.PedidoID ==
+                        dataGridViewOrders.SelectedCells[4].Value.ToString())
                     {
-                        orderRows.Add(lp.articuloID, Convert.ToInt32(lp.cantidad));
+                        orderRows.Add(
+                            lp.articuloID, Convert.ToInt32(lp.cantidad));
                     }
                 }
 
-                newOrder = new NewOrder(main, buss, orderRows, dataGridViewOrders.SelectedCells[5].Value.ToString(), dataGridViewOrders.SelectedCells[4].Value.ToString());
+                newOrder = new NewOrder(
+                    main,
+                    buss,
+                    orderRows,
+                    dataGridViewOrders.SelectedCells[5].Value.ToString(),
+                    dataGridViewOrders.SelectedCells[4].Value.ToString());
                 newOrder.MdiParent = this.ParentForm;
                 newOrder.StartPosition = FormStartPosition.Manual;
                 newOrder.Location = new Point(0, 0);
@@ -115,8 +124,13 @@ namespace PresentationLayer
             }
             else
             {
-                orderBill = new Bill(main, buss, new Pedido(dataGridViewOrders.SelectedCells[4].Value.ToString(),
-                    dataGridViewOrders.SelectedCells[5].Value.ToString(), dataGridViewOrders.SelectedCells[3].Value.ToString()));
+                orderBill = new Bill(
+                    main,
+                    buss,
+                    new Pedido(
+                        dataGridViewOrders.SelectedCells[4].Value.ToString(),
+                        dataGridViewOrders.SelectedCells[5].Value.ToString(),
+                        dataGridViewOrders.SelectedCells[3].Value.ToString()));
                 orderBill.MdiParent = this.ParentForm;
                 orderBill.StartPosition = FormStartPosition.Manual;
                 orderBill.Location = new Point(0, 0);

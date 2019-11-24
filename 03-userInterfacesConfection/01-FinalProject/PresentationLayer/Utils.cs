@@ -8,7 +8,8 @@ namespace PresentationLayer
 {
     class Utils
     {
-        public static Usuario SearchUserByIdCard(List<Usuario> users, String idCard)
+        public static Usuario SearchUserByIdCard(List<Usuario> users,
+            String idCard)
         {
             foreach(Usuario u in users)
             {

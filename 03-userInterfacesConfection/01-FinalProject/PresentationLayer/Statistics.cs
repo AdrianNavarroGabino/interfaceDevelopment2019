@@ -78,7 +78,8 @@ namespace PresentationLayer
             int maxY = 0;
 
             monthChart.Titles.Clear();
-            monthChart.Titles.Add(monthBox.SelectedItem.ToString() + " - Orders by day");
+            monthChart.Titles.Add(
+                monthBox.SelectedItem.ToString() + " - Orders by day");
             monthChart.Titles[0].ForeColor = Color.FromArgb(247, 252, 250);
             monthChart.Titles[0].Font = new Font("Arial", 14, FontStyle.Bold);
 
@@ -95,7 +96,8 @@ namespace PresentationLayer
                 data.Add(j, 0);
             }
             
-            foreach(KeyValuePair<string, SortedList<int, int>> kvp in ordersByDay)
+            foreach(
+                KeyValuePair<string, SortedList<int, int>> kvp in ordersByDay)
             {
                 if(monthBox.SelectedItem.ToString() == kvp.Key)
                 {
@@ -133,7 +135,8 @@ namespace PresentationLayer
         private void FillType()
         {
             yearChart.Titles.Clear();
-            yearChart.Titles.Add(monthBox.SelectedItem.ToString() + " - Products by type");
+            yearChart.Titles.Add(
+                monthBox.SelectedItem.ToString() + " - Products by type");
             yearChart.Titles[0].ForeColor = Color.FromArgb(247, 252, 250);
             yearChart.Titles[0].Font = new Font("Arial", 14, FontStyle.Bold);
 

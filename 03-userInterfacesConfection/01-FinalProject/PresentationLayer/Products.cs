@@ -64,7 +64,8 @@ namespace PresentationLayer
                 productRow["Name"] = product.nombre;
                 productRow["PVP"] = product.pvp;
                 productRow["Brand"] = product.marcaID;
-                productRow["Type"] = GetTypeDescription(product.tipoArticuloID);
+                productRow["Type"] = 
+                    GetTypeDescription(product.tipoArticuloID);
                 productRow["Id"] = product.articuloID;
                 dataTable.Rows.Add(productRow);
             }
@@ -134,7 +135,8 @@ namespace PresentationLayer
             CreateField("panel", "Panel:", tv.panel, 10, 10);
             CreateField("screen", "Screen:", tv.pantalla, 10, 70);
             CreateField("resolution", "Resolution:", tv.resolucion, 10, 130);
-            CreateField("hdReadyFullHd", "HD/Full HD:", tv.hdreadyfullhd, 10, 190);
+            CreateField(
+                "hdReadyFullHd", "HD/Full HD:", tv.hdreadyfullhd, 10, 190);
             CreateField("tdt", "TDT:", tv.tdt, 10, 250);
             CreateField("pvp", "Price:", product.pvp, 10, 310);
         }
@@ -151,7 +153,8 @@ namespace PresentationLayer
         {
             Camara camera = buss.GetCamera(product.articuloID);
 
-            CreateField("resolution", "Resolution:", camera.resolucion, 10, 10);
+            CreateField(
+                "resolution", "Resolution:", camera.resolucion, 10, 10);
             CreateField("sensor", "Sensor:", camera.sensor, 10, 60);
             CreateField("type", "Type:", camera.tipo, 10, 110);
             CreateField("factor", "Factor:", camera.factor, 10, 160);
@@ -169,11 +172,13 @@ namespace PresentationLayer
             CreateField("mount", "Mount:", objective.montura, 10, 70);
             CreateField("focal", "Focal:", objective.focal, 10, 130);
             CreateField("opening", "Opening:", objective.apertura, 10, 190);
-            CreateField("specials", "Specials:", objective.especiales, 10, 250);
+            CreateField(
+                "specials", "Specials:", objective.especiales, 10, 250);
             CreateField("pvp", "Price:", product.pvp, 10, 310);
         }
 
-        private void CreateField(string name, string text, string tbValue, int x, int y)
+        private void CreateField(
+            string name, string text, string tbValue, int x, int y)
         {
             Label label = new Label();
             label.Location = new Point(x, y);
@@ -188,7 +193,8 @@ namespace PresentationLayer
             textBox.BackColor = Color.FromArgb(76, 148, 144);
             textBox.ForeColor = Color.FromArgb(247, 252, 250);
             textBox.Name = name;
-            textBox.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            textBox.Font =
+                new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
             textBox.Size = new Size(150, 30);
             textBox.Text = tbValue;
             if(!modifyMode || name != "pvp")
@@ -212,13 +218,15 @@ namespace PresentationLayer
             modify.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
             modify.Size = new Size(130, 40);
             modify.Text = "Modify price";
-            modify.Click += new EventHandler((s, e) => ModifyPrice(s, e, product));
+            modify.Click += new EventHandler(
+                (s, e) => ModifyPrice(s, e, product));
             splitContainer1.Panel2.Controls.Add(modify);
         }
 
         private void ModifyPrice(object sender, EventArgs e, Articulo product)
         {
-            Control pvp = splitContainer1.Panel2.Controls.Find("pvp", false)[0];
+            Control pvp =
+                splitContainer1.Panel2.Controls.Find("pvp", false)[0];
             string newPrice = pvp.Text;
 
             try

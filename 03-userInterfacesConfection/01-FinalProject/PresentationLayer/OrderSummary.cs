@@ -1,4 +1,6 @@
-﻿using BussinessLayer;
+﻿// Adrián Navarro Gabino
+
+using BussinessLayer;
 using EntityLayer;
 using System;
 using System.Collections.Generic;
@@ -25,8 +27,10 @@ namespace PresentationLayer
         private bool modify;
         private string oldPK;
 
-        public OrderSummary(Main main, Business buss, string userID,
-            SortedList<string, int> orderedProducts, bool modify = false, string oldPK = null)
+        public OrderSummary(
+            Main main, Business buss, string userID,
+            SortedList<string, int> orderedProducts,
+            bool modify = false, string oldPK = null)
         {
             InitializeComponent();
             this.main = main;
@@ -35,7 +39,8 @@ namespace PresentationLayer
             this.orderedProducts = orderedProducts;
             FillTable();
             currentOrders = buss.GetOrders();
-            orderPK = Convert.ToInt64(currentOrders[currentOrders.Count - 1].PedidoID);
+            orderPK = Convert.ToInt64(
+                currentOrders[currentOrders.Count - 1].PedidoID);
             this.modify = modify;
 
             if(modify)
@@ -143,18 +148,20 @@ namespace PresentationLayer
 
         private void UpdateAmount(object sender, EventArgs e)
         {
-            orderedProducts[dataGridView1.SelectedCells[5].Value.ToString()] = Convert.ToInt32(amountBox.Value);
+            orderedProducts[dataGridView1.SelectedCells[5].Value.ToString()] =
+                Convert.ToInt32(amountBox.Value);
             FillTable();
         }
 
         private void RemoveProduct(object sender, EventArgs e)
         {
-            orderedProducts.Remove(dataGridView1.SelectedCells[5].Value.ToString());
+            orderedProducts.Remove(
+                dataGridView1.SelectedCells[5].Value.ToString());
             FillTable();
 
             if(orderedProducts.Count == 0)
             {
-                if(modify)
+                if (modify)
                 {
                     for (int i = 1; i <= numberOfRows; i++)
                     {
@@ -162,8 +169,12 @@ namespace PresentationLayer
                     }
 
                     buss.DeleteOrder(oldPK);
+                    main.ModifyOrder(null, null);
                 }
-                main.NewOrder(null, null);
+                else
+                {
+                    main.NewOrder(null, null);
+                }
                 this.Hide();
             }
         }

@@ -209,6 +209,7 @@
             this.provinceBox.Size = new System.Drawing.Size(284, 37);
             this.provinceBox.TabIndex = 16;
             this.provinceBox.SelectedValueChanged += new System.EventHandler(this.FillTowns);
+            this.provinceBox.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateProvince);
             // 
             // townBox
             // 

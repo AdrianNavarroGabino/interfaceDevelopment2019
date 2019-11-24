@@ -36,8 +36,10 @@ namespace PresentationLayer
                 {
                     Articulo product = buss.GetProduct(lp.articuloID);
 
-                    l_bills.Add(new LinpedAux(lp.PedidoID, lp.linea, lp.articuloID,
-                        lp.importe, lp.cantidad, product.nombre, product.pvp, product.marcaID));
+                    l_bills.Add(new LinpedAux(
+                        lp.PedidoID, lp.linea, lp.articuloID,
+                        lp.importe, lp.cantidad, product.nombre,
+                        product.pvp, product.marcaID));
                 }
             }
         }
@@ -45,9 +47,12 @@ namespace PresentationLayer
         private void Bill_Load(object sender, EventArgs e)
         {
             reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Linped", l_bills));
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Order", l_order));
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("User", l_user));
+            reportViewer1.LocalReport.DataSources.Add(
+                new ReportDataSource("Linped", l_bills));
+            reportViewer1.LocalReport.DataSources.Add(
+                new ReportDataSource("Order", l_order));
+            reportViewer1.LocalReport.DataSources.Add(
+                new ReportDataSource("User", l_user));
 
             this.reportViewer1.RefreshReport();
             this.reportViewer1.Dock = DockStyle.Fill;

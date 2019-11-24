@@ -44,8 +44,10 @@ namespace PresentationLayer
         private void Stock_Load(object sender, EventArgs e)
         {
             reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Stock", l_stock));
-            reportViewer1.LocalReport.SetParameters(new ReportParameter("minProducts", minProducts.ToString()));
+            reportViewer1.LocalReport.DataSources.Add(
+                new ReportDataSource("Stock", l_stock));
+            reportViewer1.LocalReport.SetParameters(
+                new ReportParameter("minProducts", minProducts.ToString()));
             
             this.reportViewer1.RefreshReport();
         }
@@ -53,7 +55,8 @@ namespace PresentationLayer
         private void Search(object sender, EventArgs e)
         {
             minProducts = Convert.ToInt32(minNumber.Value);
-            l_stock = stockAux.Where(p => Convert.ToInt32(p.disponible) < minProducts).ToList();
+            l_stock = stockAux.Where(
+                p => Convert.ToInt32(p.disponible) < minProducts).ToList();
             Stock_Load(null, null);
         }
     }
