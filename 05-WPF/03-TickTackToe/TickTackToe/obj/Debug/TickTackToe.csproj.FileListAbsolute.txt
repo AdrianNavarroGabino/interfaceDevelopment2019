@@ -1,0 +1,14 @@
+C:\Users\Adrian\source\repos\TickTackToe\TickTackToe\bin\Debug\TickTackToe.exe.config
+C:\Users\Adrian\source\repos\TickTackToe\TickTackToe\bin\Debug\TickTackToe.exe
+C:\Users\Adrian\source\repos\TickTackToe\TickTackToe\bin\Debug\TickTackToe.pdb
+C:\Users\Adrian\source\repos\TickTackToe\TickTackToe\obj\Debug\TickTackToe.csprojAssemblyReference.cache
+C:\Users\Adrian\source\repos\TickTackToe\TickTackToe\obj\Debug\MainWindow.g.cs
+C:\Users\Adrian\source\repos\TickTackToe\TickTackToe\obj\Debug\App.g.cs
+C:\Users\Adrian\source\repos\TickTackToe\TickTackToe\obj\Debug\TickTackToe_MarkupCompile.cache
+C:\Users\Adrian\source\repos\TickTackToe\TickTackToe\obj\Debug\TickTackToe_MarkupCompile.lref
+C:\Users\Adrian\source\repos\TickTackToe\TickTackToe\obj\Debug\MainWindow.baml
+C:\Users\Adrian\source\repos\TickTackToe\TickTackToe\obj\Debug\TickTackToe.g.resources
+C:\Users\Adrian\source\repos\TickTackToe\TickTackToe\obj\Debug\TickTackToe.Properties.Resources.resources
+C:\Users\Adrian\source\repos\TickTackToe\TickTackToe\obj\Debug\TickTackToe.csproj.GenerateResource.cache
+C:\Users\Adrian\source\repos\TickTackToe\TickTackToe\obj\Debug\TickTackToe.exe
+C:\Users\Adrian\source\repos\TickTackToe\TickTackToe\obj\Debug\TickTackToe.pdb
