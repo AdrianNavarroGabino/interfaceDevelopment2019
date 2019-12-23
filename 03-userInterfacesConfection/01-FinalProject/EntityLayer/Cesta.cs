@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// Adrián Navarro Gabino
 
 namespace EntityLayer
 {
-    class Cesta
+    public class Cesta
     {
         public string articuloID { get; set; }
         public string usuarioID { get; set; }

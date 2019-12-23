@@ -1,11 +1,9 @@
-﻿using System;
+﻿// Adrián Navarro Gabino
+
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLayer;
 using EntityLayer;
@@ -14,14 +12,17 @@ namespace PresentationLayer
 {
     public partial class Products : Form
     {
-        private Bussiness buss;
+        private Main main;
+        private Business buss;
         private List<Articulo> products;
         private List<TipoArticulo> productTypes;
         private bool modifyMode;
 
-        public Products(Bussiness buss, bool modifyMode)
+        public Products(Main main, Business buss, bool modifyMode)
         {
             InitializeComponent();
+            this.main = main;
+            main.SetStatus("Status");
             this.buss = buss;
             this.modifyMode = modifyMode;
             products = buss.GetProducts();
@@ -33,11 +34,6 @@ namespace PresentationLayer
             {
                 typeBox.Items.Add(t.Descripcion);
             }
-        }
-
-        public List<TipoArticulo> GetProductTypes()
-        {
-            return buss.GetProductTypes();
         }
 
         public string GetTypeDescription(String type)
@@ -68,7 +64,8 @@ namespace PresentationLayer
                 productRow["Name"] = product.nombre;
                 productRow["PVP"] = product.pvp;
                 productRow["Brand"] = product.marcaID;
-                productRow["Type"] = GetTypeDescription(product.tipoArticuloID);
+                productRow["Type"] = 
+                    GetTypeDescription(product.tipoArticuloID);
                 productRow["Id"] = product.articuloID;
                 dataTable.Rows.Add(productRow);
             }
@@ -110,7 +107,7 @@ namespace PresentationLayer
         {
             string idGet = dataGridView1.SelectedCells[4].Value.ToString();
 
-            Articulo product = buss.GetProducts(idGet);
+            Articulo product = buss.GetProduct(idGet);
             String typeGet = buss.GetType(product.tipoArticuloID).Descripcion;
 
             CreateProductControls(product, typeGet);
@@ -138,7 +135,8 @@ namespace PresentationLayer
             CreateField("panel", "Panel:", tv.panel, 10, 10);
             CreateField("screen", "Screen:", tv.pantalla, 10, 70);
             CreateField("resolution", "Resolution:", tv.resolucion, 10, 130);
-            CreateField("hdReadyFullHd", "HD/Full HD:", tv.hdreadyfullhd, 10, 190);
+            CreateField(
+                "hdReadyFullHd", "HD/Full HD:", tv.hdreadyfullhd, 10, 190);
             CreateField("tdt", "TDT:", tv.tdt, 10, 250);
             CreateField("pvp", "Price:", product.pvp, 10, 310);
         }
@@ -155,7 +153,8 @@ namespace PresentationLayer
         {
             Camara camera = buss.GetCamera(product.articuloID);
 
-            CreateField("resolution", "Resolution:", camera.resolucion, 10, 10);
+            CreateField(
+                "resolution", "Resolution:", camera.resolucion, 10, 10);
             CreateField("sensor", "Sensor:", camera.sensor, 10, 60);
             CreateField("type", "Type:", camera.tipo, 10, 110);
             CreateField("factor", "Factor:", camera.factor, 10, 160);
@@ -173,11 +172,13 @@ namespace PresentationLayer
             CreateField("mount", "Mount:", objective.montura, 10, 70);
             CreateField("focal", "Focal:", objective.focal, 10, 130);
             CreateField("opening", "Opening:", objective.apertura, 10, 190);
-            CreateField("specials", "Specials:", objective.especiales, 10, 250);
+            CreateField(
+                "specials", "Specials:", objective.especiales, 10, 250);
             CreateField("pvp", "Price:", product.pvp, 10, 310);
         }
 
-        private void CreateField(string name, string text, string tbValue, int x, int y)
+        private void CreateField(
+            string name, string text, string tbValue, int x, int y)
         {
             Label label = new Label();
             label.Location = new Point(x, y);
@@ -192,7 +193,8 @@ namespace PresentationLayer
             textBox.BackColor = Color.FromArgb(76, 148, 144);
             textBox.ForeColor = Color.FromArgb(247, 252, 250);
             textBox.Name = name;
-            textBox.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            textBox.Font =
+                new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
             textBox.Size = new Size(150, 30);
             textBox.Text = tbValue;
             if(!modifyMode || name != "pvp")
@@ -216,13 +218,15 @@ namespace PresentationLayer
             modify.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
             modify.Size = new Size(130, 40);
             modify.Text = "Modify price";
-            modify.Click += new EventHandler((s, e) => ModifyPrice(s, e, product));
+            modify.Click += new EventHandler(
+                (s, e) => ModifyPrice(s, e, product));
             splitContainer1.Panel2.Controls.Add(modify);
         }
 
         private void ModifyPrice(object sender, EventArgs e, Articulo product)
         {
-            Control pvp = splitContainer1.Panel2.Controls.Find("pvp", false)[0];
+            Control pvp =
+                splitContainer1.Panel2.Controls.Find("pvp", false)[0];
             string newPrice = pvp.Text;
 
             try
@@ -235,14 +239,12 @@ namespace PresentationLayer
                 if(buss.ModifyProduct(product.articuloID, modifiedProduct))
                 {
                     dataGridView1.SelectedCells[1].Value = newPrice;
+                    main.SetStatus("Price changed");
                 }
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show("Enter a valid price",
-                        "Invalid price",
-                        MessageBoxButtons.OK);
+                main.SetStatus("Enter a valid price", true);
             }
         }
     }

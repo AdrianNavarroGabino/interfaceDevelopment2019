@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// Adrián Navarro Gabino
 
 namespace EntityLayer
 {
-    class Linped
+    public class Linped
     {
-        public long PedidoID { get; set; }
-        public long linea { get; set; }
+        public string PedidoID { get; set; }
+        public string linea { get; set; }
         public string articuloID { get; set; }
-        public double importe { get; set; }
-        public long cantidad { get; set; }
+        public string importe { get; set; }
+        public string cantidad { get; set; }
 
-        public Linped(long pedidoID, long linea, string articuloID,
-            double importe, long cantidad)
+        public Linped(string pedidoID, string linea, string articuloID,
+            string importe, string cantidad)
         {
             PedidoID = pedidoID;
             this.linea = linea;

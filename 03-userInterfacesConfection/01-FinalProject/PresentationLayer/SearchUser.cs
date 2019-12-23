@@ -1,11 +1,8 @@
-﻿using System;
+﻿// Adrián Navarro Gabino
+
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLayer;
 using EntityLayer;
@@ -14,14 +11,17 @@ namespace PresentationLayer
 {
     public partial class SearchUser : Form
     {
-        private Bussiness buss;
+        private Main main;
+        private Business buss;
         private List<Usuario> users;
         private bool delete;
 
-        public SearchUser(Bussiness buss, bool delete = false)
+        public SearchUser(Main main, Business buss, bool delete = false)
         {
             InitializeComponent();
+            this.main = main;
             this.buss = buss;
+            main.SetStatus("Status");
             users = buss.GetUsers();
             FillTable(users);
             this.delete = false;
@@ -41,26 +41,24 @@ namespace PresentationLayer
             dataTable.Columns.Add("Surname");
             dataTable.Columns.Add("ID");
             dataTable.Columns.Add("Mail");
+            dataTable.Columns.Add("PK");
 
             foreach (Usuario user in users)
             {
                 DataRow userRow = dataTable.NewRow();
-                
+
                 userRow["Name"] = user.nombre;
                 userRow["Surname"] = user.apellidos;
                 userRow["ID"] = user.dni;
                 userRow["Mail"] = user.email;
+                userRow["PK"] = user.usuarioID;
                 dataTable.Rows.Add(userRow);
             }
-            
+
             DataView dataView = dataTable.DefaultView;
 
             dataGridView1.DataSource = dataView;
-
-            dataGridView1.Columns["Name"].Width = 180;
-            dataGridView1.Columns["Surname"].Width = 200;
-            dataGridView1.Columns["ID"].Width = 120;
-            dataGridView1.Columns["Mail"].Width = 212;
+            dataGridView1.Columns["PK"].Visible = false;
         }
 
         private void Filter(object sender, KeyEventArgs e)
@@ -78,47 +76,54 @@ namespace PresentationLayer
         private void GoToUserForm(object sender, EventArgs e)
         {
             string idCard = dataGridView1.SelectedCells[2].Value.ToString();
-            ((Main)this.MdiParent).InsertUser(true, idCard);
+            ((Main)this.MdiParent).InsertUser(true,
+                dataGridView1.SelectedCells[4].Value.ToString());
         }
 
         private void DeleteUser(object sender, DataGridViewCellEventArgs e)
         {
-            if(delete)
+            main.SetStatus("Status");
+            if (delete)
             {
-                var confirmResult = MessageBox.Show("Are you sure to delete " + 
-                    dataGridView1.SelectedCells[0].Value.ToString() + " " +
-                    dataGridView1.SelectedCells[1].Value.ToString() + "?",
-                                     "Delete user",
-                                     MessageBoxButtons.YesNo);
-                if (confirmResult == DialogResult.Yes)
+                List<Pedido> orders = buss.GetOrders();
+                bool canDelete = true;
+                foreach(Pedido o in orders)
                 {
-                    if(buss.DeleteUser(
-                        GetUserId(
-                            dataGridView1.SelectedCells[2].Value.ToString())))
+                    if(o.usuarioID ==
+                        dataGridView1.SelectedCells[4].Value.ToString())
                     {
-                        users = buss.GetUsers();
-                        FillTable(users);
-                    }
-                    else
-                    {
-                        MessageBox.Show(GetUserId(
-                            dataGridView1.SelectedCells[2].Value.ToString()) + "");
+                        canDelete = false;
+                        break;
                     }
                 }
-            }
-        }
-
-        private int GetUserId(String idCard)
-        {
-            foreach(Usuario u in users)
-            {
-                if(u.dni == idCard)
+                if (canDelete)
                 {
-                    return u.usuarioID;
+                    var confirmResult = MessageBox.Show(
+                        "Are you sure to delete " +
+                        dataGridView1.SelectedCells[0].Value.ToString() + " " +
+                        dataGridView1.SelectedCells[1].Value.ToString() + "?",
+                                         "Delete user",
+                                         MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        if (buss.DeleteUser(
+                            dataGridView1.SelectedCells[4].Value.ToString()))
+                        {
+                            users = buss.GetUsers();
+                            FillTable(users);
+                            main.SetStatus("User removed");
+                        }
+                        else
+                        {
+                            main.SetStatus("Something went wrong", true);
+                        }
+                    }
+                }
+                else
+                {
+                    main.SetStatus("This user has orders", true);
                 }
             }
-
-            return -1;
         }
     }
 }

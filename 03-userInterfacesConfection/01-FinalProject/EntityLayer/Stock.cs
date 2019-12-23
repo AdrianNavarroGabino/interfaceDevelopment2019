@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// Adrián Navarro Gabino
 
 namespace EntityLayer
 {
-    class Stock
+    public class Stock
     {
         public string articuloID { get; set; }
-        public long disponible { get; set; }
+        public string disponible { get; set; }
         public string entrega { get; set; }
 
-        public Stock(string articuloID, long disponible, string entrega)
+        public Stock(string articuloID, string disponible, string entrega)
         {
             this.articuloID = articuloID;
             this.disponible = disponible;

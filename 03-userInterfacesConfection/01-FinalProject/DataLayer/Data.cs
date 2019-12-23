@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EntityLayer;
+﻿// Adrián Navarro Gabino
 
+using System;
+using System.Collections.Generic;
+using EntityLayer;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
@@ -31,13 +29,15 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/usuarios").Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/usuarios").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     aux = response.Content.ReadAsStringAsync().Result;
 
-                    listaUsuarios = JsonConvert.DeserializeObject<List<Usuario>>(aux);
+                    listaUsuarios =
+                        JsonConvert.DeserializeObject<List<Usuario>>(aux);
                 }
             }
             catch (Exception e)
@@ -55,13 +55,15 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/provincias").Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/provincias").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     aux = response.Content.ReadAsStringAsync().Result;
 
-                    provincesList = JsonConvert.DeserializeObject<List<Provincia>>(aux);
+                    provincesList =
+                        JsonConvert.DeserializeObject<List<Provincia>>(aux);
                 }
             }
             catch (Exception e)
@@ -72,6 +74,31 @@ namespace DataLayer
             return provincesList;
         }
 
+        public Provincia ReadProvince(string provinceId)
+        {
+            Provincia province = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response =
+                    client.GetAsync("api/Provincias/" + provinceId).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    province = JsonConvert.DeserializeObject<Provincia>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return province;
+        }
+
         public List<Localidad> ReadTowns()
         {
             List<Localidad> townsList = null;
@@ -79,13 +106,15 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/localidades").Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/localidades").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     aux = response.Content.ReadAsStringAsync().Result;
 
-                    townsList = JsonConvert.DeserializeObject<List<Localidad>>(aux);
+                    townsList =
+                        JsonConvert.DeserializeObject<List<Localidad>>(aux);
                 }
             }
             catch (Exception e)
@@ -100,7 +129,8 @@ namespace DataLayer
         {
             try
             {
-                HttpResponseMessage response = client.PostAsJsonAsync("api/usuarios", user).Result;
+                HttpResponseMessage response =
+                    client.PostAsJsonAsync("api/usuarios", user).Result;
 
                 if (response.IsSuccessStatusCode)
                     return true;
@@ -115,11 +145,12 @@ namespace DataLayer
             return true;
         }
 
-        public bool DeleteUser(int id)
+        public bool DeleteUser(string id)
         {
             try
             {
-                HttpResponseMessage response = client.DeleteAsync("api/usuarios/" + id).Result;
+                HttpResponseMessage response =
+                    client.DeleteAsync("api/usuarios/" + id).Result;
 
                 if (response.IsSuccessStatusCode)
                     return true;
@@ -134,11 +165,12 @@ namespace DataLayer
             return true;
         }
 
-        public bool ModifyUser(int id, Usuario user)
+        public bool ModifyUser(string id, Usuario user)
         {
             try
             {
-                HttpResponseMessage response = client.PutAsJsonAsync("api/usuarios/" + id, user).Result;
+                HttpResponseMessage response =
+                    client.PutAsJsonAsync("api/usuarios/" + id, user).Result;
 
                 if (response.IsSuccessStatusCode)
                     return true;
@@ -160,13 +192,15 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Articulos").Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Articulos").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     aux = response.Content.ReadAsStringAsync().Result;
 
-                    productsList = JsonConvert.DeserializeObject<List<Articulo>>(aux);
+                    productsList =
+                        JsonConvert.DeserializeObject<List<Articulo>>(aux);
                 }
             }
             catch (Exception e)
@@ -184,13 +218,15 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/tipoArticulos").Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/tipoArticulos").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     aux = response.Content.ReadAsStringAsync().Result;
 
-                    productTypesList = JsonConvert.DeserializeObject<List<TipoArticulo>>(aux);
+                    productTypesList =
+                        JsonConvert.DeserializeObject<List<TipoArticulo>>(aux);
                 }
             }
             catch (Exception e)
@@ -208,7 +244,8 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Articulos/" + idGet).Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Articulos/" + idGet).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -232,13 +269,15 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/tipoArticulos/" + type).Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/tipoArticulos/" + type).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     aux = response.Content.ReadAsStringAsync().Result;
 
-                    productType = JsonConvert.DeserializeObject<TipoArticulo>(aux);
+                    productType =
+                        JsonConvert.DeserializeObject<TipoArticulo>(aux);
                 }
             }
             catch (Exception e)
@@ -256,7 +295,8 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Tvs/" + id).Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Tvs/" + id).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -280,7 +320,8 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Memorias/" + id).Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Memorias/" + id).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -304,7 +345,8 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Camaras/" + id).Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Camaras/" + id).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -328,7 +370,8 @@ namespace DataLayer
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("api/Objetivos/" + id).Result;
+                HttpResponseMessage response =
+                    client.GetAsync("api/Objetivos/" + id).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -349,7 +392,192 @@ namespace DataLayer
         {
             try
             {
-                HttpResponseMessage response = client.PutAsJsonAsync("api/Articulos/" + id, product).Result;
+                HttpResponseMessage response =
+                    client.PutAsJsonAsync(
+                        "api/Articulos/" + id, product).Result;
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return true;
+        }
+
+        public Usuario ReadUser(String id)
+        {
+            Usuario user = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response =
+                    client.GetAsync("api/Usuarios/" + id).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    user = JsonConvert.DeserializeObject<Usuario>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return user;
+        }
+
+        public bool InsertOrderRow(Linped lp)
+        {
+            try
+            {
+                HttpResponseMessage response =
+                    client.PostAsJsonAsync("api/Linped", lp).Result;
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return true;
+        }
+
+        public List<Pedido> ReadOrders()
+        {
+            List<Pedido> ordersList = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response =
+                    client.GetAsync("api/Pedidos").Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    ordersList =
+                        JsonConvert.DeserializeObject<List<Pedido>>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return ordersList;
+        }
+
+        public bool InsertOrder(Pedido order)
+        {
+            try
+            {
+                HttpResponseMessage response =
+                    client.PostAsJsonAsync("api/Pedidos", order).Result;
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return true;
+        }
+
+        public List<Linped> ReadLinpeds()
+        {
+            List<Linped> orderRows = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response =
+                    client.GetAsync("api/Linped").Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    orderRows =
+                        JsonConvert.DeserializeObject<List<Linped>>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return orderRows;
+        }
+
+        public List<Stock> ReadStock()
+        {
+            List<Stock> stock = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response =
+                    client.GetAsync("api/Stock").Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    stock = JsonConvert.DeserializeObject<List<Stock>>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return stock;
+        }
+
+        public bool DeleteRow(string order, int row)
+        {
+            try
+            {
+                HttpResponseMessage response =
+                    client.DeleteAsync(
+                        "api/Linped/" + order + ":" + row).Result;
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return true;
+        }
+
+        public bool DeleteOrder(string orderPK)
+        {
+            try
+            {
+                HttpResponseMessage response =
+                    client.DeleteAsync("api/Pedidos/" + orderPK).Result;
 
                 if (response.IsSuccessStatusCode)
                     return true;

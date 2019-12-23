@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.opcion1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +43,6 @@
             this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultationAndModificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.billToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,12 +50,13 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.statusBar = new System.Windows.Forms.StatusStrip();
-            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.hourLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.timerLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.userLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.hourTimer = new System.Windows.Forms.Timer(this.components);
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.SuspendLayout();
@@ -145,7 +146,7 @@
             // 
             this.consultToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
             this.consultToolStripMenuItem.Name = "consultToolStripMenuItem";
-            this.consultToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.consultToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.consultToolStripMenuItem.Text = "Consult";
             this.consultToolStripMenuItem.Click += new System.EventHandler(this.ConsultProducts);
             // 
@@ -153,7 +154,7 @@
             // 
             this.modifyToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
             this.modifyToolStripMenuItem1.Name = "modifyToolStripMenuItem1";
-            this.modifyToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.modifyToolStripMenuItem1.Size = new System.Drawing.Size(141, 26);
             this.modifyToolStripMenuItem1.Text = "Modify";
             this.modifyToolStripMenuItem1.Click += new System.EventHandler(this.ModifyProducts);
             // 
@@ -161,8 +162,7 @@
             // 
             this.ordersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
-            this.consultationAndModificationToolStripMenuItem,
-            this.removeToolStripMenuItem1});
+            this.consultationAndModificationToolStripMenuItem});
             this.ordersToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
             this.ordersToolStripMenuItem.Name = "ordersToolStripMenuItem";
             this.ordersToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
@@ -172,22 +172,17 @@
             // 
             this.newToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(293, 26);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
             this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.NewOrder);
             // 
             // consultationAndModificationToolStripMenuItem
             // 
             this.consultationAndModificationToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
             this.consultationAndModificationToolStripMenuItem.Name = "consultationAndModificationToolStripMenuItem";
-            this.consultationAndModificationToolStripMenuItem.Size = new System.Drawing.Size(293, 26);
-            this.consultationAndModificationToolStripMenuItem.Text = "Consultation and modification";
-            // 
-            // removeToolStripMenuItem1
-            // 
-            this.removeToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
-            this.removeToolStripMenuItem1.Name = "removeToolStripMenuItem1";
-            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(293, 26);
-            this.removeToolStripMenuItem1.Text = "Remove";
+            this.consultationAndModificationToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.consultationAndModificationToolStripMenuItem.Text = "Modification";
+            this.consultationAndModificationToolStripMenuItem.Click += new System.EventHandler(this.ModifyOrder);
             // 
             // statisticsToolStripMenuItem
             // 
@@ -195,6 +190,7 @@
             this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
             this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.statisticsToolStripMenuItem.Text = "Statistics";
+            this.statisticsToolStripMenuItem.Click += new System.EventHandler(this.ShowStatistics);
             // 
             // reportsToolStripMenuItem
             // 
@@ -212,6 +208,7 @@
             this.billToolStripMenuItem.Name = "billToolStripMenuItem";
             this.billToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.billToolStripMenuItem.Text = "Bill";
+            this.billToolStripMenuItem.Click += new System.EventHandler(this.SearchBills);
             // 
             // stockToolStripMenuItem
             // 
@@ -219,6 +216,7 @@
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
             this.stockToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.stockToolStripMenuItem.Text = "Stock";
+            this.stockToolStripMenuItem.Click += new System.EventHandler(this.ShowStock);
             // 
             // aboutToolStripMenuItem
             // 
@@ -226,6 +224,7 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.ShowAbout);
             // 
             // panel1
             // 
@@ -240,7 +239,7 @@
             this.statusBar.Font = new System.Drawing.Font("Tahoma", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusLabel,
+            this.statusLbl,
             this.hourLbl,
             this.timerLbl,
             this.userLbl});
@@ -251,16 +250,16 @@
             this.statusBar.TabIndex = 3;
             this.statusBar.Text = "statusStrip1";
             // 
-            // statusLabel
+            // statusLbl
             // 
-            this.statusLabel.AutoSize = false;
-            this.statusLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.statusLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusLabel.ForeColor = System.Drawing.Color.Black;
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(300, 28);
-            this.statusLabel.Text = "Status";
-            this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.statusLbl.AutoSize = false;
+            this.statusLbl.BackColor = System.Drawing.SystemColors.Control;
+            this.statusLbl.Font = new System.Drawing.Font("Tahoma", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLbl.ForeColor = System.Drawing.Color.Black;
+            this.statusLbl.Name = "statusLbl";
+            this.statusLbl.Size = new System.Drawing.Size(300, 28);
+            this.statusLbl.Text = "Status";
+            this.statusLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // hourLbl
             // 
@@ -303,6 +302,13 @@
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.IncreaseTimer);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "Online Shop";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Restore);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -312,11 +318,14 @@
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(100, 100);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
+            this.Text = "Online shop";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exit);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -342,7 +351,6 @@
         private System.Windows.Forms.ToolStripMenuItem ordersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultationAndModificationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem billToolStripMenuItem;
@@ -350,11 +358,12 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.StatusStrip statusBar;
-        private System.Windows.Forms.ToolStripStatusLabel statusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel statusLbl;
         private System.Windows.Forms.ToolStripStatusLabel hourLbl;
         private System.Windows.Forms.ToolStripStatusLabel timerLbl;
         private System.Windows.Forms.ToolStripStatusLabel userLbl;
         private System.Windows.Forms.Timer hourTimer;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

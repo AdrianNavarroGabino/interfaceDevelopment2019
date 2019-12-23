@@ -1,12 +1,9 @@
-﻿using System;
+﻿// Adrián Navarro Gabino
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLayer;
 using EntityLayer;
@@ -22,23 +19,28 @@ namespace PresentationLayer
             'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C',
             'K', 'E' };
         private const string passRegex =
-            @"^(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d\s])[A-Za-z\d@$!%*?&]{4,}$";
+            @"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{3,}$";
 
-        Bussiness buss;
-        List<Provincia> provinces;
-        List<Localidad> towns;
-        List<Usuario> users;
-        private int nextId;
+        private Main main;
+        private Business buss;
+        private List<Provincia> provinces;
+        private List<Localidad> towns;
+        private List<Usuario> users;
         private Usuario selectedUser;
+        private long currentUserId;
+        private bool passwordChanged;
 
-        public User(Bussiness buss, bool modify, string idCard)
+        public User(Main main, Business buss, bool modify, string modifyId)
         {
             InitializeComponent();
+            this.main = main;
+            main.SetStatus("Status");
             this.buss = buss;
             provinces = buss.GetProvinces();
             users = buss.GetUsers();
             towns = buss.GetTowns();
-            GetNextId();
+            currentUserId =
+                Convert.ToInt64(users[users.Count - 1].usuarioID) + 1;
             foreach (Provincia p in provinces)
             {
                 provinceBox.Items.Add(p.nombre);
@@ -48,66 +50,44 @@ namespace PresentationLayer
             {
                 registerLbl.Text = "Modify";
                 registerBtn.Text = "MODIFY";
-                selectedUser = Utils.SearchUserByIdCard(users, idCard);
-                FillFields(selectedUser);
-                bornDate.Value = DateTime.ParseExact(bornDate.Value.ToString().Substring(0,10), "dd/MM/yyyy", null);
+                selectedUser = buss.GetUser(modifyId);
+                FillFields();
+                bornDate.Value = DateTime.ParseExact(
+                    bornDate.Value.ToString().Substring(0,10),
+                    "dd/MM/yyyy", null);
             }
+            passwordChanged = false;
 
             bornDate.MaxDate = DateTime.Now;
-        }
-
-        private void IDLeave(object sender, EventArgs e)
-        {
-            if (((TextBox)sender).Text == "")
-                ((TextBox)sender).Text = "ID";
-        }
-
-        private void TownLeave(object sender, EventArgs e)
-        {
-            if (((TextBox)sender).Text == "")
-                ((TextBox)sender).Text = "Town";
-        }
-
-        private void ProvinceLeave(object sender, EventArgs e)
-        {
-            if (((TextBox)sender).Text == "")
-                ((TextBox)sender).Text = "Province";
-        }
-
-        private void BornLeave(object sender, EventArgs e)
-        {
-            if (((TextBox)sender).Text == "")
-                ((TextBox)sender).Text = "Born";
         }
 
         private void FillTowns(object sender, EventArgs e)
         {
             townBox.Items.Clear();
-            string provinceId = GetProvinceByName(provinceBox.Text).provinciaID;
+            string provinceId =
+                GetProvinceByName(provinceBox.Text).provinciaID;
             
             foreach(Localidad l in towns)
-            {
                 if(l.provinciaID == provinceId)
-                {
                     townBox.Items.Add(l.nombre);
-                }
-            }
         }
 
-        private void FillFields(Usuario user)
+        private void FillFields()
         {
-            mailBox.Text = user.email;
-            nameBox.Text = user.nombre;
-            surnameBox.Text = user.apellidos;
+            mailBox.Text = selectedUser.email;
+            nameBox.Text = selectedUser.nombre;
+            surnameBox.Text = selectedUser.apellidos;
             passBox.Text = "--------";
             passAgainBox.Text = "--------";
-            idBox.Text = user.dni;
-            phoneBox.Text = user.telefono;
-            addressBox.Text = user.calle;
-            postalCodeBox2.Text = user.codpos;
-            provinceBox.Text = GetProvinceById(user.provinciaID).nombre;
-            townBox.Text = GetTown(user.provinciaID, user.puebloID).nombre;
-            bornDate.Text = user.nacido.Substring(0, 10);
+            idBox.Text = selectedUser.dni;
+            phoneBox.Text = selectedUser.telefono;
+            addressBox.Text = selectedUser.calle;
+            postalCodeBox2.Text = selectedUser.codpos;
+            provinceBox.Text =
+                buss.GetProvince(selectedUser.provinciaID).nombre;
+            townBox.Text = GetTown(selectedUser.provinciaID,
+                selectedUser.puebloID).nombre;
+            bornDate.Text = selectedUser.nacido.Substring(0, 10);
         }
 
         private Localidad GetTown(String provinceId, String townId)
@@ -136,14 +116,7 @@ namespace PresentationLayer
 
         private Provincia GetProvinceById(String provinceId)
         {
-            foreach(Provincia p in provinces)
-            {
-                if(p.provinciaID == provinceId)
-                {
-                    return p;
-                }
-            }
-            return null;
+            return buss.GetProvince(provinceId);
         }
 
         private Provincia GetProvinceByName(String provinceName)
@@ -163,14 +136,15 @@ namespace PresentationLayer
             errorProvider.Clear();
             validated = true;
 
-            ValidateId();
+            ValidateId(null, null);
             ValidatingMail(null, null);
             ValidatingName(null, null);
-            ValidateId();
-            ValidateTown();
-            if (registerBtn.Text == "REGISTER")
+            ValidateTown(null, null);
+            ValidateProvince(null, null);
+            if (registerBtn.Text == "REGISTER" || passwordChanged)
             {
                 ValidatingPassword(null, null);
+                ValidatingPasswordAgain(null, null);
             }
 
             if(!validated)
@@ -178,62 +152,80 @@ namespace PresentationLayer
                 return;
             }
 
-            string provinceId = GetProvinceByName(provinceBox.SelectedText).provinciaID;
+            string provinceId = GetProvinceByName(
+                provinceBox.SelectedItem.ToString()).provinciaID;
 
             if (registerBtn.Text == "REGISTER")
             {
                 bool inserted = buss.InsertUser(
-                    nextId, mailBox.Text, nameBox.Text,
+                    currentUserId.ToString(), mailBox.Text, nameBox.Text,
                     surnameBox.Text, passBox.Text, idBox.Text, phoneBox.Text,
                     addressBox.Text, postalCodeBox2.Text, provinceId,
-                    GetTownByName(townBox.SelectedText, provinceId).localidadID,
+                    GetTownByName(townBox.SelectedItem.ToString(),
+                    provinceId).localidadID,
                     bornDate.Text);
                 if (inserted)
                 {
-                    nextId++;
-                    MessageBox.Show("User inserted");
+                    currentUserId++;
+                    ((Main)this.MdiParent).SetStatus("User inserted");
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong");
+                    foreach(Usuario u in users)
+                    {
+                        if(u.email == mailBox.Text)
+                        {
+                            ((Main)this.MdiParent).SetStatus(
+                                "This mail already exists", true);
+                            return;
+                        }
+                        else if(u.dni == idBox.Text)
+                        {
+                            ((Main)this.MdiParent).SetStatus(
+                                "This ID Card already exists", true);
+                            return;
+                        }
+                    }
+                    ((Main)this.MdiParent).SetStatus(
+                        "Something went wrong", true);
                 }
             }
             else if(registerBtn.Text == "MODIFY")
             {
-                bool modified = buss.ModifyUser(
-                    selectedUser.usuarioID, mailBox.Text, nameBox.Text,
-                    surnameBox.Text, passBox.Text, idBox.Text, phoneBox.Text,
-                    addressBox.Text, postalCodeBox2.Text, provinceId,
-                    GetTownByName(townBox.SelectedText, provinceId).localidadID,
-                    bornDate.Text);
+                selectedUser.email = mailBox.Text;
+                selectedUser.nombre = nameBox.Text;
+                selectedUser.apellidos = surnameBox.Text;
+                selectedUser.dni = idBox.Text;
+                selectedUser.telefono = phoneBox.Text;
+                selectedUser.calle = addressBox.Text;
+                selectedUser.codpos = postalCodeBox2.Text;
+                selectedUser.provinciaID = provinceId;
+                selectedUser.puebloID =GetTownByName(
+                    townBox.SelectedItem.ToString(),
+                    provinceId).localidadID;
+                selectedUser.nacido = bornDate.Text;
+                if(passwordChanged)
+                {
+                    selectedUser.password = buss.Codifica_MD5(passBox.Text);
+                }
+
+                bool modified = buss.ModifyUser(selectedUser);
 
                 if(modified)
                 {
-                    MessageBox.Show("User modified");
+                    ((Main)this.MdiParent).SetStatus("User modified");
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong");
+                    ((Main)this.MdiParent).SetStatus(
+                        "Something went wrong", true);
                 }
             }
-        }
-
-        private void GetNextId()
-        {
-            int auxId = -1;
-
-            foreach(Usuario u in users)
-            {
-                auxId = u.usuarioID > auxId ?
-                    u.usuarioID : auxId;
-            }
-
-            nextId = auxId + 1;
         }
 
         private void ValidatingMail(object sender, CancelEventArgs e)
         {
-            if (mailBox.Text.Trim().Length == 0 || mailBox.Text == "Mail")
+            if (mailBox.Text.Trim().Length == 0)
             {
                 validated = false;
                 errorProvider.SetError(mailBox, "Mail cannot be empty");
@@ -246,45 +238,61 @@ namespace PresentationLayer
             }
             else
             {
-                errorProvider.Clear();
+                errorProvider.SetError(mailBox, null);
             }
         }
 
         private void ValidatingName(object sender, CancelEventArgs e)
         {
-            if (nameBox.Text == "Name")
+            if (nameBox.Text == "")
             {
                 validated = false;
                 errorProvider.SetError(nameBox, "Name can no be empty");
             }
             else
             {
-                errorProvider.Clear();
+                errorProvider.SetError(nameBox, null);
             }
         }
 
         private void ValidatingPassword(object sender, CancelEventArgs e)
         {
+            passwordChanged = true;
             if (!Regex.IsMatch(passBox.Text, passRegex))
             {
+                validated = false;
                 errorProvider.SetError(passBox,
                     "The password must have at least 1 number, a capital " +
                     "letter and a non-alphanumeric character");
             }
             else
             {
-                errorProvider.Clear();
+                errorProvider.SetError(passBox, null);
             }
         }
 
-        public void ValidateId()
+        private void ValidatingPasswordAgain(object sender, CancelEventArgs e)
+        {
+            passwordChanged = true;
+            if(passBox.Text != passAgainBox.Text)
+            {
+                validated = false;
+                errorProvider.SetError(passAgainBox,
+                    "Passwords don't match");
+            }
+            else
+            {
+                errorProvider.SetError(passAgainBox, null);
+            }
+        }
+
+        public void ValidateId(object sender, CancelEventArgs e)
         {
             int aux;
             bool wrong = false;
 
             if (idBox.Text.Replace("_", "").Length < 9)
             {
-                MessageBox.Show(idBox.Text);
                 validated = false;
                 errorProvider.SetError(idBox, "ID Card cannot be empty");
             }
@@ -334,14 +342,45 @@ namespace PresentationLayer
                 validated = false;
                 errorProvider.SetError(idBox, "Wrong ID card");
             }
+            else if(!wrong && idBox.Text.Replace("_", "").Length >= 9)
+            {
+                errorProvider.SetError(idBox, null);
+            }
         }
         
-        private void ValidateTown()
+        private void ValidateTown(object sender, CancelEventArgs e)
         {
-            if (townBox.SelectedText == "Town")
+            if (townBox.SelectedItem == null)
             {
                 errorProvider.SetError(townBox, "You must select a town");
                 validated = false;
+            }
+            else
+            {
+                errorProvider.SetError(townBox, null);
+            }
+        }
+
+        private void PlaceCursor(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                ((MaskedTextBox)sender).SelectionStart =
+                    ((MaskedTextBox)sender).Text.Length;
+            });
+        }
+
+        private void ValidateProvince(object sender, CancelEventArgs e)
+        {
+            if (provinceBox.SelectedItem == null)
+            {
+                errorProvider.SetError(
+                    provinceBox, "You must select a province");
+                validated = false;
+            }
+            else
+            {
+                errorProvider.SetError(provinceBox, null);
             }
         }
     }

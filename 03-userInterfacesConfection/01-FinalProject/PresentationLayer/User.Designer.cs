@@ -152,6 +152,7 @@
             this.passAgainBox.PasswordChar = '•';
             this.passAgainBox.Size = new System.Drawing.Size(284, 34);
             this.passAgainBox.TabIndex = 9;
+            this.passAgainBox.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingPasswordAgain);
             // 
             // registerBtn
             // 
@@ -208,6 +209,7 @@
             this.provinceBox.Size = new System.Drawing.Size(284, 37);
             this.provinceBox.TabIndex = 16;
             this.provinceBox.SelectedValueChanged += new System.EventHandler(this.FillTowns);
+            this.provinceBox.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateProvince);
             // 
             // townBox
             // 
@@ -222,6 +224,7 @@
             this.townBox.Name = "townBox";
             this.townBox.Size = new System.Drawing.Size(284, 37);
             this.townBox.TabIndex = 17;
+            this.townBox.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateTown);
             // 
             // postalCodeBox2
             // 
@@ -235,6 +238,7 @@
             this.postalCodeBox2.Name = "postalCodeBox2";
             this.postalCodeBox2.Size = new System.Drawing.Size(284, 34);
             this.postalCodeBox2.TabIndex = 15;
+            this.postalCodeBox2.Enter += new System.EventHandler(this.PlaceCursor);
             // 
             // idBox
             // 
@@ -248,6 +252,8 @@
             this.idBox.Name = "idBox";
             this.idBox.Size = new System.Drawing.Size(284, 34);
             this.idBox.TabIndex = 11;
+            this.idBox.Enter += new System.EventHandler(this.PlaceCursor);
+            this.idBox.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateId);
             // 
             // bornDate
             // 

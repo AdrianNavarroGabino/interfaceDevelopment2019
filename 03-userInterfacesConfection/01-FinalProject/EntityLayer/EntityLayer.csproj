@@ -205,6 +205,7 @@
     <Compile Include="Cesta.cs" />
     <Compile Include="Direnvio.cs" />
     <Compile Include="Linped.cs" />
+    <Compile Include="LinpedAux.cs" />
     <Compile Include="Localidad.cs" />
     <Compile Include="Marca.cs" />
     <Compile Include="Memoria.cs" />
@@ -215,6 +216,7 @@
     <Compile Include="Ptienea.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Stock.cs" />
+    <Compile Include="StockAux.cs" />
     <Compile Include="TipoArticulo.cs" />
     <Compile Include="Tlb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

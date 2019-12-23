@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// Adrián Navarro Gabino
 
 namespace EntityLayer
 {
     public class Usuario
     {
-        public int usuarioID { get; set; }
+        public string usuarioID { get; set; }
         public string email { get; set; }
         public string password { get; set; }
         public string nombre { get; set; }
@@ -22,7 +18,7 @@ namespace EntityLayer
         public string provinciaID { get; set; }
         public string nacido { get; set; }
 
-        public Usuario(int usuarioID, string email, string password, string nombre,
+        public Usuario(string usuarioID, string email, string password, string nombre,
             string apellidos, string dni, string telefono, string calle,
             string calle2, string codpos, string puebloID, string provinciaID,
             string nacido)

@@ -345,3 +345,12 @@ C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\System.Composit
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\System.Composition.Runtime.xml
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\System.Composition.TypedParts.xml
 C:\Users\adrian\Desktop\FinalProject\PresentationLayer\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.NewOrder.resources
+C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.OrderSummary.resources
+C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.SearchOrder.resources
+C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Statistics.resources
+C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Bill.resources
+C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\RdlCompile.cache
+C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\RdlCompile.compiled
+C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.Stock.resources
+C:\Users\adrian\Desktop\FinalProject\PresentationLayer\obj\Debug\PresentationLayer.About.resources
