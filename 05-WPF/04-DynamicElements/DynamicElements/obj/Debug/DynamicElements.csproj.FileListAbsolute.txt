@@ -1,0 +1,14 @@
+C:\Users\Adrian\source\repos\DynamicElements\DynamicElements\obj\Debug\DynamicElements.csprojAssemblyReference.cache
+C:\Users\Adrian\source\repos\DynamicElements\DynamicElements\obj\Debug\MainWindow.g.cs
+C:\Users\Adrian\source\repos\DynamicElements\DynamicElements\obj\Debug\App.g.cs
+C:\Users\Adrian\source\repos\DynamicElements\DynamicElements\obj\Debug\DynamicElements_MarkupCompile.cache
+C:\Users\Adrian\source\repos\DynamicElements\DynamicElements\obj\Debug\DynamicElements_MarkupCompile.lref
+C:\Users\Adrian\source\repos\DynamicElements\DynamicElements\bin\Debug\DynamicElements.exe.config
+C:\Users\Adrian\source\repos\DynamicElements\DynamicElements\bin\Debug\DynamicElements.exe
+C:\Users\Adrian\source\repos\DynamicElements\DynamicElements\bin\Debug\DynamicElements.pdb
+C:\Users\Adrian\source\repos\DynamicElements\DynamicElements\obj\Debug\MainWindow.baml
+C:\Users\Adrian\source\repos\DynamicElements\DynamicElements\obj\Debug\DynamicElements.g.resources
+C:\Users\Adrian\source\repos\DynamicElements\DynamicElements\obj\Debug\DynamicElements.Properties.Resources.resources
+C:\Users\Adrian\source\repos\DynamicElements\DynamicElements\obj\Debug\DynamicElements.csproj.GenerateResource.cache
+C:\Users\Adrian\source\repos\DynamicElements\DynamicElements\obj\Debug\DynamicElements.exe
+C:\Users\Adrian\source\repos\DynamicElements\DynamicElements\obj\Debug\DynamicElements.pdb
