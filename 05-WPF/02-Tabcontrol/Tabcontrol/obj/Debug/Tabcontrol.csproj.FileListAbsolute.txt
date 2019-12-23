@@ -1,0 +1,14 @@
+C:\Users\Adrian\source\repos\Tabcontrol\Tabcontrol\bin\Debug\Tabcontrol.exe.config
+C:\Users\Adrian\source\repos\Tabcontrol\Tabcontrol\bin\Debug\Tabcontrol.exe
+C:\Users\Adrian\source\repos\Tabcontrol\Tabcontrol\bin\Debug\Tabcontrol.pdb
+C:\Users\Adrian\source\repos\Tabcontrol\Tabcontrol\obj\Debug\Tabcontrol.csprojAssemblyReference.cache
+C:\Users\Adrian\source\repos\Tabcontrol\Tabcontrol\obj\Debug\MainWindow.g.cs
+C:\Users\Adrian\source\repos\Tabcontrol\Tabcontrol\obj\Debug\App.g.cs
+C:\Users\Adrian\source\repos\Tabcontrol\Tabcontrol\obj\Debug\Tabcontrol_MarkupCompile.cache
+C:\Users\Adrian\source\repos\Tabcontrol\Tabcontrol\obj\Debug\Tabcontrol_MarkupCompile.lref
+C:\Users\Adrian\source\repos\Tabcontrol\Tabcontrol\obj\Debug\MainWindow.baml
+C:\Users\Adrian\source\repos\Tabcontrol\Tabcontrol\obj\Debug\Tabcontrol.g.resources
+C:\Users\Adrian\source\repos\Tabcontrol\Tabcontrol\obj\Debug\Tabcontrol.Properties.Resources.resources
+C:\Users\Adrian\source\repos\Tabcontrol\Tabcontrol\obj\Debug\Tabcontrol.csproj.GenerateResource.cache
+C:\Users\Adrian\source\repos\Tabcontrol\Tabcontrol\obj\Debug\Tabcontrol.exe
+C:\Users\Adrian\source\repos\Tabcontrol\Tabcontrol\obj\Debug\Tabcontrol.pdb

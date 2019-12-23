@@ -1,0 +1,59 @@
+﻿<Window x:Class="Tabcontrol.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tabcontrol"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="#FF84A34C">
+        <TabControl HorizontalAlignment="Left" Height="336" Margin="142,29,0,0" VerticalAlignment="Top" Width="533" Background="#FFC6D7A0">
+            <TabItem Header="Coches">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFC6D7A0" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#FFC6D7A0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="76*"/>
+                        <ColumnDefinition Width="438*"/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton x:Name="cochazo" Content="Cochazo" HorizontalAlignment="Left" Margin="29.95,97,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="16" VerticalContentAlignment="Center" Grid.Column="1" Click="ChangeCar"/>
+                    <RadioButton x:Name="regular" Content="Coche regular" HorizontalAlignment="Left" Margin="29.95,138,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="16" VerticalContentAlignment="Center" Grid.Column="1" Click="ChangeCar"/>
+                    <RadioButton x:Name="realidad" Content="Cruda realidad" HorizontalAlignment="Left" Margin="29.95,178,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="16" Grid.Column="1" Click="ChangeCar"/>
+                    <Label Content="¿Cuál es el tuyo?" HorizontalAlignment="Left" Margin="29.95,30,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="176" FontWeight="Bold" FontSize="20" Grid.Column="1"/>
+                    <Separator Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="20" Margin="29.95,67,0,0" VerticalAlignment="Top" Width="176" FontWeight="Bold" Grid.Column="1"/>
+                    <Image x:Name="car" Grid.Column="2" HorizontalAlignment="Left" Height="91" Margin="216,67,0,0" VerticalAlignment="Top" Width="165"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Equipo">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFC6D7A0" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#FFC6D7A0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="76*"/>
+                        <ColumnDefinition Width="438*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="¿Cuál es el tuyo?" HorizontalAlignment="Left" Margin="29.95,30,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="176" FontWeight="Bold" FontSize="20" Grid.Column="1"/>
+                    <Separator Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="20" Margin="29.95,67,0,0" VerticalAlignment="Top" Width="176" FontWeight="Bold" Grid.Column="1"/>
+                    <Image x:Name="team" Grid.Column="2" HorizontalAlignment="Left" Height="164" Margin="216,67,0,0" VerticalAlignment="Top" Width="165"/>
+                    <ComboBox x:Name="teams" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Margin="30,103,0,0" VerticalAlignment="Top" Width="140" SelectionChanged="ChangeTeam">
+                        <ListBoxItem Content="Real Madrid"/>
+                        <ListBoxItem Content="FC Barcelona"/>
+                        <ListBoxItem Content="Elche"/>
+                        <ListBoxItem Content="Hercules"/>
+                    </ComboBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
