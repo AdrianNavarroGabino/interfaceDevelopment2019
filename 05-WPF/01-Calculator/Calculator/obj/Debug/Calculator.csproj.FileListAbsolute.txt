@@ -1,0 +1,14 @@
+C:\Users\adrian\source\repos\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\adrian\source\repos\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\adrian\source\repos\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\adrian\source\repos\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\Users\adrian\source\repos\Calculator\Calculator\obj\Debug\MainWindow.g.cs
+C:\Users\adrian\source\repos\Calculator\Calculator\obj\Debug\App.g.cs
+C:\Users\adrian\source\repos\Calculator\Calculator\obj\Debug\Calculator_MarkupCompile.cache
+C:\Users\adrian\source\repos\Calculator\Calculator\obj\Debug\Calculator_MarkupCompile.lref
+C:\Users\adrian\source\repos\Calculator\Calculator\obj\Debug\MainWindow.baml
+C:\Users\adrian\source\repos\Calculator\Calculator\obj\Debug\Calculator.g.resources
+C:\Users\adrian\source\repos\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Users\adrian\source\repos\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+C:\Users\adrian\source\repos\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\adrian\source\repos\Calculator\Calculator\obj\Debug\Calculator.pdb
