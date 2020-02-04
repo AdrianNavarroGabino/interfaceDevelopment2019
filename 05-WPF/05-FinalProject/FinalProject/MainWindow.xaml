@@ -12,7 +12,11 @@
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0" x:Name="panel1"/>
+        <Grid Grid.Column="0" x:Name="panel1">
+            <Button x:Name="insertUserBtn" Content="Insert user" HorizontalAlignment="Left" Margin="44,60,0,0" VerticalAlignment="Top" Width="188" Height="52" Click="InsertUser"/>
+            <Button x:Name="modifyUserBtn" Content="Modify user" HorizontalAlignment="Left" Margin="44,140,0,0" VerticalAlignment="Top" Width="188" Height="52" Click="ModifyUser"/>
+            <Button x:Name="deleteUserBtn" Content="Delete user" HorizontalAlignment="Left" Margin="44,220,0,0" VerticalAlignment="Top" Width="188" Height="52" Click="DeleteUser"/>
+        </Grid>
         <Grid Grid.Column="1" x:Name="panel2"/>
     </Grid>
 </Window>

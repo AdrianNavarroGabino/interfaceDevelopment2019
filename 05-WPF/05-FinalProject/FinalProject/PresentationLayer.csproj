@@ -60,7 +60,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="InsertUser.xaml">
+    <Page Include="User.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -74,8 +74,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InsertUser.xaml.cs">
-      <DependentUpon>InsertUser.xaml</DependentUpon>
+    <Compile Include="User.xaml.cs">
+      <DependentUpon>User.xaml</DependentUpon>
     </Compile>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
@@ -109,17 +109,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Desktop\FinalProject\BussinessLayer\BusinessLayer.csproj">
+    <Resource Include="loginWalpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BussinessLayer\BusinessLayer.csproj">
       <Project>{07f04954-c791-4a02-9f2a-dd4c1f20e6f6}</Project>
       <Name>BusinessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Desktop\FinalProject\EntityLayer\EntityLayer.csproj">
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
       <Project>{449f17a0-9c47-4c04-b3bf-268f7d802c4d}</Project>
       <Name>EntityLayer</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="loginWalpaper.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

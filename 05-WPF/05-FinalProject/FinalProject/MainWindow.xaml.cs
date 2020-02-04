@@ -1,4 +1,4 @@
-﻿using BussinessLayer;
+﻿using BusinessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,13 +26,36 @@ namespace FinalProject
         {
             InitializeComponent();
             this.buss = buss;
+        }
 
-            InsertUser insertUser = new InsertUser();
-            insertUser.HorizontalAlignment = HorizontalAlignment.Center;
-            insertUser.VerticalAlignment = VerticalAlignment.Center;
+        private void InsertUser(object sender, RoutedEventArgs e)
+        {
+            User user = new User(buss, 0);
+            user.HorizontalAlignment = HorizontalAlignment.Center;
+            user.VerticalAlignment = VerticalAlignment.Center;
 
             panel2.Children.Clear();
-            panel2.Children.Add(insertUser);
+            panel2.Children.Add(user);
+        }
+
+        private void ModifyUser(object sender, RoutedEventArgs e)
+        {
+            User user = new User(buss, 1);
+            user.HorizontalAlignment = HorizontalAlignment.Center;
+            user.VerticalAlignment = VerticalAlignment.Center;
+
+            panel2.Children.Clear();
+            panel2.Children.Add(user);
+        }
+
+        private void DeleteUser(object sender, RoutedEventArgs e)
+        {
+            User user = new User(buss, 2);
+            user.HorizontalAlignment = HorizontalAlignment.Center;
+            user.VerticalAlignment = VerticalAlignment.Center;
+
+            panel2.Children.Clear();
+            panel2.Children.Add(user);
         }
     }
 }
