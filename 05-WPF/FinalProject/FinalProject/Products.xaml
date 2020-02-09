@@ -32,7 +32,6 @@
                       VerticalAlignment="Top" Width="686" Height="509"
                       AutoGeneratingColumn="CheckColumn"
                       AutomationProperties.ItemType="ArticuloAux"
-                      SelectionChanged="FillFields"
                       ColumnWidth="*"/>
 
             <Grid Grid.Row="1">
@@ -54,7 +53,7 @@
 
                 <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
                     <Label x:Name="typeLbl" Content="Type:" Margin="50,0,18,10" RenderTransformOrigin="-0.458,0.688" FontSize="14" VerticalAlignment="Center"/>
-                    <ComboBox x:Name="typeSearchBox" VerticalAlignment="Center" Width="200" KeyUp="Filter" Margin="28,36,0,47"/>
+                    <ComboBox x:Name="typeSearchBox" VerticalAlignment="Center" Width="200" KeyUp="Filter" Margin="28,36,0,47" SelectionChanged="Filter"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
@@ -75,6 +74,13 @@
             <Grid Grid.Row="1" x:Name="productsGrid">
 
             </Grid>
+
+            <Grid Grid.Row="2" x:Name="modifySpace">
+                <Button Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="75" Visibility="Hidden" x:Name="modifyProduct" Click="ModifyProduct">
+                    <Button Content="Modify" Width="75"/>
+                </Button>
+            </Grid>
+            
         </Grid>
     </Grid>
 </UserControl>

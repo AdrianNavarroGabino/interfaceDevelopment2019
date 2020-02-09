@@ -111,6 +111,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="LateralDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModifyOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Products.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,6 +141,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModifyOrder.xaml.cs">
+      <DependentUpon>ModifyOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewOrder.xaml.cs">
+      <DependentUpon>NewOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Products.xaml.cs">
       <DependentUpon>Products.xaml</DependentUpon>
     </Compile>
@@ -179,6 +197,16 @@
       <Project>{449f17a0-9c47-4c04-b3bf-268f7d802c4d}</Project>
       <Name>EntityLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\modifyordericon.png" />
+    <Resource Include="images\newordericon.png" />
+    <Resource Include="images\productsicon.png" />
+    <Resource Include="images\statisticsicon.png" />
+    <Resource Include="images\usericon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\billicon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

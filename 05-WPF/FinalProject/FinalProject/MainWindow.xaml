@@ -6,40 +6,96 @@
         xmlns:local="clr-namespace:FinalProject"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1530" WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="LateralDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid HorizontalAlignment="Right" Width="1522">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" MinWidth="80"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <Grid Grid.Column="0" x:Name="panel1">
-            <Button x:Name="usersBtn" Content="Users" HorizontalAlignment="Left" Margin="44,60,0,0" VerticalAlignment="Top" Width="188" Height="52" Click="UsersScreen"/>
-            <Button x:Name="productsBtn" Content="Products" HorizontalAlignment="Left" Margin="44,168,0,0" VerticalAlignment="Top" Width="188" Height="52" Click="ProductsScreen"/>
+        <Grid Grid.Column="0" Grid.Row="0" x:Name="panel1" Style="{StaticResource expandPanelStyle}" HorizontalAlignment="Left" Width="110">
+            
+            <!--<Button x:Name="usersBtn" Style="{StaticResource roundButtonStyle}" Content="Users" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="188" Height="52" Click="UsersScreen"/>
+            <Button x:Name="productsBtn" Style="{StaticResource roundButtonStyle}" Content="Products" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Width="188" Height="52" Click="ProductsScreen"/>
+            <Button x:Name="newOrderBtn" Style="{StaticResource roundButtonStyle}" Content="New order" HorizontalAlignment="Left" Margin="10,207,0,0" VerticalAlignment="Top" Width="188" Height="52" Click="NewOrderScreen"/>-->
+
+            <StackPanel>
+                <Button x:Name="usersBtn" FontSize="25" Margin="10,10,0,0" Style="{StaticResource roundButtonStyle}" Background="#FF64A6BD" Height="100" Width="290" Click="UsersScreen">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="80" Width="80" Margin="10,0,0,0" Source="images/usericon.png"/>
+                        <TextBlock VerticalAlignment="Center" Margin="20,0,0,0" TextWrapping="WrapWithOverflow" Width="150" FontFamily="Tahoma" FontSize="20">
+                            Users
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="productsBtn" FontSize="25" Margin="10,10,0,0" Style="{StaticResource roundButtonStyle}" Background="#FF64A6BD" Height="100" Width="290" Click="ProductsScreen">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="80" Width="80" Margin="10,0,0,0" Source="images/productsicon.png"/>
+                        <TextBlock VerticalAlignment="Center" Margin="20,0,0,0" TextWrapping="WrapWithOverflow" Width="150" FontFamily="Tahoma" FontSize="20">
+                            Products
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="newOrderBtn" FontSize="25" Margin="10,10,0,0" Style="{StaticResource roundButtonStyle}" Background="#FF64A6BD" Height="100" Width="290" Click="NewOrderScreen">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="80" Width="80" Margin="10,0,0,0" Source="images/newordericon.png"/>
+                        <TextBlock VerticalAlignment="Center" Margin="20,0,0,0" TextWrapping="WrapWithOverflow" Width="150" FontFamily="Tahoma" FontSize="20">
+                            New order
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="modifyOrderBtn" FontSize="25" Margin="10,10,0,0" Style="{StaticResource roundButtonStyle}" Background="#FF64A6BD" Height="100" Width="290" Click="ModifyOrderScreen">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="80" Width="80" Margin="10,0,0,0" Source="images/modifyordericon.png"/>
+                        <TextBlock VerticalAlignment="Center" Margin="20,0,0,0" TextWrapping="WrapWithOverflow" Width="150" FontFamily="Tahoma" FontSize="20">
+                            Modify order
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="statisticsBtn" FontSize="25" Margin="10,10,0,0" Style="{StaticResource roundButtonStyle}" Background="#FF64A6BD" Height="100" Width="290" Click="NewOrderScreen">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="80" Width="80" Margin="10,0,0,0" Source="images/statisticsicon.png"/>
+                        <TextBlock VerticalAlignment="Center" Margin="20,0,0,0" TextWrapping="WrapWithOverflow" Width="150" FontFamily="Tahoma" FontSize="20">
+                            Statistics
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="reportsBtn" FontSize="25" Margin="10,10,0,0" Style="{StaticResource roundButtonStyle}" Background="#FF64A6BD" Height="100" Width="290" Click="NewOrderScreen">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="80" Width="80" Margin="10,0,0,0" Source="images/billicon.png"/>
+                        <TextBlock VerticalAlignment="Center" Margin="20,0,0,0" TextWrapping="WrapWithOverflow" Width="150" FontFamily="Tahoma" FontSize="20">
+                            Reports
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
         </Grid>
-        <Grid Grid.Column="1" x:Name="panel2">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="24*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0" x:Name="panel21">
-                    
-                </Grid>
-                <StatusBar Grid.Row="1" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="1218">
-                    <StatusBarItem>
-                        <TextBlock Name="statusLbl" Text="Status" Width="500" FontSize="16"/>
-                    </StatusBarItem>
-                    <StatusBarItem>
-                        <TextBlock Name="hourLbl" Text="Hour" Width="80" FontSize="16"/>
-                    </StatusBarItem>
-                    <StatusBarItem>
-                        <TextBlock Name="timerLbl" Text="Timer" Width="80" FontSize="16"/>
-                    </StatusBarItem>
-                    <StatusBarItem>
-                        <TextBlock Name="userNameLbl" Text="User" Width="180" FontSize="16" Margin="350,0,0,0"/>
-                    </StatusBarItem>
-                </StatusBar>
-            </Grid>
+        <Grid Grid.Column="1"  Grid.Row="0" x:Name="panel21">
         </Grid>
+
+        <StatusBar Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="1522">
+            <StatusBarItem>
+                <TextBlock Name="statusLbl" Text="Status" Width="700" FontSize="16"/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock Name="hourLbl" Text="Hour" Width="100" FontSize="16"/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock Name="timerLbl" Text="Timer" Width="100" FontSize="16"/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock Name="userNameLbl" Text="User" Width="180" FontSize="16" Margin="425,0,0,0"/>
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
 </Window>

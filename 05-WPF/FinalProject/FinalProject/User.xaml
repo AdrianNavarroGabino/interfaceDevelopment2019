@@ -110,68 +110,81 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
-                    <Label x:Name="mailLbl" Content="Mail:" Margin="10,10,0,31.8" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
+                    <Label x:Name="mailTitle" Content="Mail:" Margin="10,10,0,31.8" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
                     <TextBox x:Name="mailBox" Margin="80,0,0,20" VerticalAlignment="Center" Width="140"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
-                    <Label x:Name="nameLbl" Content="Name:" Margin="10,10,0,31.8" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
-                    <TextBox x:Name="nameBox" Margin="67,0,0,20" VerticalAlignment="Center" Width="140"/>
+                    <Label x:Name="nameTitle" Content="Name:" Margin="10,10,0,31.8" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
+                    <TextBox x:Name="nameBox" Margin="65,0,0,20" VerticalAlignment="Center" Width="140"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
-                    <Label x:Name="surnameLbl" Content="Surname:" Margin="10,10,0,31.8" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
-                    <TextBox x:Name="surnameBox" Margin="44,0,0,20" VerticalAlignment="Center" Width="140"/>
+                    <Label x:Name="surnameTitle" Content="Surname:" Margin="10,10,0,31.8" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
+                    <TextBox x:Name="surnameBox" Margin="40,0,0,20" VerticalAlignment="Center" Width="140"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
-                    <Label x:Name="idLbl" Content="Id:" Margin="10,10,0,31.8" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
-                    <TextBox x:Name="idBox" Margin="106,0,0,20" VerticalAlignment="Center" Width="140"/>
+                    <Label x:Name="idTitle" Content="Id:" Margin="10,10,0,31.8" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
+                    <TextBox x:Name="idBox" Margin="102,0,0,20" VerticalAlignment="Center" Width="140"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal">
-                    <Label x:Name="passLbl" Content="Password:" Margin="10,10,0,31.8" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
-                    <PasswordBox x:Name="passBox" Margin="40,0,0,20" VerticalAlignment="Center" Width="140"/>
+                    <Label x:Name="passTitle" Content="Password:" Margin="10,10,0,31.8" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
+                    <PasswordBox x:Name="passBox" Margin="35,0,0,20" VerticalAlignment="Center" Width="140"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal">
-                    <Label x:Name="againLbl" Content="Again:" Margin="10,10,0,23.8" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
-                    <PasswordBox x:Name="againBox" Margin="73,0,0,20" VerticalAlignment="Center" Width="140"/>
+                    <Label x:Name="againTitle" Content="Again:" Margin="10,10,0,23.8" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
+                    <PasswordBox x:Name="againBox" Margin="68,22,0,0" Width="140" Height="18" VerticalAlignment="Top"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
-                    <Label x:Name="phoneLbl" Content="Phone:" Margin="10,10,0,0" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
+                    <Label x:Name="phoneTitle" Content="Phone:" Margin="10,10,0,0" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
                     <TextBox x:Name="phoneBox" Margin="65,0,0,20" VerticalAlignment="Center" Width="140"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-                    <Label x:Name="addressLbl" Content="Address:" Margin="10,10,0,0" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
+                    <Label x:Name="addressTitle" Content="Address:" Margin="10,10,0,0" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
                     <TextBox x:Name="addressBox" Margin="50,0,0,20" VerticalAlignment="Center" Width="140"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
-                    <Label x:Name="postalCodeLbl" Content="ZIP Code:" Margin="10,10,0,0" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
-                    <TextBox x:Name="postalCodeBox" Margin="40,0,0,20" Width="140" Height="18" VerticalAlignment="Center"/>
+                    <Label x:Name="postalCodeTitle" Content="ZIP Code:" Margin="10,10,0,0" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
+                    <TextBox x:Name="postalCodeBox" Margin="42,0,0,20" Width="140" Height="18" VerticalAlignment="Center"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
-                    <Label x:Name="provinceLbl" Content="Province:" Margin="10,10,0,0" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
+                    <Label x:Name="provinceTitle" Content="Province:" Margin="10,10,0,0" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
                     <ComboBox x:Name="provinceBox" Margin="45,0,0,20" VerticalAlignment="Center" Width="140" SelectionChanged="FillTowns"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
-                    <Label x:Name="townLbl" Content="Town:" Margin="10,10,0,26.8" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
+                    <Label x:Name="townTitle" Content="Town:" Margin="10,10,0,26.8" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
                     <ComboBox x:Name="townBox" Margin="75,0,0,20" VerticalAlignment="Center" Width="140"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
-                    <Label x:Name="bornLbl" Content="Born:" Margin="10,10,0,31.8" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
-                    <DatePicker x:Name="bornBox" Margin="80,0,0,20" Height="25" VerticalAlignment="Center"/>
+                    <Label x:Name="bornTitle" Content="Born:" Margin="10,10,0,31.8" RenderTransformOrigin="-0.458,0.688" FontSize="20"/>
+                    <DatePicker x:Name="bornBox" Margin="80,0,0,20" Height="25" VerticalAlignment="Center" Text="{Binding Path=SelectedDate, StringFormat='yyyy-MM-dd', RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}"/>
                 </StackPanel>
             </Grid>
-            <Button Content="Register" Margin="50,43,422,0" Grid.Row="2" VerticalAlignment="Top" Height="44"/>
-            <Button Content="Modify" Margin="236,43,236,0" Grid.Row="2" VerticalAlignment="Top" Height="44"/>
+            <Button Content="Register" Margin="50,43,422,0" Grid.Row="2" VerticalAlignment="Top" Height="44" Click="Register"/>
+            <Button Content="Modify" Margin="236,43,236,0" Grid.Row="2" VerticalAlignment="Top" Height="44" Click="ModifyUser"/>
             <Button Content="Delete" Margin="422,43,50,0" Grid.Row="2" VerticalAlignment="Top" Height="44" Click="DeleteUser"/>
+            <Label x:Name="surnameLbl1" Content="" HorizontalAlignment="Left" Margin="16,219,0,0" Grid.Row="1" VerticalAlignment="Top" Width="268" Foreground="Red"/>
+            <Label x:Name="mailLbl" Content="" HorizontalAlignment="Left" Margin="16,56,0,0" Grid.Row="1" VerticalAlignment="Top" Width="268" Foreground="Red"/>
+            <Label x:Name="idLbl" Content="" HorizontalAlignment="Left" Margin="16,300,0,0" Grid.Row="1" VerticalAlignment="Top" Width="268" Foreground="Red"/>
+            <Label x:Name="nameLbl" Content="" HorizontalAlignment="Left" Margin="16,137,0,0" Grid.Row="1" VerticalAlignment="Top" Width="268" Foreground="Red"/>
+            <Label x:Name="passLbl" Content="" HorizontalAlignment="Left" Margin="16,384,0,0" Grid.Row="1" VerticalAlignment="Top" Width="268" Foreground="Red"/>
+            <Label x:Name="againLbl" Content="" HorizontalAlignment="Left" Margin="143,466,0,0" Grid.Row="1" VerticalAlignment="Top" Width="141" Foreground="Red"/>
+            <Label x:Name="againLbl_Copy" Content="" HorizontalAlignment="Left" Margin="16,466,0,0" Grid.Row="1" VerticalAlignment="Top" Width="268" Foreground="Red"/>
+            <Label x:Name="phoneLbl" Content="" HorizontalAlignment="Left" Margin="320,56,0,0" Grid.Row="1" VerticalAlignment="Top" Width="274" Foreground="Red"/>
+            <Label x:Name="addressLbl" Content="" HorizontalAlignment="Left" Margin="320,137,0,0" Grid.Row="1" VerticalAlignment="Top" Width="274" Foreground="Red"/>
+            <Label x:Name="postalCodeLbl" Content="" HorizontalAlignment="Left" Margin="320,219,0,0" Grid.Row="1" VerticalAlignment="Top" Width="274" Foreground="Red"/>
+            <Label x:Name="provinceLbl" Content="" HorizontalAlignment="Left" Margin="320,300,0,0" Grid.Row="1" VerticalAlignment="Top" Width="274" Foreground="Red"/>
+            <Label x:Name="townLbl" Content="" HorizontalAlignment="Left" Margin="320,384,0,0" Grid.Row="1" VerticalAlignment="Top" Width="274" Foreground="Red"/>
+            <Label x:Name="bornLbl" Content="" HorizontalAlignment="Left" Margin="320,466,0,0" Grid.Row="1" VerticalAlignment="Top" Width="274" Foreground="Red"/>
         </Grid>
 
 

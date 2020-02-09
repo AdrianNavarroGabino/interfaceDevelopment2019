@@ -79,11 +79,11 @@ namespace FinalProject
             }
             else
             {
-                statusLbl.Foreground = Brushes.Red;
+                statusLbl.Foreground = Brushes.Black;
             }
         }
 
-        private void UsersScreen(object sender, RoutedEventArgs e)
+        public void UsersScreen(object sender, RoutedEventArgs e)
         {
             User user = new User(this, buss);
             user.HorizontalAlignment = HorizontalAlignment.Center;
@@ -93,7 +93,7 @@ namespace FinalProject
             panel21.Children.Add(user);
         }
 
-        private void ProductsScreen(object sender, RoutedEventArgs e)
+        public void ProductsScreen(object sender, RoutedEventArgs e)
         {
             Products products = new Products(this, buss);
             products.HorizontalAlignment = HorizontalAlignment.Center;
@@ -101,6 +101,26 @@ namespace FinalProject
 
             panel21.Children.Clear();
             panel21.Children.Add(products);
+        }
+
+        public void NewOrderScreen(object sender, RoutedEventArgs e)
+        {
+            NewOrder newOrder = new NewOrder(this, buss);
+            newOrder.HorizontalAlignment = HorizontalAlignment.Center;
+            newOrder.VerticalAlignment = VerticalAlignment.Center;
+
+            panel21.Children.Clear();
+            panel21.Children.Add(newOrder);
+        }
+
+        private void ModifyOrderScreen(object sender, RoutedEventArgs e)
+        {
+            ModifyOrder modifyOrder = new ModifyOrder(this, buss);
+            modifyOrder.HorizontalAlignment = HorizontalAlignment.Center;
+            modifyOrder.VerticalAlignment = VerticalAlignment.Center;
+
+            panel21.Children.Clear();
+            panel21.Children.Add(modifyOrder);
         }
     }
 }

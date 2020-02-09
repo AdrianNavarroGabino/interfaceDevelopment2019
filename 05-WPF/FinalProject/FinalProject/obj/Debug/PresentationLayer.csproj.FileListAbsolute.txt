@@ -104,3 +104,8 @@ C:\Users\adrian\Documents\FinalProject\FinalProject\bin\Debug\Syncfusion.Shared.
 C:\Users\adrian\Documents\FinalProject\FinalProject\bin\Debug\Syncfusion.XlsIO.Base.xml
 C:\Users\Adrian\Documents\FinalProject\FinalProject\obj\Debug\Products.g.cs
 C:\Users\Adrian\Documents\FinalProject\FinalProject\obj\Debug\Products.baml
+C:\Users\Adrian\Documents\FinalProject\FinalProject\obj\Debug\LateralDictionary.baml
+C:\Users\Adrian\Documents\FinalProject\FinalProject\obj\Debug\ModifyOrder.g.cs
+C:\Users\Adrian\Documents\FinalProject\FinalProject\obj\Debug\NewOrder.g.cs
+C:\Users\Adrian\Documents\FinalProject\FinalProject\obj\Debug\ModifyOrder.baml
+C:\Users\Adrian\Documents\FinalProject\FinalProject\obj\Debug\NewOrder.baml
