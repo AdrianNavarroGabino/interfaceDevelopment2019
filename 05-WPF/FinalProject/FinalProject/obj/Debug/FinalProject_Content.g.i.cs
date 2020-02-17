@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("billicon.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("stockicon.png")]
 
 

@@ -12,6 +12,7 @@ namespace EntityLayer
         public string urlimagen { get; set; }
         public string especificaciones { get; set; }
         public string tipoArticuloID { get; set; }
+        public string cantidad { get; set; }
 
         public Articulo(string articuloID, string nombre, string pvp,
             string marcaID, string imagen, string urlimagen,

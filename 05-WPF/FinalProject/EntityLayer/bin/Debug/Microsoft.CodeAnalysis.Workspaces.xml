@@ -1103,9 +1103,10 @@
         </member>
         <member name="P:Microsoft.CodeAnalysis.CodeGeneration.CodeGenerationOptions.AddImports">
             <summary>
-            True if the code generation service should try to automatically add imports to the file
-            for any generated code.  Defaults to true.  Not used when generating directly into a
-            declaration.
+            True if the code generation service should add <see cref="P:Microsoft.CodeAnalysis.Simplification.Simplifier.AddImportsAnnotation"/>,
+            and when not generating directly into a declaration, should try to automatically add imports to the file
+            for any generated code.
+            Defaults to true.
             </summary>
         </member>
         <member name="P:Microsoft.CodeAnalysis.CodeGeneration.CodeGenerationOptions.PlaceSystemNamespaceFirst">
@@ -1647,11 +1648,27 @@
             Creates a code refactoring context to be passed into <see cref="M:Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.ComputeRefactoringsAsync(Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext)"/> method.
             </summary>
         </member>
+        <member name="M:Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.#ctor(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Text.TextSpan,System.Action{Microsoft.CodeAnalysis.CodeActions.CodeAction,System.Nullable{Microsoft.CodeAnalysis.Text.TextSpan}},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Creates a code refactoring context to be passed into <see cref="M:Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider.ComputeRefactoringsAsync(Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext)"/> method.
+            </summary>
+        </member>
         <member name="M:Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.RegisterRefactoring(Microsoft.CodeAnalysis.CodeActions.CodeAction)">
             <summary>
             Add supplied <paramref name="action"/> to the list of refactorings that will be offered to the user.
             </summary>
             <param name="action">The <see cref="T:Microsoft.CodeAnalysis.CodeActions.CodeAction"/> that will be invoked to apply the refactoring.</param>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringContext.RegisterRefactoring(Microsoft.CodeAnalysis.CodeActions.CodeAction,Microsoft.CodeAnalysis.Text.TextSpan)">
+            <summary>
+            Add supplied <paramref name="action"/> applicable to <paramref name="applicableToSpan"/> to the list of refactorings that will be offered to the user.
+            </summary>
+            <param name="action">The <see cref="T:Microsoft.CodeAnalysis.CodeActions.CodeAction"/> that will be invoked to apply the refactoring.</param>
+            <param name="applicableToSpan">The <see cref="T:Microsoft.CodeAnalysis.Text.TextSpan"/> within original document the <paramref name="action"/> is applicable to.</param>
+            <remarks>
+            <paramref name="applicableToSpan"/> should represent a logical section within the original document that the <paramref name="action"/> is 
+            applicable to. It doesn't have to precisely represent the exact <see cref="T:Microsoft.CodeAnalysis.Text.TextSpan"/> that will get changed.
+            </remarks>
         </member>
         <member name="T:Microsoft.CodeAnalysis.CodeRefactorings.CodeRefactoringProvider">
             <summary>
@@ -1790,7 +1807,7 @@
             in those cases, use GetTextSpan method instead to calculate one from original line/column
             </summary>
         </member>
-        <member name="M:Microsoft.CodeAnalysis.Diagnostics.DiagnosticData.TryCreate(Microsoft.CodeAnalysis.DiagnosticDescriptor,System.String[],Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.Diagnostics.DiagnosticData@,System.Threading.CancellationToken)">
+        <member name="M:Microsoft.CodeAnalysis.Diagnostics.DiagnosticData.TryCreate(Microsoft.CodeAnalysis.DiagnosticDescriptor,System.String[],Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.Workspace,Microsoft.CodeAnalysis.Diagnostics.DiagnosticData@)">
             <summary>
             Create a host/VS specific diagnostic with the given descriptor and message arguments for the given project.
             Note that diagnostic created through this API cannot be suppressed with in-source suppression due to performance reasons (see the PERF remark below for details).
@@ -2290,6 +2307,65 @@
         <member name="M:Microsoft.CodeAnalysis.Editing.ImportAdder.AddImportsAsync(Microsoft.CodeAnalysis.Document,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Text.TextSpan},Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)">
             <summary>
             Adds namespace imports / using directives for namespace references found in the document within the spans specified.
+            </summary>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.Editing.ImportAdder.AddImportsFromSyntaxesAsync(Microsoft.CodeAnalysis.Document,System.Boolean,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)">
+            <summary>
+            Adds namespace imports / using directives for namespace references found in the document.
+            </summary>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.Editing.ImportAdder.AddImportsFromSyntaxesAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Text.TextSpan,System.Boolean,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)">
+            <summary>
+            Adds namespace imports / using directives for namespace references found in the document within the span specified.
+            </summary>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.Editing.ImportAdder.AddImportsFromSyntaxesAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.SyntaxAnnotation,System.Boolean,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)">
+            <summary>
+            Adds namespace imports / using directives for namespace references found in the document within the sub-trees annotated with the <see cref="T:Microsoft.CodeAnalysis.SyntaxAnnotation"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.Editing.ImportAdder.AddImportsFromSyntaxesAsync(Microsoft.CodeAnalysis.Document,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Text.TextSpan},System.Boolean,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)">
+            <summary>
+            Adds namespace imports / using directives for namespace references found in the document within the spans specified.
+            </summary>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.Editing.ImportAdder.AddImportsFromSymbolAnnotationAsync(Microsoft.CodeAnalysis.Document,System.Boolean,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)">
+            <summary>
+            Adds namespace imports / using directives for namespace references found in the document.
+            </summary>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.Editing.ImportAdder.AddImportsFromSymbolAnnotationAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Text.TextSpan,System.Boolean,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)">
+            <summary>
+            Adds namespace imports / using directives for namespace references found in the document within the span specified.
+            </summary>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.Editing.ImportAdder.AddImportsFromSymbolAnnotationAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.SyntaxAnnotation,System.Boolean,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)">
+            <summary>
+            Adds namespace imports / using directives for namespace references found in the document within the sub-trees annotated with the <see cref="T:Microsoft.CodeAnalysis.SyntaxAnnotation"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.Editing.ImportAdder.AddImportsFromSymbolAnnotationAsync(Microsoft.CodeAnalysis.Document,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Text.TextSpan},System.Boolean,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)">
+            <summary>
+            Adds namespace imports / using directives for namespace references found in the document within the spans specified.
+            </summary>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.Editing.ImportAdderService.MakeSafeToAddNamespaces(Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.INamespaceOrTypeSymbol},System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.IMethodSymbol},Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.Workspace,System.Threading.CancellationToken)">
+            <summary>
+            Fully qualifies parts of the document that may change meaning if namespaces are added, 
+            and marks them with <see cref="P:Microsoft.CodeAnalysis.Simplification.Simplifier.Annotation"/> so they can be reduced later.
+            </summary>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.Editing.ImportAdderService.GetImportDirectivesFromSyntaxesAsync(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode},Microsoft.CodeAnalysis.SyntaxNode@,Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.AddImports.IAddImportsService,Microsoft.CodeAnalysis.Editing.SyntaxGenerator,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="root">ref as we add simplifier annotations to nodes with explicit namespaces</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.Editing.ImportAdderService.IsInsideNamespace(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.INamespaceSymbol,Microsoft.CodeAnalysis.SemanticModel,System.Threading.CancellationToken)">
+            <summary>
+            Checks if the namespace declaration <paramref name="node"/> is contained inside,
+            or any of its ancestor namespaces are the same as <paramref name="symbol"/>
             </summary>
         </member>
         <member name="F:Microsoft.CodeAnalysis.Editing.OperatorKind.ImplicitConversion">
@@ -5141,6 +5217,17 @@
             that caches be flushed.
             </summary>
         </member>
+        <member name="T:Microsoft.CodeAnalysis.Host.DocumentPropertiesService">
+            <summary>
+            Extensible document properties specified via a document service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.CodeAnalysis.Host.DocumentPropertiesService.DesignTimeOnly">
+            <summary>
+            True if the source code contained in the document is only used in design-time (e.g. for completion),
+            but is not passed to the compiler when the containing project is built.
+            </summary>
+        </member>
         <member name="T:Microsoft.CodeAnalysis.Host.IDocumentExcerptService">
             <summary>
             excerpt some part of <see cref="T:Microsoft.CodeAnalysis.Document"/>
@@ -5194,9 +5281,8 @@
         </member>
         <member name="T:Microsoft.CodeAnalysis.Host.IDocumentOperationService">
             <summary>
-            provide various operations for this document
-            
-            I followed name from EditorOperation for now. 
+            TODO: Merge into <see cref="T:Microsoft.CodeAnalysis.Host.DocumentPropertiesService"/>.
+            Used by Razor via IVT.
             </summary>
         </member>
         <member name="P:Microsoft.CodeAnalysis.Host.IDocumentOperationService.CanApplyChange">
@@ -5666,9 +5752,9 @@
         <member name="T:Microsoft.CodeAnalysis.Host.IFrameworkAssemblyPathResolver">
             <summary>
             Provides a way to map from an assembly name to the actual path of the .NET Framework 
-            assemby with that name in the context of a specified project.  For example, if the 
-            assembly name is "System.Data" then a project targetting .NET 2.0 would resolve this
-            to a different path than a project targetting .NET 4.5.
+            assembly with that name in the context of a specified project.  For example, if the 
+            assembly name is "System.Data" then a project targeting .NET 2.0 would resolve this
+            to a different path than a project targeting .NET 4.5.
             </summary>
         </member>
         <member name="M:Microsoft.CodeAnalysis.Host.IFrameworkAssemblyPathResolver.ResolveAssemblyPath(Microsoft.CodeAnalysis.ProjectId,System.String,System.String)">
@@ -6085,7 +6171,7 @@
         </member>
         <member name="M:Microsoft.CodeAnalysis.FlowAnalysis.DataFlowAnalyzer`1.GetCurrentAnalysisData(Microsoft.CodeAnalysis.FlowAnalysis.BasicBlock)">
             <summary>
-            Gets current analysis data for the given basic block.
+            Gets current analysis data for the given basic block, or an empty analysis data.
             </summary>
         </member>
         <member name="M:Microsoft.CodeAnalysis.FlowAnalysis.DataFlowAnalyzer`1.GetEmptyAnalysisData">
@@ -6225,6 +6311,11 @@
         <member name="P:Microsoft.CodeAnalysis.FlowAnalysis.SymbolUsageAnalysis.SymbolUsageAnalysis.AnalysisData.CurrentBlockAnalysisData">
             <summary>
             Current block analysis data used for analysis.
+            </summary>
+        </member>
+        <member name="P:Microsoft.CodeAnalysis.FlowAnalysis.SymbolUsageAnalysis.SymbolUsageAnalysis.AnalysisData.AdditionalConditionalBranchAnalysisData">
+            <summary>
+            Block analysis data used for an additional conditional branch.
             </summary>
         </member>
         <member name="M:Microsoft.CodeAnalysis.FlowAnalysis.SymbolUsageAnalysis.SymbolUsageAnalysis.AnalysisData.ToResult">
@@ -6843,11 +6934,9 @@
             Symbol usage info for this reference.
             </summary>
         </member>
-        <member name="F:Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.IsDuplicateReferenceLocation">
+        <member name="P:Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.AdditionalProperties">
             <summary>
-            Indicates if this location is a duplicate of some another ReferenceLocation.
-            In this case, it's acceptable for a presenter to not show this location and
-            intead prefer the latter.
+            Additional properties for this reference
             </summary>
         </member>
         <member name="P:Microsoft.CodeAnalysis.FindSymbols.ReferenceLocation.IsCandidateLocation">
@@ -7609,6 +7698,25 @@
             <param name="cancellationToken">An optional cancellation token.</param>
             <returns>The changes necessary to format the tree.</returns>
         </member>
+        <member name="M:Microsoft.CodeAnalysis.Formatting.Formatter.OrganizeImportsAsync(Microsoft.CodeAnalysis.Document,System.Threading.CancellationToken)">
+            <summary>
+            Organizes the imports in the document.
+            </summary>
+            <param name="document">The document to organize.</param>
+            <param name="cancellationToken">The cancellation token that the operation will observe.</param>
+            <returns>The document with organized imports. If the language does not support organizing imports, or if no changes were made, this method returns <paramref name="document"/>.</returns>
+        </member>
+        <member name="F:Microsoft.CodeAnalysis.Formatting.FormattingDiagnosticIds.FormattingDiagnosticId">
+            <summary>
+            This is the ID reported for formatting diagnostics.
+            </summary>
+        </member>
+        <member name="F:Microsoft.CodeAnalysis.Formatting.FormattingDiagnosticIds.FormatDocumentControlDiagnosticId">
+            <summary>
+            This spacial diagnostic can be suppressed via <c>#pragma</c> to prevent the formatter from making changes to
+            code formatting within the span where the diagnostic is suppressed.
+            </summary>
+        </member>
         <member name="P:Microsoft.CodeAnalysis.Formatting.FormattingOptions.PreferredWrappingColumn">
             <summary>
             Default value of 120 was picked based on the amount of code in a github.com diff at 1080p.
@@ -7908,6 +8016,11 @@
             
             </summary>
         </member>
+        <member name="F:Microsoft.CodeAnalysis.Formatting.Rules.SuppressOption.DisableFormatting">
+            <summary>
+            Completely disable formatting within a span.
+            </summary>
+        </member>
         <member name="M:Microsoft.CodeAnalysis.Formatting.AbstractTriviaFormatter.#cctor">
             <summary>
             set up space string caches
@@ -8051,12 +8164,6 @@
             Determines the desired indentation of a given line.
             </summary>
         </member>
-        <member name="T:Microsoft.CodeAnalysis.IOrderableMetadata">
-            <summary>
-            This interface exists purely to enable some shared code that operates over orderable metadata.
-            This interface should not be used directly with MEF, used OrderableMetadata instead.
-            </summary>
-        </member>
         <member name="M:Microsoft.CodeAnalysis.LanguageServices.IPrecedenceService.GetPrecedenceKind(System.Int32)">
             <summary>
             Returns the precedence of the given expression, mapped down to one of the 
@@ -8145,7 +8252,7 @@
             see if it contains a preprocessor directive.
             </summary>
         </member>
-        <member name="M:Microsoft.CodeAnalysis.LanguageServices.AbstractSyntaxFactsService.TryGetAncestorForLocation``1(System.Int32,Microsoft.CodeAnalysis.SyntaxNode)">
+        <member name="M:Microsoft.CodeAnalysis.LanguageServices.AbstractSyntaxFactsService.TryGetAncestorForLocation``1(Microsoft.CodeAnalysis.SyntaxNode,System.Int32)">
             <summary>
             Tries to get an ancestor of a Token on current position or of Token directly to left:
             e.g.: tokenWithWantedAncestor[||]tokenWithoutWantedAncestor
@@ -8559,6 +8666,41 @@
             "\\clrmain\tools\managed\etw\eventRegister\bin\Debug\eventRegister.exe" Microsoft.CodeAnalysis.Workspaces.dll
             </summary>
         </member>
+        <member name="M:Microsoft.CodeAnalysis.Internal.Log.RoslynEventSource.LogInformationalBlock(Microsoft.CodeAnalysis.Internal.Log.FunctionId,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Logs an informational block with given <paramref name="entity"/>'s <see cref="M:System.Object.ToString"/> representation as the message
+            and specified <paramref name="functionId"/>.
+            On dispose of the returned disposable object, it logs the 'tick' count between the start and end of the block.
+            Unlike other logging methods on <see cref="T:Microsoft.CodeAnalysis.Internal.Log.RoslynEventSource"/>, this method does not check
+            if the specified <paramref name="functionId"/> was explicitly enabled.
+            Instead it checks if the <see cref="T:Microsoft.CodeAnalysis.Internal.Log.RoslynEventSource"/> was enabled at <see cref="F:System.Diagnostics.Tracing.EventLevel.Informational"/> level.
+            </summary>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.Internal.Log.RoslynEventSource.LogInformationalBlock(Microsoft.CodeAnalysis.Internal.Log.FunctionId,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Logs an informational message block with the given <paramref name="message"/>> and specified <paramref name="functionId"/>.
+            On dispose of the returned disposable object, it logs the 'tick' count between the start and end of the block.
+            Unlike other logging methods on <see cref="T:Microsoft.CodeAnalysis.Internal.Log.RoslynEventSource"/>, this method does not check
+            if the specified <paramref name="functionId"/> was explicitly enabled.
+            Instead it checks if the <see cref="T:Microsoft.CodeAnalysis.Internal.Log.RoslynEventSource"/> was enabled at <see cref="F:System.Diagnostics.Tracing.EventLevel.Informational"/> level.
+            </summary>
+        </member>
+        <member name="T:Microsoft.CodeAnalysis.Internal.Log.RoslynEventSource.LogBlock">
+            <summary>
+            This tracks the logged message. On instantiation, it logs 'Started block' with other event data.
+            On dispose, it logs 'Ended block' with the same event data so we can track which block started and ended when looking at logs.
+            </summary>
+        </member>
+        <member name="F:Microsoft.CodeAnalysis.Internal.Log.RoslynEventSource.LogBlock.s_lastUniqueBlockId">
+            <summary>
+            next unique block id that will be given to each LogBlock
+            </summary>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.Internal.Log.RoslynEventSource.LogBlock.GetNextUniqueBlockId">
+            <summary>
+            return next unique pair id
+            </summary>
+        </member>
         <member name="T:Microsoft.CodeAnalysis.Internal.Log.TraceLogger">
             <summary>
             Implementation of <see cref="T:Microsoft.CodeAnalysis.Internal.Log.ILogger"/> that produce timing debug output. 
@@ -8586,6 +8728,11 @@
             pass that information redundantly when calling <see cref="M:Microsoft.CodeAnalysis.Options.DocumentOptionSet.GetOption``1(Microsoft.CodeAnalysis.Options.PerLanguageOption{``0})"/>.
             </summary>
         </member>
+        <member name="M:Microsoft.CodeAnalysis.Options.DocumentOptionSet.WithChangedOption``1(Microsoft.CodeAnalysis.Options.PerLanguageOption{``0},``0)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.CodeAnalysis.Options.DocumentOptionSet" /> that contains the changed value.
+            </summary>
+        </member>
         <member name="T:Microsoft.CodeAnalysis.Options.EditorConfigStorageLocation`1">
             <summary>
             Specifies that an option should be read from an .editorconfig file.
@@ -8606,15 +8753,21 @@
             Returned from a <see cref="T:Microsoft.CodeAnalysis.Options.IDocumentOptionsProvider"/>
             </summary>
         </member>
+        <member name="M:Microsoft.CodeAnalysis.Options.IDocumentOptions.TryGetDocumentOption(Microsoft.CodeAnalysis.Options.OptionKey,System.Object@)">
+            <summary>
+            Attempts to fetch the value for the given option.
+            </summary>
+            <param name="option"></param>
+            <param name="value">The value returned. May be null even if the function returns true as "null" may be valid value for some options.</param>
+            <returns>True if this provider had a specific value for this option. False to indicate other providers should be queried.</returns>
+        </member>
         <member name="T:Microsoft.CodeAnalysis.Options.IDocumentOptionsProvider">
             <summary>
             Implemented to provide options that apply to specific documents, like from .editorconfig files.
             </summary>
             <remarks>
             This is passed to <see cref="M:Microsoft.CodeAnalysis.Options.IOptionService.RegisterDocumentOptionsProvider(Microsoft.CodeAnalysis.Options.IDocumentOptionsProvider)"/> to activate it
-            for a workspace. This instance then lives around for the lifetime of the workspace. This exists primarily
-            because right now we're keeping this support only for the Visual Studio "15" workspace, so this offers an interface
-            to meet in the middle.
+            for a workspace. This instance then lives around for the lifetime of the workspace.
             </remarks>
         </member>
         <member name="M:Microsoft.CodeAnalysis.Options.IDocumentOptionsProvider.GetOptionsForDocumentAsync(Microsoft.CodeAnalysis.Document,System.Threading.CancellationToken)">
@@ -8624,12 +8777,9 @@
             </summary>
         </member>
         <member name="T:Microsoft.CodeAnalysis.Options.IDocumentOptionsProviderFactory">
-            <remarks>
-            This interface exists so the Visual Studio workspace can create the .editorconfig provider,
-            despite that the provider code currently lives in a Dev15-targeting assembly but
-            the workspace itself is still in a Dev14-targeting assembly. Once those have merged,
-            this can go away.
-            </remarks>
+            <summary>
+            A MEF-exported factory which produces <see cref="T:Microsoft.CodeAnalysis.Options.IDocumentOptionsProvider"/>s for <see cref="T:Microsoft.CodeAnalysis.Workspace"/>s.
+            </summary>
         </member>
         <member name="T:Microsoft.CodeAnalysis.Options.IGlobalOptionService">
             <summary>
@@ -8714,6 +8864,12 @@
         <member name="M:Microsoft.CodeAnalysis.Options.IOptionService.GetRegisteredOptions">
             <summary>
             Returns the set of all registered options.
+            </summary>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.Options.IOptionService.RegisterDocumentOptionsProvider(Microsoft.CodeAnalysis.Options.IDocumentOptionsProvider)">
+            <summary>
+            Registers a provider that can modify the result of <see cref="M:Microsoft.CodeAnalysis.Document.GetOptionsAsync(System.Threading.CancellationToken)"/>. Providers registered earlier are queried first
+            for options, and the first provider to give a value wins.
             </summary>
         </member>
         <member name="M:Microsoft.CodeAnalysis.Options.IOptionService.GetUpdatedOptionSetForDocumentAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Options.OptionSet,System.Threading.CancellationToken)">
@@ -8875,6 +9031,12 @@
         <member name="P:Microsoft.CodeAnalysis.Options.PerLanguageOption`1.DefaultValue">
             <summary>
             The default option value.
+            </summary>
+        </member>
+        <member name="F:Microsoft.CodeAnalysis.Options.PredefinedDocumentOptionsProviderNames.EditorConfig">
+            <summary>
+            The name of the providers for .editorconfig. Both the current and legacy providers will use this name, so that way any other clients can
+            order relative to the pair. The two factories are unordered themselves because only one ever actually gives a real provider.
             </summary>
         </member>
         <member name="T:Microsoft.CodeAnalysis.Options.RoamingProfileStorageLocation">
@@ -9150,7 +9312,7 @@
             <summary>
             Request new remote host. 
             
-            this is designed to be not disruptive to existing callers and to support scenarioes where
+            this is designed to be not disruptive to existing callers and to support scenarios where
             features required to reload user extension dlls without re-launching VS.
             
             if someone requests new remote host, all new callers for <see cref="M:Microsoft.CodeAnalysis.Remote.IRemoteHostClientService.TryGetRemoteHostClientAsync(System.Threading.CancellationToken)"/> will
@@ -9708,6 +9870,20 @@
             </summary>
             <param name="value"></param>
         </member>
+        <member name="M:Microsoft.CodeAnalysis.Shared.Extensions.DiagnosticDescriptorExtensions.GetEffectiveSeverity(Microsoft.CodeAnalysis.DiagnosticDescriptor,Microsoft.CodeAnalysis.CompilationOptions,System.Collections.Immutable.ImmutableDictionary{System.String,Microsoft.CodeAnalysis.ReportDiagnostic})">
+            <summary>
+            Gets project-level effective severity of the given <paramref name="descriptor"/> accounting for severity configurations from both the following sources:
+            1. Compilation options from ruleset file, if any, and command line options such as /nowarn, /warnaserror, etc.
+            2. Analyzer config documents at the project root directory or in ancestor directories.
+            </summary>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.Shared.Extensions.DiagnosticDescriptorExtensions.GetEffectiveSeverity(Microsoft.CodeAnalysis.DiagnosticDescriptor,Microsoft.CodeAnalysis.Project)">
+            <summary>
+            Gets project-level effective severity of the given <paramref name="descriptor"/> accounting for severity configurations from both the following sources:
+            1. Compilation options from ruleset file, if any, and command line options such as /nowarn, /warnaserror, etc.
+            2. Analyzer config documents at the project root directory or in ancestor directories.
+            </summary>
+        </member>
         <member name="M:Microsoft.CodeAnalysis.Shared.Extensions.DocumentExtensions.GetSemanticModelForSpanAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Text.TextSpan,System.Threading.CancellationToken)">
             <summary>
             this will return either regular semantic model or speculative semantic based on context. 
@@ -9779,6 +9955,19 @@
             <summary>
             Searches the namespace for namespaces with the provided name.
             </summary>
+        </member>
+        <member name="M:Microsoft.CodeAnalysis.Shared.Extensions.ISolutionExtensions.ExcludeDisallowedDocumentTextChangesAsync(Microsoft.CodeAnalysis.Solution,Microsoft.CodeAnalysis.Solution,System.Threading.CancellationToken)">
+            <summary>
+            Revert all textual change made in unchangeable documents.
+            </summary>
+            <remark>A document is unchangeable if `Document.CanApplyChange()` returns false</remark>
+            <param name="newSolution">New solution with changes</param>
+            <param name="oldSolution">Old solution the new solution is based on</param>
+            <returns>
+            A tuple indicates whether there's such disallowed change made in the <paramref name="newSolution"/>, 
+            as well as the updated solution with all disallowed change reverted (which would be identical to 
+            <paramref name="oldSolution"/> if `containsDisallowedChange` is false).
+            </returns>
         </member>
         <member name="M:Microsoft.CodeAnalysis.Shared.Extensions.ISymbolExtensions.IsUnsafe(Microsoft.CodeAnalysis.ISymbol)">
             <summary>
@@ -9854,7 +10043,7 @@
         </member>
         <member name="M:Microsoft.CodeAnalysis.Shared.Extensions.ITypeSymbolExtensions.FindImplementationsForInterfaceMemberAsync(Microsoft.CodeAnalysis.FindSymbols.SymbolAndProjectId{Microsoft.CodeAnalysis.ITypeSymbol},Microsoft.CodeAnalysis.FindSymbols.SymbolAndProjectId,Microsoft.CodeAnalysis.Solution,System.Threading.CancellationToken)">
             <summary>
-            Returns the corresponding symbol in this type or a base type that implements 
+            Returns the corresponding symbol in this type or a base type that implements
             interfaceMember (either implicitly or explicitly), or null if no such symbol exists
             (which might be either because this type doesn't implement the container of
             interfaceMember, or this type doesn't supply a member that successfully implements
@@ -10538,7 +10727,7 @@
             violated, return an empty enumerable to indicate that no appropriate constructors were found.
             </summary>
         </member>
-        <member name="M:Microsoft.CodeAnalysis.Shared.Utilities.EnumValueUtilities.GetNextEnumValue(Microsoft.CodeAnalysis.INamedTypeSymbol,System.Threading.CancellationToken)">
+        <member name="M:Microsoft.CodeAnalysis.Shared.Utilities.EnumValueUtilities.GetNextEnumValue(Microsoft.CodeAnalysis.INamedTypeSymbol)">
             <summary>
             Determines, using heuristics, what the next likely value is in this enum.
             </summary>
@@ -10909,6 +11098,12 @@
             <summary>
             This is the annotation used by the simplifier and expander to identify Predefined type and preserving
             them from over simplification
+            </summary>
+        </member>
+        <member name="P:Microsoft.CodeAnalysis.Simplification.Simplifier.AddImportsAnnotation">
+            <summary>
+            The annotation <see cref="M:Microsoft.CodeAnalysis.CodeActions.CodeAction.CleanupDocumentAsync(Microsoft.CodeAnalysis.Document,System.Threading.CancellationToken)"/> used to identify sub trees to look for symbol annotations on.
+            It will then add import directives for these symbol annotations.
             </summary>
         </member>
         <member name="M:Microsoft.CodeAnalysis.Simplification.Simplifier.ExpandAsync``1(``0,Microsoft.CodeAnalysis.Document,System.Func{Microsoft.CodeAnalysis.SyntaxNode,System.Boolean},System.Boolean,System.Threading.CancellationToken)">
@@ -12068,6 +12263,11 @@
               Looks up a localized string similar to Diagnostic must have span &apos;{0}&apos;.
             </summary>
         </member>
+        <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.Document_does_not_support_syntax_trees">
+            <summary>
+              Looks up a localized string similar to Document does not support syntax trees.
+            </summary>
+        </member>
         <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.Documentation_comment_id_must_start_with_E_F_M_N_P_or_T">
             <summary>
               Looks up a localized string similar to Documentation comment id must start with E, F, M, N, P or T.
@@ -12790,7 +12990,7 @@
         </member>
         <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.Regex_hexadecimal_escape_short">
             <summary>
-              Looks up a localized string similar to hexidecimal escape.
+              Looks up a localized string similar to hexadecimal escape.
             </summary>
         </member>
         <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.Regex_inline_comment_long">
@@ -13723,41 +13923,6 @@
               Looks up a localized string similar to Too many )&apos;s.
             </summary>
         </member>
-        <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.TypeOrNamespaceUsageInfo_BaseType">
-            <summary>
-              Looks up a localized string similar to Base Type.
-            </summary>
-        </member>
-        <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.TypeOrNamespaceUsageInfo_Construct">
-            <summary>
-              Looks up a localized string similar to Construct.
-            </summary>
-        </member>
-        <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.TypeOrNamespaceUsageInfo_Declare">
-            <summary>
-              Looks up a localized string similar to Declare.
-            </summary>
-        </member>
-        <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.TypeOrNamespaceUsageInfo_Import">
-            <summary>
-              Looks up a localized string similar to Import.
-            </summary>
-        </member>
-        <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.TypeOrNamespaceUsageInfo_Qualify">
-            <summary>
-              Looks up a localized string similar to Qualify.
-            </summary>
-        </member>
-        <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.TypeOrNamespaceUsageInfo_TypeArgument">
-            <summary>
-              Looks up a localized string similar to Type Argument.
-            </summary>
-        </member>
-        <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.TypeOrNamespaceUsageInfo_TypeConstraint">
-            <summary>
-              Looks up a localized string similar to Type Constraint.
-            </summary>
-        </member>
         <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.Types">
             <summary>
               Looks up a localized string similar to Types.
@@ -13823,26 +13988,6 @@
               Looks up a localized string similar to Value too large to be represented as a 30 bit unsigned integer..
             </summary>
         </member>
-        <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.ValueUsageInfo_Name">
-            <summary>
-              Looks up a localized string similar to Name.
-            </summary>
-        </member>
-        <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.ValueUsageInfo_Read">
-            <summary>
-              Looks up a localized string similar to Read.
-            </summary>
-        </member>
-        <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.ValueUsageInfo_Reference">
-            <summary>
-              Looks up a localized string similar to Reference.
-            </summary>
-        </member>
-        <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.ValueUsageInfo_Write">
-            <summary>
-              Looks up a localized string similar to Write.
-            </summary>
-        </member>
         <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.Variables_captured_colon">
             <summary>
               Looks up a localized string similar to Variables captured:.
@@ -13856,6 +14001,11 @@
         <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.Warning">
             <summary>
               Looks up a localized string similar to Warning.
+            </summary>
+        </member>
+        <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.Warning_adding_imports_will_bring_an_extension_method_into_scope_with_the_same_name_as_member_access">
+            <summary>
+              Looks up a localized string similar to Adding imports will bring an extension method into scope with the same name as &apos;{0}&apos;.
             </summary>
         </member>
         <member name="P:Microsoft.CodeAnalysis.WorkspacesResources.Workspace_is_not_empty">
@@ -14050,6 +14200,17 @@
             It provides access to the source text, parsed syntax tree and the corresponding semantic model.
             </summary>
         </member>
+        <member name="F:Microsoft.CodeAnalysis.Document._model">
+            <summary>
+            A cached reference to the <see cref="T:Microsoft.CodeAnalysis.SemanticModel"/>.
+            </summary>
+        </member>
+        <member name="F:Microsoft.CodeAnalysis.Document._syntaxTreeResultTask">
+            <summary>
+            A cached task that can be returned once the tree has already been created. This is only set if <see cref="P:Microsoft.CodeAnalysis.Document.SupportsSyntaxTree"/> returns true,
+            so the inner value can be non-null.
+            </summary>
+        </member>
         <member name="P:Microsoft.CodeAnalysis.Document.SourceCodeKind">
             <summary>
             The kind of source code this document contains.
@@ -14097,13 +14258,15 @@
             <see langword="true"/> if this Document supports providing data through the
             <see cref="M:Microsoft.CodeAnalysis.Document.GetSemanticModelAsync(System.Threading.CancellationToken)"/> method.
             
-            If <see langword="false"/> then this method will return <see langword="null"/> instead.
+            If <see langword="false"/> then that method will return <see langword="null"/> instead.
             </summary>
         </member>
         <member name="M:Microsoft.CodeAnalysis.Document.GetSyntaxTreeAsync(System.Threading.CancellationToken)">
             <summary>
             Gets the <see cref="T:Microsoft.CodeAnalysis.SyntaxTree" /> for this document asynchronously.
             </summary>
+            <returns>
+            The returned syntax tree can be null if the <see cref="P:Microsoft.CodeAnalysis.Document.SupportsSyntaxTree"/> returns false.</returns>
         </member>
         <member name="M:Microsoft.CodeAnalysis.Document.TryGetSyntaxRoot(Microsoft.CodeAnalysis.SyntaxNode@)">
             <summary>
@@ -14116,6 +14279,9 @@
             <summary>
             Gets the root node of the syntax tree asynchronously.
             </summary>
+            <returns>
+            The returned <see cref="T:Microsoft.CodeAnalysis.SyntaxNode"/> will be null if <see cref="P:Microsoft.CodeAnalysis.Document.SupportsSyntaxTree"/> returns false.
+            </returns>
         </member>
         <member name="M:Microsoft.CodeAnalysis.Document.GetSyntaxRootSynchronously(System.Threading.CancellationToken)">
             <summary>
@@ -14135,6 +14301,9 @@
             <summary>
             Gets the semantic model for this document asynchronously.
             </summary>
+            <returns>
+            The returned <see cref="T:Microsoft.CodeAnalysis.SemanticModel"/> may be null if <see cref="P:Microsoft.CodeAnalysis.Document.SupportsSemanticModel"/> returns false.
+            </returns>
         </member>
         <member name="M:Microsoft.CodeAnalysis.Document.WithSourceCodeKind(Microsoft.CodeAnalysis.SourceCodeKind)">
             <summary>
@@ -14558,7 +14727,7 @@
         </member>
         <member name="M:Microsoft.CodeAnalysis.Project.HasSuccessfullyLoadedAsync(System.Threading.CancellationToken)">
             <summary>
-            Determines if the compilation returned by <see cref="M:Microsoft.CodeAnalysis.Project.GetCompilationAsync(System.Threading.CancellationToken)"/> and all its referenced compilaton are from fully loaded projects.
+            Determines if the compilation returned by <see cref="M:Microsoft.CodeAnalysis.Project.GetCompilationAsync(System.Threading.CancellationToken)"/> and all its referenced compilation are from fully loaded projects.
             </summary>
         </member>
         <member name="M:Microsoft.CodeAnalysis.Project.GetChanges(Microsoft.CodeAnalysis.Project)">
@@ -15143,7 +15312,7 @@
         </member>
         <member name="M:Microsoft.CodeAnalysis.Solution.GetAnalyzerConfigDocument(Microsoft.CodeAnalysis.DocumentId)">
             <summary>
-            Gets the additional document in this solution with the specified document ID.
+            Gets the analyzer config document in this solution with the specified document ID.
             </summary>
         </member>
         <member name="M:Microsoft.CodeAnalysis.Solution.GetDocument(Microsoft.CodeAnalysis.SyntaxTree)">
@@ -15665,7 +15834,7 @@
             needed and does not exist, it is also built.
             </summary>
         </member>
-        <member name="M:Microsoft.CodeAnalysis.SolutionState.CompilationTracker.GetPartialMetadataReference(Microsoft.CodeAnalysis.SolutionState,Microsoft.CodeAnalysis.ProjectState,Microsoft.CodeAnalysis.ProjectReference,System.Threading.CancellationToken)">
+        <member name="M:Microsoft.CodeAnalysis.SolutionState.CompilationTracker.GetPartialMetadataReference(Microsoft.CodeAnalysis.SolutionState,Microsoft.CodeAnalysis.ProjectState,Microsoft.CodeAnalysis.ProjectReference)">
             <summary>
             Attempts to get (without waiting) a metadata reference to a possibly in progress
             compilation. Only actual compilation references are returned. Could potentially 
@@ -15813,7 +15982,7 @@
             True if the solution contains the analyzer config document in one of its projects
             </summary>
         </member>
-        <member name="M:Microsoft.CodeAnalysis.SolutionState.GetProjectState(Microsoft.CodeAnalysis.IAssemblySymbol,System.Threading.CancellationToken)">
+        <member name="M:Microsoft.CodeAnalysis.SolutionState.GetProjectState(Microsoft.CodeAnalysis.IAssemblySymbol)">
             <summary>
             Gets the <see cref="T:Microsoft.CodeAnalysis.Project"/> associated with an assembly symbol.
             </summary>
@@ -16282,7 +16451,7 @@
             Indicates an <see cref="T:Microsoft.CodeAnalysis.AnalyzerConfigDocument"/>
             </summary>
         </member>
-        <member name="F:Microsoft.CodeAnalysis.TextDocumentState.sourceTextOpt">
+        <member name="F:Microsoft.CodeAnalysis.TextDocumentState.sourceText">
              <summary>
              A direct reference to our source text.  This is only kept around in specialized scenarios.
              Specifically, we keep this around when a document is opened.  By providing this we can allow
@@ -18531,6 +18700,12 @@
             a simple Lisp-like immutable list.  Good to use when lists are always accessed from the head.
             </summary>
         </member>
+        <member name="M:Roslyn.Utilities.RoslynDebug.Assert(System.Boolean)">
+            <inheritdoc cref="M:System.Diagnostics.Debug.Assert(System.Boolean)"/>
+        </member>
+        <member name="M:Roslyn.Utilities.RoslynDebug.Assert(System.Boolean,System.String)">
+            <inheritdoc cref="M:System.Diagnostics.Debug.Assert(System.Boolean,System.String)"/>
+        </member>
         <member name="T:Roslyn.Utilities.DocumentationCommentXmlNames">
             <summary>
             Names of well-known XML attributes and elements.
@@ -18698,6 +18873,16 @@
             </summary>
             <param name="data">The sequence of bytes</param>
             <returns>The FNV-1a hash of <paramref name="data"/></returns>
+        </member>
+        <member name="M:Roslyn.Utilities.Hash.GetFNVHashCode(System.ReadOnlySpan{System.Char})">
+            <summary>
+            Compute the hashcode of a sub-string using FNV-1a
+            See http://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
+            Note: FNV-1a was developed and tuned for 8-bit sequences. We're using it here
+            for 16-bit Unicode chars on the understanding that the majority of chars will
+            fit into 8-bits and, therefore, the algorithm will retain its desirable traits
+            for generating hash codes.
+            </summary>
         </member>
         <member name="M:Roslyn.Utilities.Hash.GetFNVHashCode(System.String,System.Int32,System.Int32)">
             <summary>
@@ -18904,6 +19089,12 @@
             <summary>
             Compares objects based upon their reference identity.
             </summary>
+        </member>
+        <member name="M:Roslyn.Utilities.RoslynString.IsNullOrEmpty(System.String)">
+            <inheritdoc cref="M:System.String.IsNullOrEmpty(System.String)"/>
+        </member>
+        <member name="M:Roslyn.Utilities.RoslynString.IsNullOrWhiteSpace(System.String)">
+            <inheritdoc cref="M:System.String.IsNullOrWhiteSpace(System.String)"/>
         </member>
         <member name="M:Roslyn.Utilities.StreamExtensions.TryReadAll(System.IO.Stream,System.Byte[],System.Int32,System.Int32)">
             <summary>
@@ -19901,6 +20092,13 @@
             Gets a simple debugger-viewable collection.
             </summary>
         </member>
+        <member name="T:System.Linq.EnumerableExtensions">
+            <summary>
+            Declare the following extension methods in System.Linq namespace to avoid accidental boxing of ImmutableArray{T} that implements IEnumerable{T}.
+            The boxing would occur if the methods were defined in Roslyn.Utilities and the file calling these methods has <c>using Roslyn.Utilities</c>
+            but not <c>using System.Linq</c>.
+            </summary>
+        </member>
         <member name="T:System.Diagnostics.CodeAnalysis.AllowNullAttribute">
             <summary>Specifies that null is allowed as an input even if the corresponding type disallows it.</summary>
         </member>
@@ -19964,13 +20162,6 @@
         </member>
         <member name="P:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.ParameterValue">
             <summary>Gets the condition parameter value.</summary>
-        </member>
-        <member name="T:System.Linq.EnumerableExtensions">
-            <summary>
-            Declare the following extension methods in System.Linq namespace to avoid accidental boxing of ImmutableArray{T} that implements IEnumerable{T}.
-            The boxing would occur if the methods were defined in Roslyn.Utilities and the file calling these methods has <c>using Roslyn.Utilities</c>
-            but not <c>using System.Linq</c>.
-            </summary>
         </member>
     </members>
 </doc>

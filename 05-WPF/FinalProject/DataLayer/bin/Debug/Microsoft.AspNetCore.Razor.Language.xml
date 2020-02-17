@@ -2818,6 +2818,18 @@
         <member name="M:Microsoft.AspNetCore.Razor.Language.ComponentResources.FormatEventHandlerTagHelper_Documentation(System.Object,System.Object)">
             <summary>Sets the '{0}' attribute to the provided string or delegate value. A delegate value should be of type '{1}'.</summary>
         </member>
+        <member name="P:Microsoft.AspNetCore.Razor.Language.ComponentResources.EventHandlerTagHelper_PreventDefault_Documentation">
+            <summary>Specifies whether to cancel (if cancelable) the default action that belongs to the '{0}' event.</summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Razor.Language.ComponentResources.FormatEventHandlerTagHelper_PreventDefault_Documentation(System.Object)">
+            <summary>Specifies whether to cancel (if cancelable) the default action that belongs to the '{0}' event.</summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Razor.Language.ComponentResources.EventHandlerTagHelper_StopPropagation_Documentation">
+            <summary>Specifies whether to prevent further propagation of the '{0}' event in the capturing and bubbling phases.</summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Razor.Language.ComponentResources.FormatEventHandlerTagHelper_StopPropagation_Documentation(System.Object)">
+            <summary>Specifies whether to prevent further propagation of the '{0}' event in the capturing and bubbling phases.</summary>
+        </member>
         <member name="P:Microsoft.AspNetCore.Razor.Language.ComponentResources.ImplementsDirective_Description">
             <summary>Declares an interface implementation for the current class.</summary>
         </member>

@@ -480,3 +480,5 @@ C:\Users\Adrian\Documents\FinalProject\DataLayer\bin\Debug\pt\Microsoft.ReportVi
 C:\Users\Adrian\Documents\FinalProject\DataLayer\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\Adrian\Documents\FinalProject\DataLayer\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\Adrian\Documents\FinalProject\DataLayer\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Adrian\Documents\FinalProject\DataLayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Adrian\Documents\FinalProject\DataLayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml

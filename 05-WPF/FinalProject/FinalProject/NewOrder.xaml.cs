@@ -1,20 +1,13 @@
-﻿using BusinessLayer;
+﻿// Adrián Navarro Gabino
+
+using BusinessLayer;
 using EntityLayer;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FinalProject
 {
@@ -45,6 +38,7 @@ namespace FinalProject
             InitializeComponent();
             this.main = main;
             this.buss = buss;
+            main.SetStatus("Status");
             pvp = 0;
 
             usersView = (CollectionViewSource)this.Resources["users-list"];
@@ -65,6 +59,7 @@ namespace FinalProject
             productsView.Source = productsList;
 
             typesNames = new ObservableCollection<string>();
+            typesNames.Add("");
             foreach (TipoArticulo t in MainWindow.types)
             {
                 typesNames.Add(t.Descripcion);
@@ -150,6 +145,10 @@ namespace FinalProject
                     e.Column.Header = "Brand";
                     e.Column.DisplayIndex = 2;
                     break;
+                case "cantidad":
+                    e.Column.Header = "Amount";
+                    e.Column.DisplayIndex = 3;
+                    break;
                 default:
                     e.Cancel = true;
                     break;
@@ -197,7 +196,7 @@ namespace FinalProject
             if (prod != null)
             {
                 if (prod.nombreAux.ToUpper().Contains(productNameSearchBox.Text.ToUpper()) &&
-                    prod.tipoNombre == typeSearchBox.SelectedItem.ToString())
+                    (prod.tipoNombre == typeSearchBox.SelectedItem.ToString() || typeSearchBox.SelectedItem.ToString() == ""))
                 {
                     e.Accepted = true;
                 }
@@ -223,11 +222,13 @@ namespace FinalProject
                 if (ordersDictionary.ContainsKey(product))
                 {
                     ordersDictionary[product] += 1;
+                    product.cantidad = ordersDictionary[product].ToString();
                 }
                 else
                 {
                     orderRowsList.Add(product);
                     ordersDictionary.Add(product, 1);
+                    product.cantidad = "1";
                 }
 
                 if (product.pvp != null)
@@ -241,8 +242,13 @@ namespace FinalProject
 
         private void SelectOrder(object sender, SelectionChangedEventArgs e)
         {
-            Articulo product = (Articulo)orderGrid.SelectedItem;
-            amountBox.Text = ordersDictionary[product].ToString();
+            try
+            {
+                Articulo product = (Articulo)orderGrid.SelectedItem;
+                amountBox.Text = ordersDictionary[product].ToString();
+            }
+            catch(Exception)
+            { }
         }
 
         private void UpdateAmount(object sender, RoutedEventArgs e)
@@ -250,21 +256,42 @@ namespace FinalProject
             Articulo product = (Articulo)orderGrid.SelectedItem;
             if(product != null)
             {
-                try
+                if (amountBox.Text == "0")
                 {
-                    int amount = Convert.ToInt32(amountBox.Text);
-
-                    pvp += (amount - ordersDictionary[product]) *
-                        Convert.ToDouble(product.pvp);
+                    pvp -= ordersDictionary[product] * Convert.ToDouble(product.pvp);
                     noIvaLbl.Content = pvp + " €";
-                    finalPriceLbl.Content = (pvp * 1.21).ToString("#.##") + " €";
-
-                    ordersDictionary[product] = amount;
+                    if (pvp == 0)
+                    {
+                        finalPriceLbl.Content = "0 €";
+                    }
+                    else
+                    {
+                        finalPriceLbl.Content = (pvp * 1.21).ToString("#.##") +
+                            " €";
+                    }
+                    orderRowsList.Remove(product);
+                    ordersDictionary.Remove(product);
                 }
-                catch
+                else
                 {
-                    amountBox.Text = ordersDictionary[product].ToString();
+                    try
+                    {
+                        int amount = Convert.ToInt32(amountBox.Text);
+
+                        pvp += (amount - ordersDictionary[product]) *
+                            Convert.ToDouble(product.pvp);
+                        noIvaLbl.Content = pvp + " €";
+                        finalPriceLbl.Content = (pvp * 1.21).ToString("#.##") + " €";
+
+                        ordersDictionary[product] = amount;
+                        product.cantidad = amount.ToString();
+                    }
+                    catch
+                    {
+                        amountBox.Text = ordersDictionary[product].ToString();
+                    }
                 }
+                orderGrid.Items.Refresh();
             }
         }
 
@@ -309,6 +336,14 @@ namespace FinalProject
                     main.SetStatus("Something went wrong", true);
                 }
             }
+            else if(selectedUser == null)
+            {
+                main.SetStatus("You must select a user", true);
+            }
+            else
+            {
+                main.SetStatus("You must select some products", true);
+            }
         }
 
         private void ClearFields()
@@ -319,10 +354,7 @@ namespace FinalProject
             pvp = 0;
             noIvaLbl.Content = "0 €";
             finalPriceLbl.Content = "0 €";
-            foreach(Articulo p in orderRowsList)
-            {
-                orderRowsList.Remove(p);
-            }
+            orderRowsList.Clear();
         }
     }
 }

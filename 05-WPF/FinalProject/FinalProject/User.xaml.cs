@@ -1,4 +1,6 @@
-﻿using BusinessLayer;
+﻿// Adrián Navarro Gabino
+
+using BusinessLayer;
 using EntityLayer;
 using System;
 using System.Collections.Generic;
@@ -42,6 +44,7 @@ namespace FinalProject
             this.main = main;
             this.buss = buss;
             main.SetStatus("Status");
+
             provinceNames = new ObservableCollection<string>();
             foreach(Provincia p in MainWindow.provinces)
             {
@@ -98,8 +101,29 @@ namespace FinalProject
                 idBox.Text = selectedUser.dni;
                 postalCodeBox.Text = selectedUser.codpos;
                 bornBox.Text = selectedUser.nacido;
-                provinceBox.SelectedItem = buss.GetProvince(selectedUser.provinciaID).nombre;
-                townBox.SelectedItem = buss.GetTown(selectedUser.provinciaID, selectedUser.puebloID).nombre;
+                try
+                {
+                    string provinceAux;
+                    if (selectedUser.provinciaID.Length > 1)
+                        provinceAux = selectedUser.provinciaID;
+                    else
+                        provinceAux = "0" + selectedUser.provinciaID;
+                    provinceBox.SelectedItem = buss.GetProvince(provinceAux).nombre;
+                    string townAux = "";
+                    if (selectedUser.puebloID.Length == 4)
+                    {
+                        townAux = selectedUser.puebloID;
+                    }
+                    else
+                    {
+                        for (int i = 0; i < 4 - selectedUser.puebloID.Length; i++)
+                            townAux += "0";
+                        townAux += selectedUser.puebloID;
+                    }
+
+                    townBox.SelectedItem = buss.GetTown(provinceAux, townAux).nombre;
+                }
+                catch (Exception) { }
                 phoneBox.Text = selectedUser.telefono;
                 addressBox.Text = selectedUser.calle;
                 passBox.IsEnabled = false;
@@ -140,8 +164,8 @@ namespace FinalProject
             {
                 if (usu.nombre.ToUpper().Contains(nameSearchBox.Text.ToUpper()) &&
                     usu.apellidos.ToUpper().Contains(surnameSearchBox.Text.ToUpper()) &&
-                    usu.dni.ToUpper().Contains(idBox.Text.ToUpper()) &&
-                    usu.email.ToUpper().Contains(mailBox.Text.ToUpper()))
+                    usu.dni.ToUpper().Contains(idSearchBox.Text.ToUpper()) &&
+                    usu.email.ToUpper().Contains(mailSearchBox.Text.ToUpper()))
                 {
                     e.Accepted = true;
                 }
@@ -254,6 +278,10 @@ namespace FinalProject
                     main.SetStatus("User inserted");
                     MainWindow.users = buss.GetUsers();
                     usersList.Add(us);
+                    myView
+                        .SortDescriptions
+                        .Add(new System.ComponentModel.SortDescription(
+                            "nombre", System.ComponentModel.ListSortDirection.Ascending));
                 }
                 else
                 {
@@ -290,7 +318,6 @@ namespace FinalProject
             if (valId && valMail && valName && valTown && valProvince
                     && valZip)
             {
-                Usuario oldUser = (Usuario)dataGrid.SelectedItem;
                 Usuario selectedUser = (Usuario)dataGrid.SelectedItem;
 
                 string provinceId = GetProvinceByName(
@@ -316,8 +343,7 @@ namespace FinalProject
                     ClearFields();
                     main.SetStatus("User modified");
                     MainWindow.users = buss.GetUsers();
-                    usersList.Remove(oldUser);
-                    usersList.Add(selectedUser);
+                    dataGrid.Items.Refresh();
                 }
                 else
                 {

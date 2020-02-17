@@ -172,6 +172,11 @@ namespace BusinessLayer
             return dat.ReadOrders();
         }
 
+        public Pedido GetOrder(string id)
+        {
+            return dat.ReadOrder(id);
+        }
+
         public bool InsertOrder(Pedido order)
         {
             return dat.InsertOrder(order);

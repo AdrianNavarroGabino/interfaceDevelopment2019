@@ -382,3 +382,5 @@ C:\Users\Adrian\Documents\FinalProject\BussinessLayer\obj\Debug\BusinessLayer.cs
 C:\Users\Adrian\Documents\FinalProject\BussinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
 C:\Users\Adrian\Documents\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.dll
 C:\Users\Adrian\Documents\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.pdb
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Adrian\Documents\FinalProject\BussinessLayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml

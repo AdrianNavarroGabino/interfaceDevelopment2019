@@ -1,20 +1,12 @@
-﻿using BusinessLayer;
+﻿// Adrián Navarro Gabino
+
+using BusinessLayer;
 using EntityLayer;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FinalProject
 {
@@ -35,7 +27,6 @@ namespace FinalProject
 
             this.main = main;
             this.buss = buss;
-
             main.SetStatus("Status");
 
             myView = (CollectionViewSource)this.Resources["products-list"];
@@ -49,6 +40,7 @@ namespace FinalProject
             myView.Source = productsList;
 
             typesNames = new ObservableCollection<string>();
+            typesNames.Add("");
             foreach (TipoArticulo t in MainWindow.types)
             {
                 typesNames.Add(t.Descripcion);
@@ -125,22 +117,22 @@ namespace FinalProject
             RowDefinition r6 = new RowDefinition();
             productsGrid.RowDefinitions.Add(r6);
 
-            CreateField(tv.panel, "Panel:", 100, 20, new Thickness(67, 0, 0, 0),
+            CreateField(tv.panel, "Panel:", 200, 20, new Thickness(67, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 0);
 
-            CreateField(tv.pantalla, "Screen:", 100, 20,
+            CreateField(tv.pantalla, "Screen:", 200, 20,
                 new Thickness(60, 0, 0, 0), new Thickness(150, 0, 0, 0), 1);
 
-            CreateField(tv.resolucion, "Resolution:", 100, 20,
+            CreateField(tv.resolucion, "Resolution:", 200, 20,
                 new Thickness(40, 0, 0, 0), new Thickness(150, 0, 0, 0), 2);
 
-            CreateField(tv.hdreadyfullhd, "HD/Full HD:", 100, 20,
+            CreateField(tv.hdreadyfullhd, "HD/Full HD:", 200, 20,
                 new Thickness(37, 0, 0, 0), new Thickness(150, 0, 0, 0), 3);
 
-            CreateField(tv.tdt, "TDT:", 100, 20, new Thickness(75, 0, 0, 0),
+            CreateField(tv.tdt, "TDT:", 200, 20, new Thickness(75, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 4);
 
-            CreateField(product.pvpAux, "Price:", 100, 20, new Thickness(70, 0, 0, 0),
+            CreateField(product.pvpAux, "Price:", 200, 20, new Thickness(70, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 5, canEdit);
         }
 
@@ -153,9 +145,9 @@ namespace FinalProject
             RowDefinition r2 = new RowDefinition();
             productsGrid.RowDefinitions.Add(r2);
 
-            CreateField(memory.tipo, "Type:", 100, 20, new Thickness(67, 0, 0, 0),
+            CreateField(memory.tipo, "Type:", 200, 20, new Thickness(67, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 0);
-            CreateField(product.pvpAux, "Price:", 100, 20, new Thickness(70, 0, 0, 0),
+            CreateField(product.pvpAux, "Price:", 200, 20, new Thickness(70, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 1, canEdit);
         }
 
@@ -180,21 +172,21 @@ namespace FinalProject
             RowDefinition r8 = new RowDefinition();
             productsGrid.RowDefinitions.Add(r8);
 
-            CreateField(camera.resolucion, "Resolution:", 100, 20, new Thickness(67, 0, 0, 0),
+            CreateField(camera.resolucion, "Resolution:", 200, 20, new Thickness(65, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 0);
-            CreateField(camera.sensor, "Sensor:", 100, 20, new Thickness(67, 0, 0, 0),
+            CreateField(camera.sensor, "Sensor:", 200, 20, new Thickness(83, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 1);
-            CreateField(camera.tipo, "Type:", 100, 20, new Thickness(67, 0, 0, 0),
+            CreateField(camera.tipo, "Type:", 200, 20, new Thickness(93, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 2);
-            CreateField(camera.factor, "Factor:", 100, 20, new Thickness(67, 0, 0, 0),
+            CreateField(camera.factor, "Factor:", 200, 20, new Thickness(85, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 3);
-            CreateField(camera.objetivo, "Objective:", 100, 20, new Thickness(67, 0, 0, 0),
+            CreateField(camera.objetivo, "Objective:", 200, 20, new Thickness(74, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 4);
-            CreateField(camera.pantalla, "Screen:", 100, 20, new Thickness(67, 0, 0, 0),
+            CreateField(camera.pantalla, "Screen:", 200, 20, new Thickness(83, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 5);
-            CreateField(camera.zoom, "Zoom:", 100, 20, new Thickness(67, 0, 0, 0),
+            CreateField(camera.zoom, "Zoom:", 200, 20, new Thickness(84, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 6);
-            CreateField(product.pvpAux, "Price:", 100, 20, new Thickness(70, 0, 0, 0),
+            CreateField(product.pvpAux, "Price:", 200, 20, new Thickness(93, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 7, canEdit);
         }
 
@@ -215,17 +207,17 @@ namespace FinalProject
             RowDefinition r6 = new RowDefinition();
             productsGrid.RowDefinitions.Add(r6);
 
-            CreateField(objective.tipo, "Type:", 100, 20, new Thickness(67, 0, 0, 0),
+            CreateField(objective.tipo, "Type:", 200, 20, new Thickness(83, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 0);
-            CreateField(objective.montura, "Mount:", 100, 20, new Thickness(67, 0, 0, 0),
+            CreateField(objective.montura, "Mount:", 200, 20, new Thickness(75, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 1);
-            CreateField(objective.focal, "Focal:", 100, 20, new Thickness(67, 0, 0, 0),
+            CreateField(objective.focal, "Focal:", 200, 20, new Thickness(82, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 2);
-            CreateField(objective.apertura, "Opening:", 100, 20, new Thickness(67, 0, 0, 0),
+            CreateField(objective.apertura, "Opening:", 200, 20, new Thickness(67, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 3);
-            CreateField(objective.especiales, "Specials:", 100, 20, new Thickness(67, 0, 0, 0),
+            CreateField(objective.especiales, "Specials:", 200, 20, new Thickness(70, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 4);
-            CreateField(product.pvpAux, "Price:", 100, 20, new Thickness(70, 0, 0, 0),
+            CreateField(product.pvpAux, "Price:", 200, 20, new Thickness(89, 0, 0, 0),
                 new Thickness(150, 0, 0, 0), 5, canEdit);
         }
 
@@ -250,6 +242,8 @@ namespace FinalProject
             else
             {
                 tb.IsEnabled = true;
+                sp.Name = "stackPanelProducts";
+                tb.Name = "pvp";
             }
             sp.Children.Add(lbl);
             sp.Children.Add(tb);
@@ -281,7 +275,7 @@ namespace FinalProject
             if (prod != null)
             {
                 if (prod.nombreAux.ToUpper().Contains(nameSearchBox.Text.ToUpper()) &&
-                    prod.tipoNombre == typeSearchBox.SelectedItem.ToString())
+                    (typeSearchBox.SelectedItem == null || prod.tipoNombre == typeSearchBox.SelectedItem.ToString() || typeSearchBox.SelectedItem.ToString() == ""))
                 {
                     e.Accepted = true;
                 }
@@ -299,19 +293,29 @@ namespace FinalProject
 
         private void ModifyProduct(object sender, RoutedEventArgs e)
         {
-            TextBox pvp = (TextBox)productsGrid.FindName("pvp");
+            StackPanel sp = (StackPanel)productsGrid.Children[productsGrid.Children.Count - 1];
+            TextBox pvp = (TextBox)sp.Children[sp.Children.Count - 1];
+            
             string newPrice = pvp.Text;
+
+            ArticuloAux p = (ArticuloAux)productsDataGrid.SelectedItem;
 
             try
             {
-                double aux = Convert.ToDouble(newPrice);
-                Articulo product = buss.GetProduct(((ArticuloAux)productsDataGrid.SelectedItem).articuloIDAux);
-                Articulo modifiedProduct = buss.GetProduct(((ArticuloAux)productsDataGrid.SelectedItem).articuloIDAux);
-                modifiedProduct.pvp = aux.ToString();
-                if (buss.ModifyProduct(product.articuloID, modifiedProduct))
+                Articulo p1 = buss.GetProduct(p.articuloIDAux);
+                p.pvpAux = newPrice;
+                p1.pvp = newPrice;
+                if (buss.ModifyProduct(p1.articuloID, p1))
                 {
-                    productsList.Remove(new ArticuloAux(product, MainWindow.types));
-                    productsList.Add(new ArticuloAux(modifiedProduct, MainWindow.types));
+                    MainWindow.products = buss.GetProducts();
+                    MainWindow.productsAux.Clear();
+                    foreach (Articulo pr in MainWindow.products)
+                    {
+                        MainWindow.productsAux.Add(new ArticuloAux(pr, MainWindow.types));
+                    }
+                    productsList =
+                        new ObservableCollection<ArticuloAux>(MainWindow.productsAux);
+                    productsDataGrid.Items.Refresh();
                     main.SetStatus("Price changed");
                 }
             }

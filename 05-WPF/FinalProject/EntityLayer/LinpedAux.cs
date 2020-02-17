@@ -29,5 +29,18 @@ namespace EntityLayer
             this.marcaID = marcaID;
             total = Convert.ToInt32(cantidad) * Convert.ToDouble(pvp);
         }
+
+        public LinpedAux(Linped l, Articulo p)
+        {
+            PedidoID = l.PedidoID;
+            this.linea = l.linea;
+            this.articuloID = p.articuloID;
+            this.importe = l.importe;
+            this.cantidad = l.cantidad;
+            this.nombre = p.nombre;
+            this.pvp = p.pvp;
+            this.marcaID = p.marcaID;
+            total = Convert.ToInt32(l.cantidad) * Convert.ToDouble(p.pvp);
+        }
     }
 }

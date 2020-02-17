@@ -17,8 +17,8 @@
             <remarks>
             See https://blogs.msdn.microsoft.com/twistylittlepassagesallalike/2011/04/23/everyone-quotes-command-line-arguments-the-wrong-way/
             </remarks>
-            <param name="args"></param>
-            <returns></returns>
+            <param name="args">The arguments to concatenate.</param>
+            <returns>The escaped arguments, concatenated.</returns>
         </member>
         <member name="T:Microsoft.VisualStudio.Web.CodeGeneration.Design.Resources">
             <summary>

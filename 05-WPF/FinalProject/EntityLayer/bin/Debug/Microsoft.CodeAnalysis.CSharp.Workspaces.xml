@@ -45,7 +45,7 @@
             e.g: int.Parse, XElement.Load, Tuple.Create etc.
             </summary>
         </member>
-        <member name="M:Microsoft.CodeAnalysis.CSharp.CodeStyle.TypeStyle.TypeStyleHelper.IsPossibleConversionMethod(Microsoft.CodeAnalysis.IMethodSymbol,Microsoft.CodeAnalysis.ITypeSymbol,Microsoft.CodeAnalysis.ITypeSymbol,Microsoft.CodeAnalysis.SemanticModel,System.Threading.CancellationToken)">
+        <member name="M:Microsoft.CodeAnalysis.CSharp.CodeStyle.TypeStyle.TypeStyleHelper.IsPossibleConversionMethod(Microsoft.CodeAnalysis.IMethodSymbol,Microsoft.CodeAnalysis.ITypeSymbol,Microsoft.CodeAnalysis.ITypeSymbol,Microsoft.CodeAnalysis.SemanticModel)">
             <summary>
             If we have a method ToXXX and its return type is also XXX, then type name is apparent
             e.g: Convert.ToString.
@@ -140,6 +140,16 @@
               Looks up a localized string similar to Pattern matching preferences.
             </summary>
         </member>
+        <member name="P:Microsoft.CodeAnalysis.CSharp.CSharpWorkspaceResources.Remove_and_Sort_Usings">
+            <summary>
+              Looks up a localized string similar to R&amp;emove and Sort Usings.
+            </summary>
+        </member>
+        <member name="P:Microsoft.CodeAnalysis.CSharp.CSharpWorkspaceResources.Sort_Usings">
+            <summary>
+              Looks up a localized string similar to &amp;Sort Usings.
+            </summary>
+        </member>
         <member name="P:Microsoft.CodeAnalysis.CSharp.CSharpWorkspaceResources.Space_preferences">
             <summary>
               Looks up a localized string similar to Space preferences.
@@ -163,6 +173,16 @@
         <member name="P:Microsoft.CodeAnalysis.CSharp.CSharpWorkspaceResources.Wrapping_preferences">
             <summary>
               Looks up a localized string similar to Wrapping preferences.
+            </summary>
+        </member>
+        <member name="F:Microsoft.CodeAnalysis.CSharp.Editing.CSharpImportAdder.Rewriter._namespaceMembers">
+            <summary>
+            A hashset containing the short names of all namespace members 
+            </summary>
+        </member>
+        <member name="F:Microsoft.CodeAnalysis.CSharp.Editing.CSharpImportAdder.Rewriter._extensionMethods">
+            <summary>
+            A hashset containing the short names of all extension methods
             </summary>
         </member>
         <member name="M:Microsoft.CodeAnalysis.CSharp.Extensions.ArgumentSyntaxExtensions.DetermineParameter(Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax,Microsoft.CodeAnalysis.SemanticModel,System.Boolean,System.Threading.CancellationToken)">
@@ -254,12 +274,6 @@
             </summary>
             <param name="node"></param>
             <returns></returns>
-        </member>
-        <member name="M:Microsoft.CodeAnalysis.CSharp.Extensions.ExpressionSyntaxExtensions.HidingTypeParameterSymbolExists(Microsoft.CodeAnalysis.ISymbol,System.Collections.Generic.List{Microsoft.CodeAnalysis.ISymbol})">
-            <summary>
-            Returns True if enclosingTypeParametersInsideOut contains a symbol with the same name as the candidateSymbol
-            thereby saying that there exists a symbol which hides the candidate Symbol
-            </summary>
         </member>
         <member name="M:Microsoft.CodeAnalysis.CSharp.Extensions.ExpressionSyntaxExtensions.IsMemberAccessADynamicInvocation(Microsoft.CodeAnalysis.CSharp.Syntax.MemberAccessExpressionSyntax,Microsoft.CodeAnalysis.SemanticModel)">
             <summary>
@@ -709,7 +723,7 @@
              <item><description>Braces may be omitted when the entire statement is placed on one line.</description></item>
              <item><description>For a statement that contains one or more embedded statements, braces may be omitted when
              every embedded statement fits on one line, and the part preceding the embedded statement is placed on one
-             line. If any embedded statement uses braces, braces are preferred for all embedded statments of the same
+             line. If any embedded statement uses braces, braces are preferred for all embedded statements of the same
              parent statement. For the purposes of evaluating this rule, if the embedded statement following an
              <c>else</c> keyword is an if statement, the embedded statements of the nested if statement are treated as
              children of the parent statement of the <c>else</c> keyword.</description></item>

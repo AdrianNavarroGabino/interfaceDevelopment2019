@@ -460,3 +460,5 @@ C:\Users\Adrian\Documents\FinalProject\EntityLayer\bin\Debug\pt\Microsoft.Report
 C:\Users\Adrian\Documents\FinalProject\EntityLayer\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\Adrian\Documents\FinalProject\EntityLayer\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\Adrian\Documents\FinalProject\EntityLayer\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Adrian\Documents\FinalProject\EntityLayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Adrian\Documents\FinalProject\EntityLayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml

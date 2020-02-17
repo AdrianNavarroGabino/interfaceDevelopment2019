@@ -101,7 +101,7 @@
             <param name="modelType">Model type for the EF metadata has to be returned.</param>
             <returns>Returns <see cref="T:Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.ContextProcessingResult"/>.</returns>
         </member>
-        <member name="M:Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.IEntityFrameworkService.GetModelMetadata(System.String,Microsoft.VisualStudio.Web.CodeGeneration.ModelType,System.String)">
+        <member name="M:Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.IEntityFrameworkService.GetModelMetadata(System.String,Microsoft.VisualStudio.Web.CodeGeneration.ModelType,System.String,System.Boolean)">
             <summary>
             Gets the EF metadata for given context and model.
             Method takes in full type name of context and if there is no context with that name,
@@ -117,6 +117,7 @@
             <param name="dbContextFullTypeName">Full name (including namespace) of the context class.</param>
             <param name="modelTypeName">Model type for which the EF metadata has to be returned.</param>
             <param name="areaName">Name of the area on which scaffolding is being run. Used for generating path for new DbContext.</param>
+            <param name="useSqlite">flag for using sqlite instead of sqlserver </param>
             <returns>Returns <see cref="T:Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.ContextProcessingResult"/>.</returns>
         </member>
         <member name="T:Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.MessageStrings">
@@ -183,6 +184,11 @@
         <member name="P:Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.MessageStrings.EFSqlServerPackageNotAvailable">
             <summary>
               Looks up a localized string similar to Please install the package &apos;Microsoft.EntityFrameworkCore.SqlServer&apos; and retry again..
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.MessageStrings.EFSqlitePackageNotAvailable">
+            <summary>
+              Looks up a localized string similar to Please install the package &apos;Microsoft.EntityFrameworkCore.Sqlite&apos; and retry again..
             </summary>
         </member>
         <member name="P:Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.MessageStrings.EnsureStartupClassExists">

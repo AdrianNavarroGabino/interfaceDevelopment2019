@@ -1,18 +1,12 @@
-﻿using BusinessLayer;
+﻿// Adrián Navarro Gabino
+
+using BusinessLayer;
 using EntityLayer;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace FinalProject
@@ -28,9 +22,11 @@ namespace FinalProject
         public static List<Localidad> towns;
         public static List<Provincia> provinces;
         public static List<Pedido> orders;
+        public static List<PedidoAux> ordersAux;
         public static List<Articulo> products;
         public static List<ArticuloAux> productsAux;
         public static List<TipoArticulo> types;
+        public static List<Linped> orderRows;
         private int time;
 
         public MainWindow(Business buss, Usuario userLogged)
@@ -41,6 +37,14 @@ namespace FinalProject
             towns = buss.GetTowns();
             provinces = buss.GetProvinces();
             orders = buss.GetOrders();
+            ordersAux = new List<PedidoAux>();
+            orderRows = buss.GetLinpeds();
+
+            foreach(Pedido o in orders)
+            {
+                ordersAux.Add(new PedidoAux(o, buss.GetUser(o.usuarioID)));
+            }
+
             products = buss.GetProducts();
             types = buss.GetProductTypes();
             productsAux = new List<ArticuloAux>();
@@ -121,6 +125,49 @@ namespace FinalProject
 
             panel21.Children.Clear();
             panel21.Children.Add(modifyOrder);
+        }
+
+        private void StatisticsScreen(object sender, RoutedEventArgs e)
+        {
+            Statistics statistics = new Statistics(this, buss);
+            statistics.HorizontalAlignment = HorizontalAlignment.Center;
+            statistics.VerticalAlignment = VerticalAlignment.Center;
+
+            panel21.Children.Clear();
+            panel21.Children.Add(statistics);
+        }
+
+        private void ReportsScreen(object sender, RoutedEventArgs e)
+        {
+            Reports reports = new Reports(this, buss);
+            reports.HorizontalAlignment = HorizontalAlignment.Center;
+            reports.VerticalAlignment = VerticalAlignment.Center;
+
+            panel21.Children.Clear();
+            panel21.Children.Add(reports);
+        }
+
+        private void StockScreen(object sender, RoutedEventArgs e)
+        {
+            Stock stock = new Stock(this, buss);
+            stock.HorizontalAlignment = HorizontalAlignment.Center;
+            stock.VerticalAlignment = VerticalAlignment.Center;
+
+            panel21.Children.Clear();
+            panel21.Children.Add(stock);
+        }
+
+        private void Close(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show(
+                "Do you really want to exit?",
+                "Exit",
+                MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

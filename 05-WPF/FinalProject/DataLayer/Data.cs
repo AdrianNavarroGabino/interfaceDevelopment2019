@@ -480,6 +480,31 @@ namespace DataLayer
             return ordersList;
         }
 
+        public Pedido ReadOrder(string id)
+        {
+            Pedido order = null;
+            string aux;
+
+            try
+            {
+                HttpResponseMessage response =
+                    client.GetAsync("api/Pedidos/" + id).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    aux = response.Content.ReadAsStringAsync().Result;
+
+                    order = JsonConvert.DeserializeObject<Pedido>(aux);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+            }
+
+            return order;
+        }
+
         public bool InsertOrder(Pedido order)
         {
             try

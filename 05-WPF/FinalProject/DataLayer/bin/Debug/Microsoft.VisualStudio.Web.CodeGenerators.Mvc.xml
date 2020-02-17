@@ -190,6 +190,11 @@
               Looks up a localized string similar to The template name &apos;{0}&apos; is not valid. Supported view templates: &apos;Empty|Create|Edit|Delete|Details|List&apos;&quot;.
             </summary>
         </member>
+        <member name="P:Microsoft.VisualStudio.Web.CodeGenerators.Mvc.MessageStrings.InstallSqlitePackage">
+            <summary>
+              Looks up a localized string similar to To scaffold controllers and views using models please install Entity Framework core packages and try again: {0}.
+            </summary>
+        </member>
         <member name="P:Microsoft.VisualStudio.Web.CodeGenerators.Mvc.MessageStrings.LayoutOptionsDesc">
             <summary>
               Looks up a localized string similar to Custom Layout page to use..
